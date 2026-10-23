@@ -65,7 +65,11 @@ export function CityCard({
                 {[stop.region, stop.country].filter(Boolean).join(", ")}
               </span>
             </h3>
-            <span className="text-xs text-mist">Demand rank #{stop.demandRank}</span>
+            <span className="text-xs text-mist">
+              {stop.area
+                ? `#${stop.demandRank} in ${stop.area}`
+                : `Demand rank #${stop.demandRank}`}
+            </span>
           </div>
           <div className="mt-2 flex flex-wrap items-center gap-3">
             <AffinityMeter value={stop.affinityScore} />

@@ -10,13 +10,17 @@ const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
 
 /**
  * Compare the average population percentile at the start and end of the window.
- * A move of 2+ percentile points counts as rising or falling.
+ * A move of 2+ percentile points counts as rising or falling. Qloo reports the
+ * percentile as a 0–1 fraction, so values are converted to 0–100 first.
  */
 export function computeMomentum(points: TrendPoint[]): Momentum {
   const series = points
     .filter((p): p is TrendPoint & { percentile: number } => typeof p.percentile === "number")
     .map((p) => ({ date: p.date, value: p.percentile }))
     .sort((a, b) => a.date.localeCompare(b.date));
+  if (series.length && series.every((p) => p.value <= 1)) {
+    for (const p of series) p.value = Math.round(p.value * 10_000) / 100;
+  }
   if (series.length < 4) {
     return {
       direction: "unknown",

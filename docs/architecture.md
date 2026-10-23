@@ -33,7 +33,7 @@ Browser ──POST /api/plan──▶ Next.js route ──▶ runPlan()
 
 ## Run budget
 
-- 20 Qloo calls per plan, about 60 seconds for the agent loop, about 95 seconds overall.
+- 20 Qloo calls per plan, about 90 seconds for the agent loop (`OPENER_AGENT_TIME_MS`), and the fallback planner always gets at least 45 seconds of its own.
 - Cache key: SHA-256 of the tool name plus normalized arguments (sorted keys, trimmed lower-case strings).
 - Plans are also cached for 24 hours by (artist or entity ID, region); cached plans skip the per-IP rate limit.
 

@@ -142,10 +142,14 @@ describe("runPlan (agent path, fake LLM)", () => {
     expect(plan?.mode).toBe("agent");
     if (!plan) return;
     expect(plan.summary).toBe("Agent summary grounded in heatmap results.");
-    expect(plan.stops[0]?.city).toBe("Seattle");
-    expect(plan.stops[0]?.reason).toBe("Agent reason");
+    expect(plan.stops.find((s) => s.city === "Seattle")?.reason).toBe("Agent reason");
+    expect(plan.stops.find((s) => s.city === "Chicago")?.reason).toBe("Agent reason 2");
+    // The server routes the stops: country by country, renumbered from 1.
+    expect(plan.stops.map((s) => s.order)).toEqual(plan.stops.map((_, i) => i + 1));
+    const areas = plan.stops.map((s) => s.area);
+    expect(areas.lastIndexOf("United States")).toBeLessThan(areas.indexOf("Canada"));
     expect(plan.stops.some((s) => s.city === "Atlantis")).toBe(false);
-    expect(plan.stops[1]?.evidenceIds).not.toContain("ev77");
+    expect(plan.stops.find((s) => s.city === "Chicago")?.evidenceIds).not.toContain("ev77");
     expect(plan.stops.flatMap((s) => s.openers).some((o) => o.id === "invented-id")).toBe(false);
     expect(plan.limitations.some((l) => l.includes("dropped"))).toBe(true);
     // The ungrounded merch idea is replaced by evidence-backed suggestions.
@@ -176,5 +180,69 @@ describe("runPlan (agent path, fake LLM)", () => {
     );
     expect(plan?.mode).toBe("deterministic");
     expect(plan?.notices.some((n) => n.message.includes("agent was unavailable"))).toBe(true);
+  });
+});
+
+describe("runPlan time budget", () => {
+  it("still builds a plan after the agent uses up the run's time", async () => {
+    const realNow = Date.now;
+    let skew = 0;
+    const slow: LlmProvider = {
+      id: "slow",
+      model: "slow",
+      runLoop: async () => {
+        skew = 100_000; // the agent "took" longer than the whole run budget
+        throw new Error("Request timed out");
+      },
+      complete: async () => "",
+    };
+    Date.now = () => realNow() + skew;
+    try {
+      const plan = await runPlan(
+        { artist: "Fixture Artist" },
+        { qloo: fakeCaller(), llm: slow, now },
+        () => undefined,
+      );
+      expect(plan?.mode).toBe("deterministic");
+      expect(plan?.stops.length).toBeGreaterThan(0);
+    } finally {
+      Date.now = realNow;
+    }
+  });
+});
+
+describe("runPlan across several countries", () => {
+  it("picks cities country by country and labels in-country ranks", async () => {
+    const plan = await runPlan(
+      { artist: "Fixture Artist", region: "worldwide" },
+      { qloo: fakeCaller(), llm: null, now },
+      () => undefined,
+    );
+    expect(plan).not.toBeNull();
+    if (!plan) return;
+    const areas = plan.stops.map((s) => s.area);
+    // Every searched country with heat data gets at least one stop.
+    for (const area of ["United States", "United Kingdom", "Germany", "Nigeria", "Australia"]) {
+      expect(areas).toContain(area);
+    }
+    // Route stays grouped by country, in search order.
+    const order = [...new Set(areas)];
+    expect(order).toEqual(["United States", "United Kingdom", "Germany", "Nigeria", "Australia"]);
+    // Ranks are within each country.
+    expect(plan.stops.find((s) => s.city === "London")?.demandRank).toBe(1);
+    expect(plan.stops.find((s) => s.city === "Berlin")?.demandRank).toBe(1);
+    expect(plan.summary).toMatch(/^Within each country searched/);
+    expect(
+      plan.notices.some((n) => n.message.includes("each country's heatmap on its own scale")),
+    ).toBe(true);
+  });
+
+  it("keeps single-country plans on one global ranking", async () => {
+    const plan = await runPlan(
+      { artist: "Fixture Artist", region: "us" },
+      { qloo: fakeCaller(), llm: null, now },
+      () => undefined,
+    );
+    expect(plan?.stops.every((s) => s.area === undefined)).toBe(true);
   });
 });

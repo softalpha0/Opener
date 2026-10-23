@@ -32,6 +32,7 @@ export class Toolbox {
   readonly evidence: Evidence[] = [];
   readonly calls: ToolCall[] = [];
   private seq = 0;
+  private deadline: number;
   private readonly now: () => number;
 
   constructor(
@@ -40,6 +41,12 @@ export class Toolbox {
     private readonly options: ToolboxOptions,
   ) {
     this.now = options.now ?? Date.now;
+    this.deadline = options.deadline;
+  }
+
+  /** Guarantee at least `ms` more time (used so the fallback planner is never starved). */
+  ensureTime(ms: number): void {
+    this.deadline = Math.max(this.deadline, this.now() + ms);
   }
 
   get used(): number {
@@ -51,7 +58,7 @@ export class Toolbox {
   }
 
   timeLeftMs(): number {
-    return this.options.deadline - this.now();
+    return this.deadline - this.now();
   }
 
   canCall(n = 1): boolean {
@@ -98,7 +105,7 @@ export class Toolbox {
       fetchedAt: outcome.fetchedAt,
       cached: outcome.cached,
       durationMs: Math.max(0, this.now() - started),
-      keyFields: redact(keyFields(tool, envelope)),
+      keyFields: redact(keyFields(tool, envelope, args)),
       warnings: envelope.warnings.slice(0, 5),
       ...(envelope.error ? { errorCode: envelope.error.code } : {}),
     };

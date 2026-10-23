@@ -221,7 +221,7 @@ export default function HowItWorks() {
               <li>
                 The LLM (Gemini by default, or Claude) gets the real Qloo tool schemas (from{" "}
                 <code className="text-gold">listTools()</code>) and plans: heatmaps, openers, crowd,
-                comparison. It can make up to 20 Qloo calls in about 60 seconds.
+                comparison. It can make up to 20 Qloo calls in about 90 seconds.
               </li>
               <li>
                 Each call goes through the cached client, gets an evidence ID, and streams to your

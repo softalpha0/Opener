@@ -2,6 +2,7 @@ import { possessive } from "../plan/format";
 import { hasResults } from "../qloo/envelope";
 import { parseEntities, parseHeatmap } from "../qloo/parse";
 import { isoDaysAgo, type InsightsType } from "../qloo/tools";
+import { countryCodeFor } from "../geo/cities";
 import { citiesFromHeat, type CityDemand } from "../plan/cities";
 import type { ToolCall, Toolbox } from "./toolbox";
 
@@ -34,18 +35,27 @@ export function heatCalls(box: Toolbox, artist: ArtistRef): ToolCall[] {
 }
 
 /** Cities derived from every successful heatmap call, each tagged with its evidence ID. */
-export function cityDemand(
-  box: Toolbox,
-  artist: ArtistRef,
-): Array<CityDemand & { evidenceId: string }> {
-  const merged = new Map<string, CityDemand & { evidenceId: string }>();
+export type AreaDemand = CityDemand & {
+  evidenceId: string;
+  /** The `within` area whose heatmap produced this city. */
+  area: string;
+  /** Rank inside that area. Heatmap scores are relative to the area, so ranks don't compare across areas. */
+  areaRank: number;
+};
+
+/** Cities derived from every successful heatmap call, tagged with evidence ID, area and in-area rank. */
+export function cityDemand(box: Toolbox, artist: ArtistRef): AreaDemand[] {
+  const merged = new Map<string, AreaDemand>();
   for (const call of heatCalls(box, artist)) {
-    for (const demand of citiesFromHeat(parseHeatmap(call.envelope.results))) {
+    const area = typeof call.args.within === "string" ? call.args.within : "";
+    const cities = citiesFromHeat(parseHeatmap(call.envelope.results), countryCodeFor(area));
+    cities.forEach((demand, i) => {
       const key = `${demand.city.n}|${demand.city.cc}`;
       const current = merged.get(key);
-      if (!current || demand.affinity > current.affinity)
-        merged.set(key, { ...demand, evidenceId: call.id });
-    }
+      if (!current || demand.affinity > current.affinity) {
+        merged.set(key, { ...demand, evidenceId: call.id, area, areaRank: i + 1 });
+      }
+    });
   }
   return [...merged.values()].sort((a, b) => b.affinity - a.affinity || b.cells - a.cells);
 }

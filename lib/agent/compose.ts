@@ -11,10 +11,18 @@ import {
   type Candidate,
   type QlooEntity,
 } from "../qloo/parse";
-import { routeOrder, type CityDemand } from "../plan/cities";
+import { routeOrder } from "../plan/cities";
 import { computeMomentum } from "../plan/momentum";
 import type { AgentDraft, Opener, Stop, TourPlan } from "../plan/schema";
-import { CROSSOVER, cityDemand, cityLabel, heatCalls, openerPool, type ArtistRef } from "./gather";
+import {
+  CROSSOVER,
+  cityDemand,
+  cityLabel,
+  heatCalls,
+  openerPool,
+  type AreaDemand,
+  type ArtistRef,
+} from "./gather";
 import type { Toolbox } from "./toolbox";
 
 export const MAX_STOPS = 8;
@@ -41,7 +49,7 @@ const fold = (s: string) =>
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
-type Demand = CityDemand & { evidenceId: string };
+type Demand = AreaDemand;
 type Pool = ReturnType<typeof openerPool>;
 
 export const LIMITATIONS = [
@@ -66,9 +74,51 @@ function matchDemand(demand: Demand[], city: string, country: string): Demand | 
   );
 }
 
-function stopReason(artist: string, d: Demand): string {
+function stopReason(artist: string, d: Demand, multiArea: boolean): string {
   const cells = d.cells > 1 ? ` across ${d.cells} nearby heat cells` : "";
+  if (multiArea) {
+    return `Strong audience affinity for ${artist} within ${d.area}: the top cell near ${d.city.n} scored ${d.affinity.toFixed(2)} on Qloo's ${d.area} heatmap${cells}.`;
+  }
   return `Strong audience affinity for ${artist}: Qloo's heatmap scored ${d.affinity.toFixed(2)} at the top cell near ${d.city.n}${cells}.`;
+}
+
+/**
+ * Next cities to add. With one area, take the global heatmap order. With several areas,
+ * heatmap scores are relative to each area and can't be compared, so take each area's
+ * strongest remaining city in turn (in the order the areas were searched).
+ */
+function pickExtras(
+  demand: Demand[],
+  areas: string[],
+  count: number,
+  taken: (d: Demand) => boolean,
+): Demand[] {
+  const remaining = demand.filter((d) => !taken(d));
+  if (areas.length <= 1) return remaining.slice(0, count);
+  const queues = areas.map((area) =>
+    remaining.filter((d) => d.area === area).sort((a, b) => a.areaRank - b.areaRank),
+  );
+  const out: Demand[] = [];
+  while (out.length < count && queues.some((q) => q.length)) {
+    for (const q of queues) {
+      const next = q.shift();
+      if (next && out.length < count) out.push(next);
+    }
+  }
+  return out;
+}
+
+/** Route order: nearest-neighbour, kept country by country when several areas were searched. */
+function orderRoute(stops: Demand[], areas: string[]): Demand[] {
+  const nn = (list: Demand[]) =>
+    routeOrder(
+      list.map((d) => ({ d, lat: d.city.lat, lng: d.city.lng })),
+      (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
+    ).map((x) => x.d);
+  if (areas.length <= 1) return nn(stops);
+  return areas.flatMap((area) =>
+    nn(stops.filter((d) => d.area === area).sort((a, b) => a.areaRank - b.areaRank)),
+  );
 }
 
 function generalOpeners(pool: Pool) {
@@ -98,7 +148,7 @@ function openerFrom(
     overlapNote:
       note ??
       (local
-        ? `Qloo recommends ${o.name} for ${possessive(artist)} audience with a ${d?.city.n} location signal.`
+        ? `Qloo recommends ${o.name} for ${possessive(artist)} audience, using ${d?.city.n} as the location signal.`
         : `Qloo recommends ${o.name} for ${possessive(artist)} audience${o.affinity !== undefined ? ` (affinity ${o.affinity.toFixed(2)})` : ""}.`),
     evidenceIds: evidenceIds.length ? evidenceIds : o.evidenceIds,
   };
@@ -138,10 +188,12 @@ function toStop(
   reason: string,
   evidenceIds: string[],
   openers: Opener[],
+  multiArea: boolean,
 ): Stop {
   return {
     order,
     demandRank,
+    ...(multiArea && d.area ? { area: d.area } : {}),
     city: d.city.n,
     region: d.city.a,
     country: d.city.c,
@@ -156,6 +208,23 @@ function toStop(
   };
 }
 
+function routeStops(stops: Stop[], areas: string[]): Stop[] {
+  const nn = (list: Stop[]) =>
+    routeOrder(
+      list.map((s) => ({ s, lat: s.lat ?? 0, lng: s.lng ?? 0 })),
+      (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
+    ).map((x) => x.s);
+  const groups = areas.length
+    ? [
+        ...areas.map((area) =>
+          stops.filter((s) => s.area === area).sort((a, b) => a.demandRank - b.demandRank),
+        ),
+        stops.filter((s) => !s.area || !areas.includes(s.area)),
+      ]
+    : [stops];
+  return groups.flatMap(nn).map((s, i) => ({ ...s, order: i + 1 }));
+}
+
 function buildStops(
   ctx: ComposeContext,
   demand: Demand[],
@@ -164,9 +233,13 @@ function buildStops(
   limitations: string[],
 ): Stop[] {
   const artist = ctx.artist.name;
+  const areas = ctx.query.within;
+  const multiArea = areas.length > 1;
   const validIds = new Set(ctx.box.evidence.map((e) => e.id));
   const rankOf = (d: Demand) =>
-    demand.findIndex((x) => x.city.n === d.city.n && x.city.cc === d.city.cc) + 1;
+    multiArea
+      ? d.areaRank
+      : demand.findIndex((x) => x.city.n === d.city.n && x.city.cc === d.city.cc) + 1;
   const used = new Set<string>();
   const stops: Stop[] = [];
 
@@ -190,6 +263,7 @@ function buildStops(
           draftStop.reason,
           draftStop.evidenceIds.filter((id) => validIds.has(id)),
           fillOpeners(openers, pool, artist, d, used),
+          multiArea,
         ),
       );
       if (stops.length >= MAX_STOPS) break;
@@ -203,15 +277,10 @@ function buildStops(
 
   const target = Math.min(MAX_STOPS, Math.max(stops.length, demand.length));
   if (stops.length < target) {
-    const extra = demand
-      .filter((d) => !stops.some((s) => s.city === d.city.n && s.countryCode === d.city.cc))
-      .slice(0, target - stops.length);
-    const routed = stops.length
-      ? extra
-      : routeOrder(
-          extra.map((d) => ({ ...d, lat: d.city.lat, lng: d.city.lng })),
-          (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
-        );
+    const extra = pickExtras(demand, areas, target - stops.length, (d) =>
+      stops.some((s) => s.city === d.city.n && s.countryCode === d.city.cc),
+    );
+    const routed = stops.length ? extra : orderRoute(extra, areas);
     if (ctx.draft && extra.length) {
       notices.push({
         level: "info",
@@ -224,13 +293,17 @@ function buildStops(
           d,
           stops.length + 1,
           rankOf(d),
-          stopReason(artist, d),
+          stopReason(artist, d, multiArea),
           [],
           fillOpeners([], pool, artist, d, used),
+          multiArea,
         ),
       );
     }
   }
+  // The model's stop order is often poor geography, so the server routes the stops itself:
+  // country by country (in search order) with short hops within each country.
+  if (ctx.draft) return routeStops(stops, multiArea ? areas : []);
   return stops;
 }
 
@@ -290,7 +363,7 @@ function spotlight(ctx: ComposeContext, pool: Pool): TourPlan["openerSpotlight"]
 function merchIdeas(
   ctx: ComposeContext,
   cross: TourPlan["crossover"],
-  tags: Array<{ name: string }>,
+  tags: Array<{ id: string; name: string }>,
   tagsId: string | undefined,
 ): TourPlan["merchIdeas"] {
   const validIds = new Set(ctx.box.evidence.map((e) => e.id));
@@ -310,8 +383,10 @@ function merchIdeas(
       evidenceIds: [brands.evidenceId],
     });
   }
-  if (tags.length >= 2 && tagsId) {
-    const picked = tags.slice(0, 3).map((t) => t.name);
+  // Mood boards only make sense with music and media tags, not place tags like "Hotel".
+  const moodTags = tags.filter((t) => /^urn:tag:[^:]+:(music|media)(:|$)/.test(t.id));
+  if (moodTags.length >= 2 && tagsId) {
+    const picked = moodTags.slice(0, 3).map((t) => t.name);
     ideas.push({
       idea: `Use ${picked.join(", ")} as the mood board for tour posters and social copy.`,
       basedOn: picked,
@@ -345,6 +420,23 @@ function deterministicSummary(
   if (!stops.length) {
     return `Qloo did not return enough location signal for ${ctx.artist.name} in ${ctx.query.regionLabel} to build a route. Try a wider region.`;
   }
+  const trend =
+    momentum.direction === "unknown"
+      ? ""
+      : ` Qloo's trend data reads as ${momentum.direction} over the past year.`;
+  if (ctx.query.within.length > 1) {
+    const leaders = ctx.query.within.flatMap((area) => {
+      const top = stops
+        .filter((s) => s.area === area)
+        .sort((a, b) => a.demandRank - b.demandRank)[0];
+      return top ? [`${top.city} (${area})`] : [];
+    });
+    const list =
+      leaders.length > 1
+        ? `${leaders.slice(0, -1).join(", ")} and ${leaders[leaders.length - 1]}`
+        : leaders[0];
+    return `Within each country searched, ${possessive(ctx.artist.name)} audience affinity peaks around ${list}. Qloo's heatmap scores are relative within each country, so the route takes the strongest cities country by country rather than ranking countries against each other, with openers drawn from artists that over-index with the same audience.${trend}`;
+  }
   const byDemand = [...stops]
     .sort((a, b) => a.demandRank - b.demandRank)
     .slice(0, 3)
@@ -353,10 +445,6 @@ function deterministicSummary(
     byDemand.length > 1
       ? `${byDemand.slice(0, -1).join(", ")} and ${byDemand[byDemand.length - 1]}`
       : byDemand[0];
-  const trend =
-    momentum.direction === "unknown"
-      ? ""
-      : ` Qloo's trend data reads as ${momentum.direction} over the past year.`;
   return `${possessive(ctx.artist.name)} strongest audience affinity in ${ctx.query.regionLabel} clusters around ${list}. The route below starts with the strongest market and follows a short-hop order, with openers drawn from artists that over-index with the same audience.${trend}`;
 }
 
@@ -365,6 +453,15 @@ export function composePlan(ctx: ComposeContext): TourPlan {
   const ref: ArtistRef = { id: ctx.artist.id, name: ctx.artist.name };
   const notices: TourPlan["notices"] = [...(ctx.extraNotices ?? [])];
   const limitations = [...LIMITATIONS, `Searched within: ${ctx.query.within.join(", ")}.`];
+  if (ctx.query.within.length > 1) {
+    limitations.push(
+      "Heatmap scores are relative within each country searched, so cities in different countries are not ranked against each other.",
+    );
+    notices.push({
+      level: "info",
+      message: `Qloo scores each country's heatmap on its own scale, so Opener picks the strongest cities in each country (${ctx.query.within.join(", ")}) instead of ranking countries against each other.`,
+    });
+  }
 
   const demand = cityDemand(box, ref);
   const pool = openerPool(box, ref);

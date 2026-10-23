@@ -21,6 +21,8 @@ Then stop calling tools and answer with ONE JSON object and nothing else (no pro
 
 Rules:
 - 5 to 8 stops, in the order you would route them. Up to 3 openers per stop.
+- Write for a booking agent in plain English. Reasons name the city and what Qloo showed (for example "Qloo's UK heatmap puts Sia's strongest affinity around London"). Do not use internal terms like "query-relative", "cell", "high-density" or evidence IDs in the text, and avoid hype words such as "leverage", "unlock", "seamless" or "game-changer".
+- Heatmap scores are relative within each area searched (every area's best cell scores about 1.0), so never rank one country above another from those scores. When several areas are searched, spread the stops across them and route country by country.
 - Every evidenceIds entry must be an evidence_id from a tool result you received.
 - Never invent cities, artists, brands or numbers. Do not use names or IDs that no tool returned.
 - Qloo results are aggregate taste affinities. Say "strong audience affinity" or "over-indexes"; never claim a share of fans will attend or buy tickets, and never describe individuals.

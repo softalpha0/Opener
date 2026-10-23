@@ -8,6 +8,7 @@ import {
 } from "../qloo/parse";
 import { isWorkflowTool, type WorkflowTool } from "../qloo/tools";
 import type { ToolArgs, ToolDescriptor } from "../qloo/types";
+import { countryCodeFor } from "../geo/cities";
 import { citiesFromHeat } from "../plan/cities";
 import { regionById } from "../plan/regions";
 import {
@@ -33,8 +34,10 @@ import { AGENT_SYSTEM_PROMPT, REPAIR_SYSTEM_PROMPT, agentPrompt, extractJson } f
 import { Toolbox, type QlooCaller } from "./toolbox";
 
 export const MAX_QLOO_CALLS = 20;
-export const AGENT_TIME_MS = 60_000;
-const TOTAL_TIME_MS = 95_000;
+/** Agent loop budget; free-tier LLMs can be slow, so it is configurable. */
+export const AGENT_TIME_MS = Number(process.env.OPENER_AGENT_TIME_MS) || 90_000;
+const TOTAL_TIME_MS = AGENT_TIME_MS + 35_000;
+const FALLBACK_TIME_MS = 45_000;
 
 export interface PlanInput {
   artist: string;
@@ -119,7 +122,9 @@ async function runAgent(
         `Agent: ${name.replace("qloo_", "").replace(/_/g, " ")}`,
       );
       return {
-        text: call.id ? digestForModel(call.id, name, call.envelope) : call.envelope.summary,
+        text: call.id
+          ? digestForModel(call.id, name, call.envelope, call.args)
+          : call.envelope.summary,
         isError: call.envelope.status === "error",
       };
     },
@@ -185,7 +190,10 @@ export async function runPlan(
         emit({
           type: "heat",
           points: points.map((p) => ({ lat: p.lat, lng: p.lng, affinity: p.affinity })),
-          cities: citiesFromHeat(points)
+          cities: citiesFromHeat(
+            points,
+            typeof call.args.within === "string" ? countryCodeFor(call.args.within) : undefined,
+          )
             .slice(0, 10)
             .map((c) => ({
               city: c.city.n,
@@ -273,15 +281,19 @@ export async function runPlan(
       log("warn", "agent loop failed; continuing with deterministic planner", {
         error: error instanceof Error ? error.message : String(error),
       });
+      const agentCalls = box.calls.filter((c) => c.id !== describe.id).length;
       notices.push({
         level: "info",
-        message:
-          "The agent was unavailable for this run, so the plan was assembled by the deterministic planner.",
+        message: agentCalls
+          ? `The agent (${deps.llm.model}) made ${agentCalls} Qloo call${agentCalls === 1 ? "" : "s"} but didn't finish its write-up, so the deterministic planner assembled the plan from the same results.`
+          : "The agent was unavailable for this run, so the plan was assembled by the deterministic planner.",
       });
     }
   }
 
   // 3. Fill any gaps with the fixed tool chain (also the whole plan when no LLM is configured).
+  // A slow or failed agent must not starve it, so it always gets its own time.
+  box.ensureTime(FALLBACK_TIME_MS);
   emit({
     type: "status",
     message: draft
@@ -291,6 +303,16 @@ export async function runPlan(
   await ensureHeat(box, artist, region.within);
   const demand = cityDemand(box, artist);
   const heat = box.byTool("qloo_where_popular");
+  if (!heat.length) {
+    emit({
+      type: "error",
+      code: "BUDGET",
+      message: "The run ran out of time before Qloo could map demand.",
+      recovery: "Try again; results gathered so far are cached, so the next run is faster.",
+      retryable: true,
+    });
+    return null;
+  }
   if (!demand.length && heat.length && heat.every((c) => c.envelope.status === "error")) {
     const first = heat[0]?.envelope;
     emit({

@@ -14,7 +14,7 @@ export function planToMarkdown(plan: TourPlan, url?: string): string {
   lines.push("## Route", "");
   for (const stop of plan.stops) {
     lines.push(
-      `${stop.order}. **${stop.city}**, ${stop.region ? `${stop.region}, ` : ""}${stop.country}: affinity ${stop.affinityScore?.toFixed(2) ?? "–"} (demand rank #${stop.demandRank}) [${stop.evidenceIds.join(", ")}]`,
+      `${stop.order}. **${stop.city}**, ${stop.region ? `${stop.region}, ` : ""}${stop.country}: affinity ${stop.affinityScore?.toFixed(2) ?? "–"} (${stop.area ? `#${stop.demandRank} in ${stop.area}` : `demand rank #${stop.demandRank}`}) [${stop.evidenceIds.join(", ")}]`,
     );
     lines.push(`   - ${stop.reason}`);
     if (stop.openers.length)

@@ -32,7 +32,9 @@ export type Opener = z.infer<typeof OpenerSchema>;
 
 export const StopSchema = z.object({
   order: z.number().int().positive(),
+  /** Heatmap rank: global for one area, within `area` when several areas were searched. */
   demandRank: z.number().int().positive(),
+  area: z.string().optional(),
   city: z.string(),
   region: z.string(),
   country: z.string(),

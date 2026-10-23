@@ -13,7 +13,7 @@ export const REGIONS: RegionPreset[] = [
   {
     id: "worldwide",
     label: "Worldwide",
-    within: ["United States", "United Kingdom", "Germany", "Australia"],
+    within: ["United States", "United Kingdom", "Germany", "Nigeria", "Australia"],
   },
   { id: "north-america", label: "North America", within: ["United States", "Canada"] },
   { id: "us", label: "United States", within: ["United States"] },
@@ -24,6 +24,7 @@ export const REGIONS: RegionPreset[] = [
     label: "Latin America",
     within: ["Mexico", "Brazil", "Argentina", "Chile"],
   },
+  { id: "africa", label: "Africa", within: ["Nigeria", "Ghana", "South Africa", "Kenya"] },
   { id: "oceania", label: "Australia & NZ", within: ["Australia", "New Zealand"] },
 ];
 

@@ -58,7 +58,7 @@ flowchart LR
 ### The agent loop
 
 1. **Resolve.** The server calls `qloo_describe` (type `artist`). If Qloo returns `needs_input`, the run stops and the UI shows the candidates. Opener never auto-picks an ambiguous name. Other plausible matches the harness noted appear as "Not the right artist?" links.
-2. **Plan.** The LLM (Gemini `gemini-3.8-flash` by default, or Claude `claude-sonnet-5-5`) gets the real tool schemas from `listTools()` and calls Qloo tools itself: heatmaps for each area, opener recommendations (broad and city-scoped), crossover categories, demographics, tags, trends and an audience comparison. Each call is cached, gets an evidence ID (`ev3`) and streams to the UI. The run is capped at 20 Qloo calls and about 60 seconds.
+2. **Plan.** The LLM (Gemini `gemini-3.6-flash` by default, falling back to `gemini-3.8-flash` and `gemini-3.5-flash-lite` when a model is busy; or Claude `claude-sonnet-5-5`) gets the real tool schemas from `listTools()` and calls Qloo tools itself: heatmaps for each area, opener recommendations (broad and city-scoped), crossover categories, demographics, tags, trends and an audience comparison. Each call is cached, gets an evidence ID (`ev3`) and streams to the UI. The run is capped at 20 Qloo calls and about 60 seconds.
 3. **Draft.** The model returns one JSON draft (summary, stops, openers, spotlight, merch ideas) where every reason cites evidence IDs. The server validates it with Zod and runs one repair pass if needed.
 4. **Ground.** The server builds the final `TourPlan` from evidence: cities must match heatmap-derived cities, openers must exist in recommend/rank results, and evidence IDs must exist. Numbers (affinity, demographics, momentum) are always computed from Qloo results, never taken from the model.
 5. **Fill gaps.** Any section the agent skipped is filled by a fixed tool chain. With no LLM key, that chain builds the whole plan (labelled "deterministic planner").
@@ -200,13 +200,14 @@ Instead of `qloo setup --qloo`, you can set `QLOO_API_KEY` in your shell or in `
 
 ### Useful scripts
 
-| Script                              | What it does                                                                 |
-| ----------------------------------- | ---------------------------------------------------------------------------- |
-| `npm run plan -- "Artist" [region]` | One plan from the CLI against live Qloo; prints each tool call               |
-| `npm run warm-cache`                | Runs the three sample artists, warms the cache, writes `data/samples/*.json` |
-| `npm run inspect-tools`             | Dumps the live `qloo mcp` tool schemas                                       |
-| `npm test` / `npm run test:e2e`     | Vitest unit + integration tests / Playwright smoke tests                     |
-| `npm run test:all`                  | Lint, typecheck, unit and E2E tests                                          |
+| Script                              | What it does                                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `npm run plan -- "Artist" [region]` | One plan from the CLI against live Qloo; prints each tool call                                   |
+| `npm run warm-cache`                | Runs the three sample artists, warms the cache, writes `data/samples/*.json`                     |
+| `npm run inspect-tools`             | Dumps the live `qloo mcp` tool schemas                                                           |
+| `npm run check-llm`                 | Sends one tiny request to the configured LLM (Gemini or Claude) and reports latency or the error |
+| `npm test` / `npm run test:e2e`     | Vitest unit + integration tests / Playwright smoke tests                                         |
+| `npm run test:all`                  | Lint, typecheck, unit and E2E tests                                                              |
 
 ## 8. Deploy to production
 
@@ -236,22 +237,24 @@ docker run --rm -p 3000:3000 -e QLOO_API_KEY=… -e GEMINI_API_KEY=… opener
 
 ## 9. Environment variables
 
-| Name                           | Required | Description                                                    | Example                          |
-| ------------------------------ | -------- | -------------------------------------------------------------- | -------------------------------- |
-| `QLOO_API_KEY`                 | Yes      | Qloo hackathon key. Read only by the `qloo mcp` child process. | `your-qloo-hackathon-key`        |
-| `QLOO_BASE_URL`                | Yes      | Hackathon API base URL (defaulted if unset).                   | `https://hackathon.api.qloo.com` |
-| `QLOO_TRUSTED_BASE_URL`        | Yes      | Same URL; the harness only sends the key to trusted hosts.     | `https://hackathon.api.qloo.com` |
-| `GEMINI_API_KEY`               | No       | Enables the agent with Gemini (free tier available).           | `your-gemini-key`                |
-| `ANTHROPIC_API_KEY`            | No       | Enables the agent with Claude instead.                         | `your-anthropic-key`             |
-| `LLM_PROVIDER`                 | No       | `gemini` or `anthropic`; only needed when both keys are set.   | `gemini`                         |
-| `LLM_MODEL`                    | No       | Model override for the chosen provider.                        | `gemini-3.8-flash`               |
-| `OPENER_LLM_FALLBACKS`         | No       | `off` disables server-side refusal fallback.                   | `on`                             |
-| `OPENER_RATE_LIMIT_PER_MINUTE` | No       | Live plans per IP per minute (cached plans don't count).       | `5`                              |
-| `OPENER_CACHE_DIR`             | No       | Where the persistent cache lives.                              | `/app/.cache`                    |
-| `OPENER_CACHE_TTL_HOURS`       | No       | Cache lifetime.                                                | `24`                             |
-| `OPENER_WARM_ON_START`         | No       | Pre-warm the sample artists after boot.                        | `true`                           |
-| `OPENER_SAMPLES_DIR`           | No       | Override the saved-plan folder (tests use fixtures).           | `data/samples`                   |
-| `PORT`                         | No       | HTTP port.                                                     | `3000`                           |
+| Name                           | Required | Description                                                       | Example                                  |
+| ------------------------------ | -------- | ----------------------------------------------------------------- | ---------------------------------------- |
+| `QLOO_API_KEY`                 | Yes      | Qloo hackathon key. Read only by the `qloo mcp` child process.    | `your-qloo-hackathon-key`                |
+| `QLOO_BASE_URL`                | Yes      | Hackathon API base URL (defaulted if unset).                      | `https://hackathon.api.qloo.com`         |
+| `QLOO_TRUSTED_BASE_URL`        | Yes      | Same URL; the harness only sends the key to trusted hosts.        | `https://hackathon.api.qloo.com`         |
+| `GEMINI_API_KEY`               | No       | Enables the agent with Gemini (free tier available).              | `your-gemini-key`                        |
+| `ANTHROPIC_API_KEY`            | No       | Enables the agent with Claude instead.                            | `your-anthropic-key`                     |
+| `LLM_PROVIDER`                 | No       | `gemini` or `anthropic`; only needed when both keys are set.      | `gemini`                                 |
+| `LLM_MODEL`                    | No       | Model override for the chosen provider.                           | `gemini-3.6-flash`                       |
+| `OPENER_LLM_FALLBACKS`         | No       | `off` disables server-side refusal fallback.                      | `on`                                     |
+| `OPENER_RATE_LIMIT_PER_MINUTE` | No       | Live plans per IP per minute (cached plans don't count).          | `5`                                      |
+| `OPENER_CACHE_DIR`             | No       | Where the persistent cache lives.                                 | `/app/.cache`                            |
+| `OPENER_CACHE_TTL_HOURS`       | No       | Cache lifetime.                                                   | `24`                                     |
+| `OPENER_WARM_ON_START`         | No       | Pre-warm the sample artists after boot.                           | `true`                                   |
+| `OPENER_AGENT_TIME_MS`         | No       | Time budget for the agent loop, in ms.                            | `90000`                                  |
+| `GEMINI_FALLBACK_MODELS`       | No       | Comma-separated models to try when the main Gemini model is busy. | `gemini-3.8-flash,gemini-3.5-flash-lite` |
+| `OPENER_SAMPLES_DIR`           | No       | Override the saved-plan folder (tests use fixtures).              | `data/samples`                           |
+| `PORT`                         | No       | HTTP port.                                                        | `3000`                                   |
 
 ## 10. Data handling and responsible use
 

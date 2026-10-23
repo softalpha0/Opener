@@ -27,3 +27,20 @@ describe("possessive", () => {
     expect(possessive("Khruangbin")).toBe("Khruangbin’s");
   });
 });
+
+describe("borders and scales", () => {
+  it("keeps a heat cell inside the country that was searched", () => {
+    expect(nearestCity(42.9, -78.88, 90, "US")?.city.cc).toBe("US");
+  });
+
+  it("reads Qloo's 0–1 percentile as a percentage", async () => {
+    const { computeMomentum } = await import("@/lib/plan/momentum");
+    const pts = [0.5, 0.51, 0.52, 0.6, 0.61, 0.62].map((p, i) => ({
+      date: `2026-01-0${i + 1}`,
+      percentile: p,
+    }));
+    const m = computeMomentum(pts);
+    expect(m.direction).toBe("rising");
+    expect(m.series[0]?.value).toBe(50);
+  });
+});

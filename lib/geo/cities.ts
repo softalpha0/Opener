@@ -32,9 +32,11 @@ export function nearestCity(
   lat: number,
   lng: number,
   maxKm = 90,
+  countryCode?: string,
 ): { city: City; km: number } | undefined {
   let best: { city: City; km: number; score: number } | undefined;
   for (const city of CITIES) {
+    if (countryCode && city.cc !== countryCode) continue;
     if (Math.abs(city.lat - lat) > 2 || Math.abs(city.lng - lng) > 3) continue;
     const km = distanceKm(lat, lng, city.lat, city.lng);
     if (km > maxKm) continue;
@@ -66,4 +68,10 @@ export function findCity(name: string, country?: string): City | undefined {
       fold(c.n) === target &&
       (!countryFold || fold(c.c) === countryFold || c.cc.toLowerCase() === countryFold),
   );
+}
+
+/** ISO code for an area name that is a country in the bundled table ("Germany" → "DE"). */
+export function countryCodeFor(area: string): string | undefined {
+  const target = fold(area);
+  return CITIES.find((c) => fold(c.c) === target)?.cc;
 }

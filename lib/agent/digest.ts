@@ -1,3 +1,4 @@
+import { countryCodeFor } from "../geo/cities";
 import { citiesFromHeat } from "../plan/cities";
 import { hasResults } from "../qloo/envelope";
 import {
@@ -9,7 +10,7 @@ import {
   parseTags,
   parseTrendSeries,
 } from "../qloo/parse";
-import type { QlooEnvelope } from "../qloo/types";
+import type { QlooEnvelope, ToolArgs } from "../qloo/types";
 
 const round = (n: number | undefined, places = 3) =>
   n === undefined ? undefined : Math.round(n * 10 ** places) / 10 ** places;
@@ -18,7 +19,7 @@ const round = (n: number | undefined, places = 3) =>
  * Compact, model- and human-readable view of a tool result. Used for the evidence panel's
  * key fields and as the tool_result text the agent reads. Never includes raw provenance.
  */
-export function keyFields(tool: string, envelope: QlooEnvelope): unknown {
+export function keyFields(tool: string, envelope: QlooEnvelope, args?: ToolArgs): unknown {
   if (envelope.status === "needs_input") {
     return {
       choices: parseResolutionIssues(envelope).map((issue) => ({
@@ -52,7 +53,10 @@ export function keyFields(tool: string, envelope: QlooEnvelope): unknown {
           affinity: round(p.affinity),
           popularity: round(p.popularity),
         })),
-        cities_derived_by_opener: citiesFromHeat(points)
+        cities_derived_by_opener: citiesFromHeat(
+          points,
+          typeof args?.within === "string" ? countryCodeFor(args.within) : undefined,
+        )
           .slice(0, 12)
           .map((c) => ({
             city: c.city.n,
@@ -89,7 +93,12 @@ export function keyFields(tool: string, envelope: QlooEnvelope): unknown {
 }
 
 /** The tool_result text handed back to the model. */
-export function digestForModel(evidenceId: string, tool: string, envelope: QlooEnvelope): string {
+export function digestForModel(
+  evidenceId: string,
+  tool: string,
+  envelope: QlooEnvelope,
+  args?: ToolArgs,
+): string {
   return JSON.stringify({
     evidence_id: evidenceId,
     status: envelope.status,
@@ -104,6 +113,6 @@ export function digestForModel(evidenceId: string, tool: string, envelope: QlooE
           },
         }
       : {}),
-    data: keyFields(tool, envelope) ?? null,
+    data: keyFields(tool, envelope, args) ?? null,
   });
 }

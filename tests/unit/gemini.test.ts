@@ -1,41 +1,34 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const create = vi.fn();
+const generateContent = vi.fn();
 vi.mock("@google/genai", () => ({
   GoogleGenAI: class {
-    interactions = { create };
+    models = { generateContent };
   },
+  FunctionCallingConfigMode: { AUTO: "AUTO", NONE: "NONE" },
+  ThinkingLevel: { LOW: "LOW" },
 }));
 
 const { GeminiProvider } = await import("@/lib/agent/gemini");
 const { createLlmProvider } = await import("@/lib/agent/llm");
 
-beforeEach(() => create.mockReset());
+const reply = (parts: unknown[], functionCalls?: unknown[], text = "") => ({
+  candidates: [{ content: { role: "model", parts } }],
+  functionCalls,
+  text,
+});
+
+beforeEach(() => generateContent.mockReset());
 
 describe("GeminiProvider", () => {
   it("runs a tool-calling loop and returns the final text", async () => {
-    create
-      .mockResolvedValueOnce({
-        status: "requires_action",
-        steps: [
-          { type: "thought", signature: "sig" },
-          {
-            type: "function_call",
-            id: "c1",
-            name: "qloo_where_popular",
-            arguments: { entity: "x", within: "Canada" },
-          },
-        ],
-      })
-      .mockResolvedValueOnce({
-        status: "completed",
-        steps: [{ type: "model_output" }],
-        output_text: '{"summary":"ok"}',
-      });
+    const call = { id: "c1", name: "qloo_where_popular", args: { entity: "x", within: "Canada" } };
+    generateContent
+      .mockResolvedValueOnce(reply([{ functionCall: call, thoughtSignature: "sig" }], [call]))
+      .mockResolvedValueOnce(reply([{ text: '{"summary":"ok"}' }], undefined, '{"summary":"ok"}'));
     const execute = vi.fn().mockResolvedValue({ text: '{"evidence_id":"ev2"}' });
 
-    const provider = new GeminiProvider("gemini-3.8-flash", "key");
-    const out = await provider.runLoop({
+    const out = await new GeminiProvider("gemini-3.8-flash", "key").runLoop({
       system: "sys",
       prompt: "plan",
       tools: [
@@ -56,40 +49,30 @@ describe("GeminiProvider", () => {
 
     expect(out).toMatchObject({ text: '{"summary":"ok"}', toolCalls: 1, turns: 2 });
     expect(execute).toHaveBeenCalledWith("qloo_where_popular", { entity: "x", within: "Canada" });
-    const first = create.mock.calls[0]![0];
-    expect(first).toMatchObject({
-      model: "gemini-3.8-flash",
-      system_instruction: "sys",
-      store: false,
-    });
-    expect(first.tools[0].parameters).toEqual({
+    const first = generateContent.mock.calls[0]![0];
+    expect(first.model).toBe("gemini-3.8-flash");
+    expect(first.config.systemInstruction).toBe("sys");
+    expect(first.config.httpOptions.timeout).toBeLessThanOrEqual(45_000);
+    expect(first.config.tools[0].functionDeclarations[0].parametersJsonSchema).toEqual({
       type: "object",
       properties: { entity: { type: "string" } },
     });
-    const secondInput = create.mock.calls[1]![0].input;
-    expect(secondInput.map((s: { type: string }) => s.type)).toEqual([
-      "user_input",
-      "thought",
-      "function_call",
-      "function_result",
-    ]);
-    expect(secondInput[3]).toMatchObject({
-      call_id: "c1",
+    const second = generateContent.mock.calls[1]![0].contents;
+    expect(second.map((c: { role: string }) => c.role)).toEqual(["user", "model", "user"]);
+    expect(second[1].parts[0].thoughtSignature).toBe("sig");
+    expect(second[2].parts[0].functionResponse).toEqual({
+      id: "c1",
       name: "qloo_where_popular",
-      result: '{"evidence_id":"ev2"}',
+      response: { output: '{"evidence_id":"ev2"}' },
     });
   });
 
   it("stops granting tools once the budget is spent", async () => {
-    create
-      .mockResolvedValueOnce({
-        status: "requires_action",
-        steps: [
-          { type: "function_call", id: "a", name: "t", arguments: {} },
-          { type: "function_call", id: "b", name: "t", arguments: {} },
-        ],
-      })
-      .mockResolvedValueOnce({ status: "completed", steps: [], output_text: "{}" });
+    const a = { id: "a", name: "t", args: {} };
+    const b = { id: "b", name: "t", args: {} };
+    generateContent
+      .mockResolvedValueOnce(reply([{ functionCall: a }, { functionCall: b }], [a, b]))
+      .mockResolvedValueOnce(reply([{ text: "{}" }], undefined, "{}"));
     const execute = vi.fn().mockResolvedValue({ text: "r" });
     await new GeminiProvider("m", "k").runLoop({
       system: "",
@@ -100,23 +83,101 @@ describe("GeminiProvider", () => {
       deadline: Date.now() + 60_000,
     });
     expect(execute).toHaveBeenCalledTimes(1);
-    const second = create.mock.calls[1]![0];
-    expect(second.generation_config.tool_choice).toBe("none");
-    expect(second.input.at(-1).type).toBe("user_input");
+    const second = generateContent.mock.calls[1]![0];
+    expect(second.config.toolConfig.functionCallingConfig.mode).toBe("NONE");
+    const lastParts = second.contents.at(-1).parts;
+    expect(lastParts[1].functionResponse.response).toEqual({
+      error: "Tool budget reached. Do not call more tools.",
+    });
+    expect(lastParts.at(-1).text).toMatch(/final JSON/);
   });
 
-  it("throws on a failed interaction so the runner can fall back", async () => {
-    create.mockResolvedValueOnce({ status: "failed", steps: [] });
+  it("throws when Gemini returns no content so the runner can fall back", async () => {
+    generateContent.mockResolvedValueOnce({
+      candidates: [],
+      promptFeedback: { blockReason: "SAFETY" },
+    });
     await expect(
       new GeminiProvider("m", "k").complete("s", "p", Date.now() + 10_000),
-    ).rejects.toThrow(/failed/);
+    ).rejects.toThrow(/SAFETY/);
+  });
+});
+
+describe("busy-model fallback", () => {
+  const busy = () =>
+    Object.assign(new Error('{"error":{"code":503,"status":"UNAVAILABLE"}}'), { status: 503 });
+
+  it("moves to the next model when the first one is overloaded", async () => {
+    generateContent
+      .mockRejectedValueOnce(busy())
+      .mockResolvedValueOnce(reply([{ text: "OK" }], undefined, "OK"));
+    const provider = new GeminiProvider("gemini-3.6-flash", "k");
+    expect(await provider.complete("s", "p", Date.now() + 10_000)).toBe("OK");
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual([
+      "gemini-3.6-flash",
+      "gemini-3.8-flash",
+    ]);
+    expect(provider.model).toBe("gemini-3.8-flash");
+  });
+
+  it("gives up after the last fallback", async () => {
+    generateContent.mockRejectedValueOnce(busy()).mockRejectedValueOnce(busy());
+    const error = await new GeminiProvider("a", "k", ["b"])
+      .complete("s", "p", Date.now() + 10_000)
+      .then(
+        () => null,
+        (e: unknown) => e,
+      );
+    expect(String(error)).toMatch(/503/);
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["a", "b"]);
+  });
+
+  it("treats a first-turn timeout as busy and moves on", async () => {
+    generateContent
+      .mockRejectedValueOnce(
+        Object.assign(new Error("This operation was aborted"), { name: "AbortError" }),
+      )
+      .mockResolvedValueOnce(reply([{ text: "OK" }], undefined, "OK"));
+    const provider = new GeminiProvider("a", "k", ["b"]);
+    expect(await provider.complete("s", "p", Date.now() + 60_000)).toBe("OK");
+    expect(generateContent.mock.calls[0]![0].config.httpOptions.timeout).toBeLessThanOrEqual(
+      25_000,
+    );
+    expect(provider.model).toBe("b");
+  });
+
+  it("does not switch models mid-conversation or on non-busy errors", async () => {
+    const call = { id: "c1", name: "t", args: {} };
+    generateContent
+      .mockResolvedValueOnce(reply([{ functionCall: call }], [call]))
+      .mockRejectedValueOnce(busy());
+    await expect(
+      new GeminiProvider("a", "k", ["b"]).runLoop({
+        system: "",
+        prompt: "",
+        tools: [{ name: "t", description: "", inputSchema: {} }],
+        execute: async () => ({ text: "r" }),
+        maxToolCalls: 5,
+        deadline: Date.now() + 60_000,
+      }),
+    ).rejects.toThrow(/503/);
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["a", "a"]);
+
+    generateContent.mockReset();
+    generateContent.mockRejectedValueOnce(
+      Object.assign(new Error("API key not valid"), { status: 400 }),
+    );
+    await expect(
+      new GeminiProvider("a", "k", ["b"]).complete("s", "p", Date.now() + 10_000),
+    ).rejects.toThrow(/key/);
+    expect(generateContent).toHaveBeenCalledTimes(1);
   });
 });
 
 describe("createLlmProvider", () => {
   it("picks the provider from whichever key is present", () => {
     expect(createLlmProvider({ GEMINI_API_KEY: "g" })?.id).toBe("gemini");
-    expect(createLlmProvider({ GEMINI_API_KEY: "g" })?.model).toBe("gemini-3.8-flash");
+    expect(createLlmProvider({ GEMINI_API_KEY: "g" })?.model).toBe("gemini-3.6-flash");
     expect(createLlmProvider({ ANTHROPIC_API_KEY: "a", GEMINI_API_KEY: "g" })?.id).toBe(
       "anthropic",
     );
@@ -127,12 +188,22 @@ describe("createLlmProvider", () => {
     expect(createLlmProvider({})).toBeNull();
   });
 
+  it("reads extra fallback models from GEMINI_FALLBACK_MODELS", async () => {
+    const busy = Object.assign(new Error("busy"), { status: 503 });
+    generateContent
+      .mockRejectedValueOnce(busy)
+      .mockResolvedValueOnce(reply([{ text: "OK" }], undefined, "OK"));
+    const llm = createLlmProvider({ GEMINI_API_KEY: "g", GEMINI_FALLBACK_MODELS: " x , y " });
+    expect(await llm?.complete("s", "p", Date.now() + 10_000)).toBe("OK");
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["gemini-3.6-flash", "x"]);
+  });
+
   it("ignores an LLM_MODEL that belongs to the other provider", () => {
     expect(createLlmProvider({ GEMINI_API_KEY: "g", LLM_MODEL: "claude-sonnet-5-5" })?.model).toBe(
-      "gemini-3.8-flash",
-    );
-    expect(createLlmProvider({ GEMINI_API_KEY: "g", LLM_MODEL: "gemini-3.6-flash" })?.model).toBe(
       "gemini-3.6-flash",
+    );
+    expect(createLlmProvider({ GEMINI_API_KEY: "g", LLM_MODEL: "gemini-3.8-flash" })?.model).toBe(
+      "gemini-3.8-flash",
     );
   });
 });

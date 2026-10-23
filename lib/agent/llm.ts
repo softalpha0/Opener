@@ -206,7 +206,10 @@ export function createLlmProvider(
   }
   if (provider === "gemini" || provider === "google") {
     const key = env.GEMINI_API_KEY || env.GOOGLE_API_KEY;
-    return key ? new GeminiProvider(model("gemini", DEFAULT_GEMINI_MODEL), key) : null;
+    const fallbacks = env.GEMINI_FALLBACK_MODELS?.split(",")
+      .map((m) => m.trim())
+      .filter(Boolean);
+    return key ? new GeminiProvider(model("gemini", DEFAULT_GEMINI_MODEL), key, fallbacks) : null;
   }
   if (provider)
     log("warn", `LLM_PROVIDER=${provider} is not supported; using the deterministic planner`);

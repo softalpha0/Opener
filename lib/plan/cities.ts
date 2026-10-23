@@ -17,7 +17,8 @@ export interface CityDemand {
  * within 90 km, and a city scores by its strongest cell (ties broken by cell count).
  * Cells far from any bundled city are dropped rather than guessed.
  */
-export function citiesFromHeat(points: HeatPoint[]): CityDemand[] {
+/** `countryCode` keeps cells on the searched country's side of a border (a US cell near Buffalo is not Toronto). */
+export function citiesFromHeat(points: HeatPoint[], countryCode?: string): CityDemand[] {
   const byCity = new Map<
     string,
     {
@@ -30,7 +31,7 @@ export function citiesFromHeat(points: HeatPoint[]): CityDemand[] {
     }
   >();
   for (const point of points) {
-    const match = nearestCity(point.lat, point.lng);
+    const match = nearestCity(point.lat, point.lng, 90, countryCode);
     if (!match) continue;
     const key = cityKey(match.city);
     const current = byCity.get(key);
