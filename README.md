@@ -46,7 +46,7 @@ flowchart LR
   API -- "SSE: tool calls, heat, plan" --> B
   subgraph Container [One long-running Node container]
     API --> R[Runner]
-    R --> A[Agent loop: Claude + tool calling]
+    R --> A[Agent loop: Gemini or Claude + tool calling]
     A -- "qloo_* tool calls" --> T[Toolbox: evidence IDs, 20-call budget]
     R -- "gap fill / no-LLM mode" --> T
     T --> C[QlooService: 24h cache, retries, respawn]
@@ -58,10 +58,10 @@ flowchart LR
 ### The agent loop
 
 1. **Resolve.** The server calls `qloo_describe` (type `artist`). If Qloo returns `needs_input`, the run stops and the UI shows the candidates. Opener never auto-picks an ambiguous name. Other plausible matches the harness noted appear as "Not the right artist?" links.
-2. **Plan.** Claude (default `claude-sonnet-5-5`) gets the real tool schemas from `listTools()` and calls Qloo tools itself: heatmaps for each area, opener recommendations (broad and city-scoped), crossover categories, demographics, tags, trends and an audience comparison. Each call is cached, gets an evidence ID (`ev3`) and streams to the UI. The run is capped at 20 Qloo calls and about 60 seconds.
-3. **Draft.** Claude returns one JSON draft (summary, stops, openers, spotlight, merch ideas) where every reason cites evidence IDs. The server validates it with Zod and runs one repair pass if needed.
+2. **Plan.** The LLM (Gemini `gemini-3.8-flash` by default, or Claude `claude-sonnet-5-5`) gets the real tool schemas from `listTools()` and calls Qloo tools itself: heatmaps for each area, opener recommendations (broad and city-scoped), crossover categories, demographics, tags, trends and an audience comparison. Each call is cached, gets an evidence ID (`ev3`) and streams to the UI. The run is capped at 20 Qloo calls and about 60 seconds.
+3. **Draft.** The model returns one JSON draft (summary, stops, openers, spotlight, merch ideas) where every reason cites evidence IDs. The server validates it with Zod and runs one repair pass if needed.
 4. **Ground.** The server builds the final `TourPlan` from evidence: cities must match heatmap-derived cities, openers must exist in recommend/rank results, and evidence IDs must exist. Numbers (affinity, demographics, momentum) are always computed from Qloo results, never taken from the model.
-5. **Fill gaps.** Any section the agent skipped is filled by a fixed tool chain. With no `ANTHROPIC_API_KEY`, that chain builds the whole plan (labelled "deterministic planner").
+5. **Fill gaps.** Any section the agent skipped is filled by a fixed tool chain. With no LLM key, that chain builds the whole plan (labelled "deterministic planner").
 
 ### Tool chain
 
@@ -136,7 +136,7 @@ The comparison's named items appear in the "Why &lt;opener&gt; opens" panel, wit
 
 - **Next.js 15** (App Router, TypeScript strict) served with `next start` in one Docker container
 - **@qloo/qloo-harness** `qloo mcp` over stdio via **@modelcontextprotocol/sdk**
-- **@anthropic-ai/sdk** tool-calling loop (Claude Sonnet 5.5 by default) behind a small provider interface
+- **@google/genai** (Gemini 3.8 Flash, free tier) or **@anthropic-ai/sdk** (Claude Sonnet 5.5) tool-calling loop behind a small provider interface
 - **Zod** for request, agent draft and plan validation
 - **MapLibre GL** with free Carto dark tiles (OpenStreetMap data), no map token
 - **Tailwind CSS v4**, Inter (self-hosted via Fontsource)
@@ -145,7 +145,7 @@ The comparison's named items appear in the "Why &lt;opener&gt; opens" panel, wit
 
 ## 7. Run locally
 
-You need a Qloo hackathon key. An Anthropic key is optional: without it, Opener uses its deterministic planner.
+You need a Qloo hackathon key. An LLM key is optional but recommended: a free Gemini key from [Google AI Studio](https://aistudio.google.com) (or an Anthropic key) turns on the agent. Without one, Opener uses its deterministic planner.
 
 ### macOS / Linux
 
@@ -162,7 +162,7 @@ export QLOO_BASE_URL="https://hackathon.api.qloo.com"
 export QLOO_TRUSTED_BASE_URL="https://hackathon.api.qloo.com"
 qloo setup --qloo            # paste the key when prompted (stored in the harness config)
 qloo setup --status          # look for "Qloo data: ready"
-export ANTHROPIC_API_KEY="…" # optional
+export GEMINI_API_KEY="…"    # optional: free key from Google AI Studio (or ANTHROPIC_API_KEY)
 
 # 4. App
 git clone https://github.com/softalpha0/opener.git && cd opener
@@ -187,7 +187,7 @@ $env:QLOO_BASE_URL="https://hackathon.api.qloo.com"
 $env:QLOO_TRUSTED_BASE_URL="https://hackathon.api.qloo.com"
 qloo setup --qloo
 qloo setup --status
-$env:ANTHROPIC_API_KEY="…"   # optional
+$env:GEMINI_API_KEY="…"      # optional: free key from Google AI Studio (or ANTHROPIC_API_KEY)
 
 # 4. App
 git clone https://github.com/softalpha0/opener.git; cd opener
@@ -216,7 +216,7 @@ Instead of `qloo setup --qloo`, you can set `QLOO_API_KEY` in your shell or in `
 
 1. Push this repo to GitHub.
 2. In Render, **New → Blueprint**, pick the repo. `render.yaml` defines one Docker web service with health check `/api/health`.
-3. Set the secrets when prompted: `QLOO_API_KEY` (required) and `ANTHROPIC_API_KEY` (optional). `QLOO_BASE_URL`, `QLOO_TRUSTED_BASE_URL` and `LLM_MODEL` are set as plain values.
+3. Set the secrets when prompted: `QLOO_API_KEY` (required) and `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` (optional; leave the other blank). `QLOO_BASE_URL` and `QLOO_TRUSTED_BASE_URL` are set as plain values.
 4. Use the **Starter** plan or higher. Free instances sleep, so a judge's first request would wait on a cold start.
 5. Deploy, then open `/api/health`. You want `"qloo": "ready"` and a harness version of 0.1.26 or newer.
 6. Optional: add a custom domain, and attach a persistent disk at `/app/.cache` (see the commented block in `render.yaml`) so the 24-hour cache survives deploys.
@@ -231,32 +231,34 @@ Both build the `Dockerfile` as is. Set the same environment variables, expose po
 
 ```sh
 docker build -t opener .
-docker run --rm -p 3000:3000 -e QLOO_API_KEY=… -e ANTHROPIC_API_KEY=… opener
+docker run --rm -p 3000:3000 -e QLOO_API_KEY=… -e GEMINI_API_KEY=… opener
 ```
 
 ## 9. Environment variables
 
-| Name                           | Required | Description                                                           | Example                          |
-| ------------------------------ | -------- | --------------------------------------------------------------------- | -------------------------------- |
-| `QLOO_API_KEY`                 | Yes      | Qloo hackathon key. Read only by the `qloo mcp` child process.        | `your-qloo-hackathon-key`        |
-| `QLOO_BASE_URL`                | Yes      | Hackathon API base URL (defaulted if unset).                          | `https://hackathon.api.qloo.com` |
-| `QLOO_TRUSTED_BASE_URL`        | Yes      | Same URL; the harness only sends the key to trusted hosts.            | `https://hackathon.api.qloo.com` |
-| `ANTHROPIC_API_KEY`            | No       | Enables the agent. Without it the deterministic planner runs.         | `your-anthropic-key`             |
-| `LLM_PROVIDER`                 | No       | `anthropic` (only provider implemented; the interface allows others). | `anthropic`                      |
-| `LLM_MODEL`                    | No       | Claude model for the agent.                                           | `claude-sonnet-5-5`              |
-| `OPENER_LLM_FALLBACKS`         | No       | `off` disables server-side refusal fallback.                          | `on`                             |
-| `OPENER_RATE_LIMIT_PER_MINUTE` | No       | Live plans per IP per minute (cached plans don't count).              | `5`                              |
-| `OPENER_CACHE_DIR`             | No       | Where the persistent cache lives.                                     | `/app/.cache`                    |
-| `OPENER_CACHE_TTL_HOURS`       | No       | Cache lifetime.                                                       | `24`                             |
-| `OPENER_WARM_ON_START`         | No       | Pre-warm the sample artists after boot.                               | `true`                           |
-| `OPENER_SAMPLES_DIR`           | No       | Override the saved-plan folder (tests use fixtures).                  | `data/samples`                   |
-| `PORT`                         | No       | HTTP port.                                                            | `3000`                           |
+| Name                           | Required | Description                                                    | Example                          |
+| ------------------------------ | -------- | -------------------------------------------------------------- | -------------------------------- |
+| `QLOO_API_KEY`                 | Yes      | Qloo hackathon key. Read only by the `qloo mcp` child process. | `your-qloo-hackathon-key`        |
+| `QLOO_BASE_URL`                | Yes      | Hackathon API base URL (defaulted if unset).                   | `https://hackathon.api.qloo.com` |
+| `QLOO_TRUSTED_BASE_URL`        | Yes      | Same URL; the harness only sends the key to trusted hosts.     | `https://hackathon.api.qloo.com` |
+| `GEMINI_API_KEY`               | No       | Enables the agent with Gemini (free tier available).           | `your-gemini-key`                |
+| `ANTHROPIC_API_KEY`            | No       | Enables the agent with Claude instead.                         | `your-anthropic-key`             |
+| `LLM_PROVIDER`                 | No       | `gemini` or `anthropic`; only needed when both keys are set.   | `gemini`                         |
+| `LLM_MODEL`                    | No       | Model override for the chosen provider.                        | `gemini-3.8-flash`               |
+| `OPENER_LLM_FALLBACKS`         | No       | `off` disables server-side refusal fallback.                   | `on`                             |
+| `OPENER_RATE_LIMIT_PER_MINUTE` | No       | Live plans per IP per minute (cached plans don't count).       | `5`                              |
+| `OPENER_CACHE_DIR`             | No       | Where the persistent cache lives.                              | `/app/.cache`                    |
+| `OPENER_CACHE_TTL_HOURS`       | No       | Cache lifetime.                                                | `24`                             |
+| `OPENER_WARM_ON_START`         | No       | Pre-warm the sample artists after boot.                        | `true`                           |
+| `OPENER_SAMPLES_DIR`           | No       | Override the saved-plan folder (tests use fixtures).           | `data/samples`                   |
+| `PORT`                         | No       | HTTP port.                                                     | `3000`                           |
 
 ## 10. Data handling and responsible use
 
 - **Aggregate affinities only.** Qloo results describe how an audience over- or under-indexes. Opener says "strong audience affinity", never "X% of fans will buy tickets", and never describes individuals.
 - **No personal data sent.** Inputs are public artist names and country names. Opener has no accounts and stores no visitor data beyond a per-IP request counter in memory.
 - **Key stays on the server.** `QLOO_API_KEY` is passed only to the `qloo mcp` child. It is never in the browser bundle, prompts, logs or evidence (a redaction helper scrubs secret-looking keys and the key value itself).
+- **What the LLM sees.** Only public artist names and Qloo's aggregate results. Google's free Gemini tier may use prompts to improve its products; use a paid key or Claude if that matters for your deployment.
 - **Provenance shown.** Qloo data carries a gold "Qloo data" badge and an evidence toggle; the agent's words carry a dashed "Agent interpretation" badge.
 - **What results do not establish:** ticket demand, venue fit, routing feasibility, or the preferences of any particular person. Demographic values are relative affinities, not shares of fans. Saved plans are always labelled "Saved result from &lt;timestamp&gt;".
 

@@ -1,6 +1,6 @@
 /**
  * Pre-warm the Qloo cache for the sample artists and save their plans to data/samples/.
- * Needs QLOO_API_KEY (and optionally ANTHROPIC_API_KEY). Commit the JSON files it writes:
+ * Needs QLOO_API_KEY (and optionally GEMINI_API_KEY or ANTHROPIC_API_KEY). Commit the JSON files it writes:
  * they are the "saved result" fallback when live Qloo calls fail.
  */
 import { getQloo } from "../lib/qloo/client";

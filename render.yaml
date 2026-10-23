@@ -11,16 +11,14 @@ services:
     envVars:
       - key: QLOO_API_KEY
         sync: false
+      - key: GEMINI_API_KEY
+        sync: false
       - key: ANTHROPIC_API_KEY
         sync: false
       - key: QLOO_BASE_URL
         value: https://hackathon.api.qloo.com
       - key: QLOO_TRUSTED_BASE_URL
         value: https://hackathon.api.qloo.com
-      - key: LLM_PROVIDER
-        value: anthropic
-      - key: LLM_MODEL
-        value: claude-sonnet-5-5
       - key: OPENER_WARM_ON_START
         value: "true"
     # Optional: keep the 24h Qloo cache across deploys (requires a paid disk).

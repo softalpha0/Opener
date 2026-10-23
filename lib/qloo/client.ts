@@ -80,6 +80,7 @@ export class QlooService {
   private connection: Promise<McpConnection> | null = null;
   private tools: ToolDescriptor[] | null = null;
   private respawns = 0;
+  private closing = false;
   readonly cache: TtlCache<QlooEnvelope>;
 
   constructor(
@@ -101,7 +102,8 @@ export class QlooService {
     if (!this.connection) {
       const attempt = this.connector().then((client) => {
         client.onclose = () => {
-          log("warn", "qloo mcp connection closed; it will respawn on the next call");
+          if (!this.closing)
+            log("warn", "qloo mcp connection closed; it will respawn on the next call");
           if (this.connection === attempt) this.connection = null;
         };
         return client;
@@ -236,7 +238,12 @@ export class QlooService {
   async close(): Promise<void> {
     const current = this.connection;
     this.connection = null;
-    if (current) await (await current).close().catch(() => undefined);
+    this.closing = true;
+    try {
+      if (current) await (await current).close().catch(() => undefined);
+    } finally {
+      this.closing = false;
+    }
   }
 }
 

@@ -140,9 +140,9 @@ export default function HowItWorks() {
             >
               <desc id="arch-desc">
                 The browser sends an artist and region to the Next.js server. The server runs the
-                agent loop with Claude, which calls Qloo tools through a cached client connected to
-                a qloo mcp process over stdio. qloo mcp calls the Qloo hackathon API. Progress
-                streams back to the browser over server-sent events.
+                agent loop with an LLM (Gemini or Claude), which calls Qloo tools through a cached
+                client connected to a qloo mcp process over stdio. qloo mcp calls the Qloo hackathon
+                API. Progress streams back to the browser over server-sent events.
               </desc>
               <defs>
                 <marker
@@ -180,7 +180,7 @@ export default function HowItWorks() {
                 sub="/api/plan (SSE) · rate limit"
                 accent
               />
-              <Box x={470} y={70} w={180} h={70} title="Agent loop" sub="Claude · tool calling" />
+              <Box x={470} y={70} w={180} h={70} title="Agent loop" sub="Gemini / Claude · tools" />
               <Box
                 x={470}
                 y={180}
@@ -219,7 +219,7 @@ export default function HowItWorks() {
                 . An ambiguous name stops the run and shows the candidates.
               </li>
               <li>
-                Claude gets the real Qloo tool schemas (from{" "}
+                The LLM (Gemini by default, or Claude) gets the real Qloo tool schemas (from{" "}
                 <code className="text-gold">listTools()</code>) and plans: heatmaps, openers, crowd,
                 comparison. It can make up to 20 Qloo calls in about 60 seconds.
               </li>
@@ -228,8 +228,8 @@ export default function HowItWorks() {
                 timeline.
               </li>
               <li>
-                Claude answers with a JSON draft. The server checks it with Zod (one repair pass if
-                needed) and keeps only stops that match heatmap cities and openers that appear in
+                The model answers with a JSON draft. The server checks it with Zod (one repair pass
+                if needed) and keeps only stops that match heatmap cities and openers that appear in
                 Qloo results.
               </li>
               <li>

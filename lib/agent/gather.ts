@@ -1,3 +1,4 @@
+import { possessive } from "../plan/format";
 import { hasResults } from "../qloo/envelope";
 import { parseEntities, parseHeatmap } from "../qloo/parse";
 import { isoDaysAgo, type InsightsType } from "../qloo/tools";
@@ -59,7 +60,7 @@ export async function ensureHeat(box: Toolbox, artist: ArtistRef, within: string
       box.call(
         "qloo_where_popular",
         { entity: artist.id, entity_type: "artist", within: area, limit: 20 },
-        `Map where ${artist.name}'s audience affinity is strongest in ${area}`,
+        `Map where ${possessive(artist.name)} audience affinity is strongest in ${area}`,
       ),
     ),
   );
@@ -86,7 +87,7 @@ export async function ensureOpeners(
       box.call(
         "qloo_recommend",
         { target_type: "artist", signals: [artist.id], limit: 15 },
-        `Artists with strong affinity among ${artist.name}'s audience (opener pool)`,
+        `Artists with strong affinity among ${possessive(artist.name)} audience (opener pool)`,
       ),
     );
   }
@@ -98,7 +99,7 @@ export async function ensureOpeners(
       box.call(
         "qloo_recommend",
         { target_type: "artist", signals: [artist.id], signal_location: label, limit: 8 },
-        `Opener candidates for ${artist.name}'s audience with a ${demand.city.n} location signal`,
+        `Opener candidates for ${possessive(artist.name)} audience with a ${demand.city.n} location signal`,
       ),
     );
   }
@@ -112,7 +113,7 @@ export async function ensureAudience(box: Toolbox, artist: ArtistRef, today: Dat
       box.call(
         "qloo_audience_demographics",
         { entity: artist.id, entity_type: "artist" },
-        `Age and gender affinity of ${artist.name}'s audience`,
+        `Age and gender affinity of ${possessive(artist.name)} audience`,
       ),
     );
   }
@@ -157,7 +158,7 @@ export async function ensureCrossover(
       box.call(
         "qloo_recommend",
         { target_type: category.type, signals: [artist.id], limit: category.limit },
-        `${category.label} with strong affinity among ${artist.name}'s audience`,
+        `${category.label} with strong affinity among ${possessive(artist.name)} audience`,
       ),
     );
   }
@@ -175,7 +176,7 @@ export async function ensureCrossover(
           filter_location: cityLabel(topCity),
           limit: 6,
         },
-        `Places in ${topCity.city.n} with strong affinity among ${artist.name}'s audience`,
+        `Places in ${topCity.city.n} with strong affinity among ${possessive(artist.name)} audience`,
       ),
     );
   }
@@ -230,6 +231,6 @@ export async function ensureCompare(
   await box.call(
     "qloo_compare_audiences",
     { group_a: [artist.id], group_b: [opener.id], limit: 10 },
-    `Compare ${artist.name}'s audience with ${opener.name}'s`,
+    `Compare ${possessive(artist.name)} audience with ${possessive(opener.name)}`,
   );
 }

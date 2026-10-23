@@ -38,7 +38,9 @@ export function nearestCity(
     if (Math.abs(city.lat - lat) > 2 || Math.abs(city.lng - lng) > 3) continue;
     const km = distanceKm(lat, lng, city.lat, city.lng);
     if (km > maxKm) continue;
-    const score = km - Math.log10(city.pop) * 6;
+    // Gravity-style score: coarse heat cells land on the metro a tour would play, not a suburb,
+    // while a cell well inside a mid-size city still maps to it.
+    const score = km / Math.sqrt(city.pop / 100_000);
     if (!best || score < best.score) best = { city, km, score };
   }
   return best ? { city: best.city, km: best.km } : undefined;

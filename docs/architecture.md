@@ -6,7 +6,7 @@ Opener is one deployable service: a Next.js 15 app run with `next start` in a lo
 Browser ──POST /api/plan──▶ Next.js route ──▶ runPlan()
    ▲                                            │
    └──────── SSE: status, tool, heat, plan ◀────┤
-                                                ├─▶ Agent loop (Claude, tool calling)  ─┐
+                                                ├─▶ Agent loop (Gemini/Claude, tools)  ─┐
                                                 └─▶ Fixed tool chain (gap fill)         ├─▶ Toolbox ─▶ QlooService ─stdio─▶ qloo mcp ─▶ Qloo API
                                                                                         ┘   (evidence IDs, budget)  (cache, retry, respawn)
 ```
@@ -22,7 +22,8 @@ Browser ──POST /api/plan──▶ Next.js route ──▶ runPlan()
 | `lib/qloo/tools.ts`    | Argument types mirroring `docs/qloo-tool-schemas.json`.                                                                                                                    |
 | `lib/qloo/redact.ts`   | Removes secret-looking keys and configured secret values before anything is shown or logged.                                                                               |
 | `lib/agent/toolbox.ts` | Per-run recorder: evidence IDs, redacted inputs, key fields, call/time budget, SSE events.                                                                                 |
-| `lib/agent/llm.ts`     | Provider interface plus the Anthropic tool-calling loop.                                                                                                                   |
+| `lib/agent/llm.ts`     | Provider interface, provider selection, and the Anthropic tool-calling loop.                                                                                               |
+| `lib/agent/gemini.ts`  | Gemini tool-calling loop (Google Interactions API, stateless).                                                                                                             |
 | `lib/agent/prompt.ts`  | System prompt and JSON extraction.                                                                                                                                         |
 | `lib/agent/gather.ts`  | Fixed tool chain steps (`ensureHeat`, `ensureOpeners`, …) that skip work the agent already did.                                                                            |
 | `lib/agent/compose.ts` | Builds the `TourPlan` from evidence plus the agent draft, dropping anything ungrounded.                                                                                    |

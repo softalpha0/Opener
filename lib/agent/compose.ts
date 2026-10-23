@@ -1,3 +1,4 @@
+import { possessive } from "../plan/format";
 import { distanceKm } from "../geo/cities";
 import { hasResults } from "../qloo/envelope";
 import {
@@ -97,8 +98,8 @@ function openerFrom(
     overlapNote:
       note ??
       (local
-        ? `Qloo recommends ${o.name} for ${artist}'s audience with a ${d?.city.n} location signal.`
-        : `Qloo recommends ${o.name} for ${artist}'s audience${o.affinity !== undefined ? ` (affinity ${o.affinity.toFixed(2)})` : ""}.`),
+        ? `Qloo recommends ${o.name} for ${possessive(artist)} audience with a ${d?.city.n} location signal.`
+        : `Qloo recommends ${o.name} for ${possessive(artist)} audience${o.affinity !== undefined ? ` (affinity ${o.affinity.toFixed(2)})` : ""}.`),
     evidenceIds: evidenceIds.length ? evidenceIds : o.evidenceIds,
   };
 }
@@ -356,7 +357,7 @@ function deterministicSummary(
     momentum.direction === "unknown"
       ? ""
       : ` Qloo's trend data reads as ${momentum.direction} over the past year.`;
-  return `${ctx.artist.name}'s strongest audience affinity in ${ctx.query.regionLabel} clusters around ${list}. The route below starts with the strongest market and follows a short-hop order, with openers drawn from artists that over-index with the same audience.${trend}`;
+  return `${possessive(ctx.artist.name)} strongest audience affinity in ${ctx.query.regionLabel} clusters around ${list}. The route below starts with the strongest market and follows a short-hop order, with openers drawn from artists that over-index with the same audience.${trend}`;
 }
 
 export function composePlan(ctx: ComposeContext): TourPlan {

@@ -31,6 +31,11 @@ export function serverState(): ServerState {
       llm: createLlmProvider(),
       startedAt: Date.now(),
     };
+    // Optional warm-up of the sample artists, started by the first request after boot
+    // (Render's health check hits /api/health within seconds of start).
+    if (process.env.OPENER_WARM_ON_START === "true") {
+      void import("./warm").then(({ warmInBackground }) => warmInBackground());
+    }
   }
   return g.__openerServer;
 }

@@ -63,3 +63,8 @@ export function errorCopy(
       };
   }
 }
+
+/** English possessive: "Phoebe Bridgers" → "Phoebe Bridgers'", "Khruangbin" → "Khruangbin's". */
+export function possessive(name: string): string {
+  return /s$/i.test(name.trim()) ? `${name}’` : `${name}’s`;
+}

@@ -1,4 +1,7 @@
-import { cityKey, nearestCity, type City } from "../geo/cities";
+import { cityKey, distanceKm, nearestCity, type City } from "../geo/cities";
+
+/** Cities closer than this merge into the larger one (one market, one show). */
+export const MERGE_KM = 110;
 import type { HeatPoint } from "../qloo/parse";
 
 export interface CityDemand {
@@ -52,12 +55,43 @@ export function citiesFromHeat(points: HeatPoint[]): CityDemand[] {
       }
     }
   }
-  return [...byCity.values()]
+  // Merge neighbouring cities into the biggest one nearby, largest first.
+  const merged: Array<{
+    city: City;
+    affinity: number;
+    cells: number;
+    popSum: number;
+    popN: number;
+    bestCell: HeatPoint;
+  }> = [];
+  for (const entry of [...byCity.values()].sort((a, b) => b.city.pop - a.city.pop)) {
+    const host = merged.find(
+      (m) => distanceKm(m.city.lat, m.city.lng, entry.city.lat, entry.city.lng) < MERGE_KM,
+    );
+    if (!host) {
+      merged.push({ ...entry });
+      continue;
+    }
+    host.cells += entry.cells;
+    host.popSum += entry.popSum;
+    host.popN += entry.popN;
+    if (entry.affinity > host.affinity) {
+      host.affinity = entry.affinity;
+      host.bestCell = entry.bestCell;
+    }
+  }
+  return merged
     .map(({ popSum, popN, ...rest }) => ({
       ...rest,
       ...(popN ? { meanPopularity: popSum / popN } : {}),
     }))
-    .sort((a, b) => b.affinity - a.affinity || b.cells - a.cells || b.city.pop - a.city.pop);
+    .sort(
+      (a, b) =>
+        b.affinity - a.affinity ||
+        b.cells - a.cells ||
+        (b.meanPopularity ?? 0) - (a.meanPopularity ?? 0) ||
+        b.city.pop - a.city.pop,
+    );
 }
 
 /** Greedy nearest-neighbour route starting at the highest-demand city. */

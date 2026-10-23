@@ -17,7 +17,7 @@ async function main() {
   const qloo = new QlooService();
   const llm = createLlmProvider();
   console.error(
-    `Planner: ${llm ? `agent (${llm.model})` : "deterministic (no ANTHROPIC_API_KEY)"}`,
+    `Planner: ${llm ? `agent (${llm.model})` : "deterministic (no GEMINI_API_KEY or ANTHROPIC_API_KEY)"}`,
   );
   const onEvent = (e: PlanEvent) => {
     if (e.type === "status") console.error(`… ${e.message}`);

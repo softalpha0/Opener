@@ -32,7 +32,7 @@ Every card has a "Qloo evidence" toggle with the tool name, the redacted request
 
 Opener is one Next.js 15 app running in a Docker container. The backend starts `qloo mcp` from the Qloo harness once, keeps it alive, and talks to it over stdio with the MCP SDK. Every tool call goes through a small client that caches results for 24 hours (memory plus disk), retries only errors Qloo marks as retryable, and respawns the MCP process if it dies.
 
-The agent is Claude (Sonnet 5.5 by default) in a tool-calling loop with the real Qloo tool schemas from `listTools()`. Each call gets an evidence ID and streams to the browser over server-sent events, so you can watch the agent work. Claude finishes with a JSON draft; the server validates it with Zod and then rebuilds the plan from the evidence. A stop survives only if its city matches a city derived from a heatmap result, and an opener survives only if it appeared in a recommend or rank result. Numbers always come from Qloo, never from the model. If there's no LLM key, a fixed tool chain builds the whole plan.
+The agent is an LLM (Google's Gemini 3.8 Flash by default, with Claude as a drop-in alternative) in a tool-calling loop with the real Qloo tool schemas from `listTools()`. Each call gets an evidence ID and streams to the browser over server-sent events, so you can watch the agent work. Claude finishes with a JSON draft; the server validates it with Zod and then rebuilds the plan from the evidence. A stop survives only if its city matches a city derived from a heatmap result, and an opener survives only if it appeared in a recommend or rank result. Numbers always come from Qloo, never from the model. If there's no LLM key, a fixed tool chain builds the whole plan.
 
 The map is MapLibre with free Carto tiles. Tests are Vitest (including a fake MCP server and a fake LLM that tries to sneak in invented cities) and Playwright.
 
@@ -67,4 +67,4 @@ The map is MapLibre with free Carto tiles. Tests are Vitest (including a fake MC
 
 ## Built with
 
-`qloo` · `qloo-harness` · `mcp` · `claude` · `anthropic` · `next.js` · `react` · `typescript` · `tailwindcss` · `maplibre` · `openstreetmap` · `zod` · `docker` · `render` · `vitest` · `playwright` · `geonames`
+`qloo` · `qloo-harness` · `mcp` · `gemini` · `google-ai-studio` · `next.js` · `react` · `typescript` · `tailwindcss` · `maplibre` · `openstreetmap` · `zod` · `docker` · `render` · `vitest` · `playwright` · `geonames`

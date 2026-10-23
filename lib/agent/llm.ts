@@ -7,6 +7,7 @@ import type {
   BetaToolUnion,
 } from "@anthropic-ai/sdk/resources/beta/messages/messages";
 import { log } from "../log";
+import { DEFAULT_GEMINI_MODEL, GeminiProvider } from "./gemini";
 
 export interface LlmToolSpec {
   name: string;
@@ -184,13 +185,30 @@ class AnthropicProvider implements LlmProvider {
   }
 }
 
-/** Returns null when no LLM is configured; Opener then runs its deterministic planner. */
-export function createLlmProvider(env: NodeJS.ProcessEnv = process.env): LlmProvider | null {
-  const provider = (env.LLM_PROVIDER || "anthropic").toLowerCase();
-  const model = env.LLM_MODEL || DEFAULT_MODEL;
+/**
+ * Pick the agent's LLM. LLM_PROVIDER wins when set; otherwise the first key present
+ * (ANTHROPIC_API_KEY, then GEMINI_API_KEY) decides. Returns null when no LLM is configured,
+ * and Opener runs its deterministic planner.
+ */
+export function createLlmProvider(
+  env: Record<string, string | undefined> = process.env,
+): LlmProvider | null {
+  const provider = (
+    env.LLM_PROVIDER || (env.ANTHROPIC_API_KEY ? "anthropic" : env.GEMINI_API_KEY ? "gemini" : "")
+  ).toLowerCase();
+  // LLM_MODEL only applies when it names a model from the chosen provider.
+  const model = (prefix: string, fallback: string) =>
+    env.LLM_MODEL?.startsWith(prefix) ? env.LLM_MODEL : fallback;
   if (provider === "anthropic") {
-    return env.ANTHROPIC_API_KEY ? new AnthropicProvider(model, env.ANTHROPIC_API_KEY) : null;
+    return env.ANTHROPIC_API_KEY
+      ? new AnthropicProvider(model("claude", DEFAULT_MODEL), env.ANTHROPIC_API_KEY)
+      : null;
   }
-  log("warn", `LLM_PROVIDER=${provider} is not implemented yet; using the deterministic planner`);
+  if (provider === "gemini" || provider === "google") {
+    const key = env.GEMINI_API_KEY || env.GOOGLE_API_KEY;
+    return key ? new GeminiProvider(model("gemini", DEFAULT_GEMINI_MODEL), key) : null;
+  }
+  if (provider)
+    log("warn", `LLM_PROVIDER=${provider} is not supported; using the deterministic planner`);
   return null;
 }

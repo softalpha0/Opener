@@ -76,8 +76,10 @@ export function EvidenceToggle({
           ▸
         </span>
         Qloo evidence
-        <span className="font-mono text-mist">
-          {items.map((e) => `${e.id} · ${toolLabel(e.tool)}`).join(", ")}
+        <span className="font-mono text-[11px] text-mist">
+          {items.length === 1 && items[0]
+            ? `${items[0].id} · ${toolLabel(items[0].tool)}`
+            : `${items.length} calls`}
         </span>
       </button>
       {open && (
