@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+next-env.d.ts
+
+# Secrets: never commit real env files
+.env
+.env.*
+!.env.example
+
+# Local Qloo result cache (rebuilt at runtime)
+.cache/
+.DS_Store

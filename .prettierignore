@@ -1,0 +1,6 @@
+.next
+node_modules
+data
+docs/qloo-tool-schemas.json
+lib/geo/cities.json
+package-lock.json

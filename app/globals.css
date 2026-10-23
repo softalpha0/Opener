@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0e0c16;
+  --color-ink-2: #15121f;
+  --color-ink-3: #1d1929;
+  --color-line: #2a2538;
+  --color-ember: #ff7a45;
+  --color-gold: #ffc45c;
+  --color-mist: #968faa;
+  --color-mist-2: #b7b1c8;
+  --color-paper: #f5f2fa;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-variation-settings: "opsz" 32;
+}
+
+/* Dotted map texture used behind hero and panels */
+.dot-grid {
+  background-image: radial-gradient(rgb(150 143 170 / 0.18) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* Stage-light glow */
+.glow-ember {
+  background: radial-gradient(closest-side, rgb(255 122 69 / 0.35), transparent);
+}
+.glow-gold {
+  background: radial-gradient(closest-side, rgb(255 196 92 / 0.25), transparent);
+}
+
+.route-dash {
+  stroke-dasharray: 6 7;
+  animation: dash 18s linear infinite;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: -260;
+  }
+}
+.pulse-soft {
+  animation: pulse-soft 2.6s ease-in-out infinite;
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* MapLibre controls in the dark theme */
+.maplibregl-ctrl-attrib {
+  background: rgb(14 12 22 / 0.8) !important;
+  color: var(--color-mist) !important;
+  font-size: 10px;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--color-mist-2) !important;
+}
+.maplibregl-ctrl-group {
+  background: var(--color-ink-2) !important;
+  border: 1px solid var(--color-line);
+}
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  filter: invert(1);
+}
+.maplibregl-popup-content {
+  background: var(--color-ink-2) !important;
+  color: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 10px !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: var(--color-ink-2) !important;
+  border-bottom-color: var(--color-ink-2) !important;
+}

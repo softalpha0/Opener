@@ -1,0 +1,1672 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-01T12:00:00.000Z",
+  "mode": "deterministic",
+  "query": {
+    "artistInput": "Fixture Artist",
+    "region": "north-america",
+    "regionLabel": "North America",
+    "within": ["United States", "Canada"]
+  },
+  "artist": {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "name": "Fixture Artist",
+    "description": "Fictional test artist",
+    "tags": [
+      {
+        "id": "urn:tag:genre:fixture_one",
+        "name": "fixture folk"
+      },
+      {
+        "id": "urn:tag:genre:fixture_two",
+        "name": "fixture indie"
+      }
+    ],
+    "alternatives": [
+      {
+        "id": "00000000-0000-4000-8000-000000000903",
+        "name": "Fixture Artist Tribute"
+      }
+    ],
+    "evidenceIds": ["ev1", "ev9"]
+  },
+  "summary": "Fixture Artist's strongest audience affinity in North America clusters around Chicago, Toronto and New York City. The route below starts with the strongest market and follows a short-hop order, with openers drawn from artists that over-index with the same audience. Qloo's trend data reads as rising over the past year.",
+  "momentum": {
+    "direction": "rising",
+    "note": "Qloo population percentile moved from an average of 71.5 in the earliest weeks to 77.5 in the latest (2026-01-01 to 2026-03-08).",
+    "evidenceId": "ev10",
+    "series": [
+      {
+        "date": "2026-01-01",
+        "value": 70
+      },
+      {
+        "date": "2026-01-08",
+        "value": 71
+      },
+      {
+        "date": "2026-01-15",
+        "value": 72
+      },
+      {
+        "date": "2026-01-22",
+        "value": 73
+      },
+      {
+        "date": "2026-02-01",
+        "value": 74
+      },
+      {
+        "date": "2026-02-08",
+        "value": 75
+      },
+      {
+        "date": "2026-02-15",
+        "value": 76
+      },
+      {
+        "date": "2026-02-22",
+        "value": 77
+      },
+      {
+        "date": "2026-03-01",
+        "value": 78
+      },
+      {
+        "date": "2026-03-08",
+        "value": 79
+      }
+    ]
+  },
+  "demographics": {
+    "items": [
+      {
+        "group": "age",
+        "label": "24 and under",
+        "value": 0.2
+      },
+      {
+        "group": "age",
+        "label": "25–29",
+        "value": 0.31
+      },
+      {
+        "group": "age",
+        "label": "30–34",
+        "value": 0.05
+      },
+      {
+        "group": "age",
+        "label": "35–44",
+        "value": -0.1
+      },
+      {
+        "group": "age",
+        "label": "45–54",
+        "value": -0.2
+      },
+      {
+        "group": "age",
+        "label": "55+",
+        "value": -0.3
+      },
+      {
+        "group": "gender",
+        "label": "male",
+        "value": -0.05
+      },
+      {
+        "group": "gender",
+        "label": "female",
+        "value": 0.05
+      }
+    ],
+    "evidenceId": "ev8"
+  },
+  "stops": [
+    {
+      "order": 1,
+      "demandRank": 1,
+      "city": "Chicago",
+      "region": "Illinois",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 41.85,
+      "lng": -87.65,
+      "affinityScore": 0.99,
+      "heatCells": 2,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.99 at the top cell near Chicago across 2 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000107",
+          "name": "Fixture artist H",
+          "affinity": 0.8799999999999999,
+          "overlapNote": "Qloo recommends Fixture artist H for Fixture Artist's audience with a Chicago location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000108",
+          "name": "Fixture artist I",
+          "affinity": 0.87,
+          "overlapNote": "Qloo recommends Fixture artist I for Fixture Artist's audience with a Chicago location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000109",
+          "name": "Fixture artist J",
+          "affinity": 0.86,
+          "overlapNote": "Qloo recommends Fixture artist J for Fixture Artist's audience with a Chicago location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "demandRank": 2,
+      "city": "Toronto",
+      "region": "Ontario",
+      "country": "Canada",
+      "countryCode": "CA",
+      "lat": 43.7064,
+      "lng": -79.3986,
+      "affinityScore": 0.97,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.97 at the top cell near Toronto.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000107",
+          "name": "Fixture artist H",
+          "affinity": 0.8799999999999999,
+          "overlapNote": "Qloo recommends Fixture artist H for Fixture Artist's audience with a Toronto location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000108",
+          "name": "Fixture artist I",
+          "affinity": 0.87,
+          "overlapNote": "Qloo recommends Fixture artist I for Fixture Artist's audience with a Toronto location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000109",
+          "name": "Fixture artist J",
+          "affinity": 0.86,
+          "overlapNote": "Qloo recommends Fixture artist J for Fixture Artist's audience with a Toronto location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "demandRank": 7,
+      "city": "Montreal",
+      "region": "Quebec",
+      "country": "Canada",
+      "countryCode": "CA",
+      "lat": 45.5088,
+      "lng": -73.5878,
+      "affinityScore": 0.92,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.92 at the top cell near Montreal.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000100",
+          "name": "Fixture artist A",
+          "affinity": 0.95,
+          "overlapNote": "Qloo recommends Fixture artist A for Fixture Artist's audience (affinity 0.95).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000101",
+          "name": "Fixture artist B",
+          "affinity": 0.94,
+          "overlapNote": "Qloo recommends Fixture artist B for Fixture Artist's audience (affinity 0.94).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000102",
+          "name": "Fixture artist C",
+          "affinity": 0.9299999999999999,
+          "overlapNote": "Qloo recommends Fixture artist C for Fixture Artist's audience (affinity 0.93).",
+          "evidenceIds": ["ev4"]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "demandRank": 6,
+      "city": "Boston",
+      "region": "Massachusetts",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 42.3584,
+      "lng": -71.0598,
+      "affinityScore": 0.93,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.93 at the top cell near Boston.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000103",
+          "name": "Fixture artist D",
+          "affinity": 0.9199999999999999,
+          "overlapNote": "Qloo recommends Fixture artist D for Fixture Artist's audience (affinity 0.92).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000104",
+          "name": "Fixture artist E",
+          "affinity": 0.9099999999999999,
+          "overlapNote": "Qloo recommends Fixture artist E for Fixture Artist's audience (affinity 0.91).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000105",
+          "name": "Fixture artist F",
+          "affinity": 0.8999999999999999,
+          "overlapNote": "Qloo recommends Fixture artist F for Fixture Artist's audience (affinity 0.90).",
+          "evidenceIds": ["ev4"]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "demandRank": 3,
+      "city": "New York City",
+      "region": "New York",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 40.7143,
+      "lng": -74.006,
+      "affinityScore": 0.96,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.96 at the top cell near New York City.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000113",
+          "name": "Fixture artist N",
+          "affinity": 0.82,
+          "overlapNote": "Qloo recommends Fixture artist N for Fixture Artist's audience with a New York City location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6", "ev7"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000114",
+          "name": "Fixture artist O",
+          "affinity": 0.8099999999999999,
+          "overlapNote": "Qloo recommends Fixture artist O for Fixture Artist's audience with a New York City location signal.",
+          "evidenceIds": ["ev4", "ev5", "ev6", "ev7"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000115",
+          "name": "Fixture artist P",
+          "overlapNote": "Qloo recommends Fixture artist P for Fixture Artist's audience with a New York City location signal.",
+          "evidenceIds": ["ev7"]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "demandRank": 8,
+      "city": "Austin",
+      "region": "Texas",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 30.2672,
+      "lng": -97.7431,
+      "affinityScore": 0.91,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.91 at the top cell near Austin.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000106",
+          "name": "Fixture artist G",
+          "affinity": 0.8899999999999999,
+          "overlapNote": "Qloo recommends Fixture artist G for Fixture Artist's audience (affinity 0.89).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000110",
+          "name": "Fixture artist K",
+          "affinity": 0.85,
+          "overlapNote": "Qloo recommends Fixture artist K for Fixture Artist's audience (affinity 0.85).",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000111",
+          "name": "Fixture artist L",
+          "affinity": 0.84,
+          "overlapNote": "Qloo recommends Fixture artist L for Fixture Artist's audience (affinity 0.84).",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "demandRank": 4,
+      "city": "Portland",
+      "region": "Oregon",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 45.5234,
+      "lng": -122.6762,
+      "affinityScore": 0.95,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.95 at the top cell near Portland.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000112",
+          "name": "Fixture artist M",
+          "affinity": 0.83,
+          "overlapNote": "Qloo recommends Fixture artist M for Fixture Artist's audience (affinity 0.83).",
+          "evidenceIds": ["ev4", "ev5", "ev6"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000100",
+          "name": "Fixture artist A",
+          "affinity": 0.95,
+          "overlapNote": "Qloo recommends Fixture artist A for Fixture Artist's audience (affinity 0.95).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000101",
+          "name": "Fixture artist B",
+          "affinity": 0.94,
+          "overlapNote": "Qloo recommends Fixture artist B for Fixture Artist's audience (affinity 0.94).",
+          "evidenceIds": ["ev4"]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "demandRank": 5,
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 47.6062,
+      "lng": -122.3321,
+      "affinityScore": 0.94,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Fixture Artist: Qloo's heatmap scored 0.94 at the top cell near Seattle.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "00000000-0000-4000-8000-000000000100",
+          "name": "Fixture artist A",
+          "affinity": 0.95,
+          "overlapNote": "Qloo recommends Fixture artist A for Fixture Artist's audience (affinity 0.95).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000101",
+          "name": "Fixture artist B",
+          "affinity": 0.94,
+          "overlapNote": "Qloo recommends Fixture artist B for Fixture Artist's audience (affinity 0.94).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000102",
+          "name": "Fixture artist C",
+          "affinity": 0.9299999999999999,
+          "overlapNote": "Qloo recommends Fixture artist C for Fixture Artist's audience (affinity 0.93).",
+          "evidenceIds": ["ev4"]
+        }
+      ]
+    }
+  ],
+  "heat": [
+    {
+      "lat": 41.88,
+      "lng": -87.63,
+      "affinity": 0.99,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 41.85,
+      "lng": -87.68,
+      "affinity": 0.97,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 40.71,
+      "lng": -74,
+      "affinity": 0.96,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 45.52,
+      "lng": -122.68,
+      "affinity": 0.95,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 47.61,
+      "lng": -122.33,
+      "affinity": 0.94,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.36,
+      "lng": -71.06,
+      "affinity": 0.93,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 30.27,
+      "lng": -97.74,
+      "affinity": 0.91,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 39.74,
+      "lng": -104.99,
+      "affinity": 0.9,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 44.98,
+      "lng": -93.27,
+      "affinity": 0.88,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 10,
+      "lng": -140,
+      "affinity": 0.87,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 43.65,
+      "lng": -79.38,
+      "affinity": 0.97,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 45.5,
+      "lng": -73.57,
+      "affinity": 0.92,
+      "evidenceId": "ev3"
+    }
+  ],
+  "openerSpotlight": {
+    "openerId": "00000000-0000-4000-8000-000000000107",
+    "openerName": "Fixture artist H",
+    "note": "Qloo's audience comparison of Fixture Artist and Fixture artist H surfaced these taste signals.",
+    "shared": [
+      {
+        "name": "fixture folk",
+        "type": "genre"
+      }
+    ],
+    "evidenceIds": ["ev16", "ev4", "ev5", "ev6"]
+  },
+  "crossover": [
+    {
+      "category": "brand",
+      "label": "Brands",
+      "items": [
+        {
+          "id": "00000000-0000-4000-8000-000000000200",
+          "name": "Fixture brand A"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000201",
+          "name": "Fixture brand B"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000202",
+          "name": "Fixture brand C"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000203",
+          "name": "Fixture brand D"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000204",
+          "name": "Fixture brand E"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000205",
+          "name": "Fixture brand F"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000206",
+          "name": "Fixture brand G"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000207",
+          "name": "Fixture brand H"
+        }
+      ],
+      "evidenceId": "ev11"
+    },
+    {
+      "category": "tv_show",
+      "label": "TV",
+      "items": [
+        {
+          "id": "00000000-0000-4000-8000-000000000300",
+          "name": "Fixture tv_show A"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000301",
+          "name": "Fixture tv_show B"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000302",
+          "name": "Fixture tv_show C"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000303",
+          "name": "Fixture tv_show D"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000304",
+          "name": "Fixture tv_show E"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000305",
+          "name": "Fixture tv_show F"
+        }
+      ],
+      "evidenceId": "ev12"
+    },
+    {
+      "category": "movie",
+      "label": "Film",
+      "items": [
+        {
+          "id": "00000000-0000-4000-8000-000000000400",
+          "name": "Fixture movie A"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000401",
+          "name": "Fixture movie B"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000402",
+          "name": "Fixture movie C"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000403",
+          "name": "Fixture movie D"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000404",
+          "name": "Fixture movie E"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000405",
+          "name": "Fixture movie F"
+        }
+      ],
+      "evidenceId": "ev13"
+    },
+    {
+      "category": "podcast",
+      "label": "Podcasts",
+      "items": [
+        {
+          "id": "00000000-0000-4000-8000-000000000500",
+          "name": "Fixture podcast A"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000501",
+          "name": "Fixture podcast B"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000502",
+          "name": "Fixture podcast C"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000503",
+          "name": "Fixture podcast D"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000504",
+          "name": "Fixture podcast E"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000505",
+          "name": "Fixture podcast F"
+        }
+      ],
+      "evidenceId": "ev14"
+    },
+    {
+      "category": "place",
+      "label": "Places in Chicago",
+      "items": [
+        {
+          "id": "00000000-0000-4000-8000-000000000600",
+          "name": "Fixture place A"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000601",
+          "name": "Fixture place B"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000602",
+          "name": "Fixture place C"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000603",
+          "name": "Fixture place D"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000604",
+          "name": "Fixture place E"
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000605",
+          "name": "Fixture place F"
+        }
+      ],
+      "evidenceId": "ev15"
+    }
+  ],
+  "merchIdeas": [
+    {
+      "idea": "A merch capsule that nods to the look of Fixture brand A and Fixture brand B, which over-index with this audience.",
+      "basedOn": ["Fixture brand A", "Fixture brand B"],
+      "evidenceIds": ["ev11"]
+    },
+    {
+      "idea": "Use fixture folk, fixture indie as the mood board for tour posters and social copy.",
+      "basedOn": ["fixture folk", "fixture indie"],
+      "evidenceIds": ["ev9"]
+    },
+    {
+      "idea": "Pitch an interview or ad read on Fixture podcast A ahead of on-sale.",
+      "basedOn": ["Fixture podcast A"],
+      "evidenceIds": ["ev14"]
+    },
+    {
+      "idea": "Scout Fixture place A for a pre-show listening party or poster drop.",
+      "basedOn": ["Fixture place A"],
+      "evidenceIds": ["ev15"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev1",
+      "tool": "qloo_describe",
+      "purpose": "Resolve “Fixture Artist” to a Qloo artist",
+      "inputRedacted": {
+        "entity": "Fixture Artist",
+        "type": "artist"
+      },
+      "status": "ok",
+      "summary": "Resolved 1 entity.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 0,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Fixture Artist",
+          "affinity": 0.94,
+          "popularity": 0.899
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev2",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Fixture Artist's audience affinity is strongest in United States",
+      "inputRedacted": {
+        "entity": "00000000-0000-4000-8000-000000000001",
+        "entity_type": "artist",
+        "within": "United States",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "10 heat cells.",
+      "resultCount": 10,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 0,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 41.88,
+            "lng": -87.63,
+            "affinity": 0.99,
+            "popularity": 0.5
+          },
+          {
+            "lat": 41.85,
+            "lng": -87.68,
+            "affinity": 0.97,
+            "popularity": 0.5
+          },
+          {
+            "lat": 40.71,
+            "lng": -74,
+            "affinity": 0.96,
+            "popularity": 0.5
+          },
+          {
+            "lat": 45.52,
+            "lng": -122.68,
+            "affinity": 0.95,
+            "popularity": 0.5
+          },
+          {
+            "lat": 47.61,
+            "lng": -122.33,
+            "affinity": 0.94,
+            "popularity": 0.5
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Chicago",
+            "region": "Illinois",
+            "country": "United States",
+            "max_affinity": 0.99,
+            "cells": 2
+          },
+          {
+            "city": "New York City",
+            "region": "New York",
+            "country": "United States",
+            "max_affinity": 0.96,
+            "cells": 1
+          },
+          {
+            "city": "Portland",
+            "region": "Oregon",
+            "country": "United States",
+            "max_affinity": 0.95,
+            "cells": 1
+          },
+          {
+            "city": "Seattle",
+            "region": "Washington",
+            "country": "United States",
+            "max_affinity": 0.94,
+            "cells": 1
+          },
+          {
+            "city": "Boston",
+            "region": "Massachusetts",
+            "country": "United States",
+            "max_affinity": 0.93,
+            "cells": 1
+          },
+          {
+            "city": "Austin",
+            "region": "Texas",
+            "country": "United States",
+            "max_affinity": 0.91,
+            "cells": 1
+          },
+          {
+            "city": "Denver",
+            "region": "Colorado",
+            "country": "United States",
+            "max_affinity": 0.9,
+            "cells": 1
+          },
+          {
+            "city": "Minneapolis",
+            "region": "Minnesota",
+            "country": "United States",
+            "max_affinity": 0.88,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev3",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Fixture Artist's audience affinity is strongest in Canada",
+      "inputRedacted": {
+        "entity": "00000000-0000-4000-8000-000000000001",
+        "entity_type": "artist",
+        "within": "Canada",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "2 heat cells.",
+      "resultCount": 2,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 7,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 43.65,
+            "lng": -79.38,
+            "affinity": 0.97,
+            "popularity": 0.5
+          },
+          {
+            "lat": 45.5,
+            "lng": -73.57,
+            "affinity": 0.92,
+            "popularity": 0.5
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Toronto",
+            "region": "Ontario",
+            "country": "Canada",
+            "max_affinity": 0.97,
+            "cells": 1
+          },
+          {
+            "city": "Montreal",
+            "region": "Quebec",
+            "country": "Canada",
+            "max_affinity": 0.92,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev4",
+      "tool": "qloo_recommend",
+      "purpose": "Artists with strong affinity among Fixture Artist's audience (opener pool)",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "limit": 15
+      },
+      "status": "ok",
+      "summary": "16 recommendations.",
+      "resultCount": 16,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 2,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Fixture Artist",
+          "affinity": 0.94,
+          "popularity": 0.899
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000100",
+          "name": "Fixture artist A",
+          "affinity": 0.95,
+          "popularity": 0.8
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000101",
+          "name": "Fixture artist B",
+          "affinity": 0.94,
+          "popularity": 0.799
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000102",
+          "name": "Fixture artist C",
+          "affinity": 0.93,
+          "popularity": 0.798
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000103",
+          "name": "Fixture artist D",
+          "affinity": 0.92,
+          "popularity": 0.797
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000104",
+          "name": "Fixture artist E",
+          "affinity": 0.91,
+          "popularity": 0.796
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000105",
+          "name": "Fixture artist F",
+          "affinity": 0.9,
+          "popularity": 0.795
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000106",
+          "name": "Fixture artist G",
+          "affinity": 0.89,
+          "popularity": 0.794
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000107",
+          "name": "Fixture artist H",
+          "affinity": 0.88,
+          "popularity": 0.793
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000108",
+          "name": "Fixture artist I",
+          "affinity": 0.87,
+          "popularity": 0.792
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000109",
+          "name": "Fixture artist J",
+          "affinity": 0.86,
+          "popularity": 0.791
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000110",
+          "name": "Fixture artist K",
+          "affinity": 0.85,
+          "popularity": 0.79
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev5",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Fixture Artist's audience with a Chicago location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "signal_location": "Chicago, United States",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "9 recommendations.",
+      "resultCount": 9,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 2,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Fixture Artist",
+          "affinity": 0.94,
+          "popularity": 0.899
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000107",
+          "name": "Fixture artist H",
+          "affinity": 0.88,
+          "popularity": 0.793
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000108",
+          "name": "Fixture artist I",
+          "affinity": 0.87,
+          "popularity": 0.792
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000109",
+          "name": "Fixture artist J",
+          "affinity": 0.86,
+          "popularity": 0.791
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000110",
+          "name": "Fixture artist K",
+          "affinity": 0.85,
+          "popularity": 0.79
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000111",
+          "name": "Fixture artist L",
+          "affinity": 0.84,
+          "popularity": 0.789
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000112",
+          "name": "Fixture artist M",
+          "affinity": 0.83,
+          "popularity": 0.788
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000113",
+          "name": "Fixture artist N",
+          "affinity": 0.82,
+          "popularity": 0.787
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000114",
+          "name": "Fixture artist O",
+          "affinity": 0.81,
+          "popularity": 0.786
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev6",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Fixture Artist's audience with a Toronto location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "signal_location": "Toronto, Canada",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "9 recommendations.",
+      "resultCount": 9,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 2,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Fixture Artist",
+          "affinity": 0.94,
+          "popularity": 0.899
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000107",
+          "name": "Fixture artist H",
+          "affinity": 0.88,
+          "popularity": 0.793
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000108",
+          "name": "Fixture artist I",
+          "affinity": 0.87,
+          "popularity": 0.792
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000109",
+          "name": "Fixture artist J",
+          "affinity": 0.86,
+          "popularity": 0.791
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000110",
+          "name": "Fixture artist K",
+          "affinity": 0.85,
+          "popularity": 0.79
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000111",
+          "name": "Fixture artist L",
+          "affinity": 0.84,
+          "popularity": 0.789
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000112",
+          "name": "Fixture artist M",
+          "affinity": 0.83,
+          "popularity": 0.788
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000113",
+          "name": "Fixture artist N",
+          "affinity": 0.82,
+          "popularity": 0.787
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000114",
+          "name": "Fixture artist O",
+          "affinity": 0.81,
+          "popularity": 0.786
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev7",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Fixture Artist's audience with a New York City location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "signal_location": "New York City, United States",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "9 recommendations.",
+      "resultCount": 9,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 2,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Fixture Artist",
+          "affinity": 0.94,
+          "popularity": 0.899
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000113",
+          "name": "Fixture artist N",
+          "affinity": 0.82,
+          "popularity": 0.787
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000114",
+          "name": "Fixture artist O",
+          "affinity": 0.81,
+          "popularity": 0.786
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000115",
+          "name": "Fixture artist P",
+          "affinity": 0.8,
+          "popularity": 0.785
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000116",
+          "name": "Fixture artist Q",
+          "affinity": 0.79,
+          "popularity": 0.784
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000117",
+          "name": "Fixture artist R",
+          "affinity": 0.78,
+          "popularity": 0.783
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000118",
+          "name": "Fixture artist S",
+          "affinity": 0.77,
+          "popularity": 0.782
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000119",
+          "name": "Fixture artist T",
+          "affinity": 0.76,
+          "popularity": 0.781
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000120",
+          "name": "Fixture artist U",
+          "affinity": 0.75,
+          "popularity": 0.78
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev8",
+      "tool": "qloo_audience_demographics",
+      "purpose": "Age and gender affinity of Fixture Artist's audience",
+      "inputRedacted": {
+        "entity": "00000000-0000-4000-8000-000000000001",
+        "entity_type": "artist"
+      },
+      "status": "ok",
+      "summary": "Demographics.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 1,
+      "keyFields": {
+        "age": [
+          {
+            "bucket": "24 and under",
+            "value": 0.2
+          },
+          {
+            "bucket": "25–29",
+            "value": 0.31
+          },
+          {
+            "bucket": "30–34",
+            "value": 0.05
+          },
+          {
+            "bucket": "35–44",
+            "value": -0.1
+          },
+          {
+            "bucket": "45–54",
+            "value": -0.2
+          },
+          {
+            "bucket": "55+",
+            "value": -0.3
+          }
+        ],
+        "gender": [
+          {
+            "bucket": "male",
+            "value": -0.05
+          },
+          {
+            "bucket": "female",
+            "value": 0.05
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev9",
+      "tool": "qloo_entity_tags",
+      "purpose": "Tags that characterise Fixture Artist",
+      "inputRedacted": {
+        "entities": ["00000000-0000-4000-8000-000000000001"],
+        "entity_type": "artist",
+        "limit": 10
+      },
+      "status": "partial",
+      "summary": "Some tags could not be scored.",
+      "resultCount": 2,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "urn:tag:genre:fixture_one",
+          "name": "fixture folk"
+        },
+        {
+          "id": "urn:tag:genre:fixture_two",
+          "name": "fixture indie"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev10",
+      "tool": "qloo_trends",
+      "purpose": "Popularity trend for Fixture Artist over the last year",
+      "inputRedacted": {
+        "entities": ["00000000-0000-4000-8000-000000000001"],
+        "entity_type": "artist",
+        "start_date": "2025-10-01",
+        "end_date": "2026-09-30",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "1 series.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 2,
+      "keyFields": [
+        {
+          "name": "Fixture Artist",
+          "points": [
+            {
+              "date": "2026-01-01",
+              "percentile": 70
+            },
+            {
+              "date": "2026-01-08",
+              "percentile": 71
+            },
+            {
+              "date": "2026-01-15",
+              "percentile": 72
+            },
+            {
+              "date": "2026-01-22",
+              "percentile": 73
+            },
+            {
+              "date": "2026-02-01",
+              "percentile": 74
+            },
+            {
+              "date": "2026-02-08",
+              "percentile": 75
+            },
+            {
+              "date": "2026-02-15",
+              "percentile": 76
+            },
+            {
+              "date": "2026-02-22",
+              "percentile": 77
+            },
+            {
+              "date": "2026-03-01",
+              "percentile": 78
+            },
+            {
+              "date": "2026-03-08",
+              "percentile": 79
+            }
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev11",
+      "tool": "qloo_recommend",
+      "purpose": "Brands with strong affinity among Fixture Artist's audience",
+      "inputRedacted": {
+        "target_type": "brand",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 recommendations.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 9,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000200",
+          "name": "Fixture brand A",
+          "affinity": 0.95,
+          "popularity": 0.7
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000201",
+          "name": "Fixture brand B",
+          "affinity": 0.94,
+          "popularity": 0.699
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000202",
+          "name": "Fixture brand C",
+          "affinity": 0.93,
+          "popularity": 0.698
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000203",
+          "name": "Fixture brand D",
+          "affinity": 0.92,
+          "popularity": 0.697
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000204",
+          "name": "Fixture brand E",
+          "affinity": 0.91,
+          "popularity": 0.696
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000205",
+          "name": "Fixture brand F",
+          "affinity": 0.9,
+          "popularity": 0.695
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000206",
+          "name": "Fixture brand G",
+          "affinity": 0.89,
+          "popularity": 0.694
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000207",
+          "name": "Fixture brand H",
+          "affinity": 0.88,
+          "popularity": 0.693
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev12",
+      "tool": "qloo_recommend",
+      "purpose": "TV with strong affinity among Fixture Artist's audience",
+      "inputRedacted": {
+        "target_type": "tv_show",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 recommendations.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 8,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000300",
+          "name": "Fixture tv_show A",
+          "affinity": 0.95,
+          "popularity": 0.6
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000301",
+          "name": "Fixture tv_show B",
+          "affinity": 0.94,
+          "popularity": 0.599
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000302",
+          "name": "Fixture tv_show C",
+          "affinity": 0.93,
+          "popularity": 0.598
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000303",
+          "name": "Fixture tv_show D",
+          "affinity": 0.92,
+          "popularity": 0.597
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000304",
+          "name": "Fixture tv_show E",
+          "affinity": 0.91,
+          "popularity": 0.596
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000305",
+          "name": "Fixture tv_show F",
+          "affinity": 0.9,
+          "popularity": 0.595
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev13",
+      "tool": "qloo_recommend",
+      "purpose": "Film with strong affinity among Fixture Artist's audience",
+      "inputRedacted": {
+        "target_type": "movie",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 recommendations.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 8,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000400",
+          "name": "Fixture movie A",
+          "affinity": 0.95,
+          "popularity": 0.5
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000401",
+          "name": "Fixture movie B",
+          "affinity": 0.94,
+          "popularity": 0.499
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000402",
+          "name": "Fixture movie C",
+          "affinity": 0.93,
+          "popularity": 0.498
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000403",
+          "name": "Fixture movie D",
+          "affinity": 0.92,
+          "popularity": 0.497
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000404",
+          "name": "Fixture movie E",
+          "affinity": 0.91,
+          "popularity": 0.496
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000405",
+          "name": "Fixture movie F",
+          "affinity": 0.9,
+          "popularity": 0.495
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev14",
+      "tool": "qloo_recommend",
+      "purpose": "Podcasts with strong affinity among Fixture Artist's audience",
+      "inputRedacted": {
+        "target_type": "podcast",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 recommendations.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 8,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000500",
+          "name": "Fixture podcast A",
+          "affinity": 0.95,
+          "popularity": 0.4
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000501",
+          "name": "Fixture podcast B",
+          "affinity": 0.94,
+          "popularity": 0.399
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000502",
+          "name": "Fixture podcast C",
+          "affinity": 0.93,
+          "popularity": 0.398
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000503",
+          "name": "Fixture podcast D",
+          "affinity": 0.92,
+          "popularity": 0.397
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000504",
+          "name": "Fixture podcast E",
+          "affinity": 0.91,
+          "popularity": 0.396
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000505",
+          "name": "Fixture podcast F",
+          "affinity": 0.9,
+          "popularity": 0.395
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev15",
+      "tool": "qloo_recommend",
+      "purpose": "Places in Chicago with strong affinity among Fixture Artist's audience",
+      "inputRedacted": {
+        "target_type": "place",
+        "signals": ["00000000-0000-4000-8000-000000000001"],
+        "filter_location": "Chicago, United States",
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 recommendations.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 8,
+      "keyFields": [
+        {
+          "id": "00000000-0000-4000-8000-000000000600",
+          "name": "Fixture place A",
+          "affinity": 0.95,
+          "popularity": 0.3
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000601",
+          "name": "Fixture place B",
+          "affinity": 0.94,
+          "popularity": 0.299
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000602",
+          "name": "Fixture place C",
+          "affinity": 0.93,
+          "popularity": 0.298
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000603",
+          "name": "Fixture place D",
+          "affinity": 0.92,
+          "popularity": 0.297
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000604",
+          "name": "Fixture place E",
+          "affinity": 0.91,
+          "popularity": 0.296
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000605",
+          "name": "Fixture place F",
+          "affinity": 0.9,
+          "popularity": 0.295
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev16",
+      "tool": "qloo_compare_audiences",
+      "purpose": "Compare Fixture Artist's audience with Fixture artist H's",
+      "inputRedacted": {
+        "group_a": ["00000000-0000-4000-8000-000000000001"],
+        "group_b": ["00000000-0000-4000-8000-000000000107"],
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "Compared.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-01T00:00:00.000Z",
+      "cached": false,
+      "durationMs": 0,
+      "keyFields": [
+        {
+          "name": "fixture folk",
+          "type": "urn:tag:genre",
+          "score": 0.8
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "notices": [
+    {
+      "level": "partial",
+      "message": "Tags that characterise Fixture Artist: Some tags could not be scored.",
+      "evidenceId": "ev9"
+    }
+  ],
+  "limitations": [
+    "Qloo heatmap affinity is relative to this query. It shows where the audience over-indexes, not ticket demand or venue capacity.",
+    "Cities are derived by Opener from Qloo heat cells using a bundled GeoNames table; cells more than 90 km from a listed city are left out.",
+    "Demographic values are relative affinities (above or below average), not shares of fans.",
+    "Dates, drive times, venue availability and capacity are not modelled yet.",
+    "Searched within: United States, Canada."
+  ],
+  "saved": {
+    "savedAt": "2026-10-01T12:00:00.000Z",
+    "label": "Test fixture (fictional data)"
+  }
+}
