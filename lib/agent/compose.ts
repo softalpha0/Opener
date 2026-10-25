@@ -108,17 +108,20 @@ function pickExtras(
   return out;
 }
 
-/** Route order: nearest-neighbour, kept country by country when several areas were searched. */
+/**
+ * Route order: one trip over all chosen stops, starting at the first area's top city.
+ * Cities are *chosen* per country (scores are relative per country), but a tour can cross
+ * borders, so routing country by country would zig-zag (Boston → LA → Vancouver → Montreal).
+ */
 function orderRoute(stops: Demand[], areas: string[]): Demand[] {
-  const nn = (list: Demand[]) =>
-    routeOrder(
-      list.map((d) => ({ d, lat: d.city.lat, lng: d.city.lng })),
-      (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
-    ).map((x) => x.d);
-  if (areas.length <= 1) return nn(stops);
-  return areas.flatMap((area) =>
-    nn(stops.filter((d) => d.area === area).sort((a, b) => a.areaRank - b.areaRank)),
-  );
+  const start = (areas.length > 1 ? stops.filter((d) => d.area === areas[0]) : stops)
+    .slice()
+    .sort((a, b) => a.areaRank - b.areaRank)[0];
+  const list = start ? [start, ...stops.filter((d) => d !== start)] : stops;
+  return routeOrder(
+    list.map((d) => ({ d, lat: d.city.lat, lng: d.city.lng })),
+    (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
+  ).map((x) => x.d);
 }
 
 function generalOpeners(pool: Pool) {
@@ -226,20 +229,16 @@ function toStop(
 }
 
 function routeStops(stops: Stop[], areas: string[]): Stop[] {
-  const nn = (list: Stop[]) =>
-    routeOrder(
-      list.map((s) => ({ s, lat: s.lat ?? 0, lng: s.lng ?? 0 })),
-      (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
-    ).map((x) => x.s);
-  const groups = areas.length
-    ? [
-        ...areas.map((area) =>
-          stops.filter((s) => s.area === area).sort((a, b) => a.demandRank - b.demandRank),
-        ),
-        stops.filter((s) => !s.area || !areas.includes(s.area)),
-      ]
-    : [stops];
-  return groups.flatMap(nn).map((s, i) => ({ ...s, order: i + 1 }));
+  const start = (areas.length ? stops.filter((s) => s.area === areas[0]) : stops)
+    .slice()
+    .sort((a, b) => a.demandRank - b.demandRank)[0];
+  const list = start ? [start, ...stops.filter((s) => s !== start)] : stops;
+  return routeOrder(
+    list.map((s) => ({ s, lat: s.lat ?? 0, lng: s.lng ?? 0 })),
+    (a, b) => distanceKm(a.lat, a.lng, b.lat, b.lng),
+  )
+    .map((x) => x.s)
+    .map((s, i) => ({ ...s, order: i + 1 }));
 }
 
 function buildStops(
@@ -318,8 +317,7 @@ function buildStops(
       );
     }
   }
-  // The model's stop order is often poor geography, so the server routes the stops itself:
-  // country by country (in search order) with short hops within each country.
+  // The model's stop order is often poor geography, so the server routes the stops itself.
   if (ctx.draft) return routeStops(stops, multiArea ? areas : []);
   return stops;
 }

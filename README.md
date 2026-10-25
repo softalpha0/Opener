@@ -43,7 +43,7 @@ Type an artist and pick a region (North America, US, Europe, UK & Ireland, Latin
 
 1. Resolves the artist in Qloo, and asks you to choose if the name is ambiguous.
 2. Pulls a Qloo heatmap for each country in the region and turns the hottest cells into ranked cities.
-3. Picks 5–8 stops, routes them country by country, and shows the Qloo signals behind each one.
+3. Picks 5–8 stops (the strongest cities in each country), routes them as one trip, and shows the Qloo signals behind each one.
 4. Suggests openers per city from artists Qloo recommends to the same audience, using the city as a location signal.
 5. Compares the headliner's and lead opener's audiences, shows who over-indexes by age and gender, and lists the brands, TV, films, podcasts and local places the crowd likes.
 6. Puts a generic, no-data tour next to its own, and ranks every generic city against Qloo.
@@ -75,7 +75,7 @@ If the free server was asleep, the first page load takes about a minute.
 1. **Understand the artist.** The server calls `qloo_describe`. If Qloo says the name is ambiguous, the run stops and shows the candidates. Every later call uses the resolved Qloo ID, not the name.
 2. **Query Qloo.** An LLM agent (Gemini by default, Claude optional) gets the real Qloo tool schemas and decides which calls to make: a heatmap per country, opener recommendations (broad and per city), audience comparison, demographics, tags, trends and crossover tastes. Each call gets an evidence ID like `ev3` and streams to the browser. Without an LLM key, a fixed tool chain makes the same calls.
 3. **Rank cities and pick openers.** Code maps each heat cell to the nearest city in a bundled GeoNames table (inside the searched country, within 90 km), merges cities closer than 110 km, and ranks them by affinity within each country. Openers must come from a Qloo recommend or rank result.
-4. **Build the route and check the write-up.** Code orders the stops country by country with nearest-neighbour hops. The model's draft is checked against the recorded calls: a stop survives only if its city came from a heatmap, an opener only if Qloo returned it, a citation only if the evidence ID exists.
+4. **Build the route and check the write-up.** Code orders the stops as one trip: start at the top city, nearest-neighbour hops, then a 2-opt pass that removes crossings. The model's draft is checked against the recorded calls: a stop survives only if its city came from a heatmap, an opener only if Qloo returned it, a citation only if the evidence ID exists.
 
 ```mermaid
 flowchart LR
@@ -280,7 +280,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Generic vs Opener (`generic.test.ts`) | 13              | Parsing model replies, population baseline, ranking on recorded Qloo data, no Qloo data in the prompt, caching                                                                        |
 | Agent runner (`runner.integration`)   | 8               | Full plan on mocked Qloo, ambiguous and unknown artists, grounding drops invented cities, artists and evidence, agent failure fallback, time budget, per-country ranking, agent steps |
 | Gemini provider (`gemini.test.ts`)    | 12              | Busy and quota fallbacks, retries, schema cleaning                                                                                                                                    |
-| Ranking and helpers (`plan-helpers`)  | 13              | Cell-to-city mapping, route order, momentum, rate limiter, "Why this city", audience tag filtering                                                                                    |
+| Ranking and helpers (`plan-helpers`)  | 14              | Cell-to-city mapping, route order (incl. a real cross-border tour), momentum, rate limiter, "Why this city", audience tag filtering                                                   |
 | Cities and scales (`merge`)           | 6               | Neighbour merging, metro over suburb, border fix, 0–1 percentiles, near-tie ranking                                                                                                   |
 | Qloo client (`client.integration`)    | 5               | One connection, caching by normalised args, bounded retries, respawn, readiness                                                                                                       |
 | Envelope normalisation (`envelope`)   | 9               | Result parsing, missing status, errors and retryability, `series` for trends                                                                                                          |
@@ -289,7 +289,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Redaction (`redact.test.ts`)          | 4               | Secret-looking fields and the Qloo key value scrubbed at any depth                                                                                                                    |
 | End to end (`tests/e2e`)              | 5 × 2 viewports | Landing, saved plan, Why this city, Under the hood, Generic vs Opener, health, no horizontal scroll                                                                                   |
 
-85 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
+86 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
 
 ## Project layout
 
@@ -318,7 +318,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 - **Cities come from a bundled table.** Cells more than 90 km from one of the 1,797 cities are dropped, and cities closer than 110 km merge. A generic city missing from the table (Cologne, for example) shows as "no match" even if Qloo has heat nearby.
 - **Some artists get thin location data.** For Drake in North America, Qloo returned 2 US heat cells and none for Canada, so the route had 2 stops. The plan says so when that happens.
 - **Affinity is not ticket demand.** It shows where the audience over-indexes, not how many tickets would sell.
-- **No venues, dates or drive times yet.** Stop reasons cite Qloo signals; there are no venue-level pitches. Route order is nearest-neighbour by straight-line distance.
+- **No venues, dates or drive times yet.** Stop reasons cite Qloo signals; there are no venue-level pitches. Route order uses straight-line distance (nearest neighbour plus 2-opt), not real drive or flight times.
 - **Free LLM tier.** Gemini's free tier can be busy or out of daily quota. The plan then comes from the fixed planner and the generic tour from the population baseline, and the page says so.
 - **Small evidence set.** Four artists captured from the live app, each one run. The generic tours in them are the population baseline because Gemini's free quota was spent that day; the LLM comparison runs on the live app when the quota allows.
 - **Rate limits and cache are per instance.** Several instances would need a shared store.

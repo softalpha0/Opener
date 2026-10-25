@@ -158,8 +158,8 @@ describe("runPlan (agent path, fake LLM)", () => {
     expect(plan.stops.find((s) => s.city === "Chicago")?.reason).toBe("Agent reason 2");
     // The server routes the stops: country by country, renumbered from 1.
     expect(plan.stops.map((s) => s.order)).toEqual(plan.stops.map((_, i) => i + 1));
-    const areas = plan.stops.map((s) => s.area);
-    expect(areas.lastIndexOf("United States")).toBeLessThan(areas.indexOf("Canada"));
+    // One trip over all stops, starting at the first country's top city.
+    expect(plan.stops[0]).toMatchObject({ area: "United States", demandRank: 1 });
     expect(plan.stops.some((s) => s.city === "Atlantis")).toBe(false);
     expect(plan.stops.find((s) => s.city === "Chicago")?.evidenceIds).not.toContain("ev77");
     expect(plan.stops.flatMap((s) => s.openers).some((o) => o.id === "invented-id")).toBe(false);

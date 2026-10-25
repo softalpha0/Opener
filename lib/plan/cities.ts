@@ -104,7 +104,10 @@ export function compareDemand(a: CityDemand, b: CityDemand): number {
   );
 }
 
-/** Greedy nearest-neighbour route starting at the highest-demand city. */
+/**
+ * Route starting at the highest-demand city (the first stop): greedy nearest neighbour, then
+ * 2-opt passes that undo crossings (an open path, so the start stays fixed).
+ */
 export function routeOrder<T extends { lat: number; lng: number }>(
   stops: T[],
   distance: (a: T, b: T) => number,
@@ -122,6 +125,21 @@ export function routeOrder<T extends { lat: number; lng: number }>(
         bestIndex = i;
     }
     route.push(remaining.splice(bestIndex, 1)[0] as T);
+  }
+  // 2-opt: reverse route[i..j] whenever that shortens the path. Few stops, so this is cheap.
+  const d = (a: number, b: number) => distance(route[a] as T, route[b] as T);
+  for (let pass = 0, improved = true; improved && pass < 20; pass++) {
+    improved = false;
+    for (let i = 1; i < route.length - 1; i++) {
+      for (let j = i + 1; j < route.length; j++) {
+        const before = d(i - 1, i) + (j + 1 < route.length ? d(j, j + 1) : 0);
+        const after = d(i - 1, j) + (j + 1 < route.length ? d(i, j + 1) : 0);
+        if (after + 1e-9 < before) {
+          route.splice(i, j - i + 1, ...route.slice(i, j + 1).reverse());
+          improved = true;
+        }
+      }
+    }
   }
   return route;
 }

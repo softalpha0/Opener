@@ -198,3 +198,36 @@ describe("audienceTags", () => {
     ]);
   });
 });
+
+describe("routeOrder on a cross-border tour", () => {
+  // Phoebe Bridgers, North America (live run 2026-10-25): these 8 stops used to be routed
+  // country by country, crossing the continent twice.
+  const names = [
+    "Boston",
+    "Seattle",
+    "Portland",
+    "Riverside",
+    "Vancouver",
+    "Toronto",
+    "Ottawa",
+    "Montreal",
+  ];
+  const stops = names.map((n) => {
+    const c = findCity(
+      n,
+      n === "Vancouver" || n === "Toronto" || n === "Ottawa" || n === "Montreal" ? "CA" : "US",
+    );
+    if (!c) throw new Error(n);
+    return { n, lat: c.lat, lng: c.lng };
+  });
+  const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) =>
+    distanceKm(a.lat, a.lng, b.lat, b.lng);
+  const length = (r: typeof stops) => r.slice(1).reduce((t, s, i) => t + km(r[i]!, s), 0);
+
+  it("starts at the top city and crosses the continent once", () => {
+    const route = routeOrder(stops, km);
+    expect(route[0]?.n).toBe("Boston");
+    expect(route.map((s) => s.n).slice(0, 4)).toEqual(["Boston", "Montreal", "Ottawa", "Toronto"]);
+    expect(length(route)).toBeLessThan(length(stops) * 0.75);
+  });
+});
