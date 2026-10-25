@@ -133,6 +133,21 @@ describe("whyThisCity", () => {
     ]);
   });
 
+  it("warns when Qloo returned only a couple of cities", () => {
+    const thin = {
+      ...stop,
+      demandRank: 2,
+      areaCities: 2,
+      affinityScore: 0,
+      heatCells: 1,
+      openers: [],
+    };
+    expect(whyThisCity(thin, evidence)).toEqual([
+      "Ranked #2 of 2 cities in Qloo's audience heatmap for United Kingdom.",
+      "Qloo returned very few heat cells here, so the affinity score (0.00, relative within United Kingdom) only compares 2 cities.",
+    ]);
+  });
+
   it("drops lines it has no data for", () => {
     const bare = {
       ...stop,

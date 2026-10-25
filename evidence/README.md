@@ -20,14 +20,14 @@ Each folder has:
 
 ## Reproduce from the live link
 
-On the live app, open a sample (for example `LIVE_URL/plan?artist=Sia&region=worldwide`), then click **Generic vs Opener** and **Under the hood**. **Download JSON** saves the plan.
+On the live app, open a sample (for example `https://opener-9w48.onrender.com/plan?artist=Sia&region=worldwide`), then click **Generic vs Opener** and **Under the hood**. **Download JSON** saves the plan.
 
 To capture all sample artists into this folder in one go (plans and LLM comparisons from the live app):
 
 ```sh
-npm run evidence -- LIVE_URL
+npm run evidence -- https://opener-9w48.onrender.com
 ```
 
-Or one artist: `npm run evidence -- LIVE_URL "Rema" africa`. To rebuild a folder from a downloaded plan, offline: `npm run evidence -- --from-file plan.json`.
+Or one artist: `npm run evidence -- https://opener-9w48.onrender.com "Rema" africa`. To rebuild a folder from a downloaded plan, offline: `npm run evidence -- --from-file plan.json`.
 
 Live plans count against the app's rate limit (5 a minute per IP) and Qloo quota, and results change as Qloo's data updates, so a new capture will not match these files exactly.

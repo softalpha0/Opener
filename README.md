@@ -7,8 +7,8 @@
 
 An indie artist with a few thousand fans in five countries has to pick eight cities. With no data, the list writes itself: the biggest cities, the ones the last band played, the ones a promoter knows. Half of those rooms are full of people who have never heard the artist, the door money doesn't cover the van, and the tour loses money. The fans who would have sold out a smaller room two hours away never hear about the show. Opener replaces the guess with Qloo's taste data: where this artist's audience over-indexes, who else that audience likes, and what the crowd is into.
 
-- **Live app:** `LIVE_URL` _(replace with the Render or Hugging Face link)_
-- **One-click sample:** `LIVE_URL/plan?artist=Rema&region=africa`
+- **Live app:** https://opener-9w48.onrender.com (free Render plan: the first visit after a quiet spell takes about a minute)
+- **One-click sample:** https://opener-9w48.onrender.com/plan?artist=Rema&region=africa
 - **Demo video:** _add the link after recording_
 - **Evidence from real runs:** [`evidence/`](evidence/)
 
@@ -60,7 +60,7 @@ Type an artist and pick a region (North America, US, Europe, UK & Ireland, Latin
 
 ## Try it in a minute
 
-1. Open the live app (`LIVE_URL`). No login.
+1. Open the live app (`https://opener-9w48.onrender.com`). No login.
 2. Under **Try an example**, click one of the four sample artists (Phoebe Bridgers, Khruangbin, Rema, Sia). Each runs a live plan, or loads it from the 24-hour cache if it ran recently.
 3. Watch the **Agent timeline**: four steps with their durations, and every Qloo call as it happens.
 4. When the plan appears, click **Generic vs Opener**. The left column is the tour a model suggests from its own knowledge; the right is Opener's. Each generic city shows where Qloo actually ranks it.
@@ -188,7 +188,7 @@ From [`evidence/sia-worldwide/`](evidence/sia-worldwide/summary.md), a real Qloo
 | Birmingham           | No match in Qloo's top UK heat cells | No                |
 | Hamburg              | #5 of 8 in Germany                   | No                |
 
-For a global pop star the big-city guess and Qloo mostly agree (5 of 8). Where they differ, Qloo moves the tour: Munich (#2 in Germany) and San Francisco (#3 in the US) instead of Hamburg (#5) and Birmingham (no signal). The gap should be larger for niche artists. Run the comparison for the other samples on the live app, or capture them with `npm run evidence -- LIVE_URL`.
+For a global pop star the big-city guess and Qloo mostly agree (5 of 8). Where they differ, Qloo moves the tour: Munich (#2 in Germany) and San Francisco (#3 in the US) instead of Hamburg (#5) and Birmingham (no signal). The gap should be larger for niche artists. Run the comparison for the other samples on the live app, or capture them with `npm run evidence -- https://opener-9w48.onrender.com`.
 
 ## Tech stack
 
@@ -238,13 +238,13 @@ Every variable has a one-line description in [`.env.example`](.env.example).
 
 Useful scripts:
 
-| Command                             | What it does                                                       |
-| ----------------------------------- | ------------------------------------------------------------------ |
-| `npm run plan -- "Artist" [region]` | One plan from the terminal against live Qloo                       |
-| `npm run warm-cache`                | Runs the sample artists and saves their plans to `data/samples`    |
-| `npm run evidence -- LIVE_URL`      | Captures plans and comparisons from a running app into `evidence/` |
-| `npm run check-llm`                 | One tiny request to the configured LLM                             |
-| `npm run inspect-tools`             | Dumps the live `qloo mcp` tool schemas                             |
+| Command                                                | What it does                                                       |
+| ------------------------------------------------------ | ------------------------------------------------------------------ |
+| `npm run plan -- "Artist" [region]`                    | One plan from the terminal against live Qloo                       |
+| `npm run warm-cache`                                   | Runs the sample artists and saves their plans to `data/samples`    |
+| `npm run evidence -- https://opener-9w48.onrender.com` | Captures plans and comparisons from a running app into `evidence/` |
+| `npm run check-llm`                                    | One tiny request to the configured LLM                             |
+| `npm run inspect-tools`                                | Dumps the live `qloo mcp` tool schemas                             |
 
 **Deploying.** Use a host that runs a Docker container continuously; serverless functions can't keep `qloo mcp` alive.
 
@@ -267,7 +267,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Generic vs Opener (`generic.test.ts`) | 13              | Parsing model replies, population baseline, ranking on recorded Qloo data, no Qloo data in the prompt, caching                                                                        |
 | Agent runner (`runner.integration`)   | 8               | Full plan on mocked Qloo, ambiguous and unknown artists, grounding drops invented cities, artists and evidence, agent failure fallback, time budget, per-country ranking, agent steps |
 | Gemini provider (`gemini.test.ts`)    | 12              | Busy and quota fallbacks, retries, schema cleaning                                                                                                                                    |
-| Ranking and helpers (`plan-helpers`)  | 10              | Cell-to-city mapping, route order, momentum, rate limiter, "Why this city"                                                                                                            |
+| Ranking and helpers (`plan-helpers`)  | 11              | Cell-to-city mapping, route order, momentum, rate limiter, "Why this city"                                                                                                            |
 | Cities and scales (`merge`)           | 6               | Neighbour merging, metro over suburb, border fix, 0–1 percentiles, near-tie ranking                                                                                                   |
 | Qloo client (`client.integration`)    | 5               | One connection, caching by normalised args, bounded retries, respawn, readiness                                                                                                       |
 | Envelope normalisation (`envelope`)   | 9               | Result parsing, missing status, errors and retryability, `series` for trends                                                                                                          |
@@ -276,7 +276,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Redaction (`redact.test.ts`)          | 4               | Secret-looking fields and the Qloo key value scrubbed at any depth                                                                                                                    |
 | End to end (`tests/e2e`)              | 5 × 2 viewports | Landing, saved plan, Why this city, Under the hood, Generic vs Opener, health, no horizontal scroll                                                                                   |
 
-82 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
+83 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
 
 ## Project layout
 
@@ -303,6 +303,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 - **Heatmap scores are relative within each country.** Multi-country plans rank cities inside each country, not across countries.
 - **Coverage depends on the presets.** Each region searches 1–5 large countries, because Qloo's `within` needs a resolvable place. Smaller markets can be missed.
 - **Cities come from a bundled table.** Cells more than 90 km from one of the 1,797 cities are dropped, and cities closer than 110 km merge. A generic city missing from the table (Cologne, for example) shows as "no match" even if Qloo has heat nearby.
+- **Some artists get thin location data.** For Drake in North America, Qloo returned 2 US heat cells and none for Canada, so the route had 2 stops. The plan says so when that happens.
 - **Affinity is not ticket demand.** It shows where the audience over-indexes, not how many tickets would sell.
 - **No venues, dates or drive times yet.** Stop reasons cite Qloo signals; there are no venue-level pitches. Route order is nearest-neighbour by straight-line distance.
 - **Free LLM tier.** Gemini's free tier can be busy or out of daily quota. The plan then comes from the fixed planner and the generic tour from the population baseline, and the page says so.

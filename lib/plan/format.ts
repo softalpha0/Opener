@@ -93,7 +93,11 @@ export function whyThisCity(stop: Stop, index: Map<string, Evidence>): string[] 
   const area = stop.area ?? stop.country;
   const of = stop.areaCities ? ` of ${stop.areaCities} cities` : "";
   lines.push(`Ranked #${stop.demandRank}${of} in Qloo's audience heatmap for ${area}.`);
-  if (stop.affinityScore !== undefined) {
+  if (stop.affinityScore !== undefined && stop.areaCities !== undefined && stop.areaCities < 3) {
+    lines.push(
+      `Qloo returned very few heat cells here, so the affinity score (${stop.affinityScore.toFixed(2)}, relative within ${area}) only compares ${stop.areaCities} cities.`,
+    );
+  } else if (stop.affinityScore !== undefined) {
     lines.push(
       `Strongest heat cell near ${stop.city} scored ${stop.affinityScore.toFixed(2)} for audience affinity (Qloo scores 0 to 1, relative within ${area}).`,
     );

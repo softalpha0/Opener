@@ -470,6 +470,21 @@ export function composePlan(ctx: ComposeContext): TourPlan {
     areaCities: s.area ? demand.filter((d) => d.area === s.area).length : demand.length,
   }));
 
+  // Say so when Qloo's location data is too thin for a full route (e.g. 2 cells in one country).
+  if (stops.length < 5) {
+    const perArea = ctx.query.within.map((area) => {
+      const cells = box
+        .byTool("qloo_where_popular")
+        .filter((c) => c.args.within === area && hasResults(c.envelope))
+        .reduce((n, c) => n + parseHeatmap(c.envelope.results).length, 0);
+      return cells ? `${cells} heat cell${cells === 1 ? "" : "s"} in ${area}` : `none in ${area}`;
+    });
+    notices.push({
+      level: "partial",
+      message: `Qloo returned little location data for ${ctx.artist.name} here (${perArea.join(", ")}), so the route has ${stops.length} stop${stops.length === 1 ? "" : "s"} instead of 5–8. Try another region; scores with only a few cells are less informative.`,
+    });
+  }
+
   const heat = heatCalls(box, ref)
     .flatMap((call) =>
       parseHeatmap(call.envelope.results).map((p) => ({
