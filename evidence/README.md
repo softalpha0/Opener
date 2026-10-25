@@ -2,9 +2,14 @@
 
 Real outputs from Opener, so a reviewer can check the claims in the README without running anything.
 
-| Folder                                       | What it is                                                                                                                  | Source                              |
-| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| [`sia-worldwide/`](sia-worldwide/summary.md) | Sia across the US, UK, Germany, Nigeria and Australia: 19 real Qloo calls, the 8-stop plan, and the generic-tour comparison | Live Qloo hackathon API, 2026-10-23 |
+| Folder                                                                       | Artist and region                               | Stops | Qloo calls |
+| ---------------------------------------------------------------------------- | ----------------------------------------------- | ----- | ---------- |
+| [`phoebe-bridgers-north-america/`](phoebe-bridgers-north-america/summary.md) | Phoebe Bridgers, US and Canada                  | 8     | 16         |
+| [`khruangbin-europe/`](khruangbin-europe/summary.md)                         | Khruangbin, Germany, France, Netherlands, Spain | 8     | 17         |
+| [`rema-africa/`](rema-africa/summary.md)                                     | Rema, Nigeria, Ghana, South Africa, Kenya       | 8     | 17         |
+| [`sia-worldwide/`](sia-worldwide/summary.md)                                 | Sia, US, UK, Germany, Nigeria, Australia        | 8     | 18         |
+
+All four were captured from https://opener-9w48.onrender.com on 2026-10-25 with `npm run evidence`.
 
 Each folder has:
 
@@ -12,10 +17,10 @@ Each folder has:
 - `comparison.json`: the generic tour and where Qloo ranks each of its cities.
 - `summary.md`: the same in two short tables.
 
-## Notes on `sia-worldwide`
+## Notes
 
-- The plan was captured from a live run on the October 23 build. That build ranked cities across countries and mapped one US cell near Buffalo to Toronto, which is why Toronto appears in its route. Both were fixed the same day; the comparison was recomputed from the same Qloo heat data with the current code, which ranks per country and keeps cells inside the country searched.
-- The generic tour here is the population baseline, because the comparison was built offline from the saved plan. On the live app the generic tour comes from the configured model (no tools, no Qloo data) when a key is set.
+- These plans were built by the deterministic planner and the generic tours are the population baseline: Gemini's free quota was spent when they were captured. The Qloo calls and results are the same either way; the agent changes which calls are made and how the reasons are worded. Each `summary.md` states which planner and which generic tour it used.
+- `tests/fixtures/recorded/sia-worldwide.json` is an older capture (2026-10-23) kept as a test fixture.
 - No secrets: the Qloo key never enters plan JSON.
 
 ## Reproduce from the live link

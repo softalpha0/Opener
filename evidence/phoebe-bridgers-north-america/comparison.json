@@ -1,0 +1,220 @@
+{
+  "generic": {
+    "source": "population",
+    "generatedAt": "2026-10-25T22:38:35.057Z",
+    "stops": [
+      {
+        "city": "New York City",
+        "country": "United States",
+        "why": "One of the largest cities in United States (population 8,804k)."
+      },
+      {
+        "city": "Toronto",
+        "country": "Canada",
+        "why": "One of the largest cities in Canada (population 2,794k)."
+      },
+      {
+        "city": "Los Angeles",
+        "country": "United States",
+        "why": "One of the largest cities in United States (population 3,821k)."
+      },
+      {
+        "city": "Montreal",
+        "country": "Canada",
+        "why": "One of the largest cities in Canada (population 1,763k)."
+      },
+      {
+        "city": "Chicago",
+        "country": "United States",
+        "why": "One of the largest cities in United States (population 2,664k)."
+      },
+      {
+        "city": "Calgary",
+        "country": "Canada",
+        "why": "One of the largest cities in Canada (population 1,307k)."
+      },
+      {
+        "city": "Houston",
+        "country": "United States",
+        "why": "One of the largest cities in United States (population 2,314k)."
+      },
+      {
+        "city": "Ottawa",
+        "country": "Canada",
+        "why": "One of the largest cities in Canada (population 1,017k)."
+      }
+    ],
+    "note": "The model was unavailable (busy or out of free quota), so this is the population baseline."
+  },
+  "rows": [
+    {
+      "city": "New York City",
+      "country": "United States",
+      "why": "One of the largest cities in United States (population 8,804k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Toronto",
+      "country": "Canada",
+      "why": "One of the largest cities in Canada (population 2,794k).",
+      "openerOrder": 6,
+      "qloo": {
+        "key": "toronto|ca",
+        "city": "Toronto",
+        "country": "Canada",
+        "area": "Canada",
+        "rank": 2,
+        "of": 6,
+        "affinity": 0.9980879541108987,
+        "cells": 2,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Los Angeles",
+      "country": "United States",
+      "why": "One of the largest cities in United States (population 3,821k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Montreal",
+      "country": "Canada",
+      "why": "One of the largest cities in Canada (population 1,763k).",
+      "openerOrder": 8,
+      "qloo": {
+        "key": "montreal|ca",
+        "city": "Montreal",
+        "country": "Canada",
+        "area": "Canada",
+        "rank": 3,
+        "of": 6,
+        "affinity": 0.9974506054811982,
+        "cells": 1,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Chicago",
+      "country": "United States",
+      "why": "One of the largest cities in United States (population 2,664k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Calgary",
+      "country": "Canada",
+      "why": "One of the largest cities in Canada (population 1,307k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Houston",
+      "country": "United States",
+      "why": "One of the largest cities in United States (population 2,314k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Ottawa",
+      "country": "Canada",
+      "why": "One of the largest cities in Canada (population 1,017k).",
+      "openerOrder": 7,
+      "qloo": {
+        "key": "ottawa|ca",
+        "city": "Ottawa",
+        "country": "Canada",
+        "area": "Canada",
+        "rank": 4,
+        "of": 6,
+        "affinity": 0.9923518164435946,
+        "cells": 1,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    }
+  ],
+  "openerOnly": [
+    {
+      "order": 1,
+      "city": "Boston",
+      "country": "United States",
+      "qloo": {
+        "key": "boston|us",
+        "city": "Boston",
+        "country": "United States",
+        "area": "United States",
+        "rank": 1,
+        "of": 4,
+        "affinity": 0.9998833819241982,
+        "cells": 4,
+        "evidenceId": "ev2"
+      }
+    },
+    {
+      "order": 2,
+      "city": "Seattle",
+      "country": "United States",
+      "qloo": {
+        "key": "seattle|us",
+        "city": "Seattle",
+        "country": "United States",
+        "area": "United States",
+        "rank": 3,
+        "of": 4,
+        "affinity": 0.9977842565597668,
+        "cells": 1,
+        "evidenceId": "ev2"
+      }
+    },
+    {
+      "order": 3,
+      "city": "Portland",
+      "country": "United States",
+      "qloo": {
+        "key": "portland|us",
+        "city": "Portland",
+        "country": "United States",
+        "area": "United States",
+        "rank": 2,
+        "of": 4,
+        "affinity": 0.9996501457725947,
+        "cells": 2,
+        "evidenceId": "ev2"
+      }
+    },
+    {
+      "order": 4,
+      "city": "Riverside",
+      "country": "United States",
+      "qloo": {
+        "key": "riverside|us",
+        "city": "Riverside",
+        "country": "United States",
+        "area": "United States",
+        "rank": 4,
+        "of": 4,
+        "affinity": 0.9983673469387755,
+        "cells": 1,
+        "evidenceId": "ev2"
+      }
+    },
+    {
+      "order": 5,
+      "city": "Vancouver",
+      "country": "Canada",
+      "qloo": {
+        "key": "vancouver|ca",
+        "city": "Vancouver",
+        "country": "Canada",
+        "area": "Canada",
+        "rank": 1,
+        "of": 6,
+        "affinity": 1,
+        "cells": 6,
+        "evidenceId": "ev3"
+      }
+    }
+  ],
+  "overlap": 3,
+  "noSignal": 5,
+  "qlooTop3": 2
+}

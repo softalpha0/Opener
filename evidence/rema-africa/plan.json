@@ -1,0 +1,2530 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-25T22:37:07.503Z",
+  "mode": "deterministic",
+  "query": {
+    "artistInput": "Rema",
+    "region": "africa",
+    "regionLabel": "Africa",
+    "within": ["Nigeria", "Ghana", "South Africa", "Kenya"]
+  },
+  "artist": {
+    "id": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+    "name": "Rema",
+    "image": "https://images.qloo.com/i/28EF796E-D7E8-42AC-BF59-414359E4E7B4-420x-auto.jpg",
+    "description": "Nigerian singer and rapper known for his Afrobeats and trap-infused music.",
+    "tags": [
+      {
+        "id": "urn:tag:genre:place:hotel",
+        "name": "Hotel"
+      },
+      {
+        "id": "urn:tag:credit_card:place:diners_club",
+        "name": "Diners Club"
+      },
+      {
+        "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+        "name": "Identifies as women-owned"
+      },
+      {
+        "id": "urn:tag:genre:brand:entertainment",
+        "name": "Entertainment"
+      },
+      {
+        "id": "urn:tag:hotel_rating:place:three_star",
+        "name": "Three Star"
+      },
+      {
+        "id": "urn:tag:cost_description:place:expensive",
+        "name": "Expensive"
+      },
+      {
+        "id": "urn:tag:keyword:media:african_american",
+        "name": "african american"
+      },
+      {
+        "id": "urn:tag:genre:media:africa",
+        "name": "Africa"
+      },
+      {
+        "id": "urn:tag:style:qloo:fusion",
+        "name": "Fusion"
+      },
+      {
+        "id": "urn:tag:keyword:qloo:ex_convict",
+        "name": "Ex-Convict"
+      }
+    ],
+    "alternatives": [
+      {
+        "id": "6FA9C3E2-A430-406E-93D7-77F937D2F9C3",
+        "name": "Remady",
+        "description": "Swiss DJ and music producer known for dance and house music."
+      },
+      {
+        "id": "9B24F07B-A64B-4B85-B03E-D01C306EE615",
+        "name": "Remady & Manu-L",
+        "description": "Swiss dance and house music duo known for catchy electronic hits."
+      },
+      {
+        "id": "A145FA5E-8A2E-4CF8-A49B-F84E037F6BCC",
+        "name": "Remarc",
+        "description": "British DJ and producer known for pioneering jungle and drum and bass music."
+      },
+      {
+        "id": "A2EF45A4-D20A-425E-922F-5FB9C93F7C5C",
+        "name": "Remains of the Day",
+        "description": "Remains Of The Day is a rock band known for their alternative rock sound."
+      }
+    ],
+    "evidenceIds": ["ev1", "ev11"]
+  },
+  "summary": "Within each country searched, Rema’s audience affinity peaks around Lagos (Nigeria), Accra (Ghana), Johannesburg (South Africa) and Nairobi (Kenya). Qloo's heatmap scores are relative within each country, so the route takes the strongest cities country by country rather than ranking countries against each other, with openers drawn from artists that over-index with the same audience. Qloo's trend data reads as steady over the past year.",
+  "momentum": {
+    "direction": "steady",
+    "note": "Qloo population percentile moved from an average of 10.9 in the earliest weeks to 10.9 in the latest (2026-06-13 to 2026-10-24).",
+    "evidenceId": "ev12",
+    "series": [
+      {
+        "date": "2026-06-13",
+        "value": 10.9
+      },
+      {
+        "date": "2026-06-20",
+        "value": 10.9
+      },
+      {
+        "date": "2026-06-27",
+        "value": 10.9
+      },
+      {
+        "date": "2026-07-04",
+        "value": 10.9
+      },
+      {
+        "date": "2026-07-11",
+        "value": 10.9
+      },
+      {
+        "date": "2026-07-18",
+        "value": 10.9
+      },
+      {
+        "date": "2026-07-25",
+        "value": 10.9
+      },
+      {
+        "date": "2026-08-01",
+        "value": 10.9
+      },
+      {
+        "date": "2026-08-08",
+        "value": 10.9
+      },
+      {
+        "date": "2026-08-15",
+        "value": 10.9
+      },
+      {
+        "date": "2026-08-22",
+        "value": 10.9
+      },
+      {
+        "date": "2026-08-29",
+        "value": 10.9
+      },
+      {
+        "date": "2026-09-05",
+        "value": 10.9
+      },
+      {
+        "date": "2026-09-12",
+        "value": 10.9
+      },
+      {
+        "date": "2026-09-19",
+        "value": 10.9
+      },
+      {
+        "date": "2026-09-26",
+        "value": 10.9
+      },
+      {
+        "date": "2026-10-03",
+        "value": 10.9
+      },
+      {
+        "date": "2026-10-10",
+        "value": 10.9
+      },
+      {
+        "date": "2026-10-17",
+        "value": 10.9
+      },
+      {
+        "date": "2026-10-24",
+        "value": 10.9
+      }
+    ]
+  },
+  "demographics": {
+    "items": [
+      {
+        "group": "age",
+        "label": "24 and under",
+        "value": 0.46
+      },
+      {
+        "group": "age",
+        "label": "25–29",
+        "value": 0.58
+      },
+      {
+        "group": "age",
+        "label": "30–34",
+        "value": 0.59
+      },
+      {
+        "group": "age",
+        "label": "35–44",
+        "value": -0.77
+      },
+      {
+        "group": "age",
+        "label": "45–54",
+        "value": -0.39
+      },
+      {
+        "group": "age",
+        "label": "55+",
+        "value": -0.37
+      },
+      {
+        "group": "gender",
+        "label": "male",
+        "value": 0.52
+      },
+      {
+        "group": "gender",
+        "label": "female",
+        "value": -0.52
+      }
+    ],
+    "evidenceId": "ev10"
+  },
+  "stops": [
+    {
+      "order": 1,
+      "demandRank": 1,
+      "area": "Nigeria",
+      "areaCities": 7,
+      "city": "Lagos",
+      "region": "Lagos",
+      "country": "Nigeria",
+      "countryCode": "NG",
+      "lat": 6.4541,
+      "lng": 3.3947,
+      "affinityScore": 1,
+      "heatCells": 6,
+      "reason": "Strong audience affinity for Rema within Nigeria: the top cell near Lagos scored 1.00 on Qloo's Nigeria heatmap across 6 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "image": "https://images.qloo.com/i/4A322BDD-04A3-4369-8234-B38A7FB485D9-420x-auto.jpg",
+          "affinity": 0.9706586640460885,
+          "overlapNote": "Qloo recommends Burna Boy for Rema’s audience, using Lagos as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        },
+        {
+          "id": "1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF",
+          "name": "CKay",
+          "image": "https://images.qloo.com/i/1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF-420x-auto.jpg",
+          "affinity": 0.9675002461790448,
+          "overlapNote": "Qloo recommends CKay for Rema’s audience, using Lagos as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev9"]
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "image": "https://images.qloo.com/i/E7096B50-EE00-4A60-86E3-231F82115031-420x-auto.jpg",
+          "affinity": 0.964983255422213,
+          "overlapNote": "Qloo recommends Mr Eazi for Rema’s audience, using Lagos as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "demandRank": 2,
+      "area": "Nigeria",
+      "areaCities": 7,
+      "city": "Abuja",
+      "region": "FCT",
+      "country": "Nigeria",
+      "countryCode": "NG",
+      "lat": 9.0579,
+      "lng": 7.4951,
+      "affinityScore": 0.995,
+      "heatCells": 4,
+      "reason": "Strong audience affinity for Rema within Nigeria: the top cell near Abuja scored 0.99 on Qloo's Nigeria heatmap across 4 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "DB7622AA-5464-4C6C-9E6F-9732E4BD2390",
+          "name": "Oxlade",
+          "image": "https://images.qloo.com/i/DB7622AA-5464-4C6C-9E6F-9732E4BD2390-420x-auto.jpg",
+          "affinity": 0.9649736332096507,
+          "overlapNote": "Qloo recommends Oxlade for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev7", "ev9"]
+        },
+        {
+          "id": "5FEB9D0B-0ACA-4A26-9872-37F69692DE16",
+          "name": "Omah Lay",
+          "image": "https://images.qloo.com/i/5FEB9D0B-0ACA-4A26-9872-37F69692DE16-420x-auto.jpg",
+          "affinity": 0.9621204429827782,
+          "overlapNote": "Qloo recommends Omah Lay for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev9"]
+        },
+        {
+          "id": "DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F",
+          "name": "Ayra Starr",
+          "image": "https://images.qloo.com/i/DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F-420x-auto.jpg",
+          "affinity": 0.9617644525166633,
+          "overlapNote": "Qloo recommends Ayra Starr for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "demandRank": 1,
+      "area": "Ghana",
+      "areaCities": 3,
+      "city": "Accra",
+      "region": "Greater Accra",
+      "country": "Ghana",
+      "countryCode": "GH",
+      "lat": 5.556,
+      "lng": -0.1969,
+      "affinityScore": 1,
+      "heatCells": 16,
+      "reason": "Strong audience affinity for Rema within Ghana: the top cell near Accra scored 1.00 on Qloo's Ghana heatmap across 16 nearby heat cells.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "image": "https://images.qloo.com/i/4A322BDD-04A3-4369-8234-B38A7FB485D9-420x-auto.jpg",
+          "affinity": 0.9706586640460885,
+          "overlapNote": "Qloo recommends Burna Boy for Rema’s audience, using Accra as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        },
+        {
+          "id": "1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF",
+          "name": "CKay",
+          "image": "https://images.qloo.com/i/1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF-420x-auto.jpg",
+          "affinity": 0.9675002461790448,
+          "overlapNote": "Qloo recommends CKay for Rema’s audience, using Accra as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev9"]
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "image": "https://images.qloo.com/i/E7096B50-EE00-4A60-86E3-231F82115031-420x-auto.jpg",
+          "affinity": 0.964983255422213,
+          "overlapNote": "Qloo recommends Mr Eazi for Rema’s audience, using Accra as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "demandRank": 2,
+      "area": "Ghana",
+      "areaCities": 3,
+      "city": "Kumasi",
+      "region": "Ashanti",
+      "country": "Ghana",
+      "countryCode": "GH",
+      "lat": 6.6885,
+      "lng": -1.6244,
+      "affinityScore": 0.965,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Rema within Ghana: the top cell near Kumasi scored 0.97 on Qloo's Ghana heatmap.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "C510E01A-E17C-45FC-8DCE-64A963A121A4",
+          "name": "Wizkid",
+          "image": "https://images.qloo.com/i/C510E01A-E17C-45FC-8DCE-64A963A121A4-420x-auto.jpg",
+          "affinity": 0.9588122980292579,
+          "overlapNote": "Qloo recommends Wizkid for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev7", "ev8"]
+        },
+        {
+          "id": "BB904724-6077-45C0-AE24-2A32D9CBE436",
+          "name": "Fireboy DML",
+          "image": "https://images.qloo.com/i/BB904724-6077-45C0-AE24-2A32D9CBE436-420x-auto.jpg",
+          "affinity": 0.9580441513547844,
+          "overlapNote": "Qloo recommends Fireboy DML for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev7"]
+        },
+        {
+          "id": "7E1A2234-DD16-4627-9851-AE2F9E2EA845",
+          "name": "Tiwa Savage",
+          "image": "https://images.qloo.com/i/7E1A2234-DD16-4627-9851-AE2F9E2EA845-420x-auto.jpg",
+          "affinity": 0.9563181512262148,
+          "overlapNote": "Qloo recommends Tiwa Savage for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev7", "ev8"]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "demandRank": 1,
+      "area": "South Africa",
+      "areaCities": 6,
+      "city": "Johannesburg",
+      "region": "Gauteng",
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "lat": -26.2023,
+      "lng": 28.0436,
+      "affinityScore": 0.994,
+      "heatCells": 10,
+      "reason": "Strong audience affinity for Rema within South Africa: the top cell near Johannesburg scored 0.99 on Qloo's South Africa heatmap across 10 nearby heat cells.",
+      "evidenceIds": ["ev4"],
+      "openers": [
+        {
+          "id": "EB13954E-3AC6-44A3-8200-88DEE1FE3171",
+          "name": "Libianca",
+          "image": "https://images.qloo.com/i/EB13954E-3AC6-44A3-8200-88DEE1FE3171-420x-auto.jpg",
+          "affinity": 0.9549064007170526,
+          "overlapNote": "Qloo recommends Libianca for Rema’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "9145683D-230A-45DF-9BF1-24F8F345FB3C",
+          "name": "Starboy",
+          "image": "https://images.qloo.com/i/9145683D-230A-45DF-9BF1-24F8F345FB3C-420x-auto.jpg",
+          "affinity": 0.9542129939511139,
+          "overlapNote": "Qloo recommends Starboy for Rema’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "DF407F62-5C3B-48BF-B249-081D93C42FBB",
+          "name": "Tekno",
+          "image": "https://images.qloo.com/i/DF407F62-5C3B-48BF-B249-081D93C42FBB-420x-auto.jpg",
+          "affinity": 0.9540246206867786,
+          "overlapNote": "Qloo recommends Tekno for Rema’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6", "ev8"]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "demandRank": 2,
+      "area": "South Africa",
+      "areaCities": 6,
+      "city": "Cape Town",
+      "region": "Western Cape",
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "lat": -33.9258,
+      "lng": 18.4232,
+      "affinityScore": 0.976,
+      "heatCells": 4,
+      "reason": "Strong audience affinity for Rema within South Africa: the top cell near Cape Town scored 0.98 on Qloo's South Africa heatmap across 4 nearby heat cells.",
+      "evidenceIds": ["ev4"],
+      "openers": [
+        {
+          "id": "B27778E2-A20F-460B-BF03-301DFDA970FA",
+          "name": "Yemi Alade",
+          "image": "https://images.qloo.com/i/B27778E2-A20F-460B-BF03-301DFDA970FA-420x-auto.jpg",
+          "affinity": 0.9535698476106299,
+          "overlapNote": "Qloo recommends Yemi Alade for Rema’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6", "ev8"]
+        },
+        {
+          "id": "163F8832-54F9-46F6-BE0A-9E0DB0CAA5C0",
+          "name": "Kizz Daniel",
+          "image": "https://images.qloo.com/i/163F8832-54F9-46F6-BE0A-9E0DB0CAA5C0-420x-auto.jpg",
+          "affinity": 0.9526038266876647,
+          "overlapNote": "Qloo recommends Kizz Daniel for Rema’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6", "ev8", "ev9"]
+        },
+        {
+          "id": "22DB6C14-BD19-4D5A-BA5E-A250DE5EA2EB",
+          "name": "Afro B",
+          "image": "https://images.qloo.com/i/22DB6C14-BD19-4D5A-BA5E-A250DE5EA2EB-420x-auto.jpg",
+          "affinity": 0.9526002352824702,
+          "overlapNote": "Qloo recommends Afro B for Rema’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6", "ev9"]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "demandRank": 1,
+      "area": "Kenya",
+      "areaCities": 3,
+      "city": "Nairobi",
+      "region": "Nairobi County",
+      "country": "Kenya",
+      "countryCode": "KE",
+      "lat": -1.2833,
+      "lng": 36.8167,
+      "affinityScore": 1,
+      "heatCells": 13,
+      "reason": "Strong audience affinity for Rema within Kenya: the top cell near Nairobi scored 1.00 on Qloo's Kenya heatmap across 13 nearby heat cells.",
+      "evidenceIds": ["ev5"],
+      "openers": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "image": "https://images.qloo.com/i/4A322BDD-04A3-4369-8234-B38A7FB485D9-420x-auto.jpg",
+          "affinity": 0.9706586640460885,
+          "overlapNote": "Qloo recommends Burna Boy for Rema’s audience, using Nairobi as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "image": "https://images.qloo.com/i/E7096B50-EE00-4A60-86E3-231F82115031-420x-auto.jpg",
+          "affinity": 0.964983255422213,
+          "overlapNote": "Qloo recommends Mr Eazi for Rema’s audience, using Nairobi as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        },
+        {
+          "id": "DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F",
+          "name": "Ayra Starr",
+          "image": "https://images.qloo.com/i/DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F-420x-auto.jpg",
+          "affinity": 0.9617644525166633,
+          "overlapNote": "Qloo recommends Ayra Starr for Rema’s audience, using Nairobi as the location signal.",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "demandRank": 2,
+      "area": "Kenya",
+      "areaCities": 3,
+      "city": "Mombasa",
+      "region": "Mombasa County",
+      "country": "Kenya",
+      "countryCode": "KE",
+      "lat": -4.0547,
+      "lng": 39.6636,
+      "affinityScore": 0.993,
+      "heatCells": 4,
+      "reason": "Strong audience affinity for Rema within Kenya: the top cell near Mombasa scored 0.99 on Qloo's Kenya heatmap across 4 nearby heat cells.",
+      "evidenceIds": ["ev5"],
+      "openers": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "image": "https://images.qloo.com/i/4A322BDD-04A3-4369-8234-B38A7FB485D9-420x-auto.jpg",
+          "affinity": 0.9706586640460885,
+          "overlapNote": "Qloo recommends Burna Boy for Rema’s audience (affinity 0.97).",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        },
+        {
+          "id": "1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF",
+          "name": "CKay",
+          "image": "https://images.qloo.com/i/1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF-420x-auto.jpg",
+          "affinity": 0.9675002461790448,
+          "overlapNote": "Qloo recommends CKay for Rema’s audience (affinity 0.97).",
+          "evidenceIds": ["ev6", "ev7", "ev9"]
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "image": "https://images.qloo.com/i/E7096B50-EE00-4A60-86E3-231F82115031-420x-auto.jpg",
+          "affinity": 0.964983255422213,
+          "overlapNote": "Qloo recommends Mr Eazi for Rema’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev7", "ev8", "ev9"]
+        }
+      ]
+    }
+  ],
+  "heat": [
+    {
+      "lat": 6.4160156,
+      "lng": 3.3398438,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.591797,
+      "lng": 3.3398438,
+      "affinity": 0.9974489795918368,
+      "popularity": 0.9974489795918368,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 9.052734,
+      "lng": 7.9101562,
+      "affinity": 0.9948979591836735,
+      "popularity": 0.9872448979591837,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 9.052734,
+      "lng": 7.5585938,
+      "affinity": 0.9923469387755102,
+      "popularity": 0.9948979591836735,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.591797,
+      "lng": 3.6914062,
+      "affinity": 0.9897959183673469,
+      "popularity": 0.9923469387755102,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.4160156,
+      "lng": 3.6914062,
+      "affinity": 0.9872448979591837,
+      "popularity": 0.9897959183673469,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.2402344,
+      "lng": 6.8554688,
+      "affinity": 0.9846938775510204,
+      "popularity": 0.9591836734693877,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.4160156,
+      "lng": 4.0429688,
+      "affinity": 0.9821428571428571,
+      "popularity": 0.9719387755102041,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.4160156,
+      "lng": 7.5585938,
+      "affinity": 0.9795918367346939,
+      "popularity": 0.9744897959183674,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 4.8339844,
+      "lng": 6.8554688,
+      "affinity": 0.9770408163265306,
+      "popularity": 0.9795918367346939,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 7.470703,
+      "lng": 4.0429688,
+      "affinity": 0.9744897959183674,
+      "popularity": 0.9821428571428571,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.4160156,
+      "lng": 5.8007812,
+      "affinity": 0.9719387755102041,
+      "popularity": 0.9285714285714286,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 9.052734,
+      "lng": 7.2070312,
+      "affinity": 0.9693877551020408,
+      "popularity": 0.9362244897959183,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 4.8339844,
+      "lng": 7.2070312,
+      "affinity": 0.9668367346938775,
+      "popularity": 0.9846938775510204,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.4160156,
+      "lng": 5.4492188,
+      "affinity": 0.9642857142857143,
+      "popularity": 0.9693877551020408,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 5.5371094,
+      "lng": 5.8007812,
+      "affinity": 0.9617346938775511,
+      "popularity": 0.9617346938775511,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 6.767578,
+      "lng": 3.3398438,
+      "affinity": 0.9591836734693877,
+      "popularity": 0.9668367346938775,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 8.876953,
+      "lng": 7.2070312,
+      "affinity": 0.9566326530612245,
+      "popularity": 0.9770408163265306,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 5.5371094,
+      "lng": 7.2070312,
+      "affinity": 0.9540816326530612,
+      "popularity": 0.9642857142857143,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 10.458984,
+      "lng": 7.5585938,
+      "affinity": 0.951530612244898,
+      "popularity": 0.9311224489795918,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 5.559082,
+      "lng": -0.1977539,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 8.02002,
+      "lng": -0.98876953,
+      "affinity": 0.9961240310077519,
+      "popularity": 0.9883720930232558,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6030273,
+      "lng": -0.1977539,
+      "affinity": 0.9922480620155039,
+      "popularity": 0.9961240310077519,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.559082,
+      "lng": -0.1538086,
+      "affinity": 0.9883720930232558,
+      "popularity": 0.9806201550387597,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6030273,
+      "lng": -0.06591797,
+      "affinity": 0.9844961240310077,
+      "popularity": 0.9612403100775194,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6469727,
+      "lng": -0.10986328,
+      "affinity": 0.9806201550387597,
+      "popularity": 0.9922480620155039,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6030273,
+      "lng": -0.1538086,
+      "affinity": 0.9767441860465116,
+      "popularity": 0.9767441860465116,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6469727,
+      "lng": -0.021972656,
+      "affinity": 0.9728682170542635,
+      "popularity": 0.9224806201550387,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6469727,
+      "lng": -0.1977539,
+      "affinity": 0.9689922480620154,
+      "popularity": 0.9728682170542635,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 6.657715,
+      "lng": -1.6040039,
+      "affinity": 0.9651162790697675,
+      "popularity": 0.9844961240310077,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6469727,
+      "lng": -0.1538086,
+      "affinity": 0.9612403100775194,
+      "popularity": 0.9689922480620154,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6469727,
+      "lng": 0.021972656,
+      "affinity": 0.9573643410852714,
+      "popularity": 0.9651162790697675,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.119629,
+      "lng": -1.2524414,
+      "affinity": 0.9534883720930233,
+      "popularity": 0.9302325581395349,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6030273,
+      "lng": -0.24169922,
+      "affinity": 0.9496124031007752,
+      "popularity": 0.9573643410852714,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.559082,
+      "lng": -0.24169922,
+      "affinity": 0.9457364341085271,
+      "popularity": 0.9534883720930233,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.5151367,
+      "lng": -0.32958984,
+      "affinity": 0.9418604651162791,
+      "popularity": 0.8372093023255814,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.6469727,
+      "lng": -0.24169922,
+      "affinity": 0.937984496124031,
+      "popularity": 0.9496124031007752,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.690918,
+      "lng": -0.1538086,
+      "affinity": 0.9341085271317829,
+      "popularity": 0.9457364341085271,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 7.976074,
+      "lng": -1.2084961,
+      "affinity": 0.9302325581395349,
+      "popularity": 0.9302325581395349,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 5.559082,
+      "lng": -0.28564453,
+      "affinity": 0.9263565891472868,
+      "popularity": 0.9418604651162791,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": -28.916016,
+      "lng": 24.082031,
+      "affinity": 1,
+      "popularity": 0.9700598802395209,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -26.103516,
+      "lng": 27.949219,
+      "affinity": 0.9940119760479041,
+      "popularity": 1,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -26.279297,
+      "lng": 27.949219,
+      "affinity": 0.9880239520958084,
+      "popularity": 0.9940119760479041,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -25.751953,
+      "lng": 28.300781,
+      "affinity": 0.9820359281437125,
+      "popularity": 0.9820359281437125,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -33.83789,
+      "lng": 18.457031,
+      "affinity": 0.9760479041916168,
+      "popularity": 0.9880239520958084,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -26.103516,
+      "lng": 28.300781,
+      "affinity": 0.9700598802395209,
+      "popularity": 0.9580838323353293,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -25.927734,
+      "lng": 27.949219,
+      "affinity": 0.9640718562874252,
+      "popularity": 0.9640718562874252,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -34.01367,
+      "lng": 18.457031,
+      "affinity": 0.9580838323353293,
+      "popularity": 0.9760479041916168,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -25.751953,
+      "lng": 27.949219,
+      "affinity": 0.9520958083832335,
+      "popularity": 0.9341317365269461,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -26.279297,
+      "lng": 28.300781,
+      "affinity": 0.9461077844311377,
+      "popularity": 0.9520958083832335,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -25.927734,
+      "lng": 28.300781,
+      "affinity": 0.9401197604790419,
+      "popularity": 0.9401197604790419,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -25.576172,
+      "lng": 27.949219,
+      "affinity": 0.9341317365269461,
+      "popularity": 0.9221556886227545,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -25.40039,
+      "lng": 27.246094,
+      "affinity": 0.9281437125748503,
+      "popularity": 0.9161676646706587,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -34.01367,
+      "lng": 18.808594,
+      "affinity": 0.9221556886227545,
+      "popularity": 0.9461077844311377,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -34.01367,
+      "lng": 25.488281,
+      "affinity": 0.9161676646706587,
+      "popularity": 0.9041916167664671,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -29.794922,
+      "lng": 30.761719,
+      "affinity": 0.9101796407185628,
+      "popularity": 0.9281437125748503,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -23.99414,
+      "lng": 29.355469,
+      "affinity": 0.9041916167664671,
+      "popularity": 0.8922155688622755,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -32.958984,
+      "lng": 27.949219,
+      "affinity": 0.8982035928143712,
+      "popularity": 0.8802395209580839,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -33.83789,
+      "lng": 18.808594,
+      "affinity": 0.8922155688622755,
+      "popularity": 0.9101796407185628,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -29.61914,
+      "lng": 31.113281,
+      "affinity": 0.8862275449101796,
+      "popularity": 0.8982035928143712,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": -1.2963867,
+      "lng": 36.8042,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -4.0649414,
+      "lng": 39.660645,
+      "affinity": 0.993006993006993,
+      "popularity": 0.986013986013986,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.2524414,
+      "lng": 36.8042,
+      "affinity": 0.986013986013986,
+      "popularity": 0.993006993006993,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 0.41748047,
+      "lng": 37.858887,
+      "affinity": 0.9790209790209791,
+      "popularity": 0.9790209790209791,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.2963867,
+      "lng": 36.760254,
+      "affinity": 0.972027972027972,
+      "popularity": 0.965034965034965,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.2963867,
+      "lng": 36.89209,
+      "affinity": 0.965034965034965,
+      "popularity": 0.972027972027972,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.340332,
+      "lng": 36.936035,
+      "affinity": 0.958041958041958,
+      "popularity": 0.951048951048951,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.3842773,
+      "lng": 36.760254,
+      "affinity": 0.951048951048951,
+      "popularity": 0.8811188811188811,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -2.5268555,
+      "lng": 36.8042,
+      "affinity": 0.9440559440559441,
+      "popularity": 0.8881118881118881,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 0.5053711,
+      "lng": 35.31006,
+      "affinity": 0.9370629370629371,
+      "popularity": 0.8741258741258742,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.340332,
+      "lng": 36.8042,
+      "affinity": 0.9300699300699301,
+      "popularity": 0.9300699300699301,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -4.284668,
+      "lng": 39.572754,
+      "affinity": 0.9230769230769231,
+      "popularity": 0.8181818181818182,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.2084961,
+      "lng": 36.89209,
+      "affinity": 0.916083916083916,
+      "popularity": 0.958041958041958,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.3842773,
+      "lng": 36.848145,
+      "affinity": 0.9090909090909091,
+      "popularity": 0.8321678321678322,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.2963867,
+      "lng": 36.848145,
+      "affinity": 0.9020979020979021,
+      "popularity": 0.9370629370629371,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.340332,
+      "lng": 36.848145,
+      "affinity": 0.8951048951048951,
+      "popularity": 0.9230769230769231,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -4.020996,
+      "lng": 39.70459,
+      "affinity": 0.8881118881118881,
+      "popularity": 0.9090909090909091,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.2084961,
+      "lng": 36.8042,
+      "affinity": 0.8811188811188811,
+      "popularity": 0.9440559440559441,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -1.340332,
+      "lng": 36.71631,
+      "affinity": 0.8741258741258742,
+      "popularity": 0.9090909090909091,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": -3.9770508,
+      "lng": 39.748535,
+      "affinity": 0.8671328671328671,
+      "popularity": 0.8671328671328671,
+      "evidenceId": "ev5"
+    }
+  ],
+  "openerSpotlight": {
+    "openerId": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+    "openerName": "Burna Boy",
+    "note": "Qloo's audience comparison of Rema and Burna Boy surfaced these taste signals.",
+    "shared": [
+      {
+        "name": "Funk",
+        "type": "genre:music"
+      },
+      {
+        "name": "Rhythmic",
+        "type": "characteristic:music"
+      },
+      {
+        "name": "Moderate",
+        "type": "characteristic:music"
+      },
+      {
+        "name": "Jazz",
+        "type": "genre:music"
+      },
+      {
+        "name": "Soul",
+        "type": "genre:music"
+      },
+      {
+        "name": "Energetic",
+        "type": "characteristic:music"
+      }
+    ],
+    "evidenceIds": ["ev17", "ev6", "ev7", "ev8", "ev9"]
+  },
+  "crossover": [
+    {
+      "category": "brand",
+      "label": "Brands",
+      "items": [
+        {
+          "id": "25255993-75ED-4735-AEB1-E767E3801717",
+          "name": "Pulse Ng",
+          "image": "https://images.qloo.com/i/25255993-75ED-4735-AEB1-E767E3801717-420x-auto.jpg"
+        },
+        {
+          "id": "628DE8B7-4D77-4CF0-A7A2-EE8BF6BAC541",
+          "name": "Guaranty Trust Bank",
+          "image": "https://images.qloo.com/i/628DE8B7-4D77-4CF0-A7A2-EE8BF6BAC541-420x-auto.jpg"
+        },
+        {
+          "id": "6FBB479C-8AF7-4DFB-8484-5F1C2F750B32",
+          "name": "Wakanow",
+          "image": "https://images.qloo.com/i/6FBB479C-8AF7-4DFB-8484-5F1C2F750B32-420x-auto.jpg"
+        },
+        {
+          "id": "C16EA424-AD40-4DE7-AC90-A9B445F5660B",
+          "name": "Travelbeta.com",
+          "image": "https://images.qloo.com/i/C16EA424-AD40-4DE7-AC90-A9B445F5660B-420x-auto.jpg"
+        },
+        {
+          "id": "2BAE9B88-2327-4C62-A811-94F46F672748",
+          "name": "Fidelity Bank Nigeria",
+          "image": "https://images.qloo.com/i/2BAE9B88-2327-4C62-A811-94F46F672748-420x-auto.jpg"
+        },
+        {
+          "id": "E530914C-0574-40A4-8598-49B1C0D6BBC7",
+          "name": "Sigma Pensions Ltd",
+          "image": "https://images.qloo.com/i/E530914C-0574-40A4-8598-49B1C0D6BBC7-420x-auto.jpg"
+        },
+        {
+          "id": "19CF9116-593F-48E2-BECB-41DE40C09BD1",
+          "name": "Boomplay Music",
+          "image": "https://images.qloo.com/i/19CF9116-593F-48E2-BECB-41DE40C09BD1-420x-auto.jpg"
+        },
+        {
+          "id": "38EDED31-A56D-47A6-B289-FED7D26A0400",
+          "name": "TECNO Mobile",
+          "image": "https://images.qloo.com/i/38EDED31-A56D-47A6-B289-FED7D26A0400-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev13"
+    },
+    {
+      "category": "tv_show",
+      "label": "TV",
+      "items": [
+        {
+          "id": "D873C7EC-6DF8-48B9-8772-48417EEB884F",
+          "name": "Bob Hearts Abishola",
+          "image": "https://images.qloo.com/i/D873C7EC-6DF8-48B9-8772-48417EEB884F-420x-auto.jpg"
+        },
+        {
+          "id": "2D68C5AC-DC22-4823-A551-0A266CFF7710",
+          "name": "Lopez vs. Lopez",
+          "image": "https://images.qloo.com/i/2D68C5AC-DC22-4823-A551-0A266CFF7710-420x-auto.jpg"
+        },
+        {
+          "id": "2381C048-D597-4AA9-B03C-46D5435E1C6B",
+          "name": "The Neighborhood",
+          "image": "https://images.qloo.com/i/2381C048-D597-4AA9-B03C-46D5435E1C6B-420x-auto.jpg"
+        },
+        {
+          "id": "4F40CBA6-A0BE-4907-8088-B671DB8C8ED7",
+          "name": "So Help Me Todd",
+          "image": "https://images.qloo.com/i/4F40CBA6-A0BE-4907-8088-B671DB8C8ED7-420x-auto.jpg"
+        },
+        {
+          "id": "AAAA34DF-1C85-4BD3-B196-176EA793ACCE",
+          "name": "All Rise",
+          "image": "https://images.qloo.com/i/AAAA34DF-1C85-4BD3-B196-176EA793ACCE-420x-auto.jpg"
+        },
+        {
+          "id": "D2C6CC9A-5311-437C-B2BB-0DF24BC98F94",
+          "name": "Family Law",
+          "image": "https://images.qloo.com/i/D2C6CC9A-5311-437C-B2BB-0DF24BC98F94-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev14"
+    },
+    {
+      "category": "movie",
+      "label": "Film",
+      "items": [
+        {
+          "id": "CE6DCD13-F03B-4757-B563-CBB182412C9B",
+          "name": "King Richard",
+          "image": "https://images.qloo.com/i/CE6DCD13-F03B-4757-B563-CBB182412C9B-420x-auto.jpg"
+        },
+        {
+          "id": "3B21A963-7520-42DD-82E6-B373ED82CAE9",
+          "name": "A Man Called Otto",
+          "image": "https://images.qloo.com/i/3B21A963-7520-42DD-82E6-B373ED82CAE9-420x-auto.jpg"
+        },
+        {
+          "id": "20A39130-A09F-4A82-900E-B59A84F41623",
+          "name": "CODA",
+          "image": "https://images.qloo.com/i/20A39130-A09F-4A82-900E-B59A84F41623-420x-auto.jpg"
+        },
+        {
+          "id": "B7DAFF18-B83E-45C3-AAE8-66FC9B0BF75D",
+          "name": "Blue Bayou",
+          "image": "https://images.qloo.com/i/B7DAFF18-B83E-45C3-AAE8-66FC9B0BF75D-420x-auto.jpg"
+        },
+        {
+          "id": "A638BD76-94F9-47BA-89FF-CD1FCAFB33FF",
+          "name": "The Swimmers",
+          "image": "https://images.qloo.com/i/A638BD76-94F9-47BA-89FF-CD1FCAFB33FF-420x-auto.jpg"
+        },
+        {
+          "id": "5A9170F3-DE30-446E-B71D-629CD38B7580",
+          "name": "The Good Nurse",
+          "image": "https://images.qloo.com/i/5A9170F3-DE30-446E-B71D-629CD38B7580-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev15"
+    },
+    {
+      "category": "podcast",
+      "label": "Podcasts",
+      "items": [
+        {
+          "id": "1F6EECD3-590C-4DA3-803F-6169F2E3C2F4",
+          "name": "Joel Osteen Podcast",
+          "image": "https://images.qloo.com/i/1F6EECD3-590C-4DA3-803F-6169F2E3C2F4-420x-auto.jpg"
+        },
+        {
+          "id": "F581A398-1C1E-4D31-A1B0-6AF151BEF5E6",
+          "name": "Joyce Meyer Enjoying Everyday Life® Radio Podcast",
+          "image": "https://images.qloo.com/i/F581A398-1C1E-4D31-A1B0-6AF151BEF5E6-420x-auto.jpg"
+        },
+        {
+          "id": "CCF93151-7F7A-483A-8EDA-2D6EA7ED1013",
+          "name": "Woman Evolve with Sarah Jakes Roberts",
+          "image": "https://images.qloo.com/i/CCF93151-7F7A-483A-8EDA-2D6EA7ED1013-420x-auto.jpg"
+        },
+        {
+          "id": "294A0E2B-35C1-40C7-8415-39981EC3E629",
+          "name": "Dead Ass with Khadeen and Devale Ellis",
+          "image": "https://images.qloo.com/i/294A0E2B-35C1-40C7-8415-39981EC3E629-420x-auto.jpg"
+        },
+        {
+          "id": "E792DDA4-FCAB-4517-B3DF-C9328A290667",
+          "name": "The Secret To Success with CJ, Karl, Jemal & Eric Thomas",
+          "image": "https://images.qloo.com/i/E792DDA4-FCAB-4517-B3DF-C9328A290667-420x-auto.jpg"
+        },
+        {
+          "id": "2135C346-49A5-4ABA-A3A9-A86519C6D6E8",
+          "name": "Elevation with Steven Furtick",
+          "image": "https://images.qloo.com/i/2135C346-49A5-4ABA-A3A9-A86519C6D6E8-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev16"
+    }
+  ],
+  "merchIdeas": [
+    {
+      "idea": "A merch capsule that nods to the look of Pulse Ng and Guaranty Trust Bank, which over-index with this audience.",
+      "basedOn": ["Pulse Ng", "Guaranty Trust Bank"],
+      "evidenceIds": ["ev13"]
+    },
+    {
+      "idea": "Use african american, Africa as the mood board for tour posters and social copy.",
+      "basedOn": ["african american", "Africa"],
+      "evidenceIds": ["ev11"]
+    },
+    {
+      "idea": "Pitch an interview or ad read on Joel Osteen Podcast ahead of on-sale.",
+      "basedOn": ["Joel Osteen Podcast"],
+      "evidenceIds": ["ev16"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev1",
+      "tool": "qloo_describe",
+      "purpose": "Resolve “Rema” to a Qloo artist",
+      "inputRedacted": {
+        "entity": "Rema",
+        "type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:37:02.129Z",
+      "cached": true,
+      "durationMs": 0,
+      "keyFields": [
+        {
+          "id": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+          "name": "Rema",
+          "popularity": 0.943
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev2",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Rema’s audience affinity is strongest in Nigeria",
+      "inputRedacted": {
+        "entity": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+        "entity_type": "artist",
+        "within": "Nigeria",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:02.994Z",
+      "cached": true,
+      "durationMs": 0,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 6.416,
+            "lng": 3.34,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 6.592,
+            "lng": 3.34,
+            "affinity": 0.997,
+            "popularity": 0.997
+          },
+          {
+            "lat": 9.053,
+            "lng": 7.91,
+            "affinity": 0.995,
+            "popularity": 0.987
+          },
+          {
+            "lat": 9.053,
+            "lng": 7.559,
+            "affinity": 0.992,
+            "popularity": 0.995
+          },
+          {
+            "lat": 6.592,
+            "lng": 3.691,
+            "affinity": 0.99,
+            "popularity": 0.992
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Lagos",
+            "region": "Lagos",
+            "country": "Nigeria",
+            "max_affinity": 1,
+            "cells": 6
+          },
+          {
+            "city": "Abuja",
+            "region": "FCT",
+            "country": "Nigeria",
+            "max_affinity": 0.995,
+            "cells": 4
+          },
+          {
+            "city": "Port Harcourt",
+            "region": "Rivers State",
+            "country": "Nigeria",
+            "max_affinity": 0.977,
+            "cells": 3
+          },
+          {
+            "city": "Onitsha",
+            "region": "Anambra",
+            "country": "Nigeria",
+            "max_affinity": 0.985,
+            "cells": 2
+          },
+          {
+            "city": "Benin City",
+            "region": "Edo State",
+            "country": "Nigeria",
+            "max_affinity": 0.972,
+            "cells": 3
+          },
+          {
+            "city": "Ibadan",
+            "region": "Oyo State",
+            "country": "Nigeria",
+            "max_affinity": 0.974,
+            "cells": 1
+          },
+          {
+            "city": "Kaduna",
+            "region": "Kaduna State",
+            "country": "Nigeria",
+            "max_affinity": 0.952,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev3",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Rema’s audience affinity is strongest in Ghana",
+      "inputRedacted": {
+        "entity": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+        "entity_type": "artist",
+        "within": "Ghana",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:02.920Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 5.559,
+            "lng": -0.198,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 8.02,
+            "lng": -0.989,
+            "affinity": 0.996,
+            "popularity": 0.988
+          },
+          {
+            "lat": 5.603,
+            "lng": -0.198,
+            "affinity": 0.992,
+            "popularity": 0.996
+          },
+          {
+            "lat": 5.559,
+            "lng": -0.154,
+            "affinity": 0.988,
+            "popularity": 0.981
+          },
+          {
+            "lat": 5.603,
+            "lng": -0.066,
+            "affinity": 0.984,
+            "popularity": 0.961
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Accra",
+            "region": "Greater Accra",
+            "country": "Ghana",
+            "max_affinity": 1,
+            "cells": 16
+          },
+          {
+            "city": "Kumasi",
+            "region": "Ashanti",
+            "country": "Ghana",
+            "max_affinity": 0.965,
+            "cells": 1
+          },
+          {
+            "city": "Cape Coast",
+            "region": "Central",
+            "country": "Ghana",
+            "max_affinity": 0.953,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev4",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Rema’s audience affinity is strongest in South Africa",
+      "inputRedacted": {
+        "entity": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+        "entity_type": "artist",
+        "within": "South Africa",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:03.179Z",
+      "cached": true,
+      "durationMs": 3,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": -28.916,
+            "lng": 24.082,
+            "affinity": 1,
+            "popularity": 0.97
+          },
+          {
+            "lat": -26.104,
+            "lng": 27.949,
+            "affinity": 0.994,
+            "popularity": 1
+          },
+          {
+            "lat": -26.279,
+            "lng": 27.949,
+            "affinity": 0.988,
+            "popularity": 0.994
+          },
+          {
+            "lat": -25.752,
+            "lng": 28.301,
+            "affinity": 0.982,
+            "popularity": 0.982
+          },
+          {
+            "lat": -33.838,
+            "lng": 18.457,
+            "affinity": 0.976,
+            "popularity": 0.988
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Johannesburg",
+            "region": "Gauteng",
+            "country": "South Africa",
+            "max_affinity": 0.994,
+            "cells": 10
+          },
+          {
+            "city": "Cape Town",
+            "region": "Western Cape",
+            "country": "South Africa",
+            "max_affinity": 0.976,
+            "cells": 4
+          },
+          {
+            "city": "Gqeberha",
+            "region": "Eastern Cape",
+            "country": "South Africa",
+            "max_affinity": 0.916,
+            "cells": 1
+          },
+          {
+            "city": "Durban",
+            "region": "KwaZulu-Natal",
+            "country": "South Africa",
+            "max_affinity": 0.91,
+            "cells": 2
+          },
+          {
+            "city": "Polokwane",
+            "region": "Limpopo",
+            "country": "South Africa",
+            "max_affinity": 0.904,
+            "cells": 1
+          },
+          {
+            "city": "East London",
+            "region": "Eastern Cape",
+            "country": "South Africa",
+            "max_affinity": 0.898,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev5",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Rema’s audience affinity is strongest in Kenya",
+      "inputRedacted": {
+        "entity": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+        "entity_type": "artist",
+        "within": "Kenya",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:02.956Z",
+      "cached": true,
+      "durationMs": 4,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": -1.296,
+            "lng": 36.804,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": -4.065,
+            "lng": 39.661,
+            "affinity": 0.993,
+            "popularity": 0.986
+          },
+          {
+            "lat": -1.252,
+            "lng": 36.804,
+            "affinity": 0.986,
+            "popularity": 0.993
+          },
+          {
+            "lat": 0.417,
+            "lng": 37.859,
+            "affinity": 0.979,
+            "popularity": 0.979
+          },
+          {
+            "lat": -1.296,
+            "lng": 36.76,
+            "affinity": 0.972,
+            "popularity": 0.965
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Nairobi",
+            "region": "Nairobi County",
+            "country": "Kenya",
+            "max_affinity": 1,
+            "cells": 13
+          },
+          {
+            "city": "Mombasa",
+            "region": "Mombasa County",
+            "country": "Kenya",
+            "max_affinity": 0.993,
+            "cells": 4
+          },
+          {
+            "city": "Eldoret",
+            "region": "Uasin Gishu County",
+            "country": "Kenya",
+            "max_affinity": 0.937,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev6",
+      "tool": "qloo_recommend",
+      "purpose": "Artists with strong affinity among Rema’s audience (opener pool)",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "limit": 15
+      },
+      "status": "ok",
+      "summary": "15 results.",
+      "resultCount": 15,
+      "fetchedAt": "2026-10-25T22:37:06.861Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "affinity": 0.971,
+          "popularity": 0.967
+        },
+        {
+          "id": "1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF",
+          "name": "CKay",
+          "affinity": 0.968,
+          "popularity": 0.937
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "affinity": 0.965,
+          "popularity": 0.883
+        },
+        {
+          "id": "DB7622AA-5464-4C6C-9E6F-9732E4BD2390",
+          "name": "Oxlade",
+          "affinity": 0.965,
+          "popularity": 0.811
+        },
+        {
+          "id": "5FEB9D0B-0ACA-4A26-9872-37F69692DE16",
+          "name": "Omah Lay",
+          "affinity": 0.962,
+          "popularity": 0.902
+        },
+        {
+          "id": "DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F",
+          "name": "Ayra Starr",
+          "affinity": 0.962,
+          "popularity": 0.916
+        },
+        {
+          "id": "C510E01A-E17C-45FC-8DCE-64A963A121A4",
+          "name": "Wizkid",
+          "affinity": 0.959,
+          "popularity": 0.948
+        },
+        {
+          "id": "BB904724-6077-45C0-AE24-2A32D9CBE436",
+          "name": "Fireboy DML",
+          "affinity": 0.958,
+          "popularity": 0.808
+        },
+        {
+          "id": "7E1A2234-DD16-4627-9851-AE2F9E2EA845",
+          "name": "Tiwa Savage",
+          "affinity": 0.956,
+          "popularity": 0.89
+        },
+        {
+          "id": "EB13954E-3AC6-44A3-8200-88DEE1FE3171",
+          "name": "Libianca",
+          "affinity": 0.955,
+          "popularity": 0.903
+        },
+        {
+          "id": "9145683D-230A-45DF-9BF1-24F8F345FB3C",
+          "name": "Starboy",
+          "affinity": 0.954,
+          "popularity": 0.758
+        },
+        {
+          "id": "DF407F62-5C3B-48BF-B249-081D93C42FBB",
+          "name": "Tekno",
+          "affinity": 0.954,
+          "popularity": 0.882
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev7",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Rema’s audience with a Accra location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "signal_location": "Accra, Ghana",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:04.065Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "affinity": 0.985,
+          "popularity": 0.967
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "affinity": 0.983,
+          "popularity": 0.883
+        },
+        {
+          "id": "1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF",
+          "name": "CKay",
+          "affinity": 0.982,
+          "popularity": 0.937
+        },
+        {
+          "id": "DB7622AA-5464-4C6C-9E6F-9732E4BD2390",
+          "name": "Oxlade",
+          "affinity": 0.981,
+          "popularity": 0.811
+        },
+        {
+          "id": "DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F",
+          "name": "Ayra Starr",
+          "affinity": 0.98,
+          "popularity": 0.916
+        },
+        {
+          "id": "C510E01A-E17C-45FC-8DCE-64A963A121A4",
+          "name": "Wizkid",
+          "affinity": 0.979,
+          "popularity": 0.948
+        },
+        {
+          "id": "BB904724-6077-45C0-AE24-2A32D9CBE436",
+          "name": "Fireboy DML",
+          "affinity": 0.979,
+          "popularity": 0.808
+        },
+        {
+          "id": "7E1A2234-DD16-4627-9851-AE2F9E2EA845",
+          "name": "Tiwa Savage",
+          "affinity": 0.978,
+          "popularity": 0.89
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev8",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Rema’s audience with a Nairobi location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "signal_location": "Nairobi, Kenya",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:05.958Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "affinity": 0.985,
+          "popularity": 0.967
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "affinity": 0.982,
+          "popularity": 0.883
+        },
+        {
+          "id": "C510E01A-E17C-45FC-8DCE-64A963A121A4",
+          "name": "Wizkid",
+          "affinity": 0.98,
+          "popularity": 0.948
+        },
+        {
+          "id": "7E1A2234-DD16-4627-9851-AE2F9E2EA845",
+          "name": "Tiwa Savage",
+          "affinity": 0.978,
+          "popularity": 0.89
+        },
+        {
+          "id": "B27778E2-A20F-460B-BF03-301DFDA970FA",
+          "name": "Yemi Alade",
+          "affinity": 0.977,
+          "popularity": 0.843
+        },
+        {
+          "id": "DF407F62-5C3B-48BF-B249-081D93C42FBB",
+          "name": "Tekno",
+          "affinity": 0.976,
+          "popularity": 0.882
+        },
+        {
+          "id": "DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F",
+          "name": "Ayra Starr",
+          "affinity": 0.976,
+          "popularity": 0.916
+        },
+        {
+          "id": "163F8832-54F9-46F6-BE0A-9E0DB0CAA5C0",
+          "name": "Kizz Daniel",
+          "affinity": 0.975,
+          "popularity": 0.811
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev9",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Rema’s audience with a Lagos location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "signal_location": "Lagos, Nigeria",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:05.312Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "4A322BDD-04A3-4369-8234-B38A7FB485D9",
+          "name": "Burna Boy",
+          "affinity": 0.985,
+          "popularity": 0.967
+        },
+        {
+          "id": "1BEFACAD-0D21-4212-B422-0CFE5BA2CFEF",
+          "name": "CKay",
+          "affinity": 0.983,
+          "popularity": 0.937
+        },
+        {
+          "id": "E7096B50-EE00-4A60-86E3-231F82115031",
+          "name": "Mr Eazi",
+          "affinity": 0.982,
+          "popularity": 0.883
+        },
+        {
+          "id": "DB7622AA-5464-4C6C-9E6F-9732E4BD2390",
+          "name": "Oxlade",
+          "affinity": 0.982,
+          "popularity": 0.811
+        },
+        {
+          "id": "DDB9FE17-A89F-4AB8-87D8-B7D97686CE9F",
+          "name": "Ayra Starr",
+          "affinity": 0.98,
+          "popularity": 0.916
+        },
+        {
+          "id": "5FEB9D0B-0ACA-4A26-9872-37F69692DE16",
+          "name": "Omah Lay",
+          "affinity": 0.977,
+          "popularity": 0.902
+        },
+        {
+          "id": "163F8832-54F9-46F6-BE0A-9E0DB0CAA5C0",
+          "name": "Kizz Daniel",
+          "affinity": 0.976,
+          "popularity": 0.811
+        },
+        {
+          "id": "22DB6C14-BD19-4D5A-BA5E-A250DE5EA2EB",
+          "name": "Afro B",
+          "affinity": 0.975,
+          "popularity": 0.833
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev10",
+      "tool": "qloo_audience_demographics",
+      "purpose": "Age and gender affinity of Rema’s audience",
+      "inputRedacted": {
+        "entity": "28EF796E-D7E8-42AC-BF59-414359E4E7B4",
+        "entity_type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:37:04.557Z",
+      "cached": true,
+      "durationMs": 0,
+      "keyFields": {
+        "age": [
+          {
+            "bucket": "24 and under",
+            "value": 0.46
+          },
+          {
+            "bucket": "25–29",
+            "value": 0.58
+          },
+          {
+            "bucket": "30–34",
+            "value": 0.59
+          },
+          {
+            "bucket": "35–44",
+            "value": -0.77
+          },
+          {
+            "bucket": "45–54",
+            "value": -0.39
+          },
+          {
+            "bucket": "55+",
+            "value": -0.37
+          }
+        ],
+        "gender": [
+          {
+            "bucket": "male",
+            "value": 0.52
+          },
+          {
+            "bucket": "female",
+            "value": -0.52
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev11",
+      "tool": "qloo_entity_tags",
+      "purpose": "Tags that characterise Rema",
+      "inputRedacted": {
+        "entities": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "entity_type": "artist",
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "10 results.",
+      "resultCount": 10,
+      "fetchedAt": "2026-10-25T22:37:04.057Z",
+      "cached": true,
+      "durationMs": 0,
+      "keyFields": [
+        {
+          "id": "urn:tag:genre:place:hotel",
+          "name": "Hotel",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:credit_card:place:diners_club",
+          "name": "Diners Club",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+          "name": "Identifies as women-owned",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:genre:brand:entertainment",
+          "name": "Entertainment",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:hotel_rating:place:three_star",
+          "name": "Three Star",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:cost_description:place:expensive",
+          "name": "Expensive",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:keyword:media:african_american",
+          "name": "african american",
+          "affinity": 0.999
+        },
+        {
+          "id": "urn:tag:genre:media:africa",
+          "name": "Africa",
+          "affinity": 0.999
+        },
+        {
+          "id": "urn:tag:style:qloo:fusion",
+          "name": "Fusion",
+          "affinity": 0.998
+        },
+        {
+          "id": "urn:tag:keyword:qloo:ex_convict",
+          "name": "Ex-Convict",
+          "affinity": 0.998
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev12",
+      "tool": "qloo_trends",
+      "purpose": "Popularity trend for Rema over the last year",
+      "inputRedacted": {
+        "entities": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "entity_type": "artist",
+        "start_date": "2025-10-25",
+        "end_date": "2026-10-24",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:37:04.556Z",
+      "cached": true,
+      "durationMs": 0,
+      "keyFields": [
+        {
+          "name": "Rema",
+          "points": [
+            {
+              "date": "2026-08-08",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-15",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-22",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-29",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-05",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-12",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-19",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-26",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-03",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-10",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-17",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-24",
+              "percentile": 0.11,
+              "delta": 0
+            }
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev13",
+      "tool": "qloo_recommend",
+      "purpose": "Brands with strong affinity among Rema’s audience",
+      "inputRedacted": {
+        "target_type": "brand",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:05.327Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "25255993-75ED-4735-AEB1-E767E3801717",
+          "name": "Pulse Ng",
+          "affinity": 0.989,
+          "popularity": 0.99
+        },
+        {
+          "id": "628DE8B7-4D77-4CF0-A7A2-EE8BF6BAC541",
+          "name": "Guaranty Trust Bank",
+          "affinity": 0.969,
+          "popularity": 0.987
+        },
+        {
+          "id": "6FBB479C-8AF7-4DFB-8484-5F1C2F750B32",
+          "name": "Wakanow",
+          "affinity": 0.962,
+          "popularity": 0.82
+        },
+        {
+          "id": "C16EA424-AD40-4DE7-AC90-A9B445F5660B",
+          "name": "Travelbeta.com",
+          "affinity": 0.957,
+          "popularity": 0.76
+        },
+        {
+          "id": "2BAE9B88-2327-4C62-A811-94F46F672748",
+          "name": "Fidelity Bank Nigeria",
+          "affinity": 0.956,
+          "popularity": 0.922
+        },
+        {
+          "id": "E530914C-0574-40A4-8598-49B1C0D6BBC7",
+          "name": "Sigma Pensions Ltd",
+          "affinity": 0.955,
+          "popularity": 0.573
+        },
+        {
+          "id": "19CF9116-593F-48E2-BECB-41DE40C09BD1",
+          "name": "Boomplay Music",
+          "affinity": 0.955,
+          "popularity": 0.71
+        },
+        {
+          "id": "38EDED31-A56D-47A6-B289-FED7D26A0400",
+          "name": "TECNO Mobile",
+          "affinity": 0.955,
+          "popularity": 0.977
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev14",
+      "tool": "qloo_recommend",
+      "purpose": "TV with strong affinity among Rema’s audience",
+      "inputRedacted": {
+        "target_type": "tv_show",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:05.127Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "D873C7EC-6DF8-48B9-8772-48417EEB884F",
+          "name": "Bob Hearts Abishola",
+          "affinity": 0.976,
+          "popularity": 0.684
+        },
+        {
+          "id": "2D68C5AC-DC22-4823-A551-0A266CFF7710",
+          "name": "Lopez vs. Lopez",
+          "affinity": 0.961
+        },
+        {
+          "id": "2381C048-D597-4AA9-B03C-46D5435E1C6B",
+          "name": "The Neighborhood",
+          "affinity": 0.96,
+          "popularity": 0.78
+        },
+        {
+          "id": "4F40CBA6-A0BE-4907-8088-B671DB8C8ED7",
+          "name": "So Help Me Todd",
+          "affinity": 0.957,
+          "popularity": 0.616
+        },
+        {
+          "id": "AAAA34DF-1C85-4BD3-B196-176EA793ACCE",
+          "name": "All Rise",
+          "affinity": 0.956,
+          "popularity": 0.679
+        },
+        {
+          "id": "D2C6CC9A-5311-437C-B2BB-0DF24BC98F94",
+          "name": "Family Law",
+          "affinity": 0.955,
+          "popularity": 0.292
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev15",
+      "tool": "qloo_recommend",
+      "purpose": "Film with strong affinity among Rema’s audience",
+      "inputRedacted": {
+        "target_type": "movie",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:05.956Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "CE6DCD13-F03B-4757-B563-CBB182412C9B",
+          "name": "King Richard",
+          "affinity": 0.908,
+          "popularity": 0.984
+        },
+        {
+          "id": "3B21A963-7520-42DD-82E6-B373ED82CAE9",
+          "name": "A Man Called Otto",
+          "affinity": 0.907,
+          "popularity": 0.99
+        },
+        {
+          "id": "20A39130-A09F-4A82-900E-B59A84F41623",
+          "name": "CODA",
+          "affinity": 0.906,
+          "popularity": 0.99
+        },
+        {
+          "id": "B7DAFF18-B83E-45C3-AAE8-66FC9B0BF75D",
+          "name": "Blue Bayou",
+          "affinity": 0.906,
+          "popularity": 0.908
+        },
+        {
+          "id": "A638BD76-94F9-47BA-89FF-CD1FCAFB33FF",
+          "name": "The Swimmers",
+          "affinity": 0.9,
+          "popularity": 0.961
+        },
+        {
+          "id": "5A9170F3-DE30-446E-B71D-629CD38B7580",
+          "name": "The Good Nurse",
+          "affinity": 0.898,
+          "popularity": 0.969
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev16",
+      "tool": "qloo_recommend",
+      "purpose": "Podcasts with strong affinity among Rema’s audience",
+      "inputRedacted": {
+        "target_type": "podcast",
+        "signals": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:05.029Z",
+      "cached": true,
+      "durationMs": 1,
+      "keyFields": [
+        {
+          "id": "1F6EECD3-590C-4DA3-803F-6169F2E3C2F4",
+          "name": "Joel Osteen Podcast",
+          "affinity": 0.969,
+          "popularity": 0.982
+        },
+        {
+          "id": "F581A398-1C1E-4D31-A1B0-6AF151BEF5E6",
+          "name": "Joyce Meyer Enjoying Everyday Life® Radio Podcast",
+          "affinity": 0.918,
+          "popularity": 0.926
+        },
+        {
+          "id": "CCF93151-7F7A-483A-8EDA-2D6EA7ED1013",
+          "name": "Woman Evolve with Sarah Jakes Roberts",
+          "affinity": 0.916,
+          "popularity": 0.926
+        },
+        {
+          "id": "294A0E2B-35C1-40C7-8415-39981EC3E629",
+          "name": "Dead Ass with Khadeen and Devale Ellis",
+          "affinity": 0.907,
+          "popularity": 0.959
+        },
+        {
+          "id": "E792DDA4-FCAB-4517-B3DF-C9328A290667",
+          "name": "The Secret To Success with CJ, Karl, Jemal & Eric Thomas",
+          "affinity": 0.907,
+          "popularity": 0.986
+        },
+        {
+          "id": "2135C346-49A5-4ABA-A3A9-A86519C6D6E8",
+          "name": "Elevation with Steven Furtick",
+          "affinity": 0.907,
+          "popularity": 0.959
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev17",
+      "tool": "qloo_compare_audiences",
+      "purpose": "Compare Rema’s audience with Burna Boy’s",
+      "inputRedacted": {
+        "group_a": ["28EF796E-D7E8-42AC-BF59-414359E4E7B4"],
+        "group_b": ["4A322BDD-04A3-4369-8234-B38A7FB485D9"],
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:37:07.502Z",
+      "cached": false,
+      "durationMs": 243,
+      "keyFields": [
+        {
+          "name": "Funk",
+          "type": "urn:tag:genre:music",
+          "score": 1
+        },
+        {
+          "name": "Rhythmic",
+          "type": "urn:tag:characteristic:music",
+          "score": 1
+        },
+        {
+          "name": "Moderate",
+          "type": "urn:tag:characteristic:music",
+          "score": 1
+        },
+        {
+          "name": "Jazz",
+          "type": "urn:tag:genre:music",
+          "score": 0.986
+        },
+        {
+          "name": "Soul",
+          "type": "urn:tag:genre:music",
+          "score": 0.986
+        },
+        {
+          "name": "Energetic",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.981
+        },
+        {
+          "name": "Nigeria",
+          "type": "urn:tag:region:qloo",
+          "score": 0.981
+        },
+        {
+          "name": "Palm Wine Music",
+          "type": "urn:tag:genre:music",
+          "score": 0.981
+        },
+        {
+          "name": "Fast",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.981
+        },
+        {
+          "name": "Melodic",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.981
+        },
+        {
+          "name": "Highlife",
+          "type": "urn:tag:genre:music",
+          "score": 0.981
+        },
+        {
+          "name": "Afrobeat",
+          "type": "urn:tag:genre:music",
+          "score": 0.95
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "notices": [
+    {
+      "level": "info",
+      "message": "The agent was unavailable for this run, so the plan was assembled by the deterministic planner."
+    },
+    {
+      "level": "info",
+      "message": "Qloo scores each country's heatmap on its own scale, so Opener picks the strongest cities in each country (Nigeria, Ghana, South Africa, Kenya) instead of ranking countries against each other."
+    }
+  ],
+  "limitations": [
+    "Qloo heatmap affinity is relative to this query. It shows where the audience over-indexes, not ticket demand or venue capacity.",
+    "Cities are derived by Opener from Qloo heat cells using a bundled GeoNames table; cells more than 90 km from a listed city are left out.",
+    "Demographic values are relative affinities (above or below average), not shares of fans.",
+    "Dates, drive times, venue availability and capacity are not modelled yet.",
+    "Searched within: Nigeria, Ghana, South Africa, Kenya.",
+    "Heatmap scores are relative within each country searched, so cities in different countries are not ranked against each other."
+  ]
+}

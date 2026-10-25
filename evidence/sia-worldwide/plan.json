@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T21:40:40.714Z",
+  "generatedAt": "2026-10-25T22:37:20.458Z",
   "mode": "deterministic",
   "query": {
     "artistInput": "Sia",
@@ -79,51 +79,91 @@
     ],
     "evidenceIds": ["ev1", "ev12"]
   },
-  "summary": "Sia’s strongest audience affinity across the markets searched clusters around London, Lagos and Berlin. The route below starts with the strongest market and follows a short-hop order, with openers drawn from artists that over-index with the same audience. Qloo's trend data reads as steady over the past year.",
+  "summary": "Within each country searched, Sia’s audience affinity peaks around Los Angeles (United States), London (United Kingdom), Berlin (Germany), Lagos (Nigeria) and Sydney (Australia). Qloo's heatmap scores are relative within each country, so the route takes the strongest cities country by country rather than ranking countries against each other, with openers drawn from artists that over-index with the same audience. Qloo's trend data reads as steady over the past year.",
   "momentum": {
     "direction": "steady",
-    "note": "Qloo population percentile moved from an average of 0.1 in the earliest weeks to 0.1 in the latest (2026-08-20 to 2026-10-22).",
+    "note": "Qloo population percentile moved from an average of 11.2 in the earliest weeks to 11.2 in the latest (2026-06-13 to 2026-10-24).",
     "evidenceId": "ev13",
     "series": [
       {
-        "date": "2026-08-20",
-        "value": 0.11206866372649392
+        "date": "2026-06-13",
+        "value": 11.21
       },
       {
-        "date": "2026-08-27",
-        "value": 0.11206866372649392
+        "date": "2026-06-20",
+        "value": 11.21
       },
       {
-        "date": "2026-09-03",
-        "value": 0.11206866372649392
+        "date": "2026-06-27",
+        "value": 11.21
       },
       {
-        "date": "2026-09-10",
-        "value": 0.11206866372649392
+        "date": "2026-07-04",
+        "value": 11.21
       },
       {
-        "date": "2026-09-17",
-        "value": 0.11206866372649392
+        "date": "2026-07-11",
+        "value": 11.21
       },
       {
-        "date": "2026-09-24",
-        "value": 0.11206866372649392
+        "date": "2026-07-18",
+        "value": 11.21
       },
       {
-        "date": "2026-10-01",
-        "value": 0.11206866372649392
+        "date": "2026-07-25",
+        "value": 11.21
       },
       {
-        "date": "2026-10-08",
-        "value": 0.11206866372649392
+        "date": "2026-08-01",
+        "value": 11.21
       },
       {
-        "date": "2026-10-15",
-        "value": 0.11206866372649392
+        "date": "2026-08-08",
+        "value": 11.21
       },
       {
-        "date": "2026-10-22",
-        "value": 0.11206866372649392
+        "date": "2026-08-15",
+        "value": 11.21
+      },
+      {
+        "date": "2026-08-22",
+        "value": 11.21
+      },
+      {
+        "date": "2026-08-29",
+        "value": 11.21
+      },
+      {
+        "date": "2026-09-05",
+        "value": 11.21
+      },
+      {
+        "date": "2026-09-12",
+        "value": 11.21
+      },
+      {
+        "date": "2026-09-19",
+        "value": 11.21
+      },
+      {
+        "date": "2026-09-26",
+        "value": 11.21
+      },
+      {
+        "date": "2026-10-03",
+        "value": 11.21
+      },
+      {
+        "date": "2026-10-10",
+        "value": 11.21
+      },
+      {
+        "date": "2026-10-17",
+        "value": 11.21
+      },
+      {
+        "date": "2026-10-24",
+        "value": 11.21
       }
     ]
   },
@@ -176,57 +216,35 @@
     {
       "order": 1,
       "demandRank": 1,
-      "city": "London",
-      "region": "England",
-      "country": "United Kingdom",
-      "countryCode": "GB",
-      "lat": 51.5085,
-      "lng": -0.1257,
+      "area": "United States",
+      "areaCities": 11,
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 34.0522,
+      "lng": -118.2437,
       "affinityScore": 1,
-      "heatCells": 12,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near London across 12 nearby heat cells.",
-      "evidenceIds": ["ev3"],
+      "heatCells": 3,
+      "reason": "Strong audience affinity for Sia within United States: the top cell near Los Angeles scored 1.00 on Qloo's United States heatmap across 3 nearby heat cells.",
+      "evidenceIds": ["ev2"],
       "openers": [
         {
           "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
           "name": "Ellie Goulding",
           "image": "https://images.qloo.com/i/D0FB2FA3-01FF-4F46-A501-F53EE746CD66-420x-auto.jpg",
           "affinity": 0.9264440423052863,
-          "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience, using London as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
+          "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience (affinity 0.93).",
+          "evidenceIds": ["ev10", "ev8", "ev7"]
         },
         {
           "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
           "name": "Sam Smith",
           "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
           "affinity": 0.9217345503205748,
-          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience, using London as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev16", "ev14"]
+          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience (affinity 0.92).",
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
         },
-        {
-          "id": "77609B72-D958-4C2D-B6F9-59ECE4633D56",
-          "name": "Clean Bandit",
-          "image": "https://images.qloo.com/i/77609B72-D958-4C2D-B6F9-59ECE4633D56-420x-auto.jpg",
-          "affinity": 0.916201968804848,
-          "overlapNote": "Qloo recommends Clean Bandit for Sia’s audience, using London as the location signal.",
-          "evidenceIds": ["ev7", "ev15"]
-        }
-      ]
-    },
-    {
-      "order": 2,
-      "demandRank": 7,
-      "city": "Munich",
-      "region": "Bavaria",
-      "country": "Germany",
-      "countryCode": "DE",
-      "lat": 48.1374,
-      "lng": 11.5755,
-      "affinityScore": 1,
-      "heatCells": 5,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near Munich across 5 nearby heat cells.",
-      "evidenceIds": ["ev4"],
-      "openers": [
         {
           "id": "BE94A541-4FEC-49CE-8865-C54834FD8484",
           "name": "Katy Perry",
@@ -234,7 +252,25 @@
           "affinity": 0.9193567674626478,
           "overlapNote": "Qloo recommends Katy Perry for Sia’s audience (affinity 0.92).",
           "evidenceIds": ["ev7"]
-        },
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "demandRank": 2,
+      "area": "United States",
+      "areaCities": 11,
+      "city": "New York City",
+      "region": "New York",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 40.7143,
+      "lng": -74.006,
+      "affinityScore": 1,
+      "heatCells": 2,
+      "reason": "Strong audience affinity for Sia within United States: the top cell near New York City scored 1.00 on Qloo's United States heatmap across 2 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
         {
           "id": "84A3362F-350F-41DC-9F62-B1C462359D43",
           "name": "Marina & the Diamonds",
@@ -244,145 +280,89 @@
           "evidenceIds": ["ev7"]
         },
         {
+          "id": "77609B72-D958-4C2D-B6F9-59ECE4633D56",
+          "name": "Clean Bandit",
+          "image": "https://images.qloo.com/i/77609B72-D958-4C2D-B6F9-59ECE4633D56-420x-auto.jpg",
+          "affinity": 0.916201968804848,
+          "overlapNote": "Qloo recommends Clean Bandit for Sia’s audience (affinity 0.92).",
+          "evidenceIds": ["ev8", "ev7"]
+        },
+        {
           "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
           "name": "Calvin Harris",
           "image": "https://images.qloo.com/i/8C215FA9-DD4E-4A87-BC72-578887686325-420x-auto.jpg",
           "affinity": 0.9156746527865326,
           "overlapNote": "Qloo recommends Calvin Harris for Sia’s audience (affinity 0.92).",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
+          "evidenceIds": ["ev10", "ev8", "ev7"]
         }
       ]
     },
     {
       "order": 3,
-      "demandRank": 3,
-      "city": "Berlin",
-      "region": "State of Berlin",
-      "country": "Germany",
-      "countryCode": "DE",
-      "lat": 52.5244,
-      "lng": 13.4105,
+      "demandRank": 1,
+      "area": "United Kingdom",
+      "areaCities": 4,
+      "city": "London",
+      "region": "England",
+      "country": "United Kingdom",
+      "countryCode": "GB",
+      "lat": 51.5085,
+      "lng": -0.1257,
       "affinityScore": 1,
-      "heatCells": 5,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near Berlin across 5 nearby heat cells.",
-      "evidenceIds": ["ev4"],
-      "openers": [
-        {
-          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
-          "name": "Sam Smith",
-          "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
-          "affinity": 0.9217345503205748,
-          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience, using Berlin as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev16", "ev14"]
-        },
-        {
-          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
-          "name": "MØ",
-          "image": "https://images.qloo.com/i/53BFBE23-88E7-4822-94DA-A20D0874F086-420x-auto.jpg",
-          "affinity": 0.9150903748177188,
-          "overlapNote": "Qloo recommends MØ for Sia’s audience, using Berlin as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev16", "ev14"]
-        },
-        {
-          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
-          "name": "Lorde",
-          "image": "https://images.qloo.com/i/A37B17AE-15C7-48A3-AADD-6CE50BE3FF74-420x-auto.jpg",
-          "overlapNote": "Qloo recommends Lorde for Sia’s audience, using Berlin as the location signal.",
-          "evidenceIds": ["ev15", "ev16", "ev14"]
-        }
-      ]
-    },
-    {
-      "order": 4,
-      "demandRank": 2,
-      "city": "Lagos",
-      "region": "Lagos",
-      "country": "Nigeria",
-      "countryCode": "NG",
-      "lat": 6.4541,
-      "lng": 3.3947,
-      "affinityScore": 1,
-      "heatCells": 5,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near Lagos across 5 nearby heat cells.",
-      "evidenceIds": ["ev5"],
-      "openers": [
-        {
-          "id": "723BCD5C-AA73-4E13-AAA6-9FBE10A889E4",
-          "name": "Rihanna",
-          "image": "https://images.qloo.com/i/723BCD5C-AA73-4E13-AAA6-9FBE10A889E4-420x-auto.jpg",
-          "overlapNote": "Qloo recommends Rihanna for Sia’s audience, using Lagos as the location signal.",
-          "evidenceIds": ["ev16", "ev18"]
-        },
-        {
-          "id": "41FF0A0C-38BD-449A-A566-7C3E59DC95AF",
-          "name": "Labrinth",
-          "image": "https://images.qloo.com/i/41FF0A0C-38BD-449A-A566-7C3E59DC95AF-420x-auto.jpg",
-          "overlapNote": "Qloo recommends Labrinth for Sia’s audience, using Lagos as the location signal.",
-          "evidenceIds": ["ev18"]
-        },
-        {
-          "id": "A9C3CE3F-9A0C-47B3-8AF8-E75B252F86D8",
-          "name": "The Weeknd",
-          "image": "https://images.qloo.com/i/A9C3CE3F-9A0C-47B3-8AF8-E75B252F86D8-420x-auto.jpg",
-          "overlapNote": "Qloo recommends The Weeknd for Sia’s audience, using Lagos as the location signal.",
-          "evidenceIds": ["ev18"]
-        }
-      ]
-    },
-    {
-      "order": 5,
-      "demandRank": 4,
-      "city": "New York City",
-      "region": "New York",
-      "country": "United States",
-      "countryCode": "US",
-      "lat": 40.7143,
-      "lng": -74.006,
-      "affinityScore": 1,
-      "heatCells": 2,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near New York City across 2 nearby heat cells.",
-      "evidenceIds": ["ev2"],
+      "heatCells": 12,
+      "reason": "Strong audience affinity for Sia within United Kingdom: the top cell near London scored 1.00 on Qloo's United Kingdom heatmap across 12 nearby heat cells.",
+      "evidenceIds": ["ev3"],
       "openers": [
         {
           "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
           "name": "Ellie Goulding",
           "image": "https://images.qloo.com/i/D0FB2FA3-01FF-4F46-A501-F53EE746CD66-420x-auto.jpg",
           "affinity": 0.9264440423052863,
-          "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience, using New York City as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
+          "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience, using London as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev7"]
         },
         {
           "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
           "name": "Sam Smith",
           "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
           "affinity": 0.9217345503205748,
-          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience, using New York City as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev16", "ev14"]
+          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience, using London as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
         },
         {
           "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
           "name": "Calvin Harris",
           "image": "https://images.qloo.com/i/8C215FA9-DD4E-4A87-BC72-578887686325-420x-auto.jpg",
           "affinity": 0.9156746527865326,
-          "overlapNote": "Qloo recommends Calvin Harris for Sia’s audience, using New York City as the location signal.",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
+          "overlapNote": "Qloo recommends Calvin Harris for Sia’s audience, using London as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev7"]
         }
       ]
     },
     {
-      "order": 6,
-      "demandRank": 5,
-      "city": "Toronto",
-      "region": "Ontario",
-      "country": "Canada",
-      "countryCode": "CA",
-      "lat": 43.7064,
-      "lng": -79.3986,
-      "affinityScore": 1,
-      "heatCells": 1,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near Toronto.",
-      "evidenceIds": ["ev2"],
+      "order": 4,
+      "demandRank": 2,
+      "area": "United Kingdom",
+      "areaCities": 4,
+      "city": "Glasgow",
+      "region": "Scotland",
+      "country": "United Kingdom",
+      "countryCode": "GB",
+      "lat": 55.8651,
+      "lng": -4.2576,
+      "affinityScore": 0.999,
+      "heatCells": 3,
+      "reason": "Strong audience affinity for Sia within United Kingdom: the top cell near Glasgow scored 1.00 on Qloo's United Kingdom heatmap across 3 nearby heat cells.",
+      "evidenceIds": ["ev3"],
       "openers": [
+        {
+          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
+          "name": "MØ",
+          "image": "https://images.qloo.com/i/53BFBE23-88E7-4822-94DA-A20D0874F086-420x-auto.jpg",
+          "affinity": 0.9150903748177188,
+          "overlapNote": "Qloo recommends MØ for Sia’s audience (affinity 0.92).",
+          "evidenceIds": ["ev8", "ev9", "ev7"]
+        },
         {
           "id": "3C630514-7D7C-451F-91B2-309FB1B54742",
           "name": "Lady Gaga",
@@ -398,78 +378,166 @@
           "affinity": 0.914039158978224,
           "overlapNote": "Qloo recommends Iggy Azalea for Sia’s audience (affinity 0.91).",
           "evidenceIds": ["ev7"]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "demandRank": 1,
+      "area": "Germany",
+      "areaCities": 8,
+      "city": "Berlin",
+      "region": "State of Berlin",
+      "country": "Germany",
+      "countryCode": "DE",
+      "lat": 52.5244,
+      "lng": 13.4105,
+      "affinityScore": 1,
+      "heatCells": 5,
+      "reason": "Strong audience affinity for Sia within Germany: the top cell near Berlin scored 1.00 on Qloo's Germany heatmap across 5 nearby heat cells.",
+      "evidenceIds": ["ev4"],
+      "openers": [
+        {
+          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
+          "name": "Sam Smith",
+          "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
+          "affinity": 0.9217345503205748,
+          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience, using Berlin as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
         },
+        {
+          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
+          "name": "Adele",
+          "image": "https://images.qloo.com/i/24012F7D-C125-4EB7-A661-6AF65523E43C-420x-auto.jpg",
+          "affinity": 0.9093185326699441,
+          "overlapNote": "Qloo recommends Adele for Sia’s audience, using Berlin as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
+        },
+        {
+          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
+          "name": "Lorde",
+          "image": "https://images.qloo.com/i/A37B17AE-15C7-48A3-AADD-6CE50BE3FF74-420x-auto.jpg",
+          "affinity": 0.9113185944902836,
+          "overlapNote": "Qloo recommends Lorde for Sia’s audience, using Berlin as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "demandRank": 2,
+      "area": "Germany",
+      "areaCities": 8,
+      "city": "Munich",
+      "region": "Bavaria",
+      "country": "Germany",
+      "countryCode": "DE",
+      "lat": 48.1374,
+      "lng": 11.5755,
+      "affinityScore": 1,
+      "heatCells": 5,
+      "reason": "Strong audience affinity for Sia within Germany: the top cell near Munich scored 1.00 on Qloo's Germany heatmap across 5 nearby heat cells.",
+      "evidenceIds": ["ev4"],
+      "openers": [
+        {
+          "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
+          "name": "Ellie Goulding",
+          "image": "https://images.qloo.com/i/D0FB2FA3-01FF-4F46-A501-F53EE746CD66-420x-auto.jpg",
+          "affinity": 0.9264440423052863,
+          "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience, using Munich as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev7"]
+        },
+        {
+          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
+          "name": "Sam Smith",
+          "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
+          "affinity": 0.9217345503205748,
+          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience, using Munich as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
+        },
+        {
+          "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
+          "name": "Calvin Harris",
+          "image": "https://images.qloo.com/i/8C215FA9-DD4E-4A87-BC72-578887686325-420x-auto.jpg",
+          "affinity": 0.9156746527865326,
+          "overlapNote": "Qloo recommends Calvin Harris for Sia’s audience, using Munich as the location signal.",
+          "evidenceIds": ["ev10", "ev8", "ev7"]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "demandRank": 1,
+      "area": "Nigeria",
+      "areaCities": 8,
+      "city": "Lagos",
+      "region": "Lagos",
+      "country": "Nigeria",
+      "countryCode": "NG",
+      "lat": 6.4541,
+      "lng": 3.3947,
+      "affinityScore": 1,
+      "heatCells": 5,
+      "reason": "Strong audience affinity for Sia within Nigeria: the top cell near Lagos scored 1.00 on Qloo's Nigeria heatmap across 5 nearby heat cells.",
+      "evidenceIds": ["ev5"],
+      "openers": [
         {
           "id": "4595F6D2-E849-4988-A4DE-8905D463C9B8",
           "name": "Jessie J",
           "image": "https://images.qloo.com/i/4595F6D2-E849-4988-A4DE-8905D463C9B8-420x-auto.jpg",
           "affinity": 0.9131301274086112,
           "overlapNote": "Qloo recommends Jessie J for Sia’s audience (affinity 0.91).",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
-        }
-      ]
-    },
-    {
-      "order": 7,
-      "demandRank": 6,
-      "city": "Los Angeles",
-      "region": "California",
-      "country": "United States",
-      "countryCode": "US",
-      "lat": 34.0522,
-      "lng": -118.2437,
-      "affinityScore": 1,
-      "heatCells": 3,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near Los Angeles across 3 nearby heat cells.",
-      "evidenceIds": ["ev2"],
-      "openers": [
-        {
-          "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
-          "name": "Ellie Goulding",
-          "image": "https://images.qloo.com/i/D0FB2FA3-01FF-4F46-A501-F53EE746CD66-420x-auto.jpg",
-          "affinity": 0.9264440423052863,
-          "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience (affinity 0.93).",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
+          "evidenceIds": ["ev8", "ev7"]
         },
         {
-          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
-          "name": "Sam Smith",
-          "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
-          "affinity": 0.9217345503205748,
-          "overlapNote": "Qloo recommends Sam Smith for Sia’s audience (affinity 0.92).",
-          "evidenceIds": ["ev7", "ev15", "ev16", "ev14"]
+          "id": "67214C5E-264F-4329-8EA3-582B5AEE513D",
+          "name": "Foxes",
+          "image": "https://images.qloo.com/i/67214C5E-264F-4329-8EA3-582B5AEE513D-420x-auto.jpg",
+          "affinity": 0.9096641426640479,
+          "overlapNote": "Qloo recommends Foxes for Sia’s audience (affinity 0.91).",
+          "evidenceIds": ["ev7"]
         },
         {
-          "id": "BE94A541-4FEC-49CE-8865-C54834FD8484",
-          "name": "Katy Perry",
-          "image": "https://images.qloo.com/i/BE94A541-4FEC-49CE-8865-C54834FD8484-420x-auto.jpg",
-          "affinity": 0.9193567674626478,
-          "overlapNote": "Qloo recommends Katy Perry for Sia’s audience (affinity 0.92).",
+          "id": "809B75F5-6747-459D-8A98-EA31A5CF7C80",
+          "name": "P!nk",
+          "image": "https://images.qloo.com/i/809B75F5-6747-459D-8A98-EA31A5CF7C80-420x-auto.jpg",
+          "affinity": 0.9088712222492733,
+          "overlapNote": "Qloo recommends P!nk for Sia’s audience (affinity 0.91).",
           "evidenceIds": ["ev7"]
         }
       ]
     },
     {
       "order": 8,
-      "demandRank": 8,
-      "city": "San Francisco",
-      "region": "California",
-      "country": "United States",
-      "countryCode": "US",
-      "lat": 37.7749,
-      "lng": -122.4194,
-      "affinityScore": 1,
-      "heatCells": 2,
-      "reason": "Strong audience affinity for Sia: Qloo's heatmap scored 1.00 at the top cell near San Francisco across 2 nearby heat cells.",
-      "evidenceIds": ["ev2"],
+      "demandRank": 1,
+      "area": "Australia",
+      "areaCities": 6,
+      "city": "Sydney",
+      "region": "New South Wales",
+      "country": "Australia",
+      "countryCode": "AU",
+      "lat": -33.8678,
+      "lng": 151.2073,
+      "affinityScore": 0.999,
+      "heatCells": 5,
+      "reason": "Strong audience affinity for Sia within Australia: the top cell near Sydney scored 1.00 on Qloo's Australia heatmap across 5 nearby heat cells.",
+      "evidenceIds": ["ev6"],
       "openers": [
+        {
+          "id": "02750106-6B44-44CA-911D-B32C846B49A1",
+          "name": "Tove Lo",
+          "image": "https://images.qloo.com/i/02750106-6B44-44CA-911D-B32C846B49A1-420x-auto.jpg",
+          "affinity": 0.9086510721578194,
+          "overlapNote": "Qloo recommends Tove Lo for Sia’s audience (affinity 0.91).",
+          "evidenceIds": ["ev9", "ev7"]
+        },
         {
           "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
           "name": "Ellie Goulding",
           "image": "https://images.qloo.com/i/D0FB2FA3-01FF-4F46-A501-F53EE746CD66-420x-auto.jpg",
           "affinity": 0.9264440423052863,
           "overlapNote": "Qloo recommends Ellie Goulding for Sia’s audience (affinity 0.93).",
-          "evidenceIds": ["ev7", "ev15", "ev14"]
+          "evidenceIds": ["ev10", "ev8", "ev7"]
         },
         {
           "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
@@ -477,15 +545,7 @@
           "image": "https://images.qloo.com/i/6062A977-79F7-48F9-917E-0B57D77474AD-420x-auto.jpg",
           "affinity": 0.9217345503205748,
           "overlapNote": "Qloo recommends Sam Smith for Sia’s audience (affinity 0.92).",
-          "evidenceIds": ["ev7", "ev15", "ev16", "ev14"]
-        },
-        {
-          "id": "BE94A541-4FEC-49CE-8865-C54834FD8484",
-          "name": "Katy Perry",
-          "image": "https://images.qloo.com/i/BE94A541-4FEC-49CE-8865-C54834FD8484-420x-auto.jpg",
-          "affinity": 0.9193567674626478,
-          "overlapNote": "Qloo recommends Katy Perry for Sia’s audience (affinity 0.92).",
-          "evidenceIds": ["ev7"]
+          "evidenceIds": ["ev10", "ev8", "ev9", "ev7"]
         }
       ]
     }
@@ -495,600 +555,700 @@
       "lat": 6.4160156,
       "lng": 3.3398438,
       "affinity": 1,
+      "popularity": 1,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.591797,
       "lng": 3.3398438,
       "affinity": 0.9954545454545455,
+      "popularity": 0.9954545454545455,
       "evidenceId": "ev5"
     },
     {
       "lat": 9.052734,
       "lng": 7.5585938,
       "affinity": 0.990909090909091,
+      "popularity": 0.990909090909091,
       "evidenceId": "ev5"
     },
     {
       "lat": 9.052734,
       "lng": 7.9101562,
       "affinity": 0.9863636363636363,
+      "popularity": 0.9772727272727273,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.591797,
       "lng": 3.6914062,
       "affinity": 0.9818181818181818,
+      "popularity": 0.9863636363636363,
       "evidenceId": "ev5"
     },
     {
       "lat": 9.755859,
       "lng": 11.777344,
       "affinity": 0.9772727272727273,
+      "popularity": 0.8045454545454546,
       "evidenceId": "ev5"
     },
     {
       "lat": 7.470703,
       "lng": 4.0429688,
       "affinity": 0.9727272727272728,
+      "popularity": 0.9681818181818181,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.4160156,
       "lng": 3.6914062,
       "affinity": 0.9681818181818181,
+      "popularity": 0.9818181818181818,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.2402344,
       "lng": 6.8554688,
       "affinity": 0.9636363636363636,
+      "popularity": 0.9409090909090909,
       "evidenceId": "ev5"
     },
     {
       "lat": 4.8339844,
       "lng": 7.2070312,
       "affinity": 0.9590909090909091,
+      "popularity": 0.9727272727272728,
       "evidenceId": "ev5"
     },
     {
       "lat": 4.8339844,
       "lng": 6.8554688,
       "affinity": 0.9545454545454546,
+      "popularity": 0.9636363636363636,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.4160156,
       "lng": 7.5585938,
       "affinity": 0.95,
+      "popularity": 0.9545454545454546,
       "evidenceId": "ev5"
     },
     {
       "lat": 8.525391,
       "lng": 5.8007812,
       "affinity": 0.9454545454545454,
+      "popularity": 0.7727272727272727,
       "evidenceId": "ev5"
     },
     {
       "lat": 5.5371094,
       "lng": 7.2070312,
       "affinity": 0.9409090909090909,
+      "popularity": 0.9454545454545454,
       "evidenceId": "ev5"
     },
     {
       "lat": 8.876953,
       "lng": 7.2070312,
       "affinity": 0.9363636363636364,
+      "popularity": 0.9590909090909091,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.4160156,
       "lng": 5.4492188,
       "affinity": 0.9318181818181818,
+      "popularity": 0.95,
       "evidenceId": "ev5"
     },
     {
       "lat": 9.052734,
       "lng": 7.2070312,
       "affinity": 0.9272727272727272,
+      "popularity": 0.8681818181818182,
       "evidenceId": "ev5"
     },
     {
       "lat": 5.5371094,
       "lng": 5.8007812,
       "affinity": 0.9227272727272727,
+      "popularity": 0.9318181818181818,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.4160156,
       "lng": 5.8007812,
       "affinity": 0.9181818181818182,
+      "popularity": 0.8454545454545455,
       "evidenceId": "ev5"
     },
     {
       "lat": 6.767578,
       "lng": 3.3398438,
       "affinity": 0.9136363636363637,
+      "popularity": 0.9363636363636364,
       "evidenceId": "ev5"
     },
     {
       "lat": -25.048828,
       "lng": 135.17578,
       "affinity": 1,
+      "popularity": 0.9926590538336052,
       "evidenceId": "ev6"
     },
     {
       "lat": -33.83789,
       "lng": 151.34766,
       "affinity": 0.9991843393148451,
+      "popularity": 1,
       "evidenceId": "ev6"
     },
     {
       "lat": -37.88086,
       "lng": 145.01953,
       "affinity": 0.99836867862969,
+      "popularity": 0.9991843393148451,
       "evidenceId": "ev6"
     },
     {
       "lat": -34.89258,
       "lng": 138.6914,
       "affinity": 0.9975530179445351,
+      "popularity": 0.9942903752039152,
       "evidenceId": "ev6"
     },
     {
       "lat": -27.509766,
       "lng": 153.10547,
       "affinity": 0.9967373572593801,
+      "popularity": 0.99836867862969,
       "evidenceId": "ev6"
     },
     {
       "lat": -33.83789,
       "lng": 150.9961,
       "affinity": 0.9959216965742251,
+      "popularity": 0.9967373572593801,
       "evidenceId": "ev6"
     },
     {
       "lat": -31.904297,
       "lng": 115.83984,
       "affinity": 0.9951060358890701,
+      "popularity": 0.9951060358890701,
       "evidenceId": "ev6"
     },
     {
       "lat": -28.03711,
       "lng": 153.45703,
       "affinity": 0.9942903752039152,
+      "popularity": 0.9975530179445351,
       "evidenceId": "ev6"
     },
     {
       "lat": -34.01367,
       "lng": 150.9961,
       "affinity": 0.9934747145187602,
+      "popularity": 0.9934747145187602,
       "evidenceId": "ev6"
     },
     {
       "lat": -37.70508,
       "lng": 145.01953,
       "affinity": 0.9926590538336052,
+      "popularity": 0.9959216965742251,
       "evidenceId": "ev6"
     },
     {
       "lat": -37.529297,
       "lng": 143.61328,
       "affinity": 0.9918433931484503,
+      "popularity": 0.9061990212071778,
       "evidenceId": "ev6"
     },
     {
       "lat": -16.96289,
       "lng": 145.72266,
       "affinity": 0.9910277324632952,
+      "popularity": 0.9869494290375204,
       "evidenceId": "ev6"
     },
     {
       "lat": -33.66211,
       "lng": 150.29297,
       "affinity": 0.9902120717781403,
+      "popularity": 0.9877650897226754,
       "evidenceId": "ev6"
     },
     {
       "lat": -34.01367,
       "lng": 151.34766,
       "affinity": 0.9893964110929854,
+      "popularity": 0.9853181076672104,
       "evidenceId": "ev6"
     },
     {
       "lat": -32.08008,
       "lng": 115.83984,
       "affinity": 0.9885807504078303,
+      "popularity": 0.9910277324632952,
       "evidenceId": "ev6"
     },
     {
       "lat": -38.583984,
       "lng": 143.26172,
       "affinity": 0.9877650897226754,
+      "popularity": 0.965742251223491,
       "evidenceId": "ev6"
     },
     {
       "lat": -27.333984,
       "lng": 153.10547,
       "affinity": 0.9869494290375204,
+      "popularity": 0.9902120717781403,
       "evidenceId": "ev6"
     },
     {
       "lat": -20.302734,
       "lng": 148.88672,
       "affinity": 0.9861337683523654,
+      "popularity": 0.9804241435562806,
       "evidenceId": "ev6"
     },
     {
       "lat": -35.06836,
       "lng": 138.6914,
       "affinity": 0.9853181076672104,
+      "popularity": 0.9755301794453507,
       "evidenceId": "ev6"
     },
     {
       "lat": -35.24414,
       "lng": 149.23828,
       "affinity": 0.9845024469820555,
+      "popularity": 0.9845024469820555,
       "evidenceId": "ev6"
-    },
-    {
-      "lat": 51.52588,
-      "lng": -0.10986328,
-      "affinity": 1,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.52588,
-      "lng": -0.1538086,
-      "affinity": 0.9998524856173477,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.481934,
-      "lng": -0.10986328,
-      "affinity": 0.9997049712346954,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.481934,
-      "lng": -0.1538086,
-      "affinity": 0.9995574568520431,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.52588,
-      "lng": -0.1977539,
-      "affinity": 0.9994099424693907,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.52588,
-      "lng": -0.06591797,
-      "affinity": 0.9992624280867385,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 53.986816,
-      "lng": -1.9995117,
-      "affinity": 0.9991149137040861,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.481934,
-      "lng": -0.1977539,
-      "affinity": 0.9989673993214339,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 55.964355,
-      "lng": -3.1860352,
-      "affinity": 0.9988198849387815,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.70166,
-      "lng": -0.41748047,
-      "affinity": 0.9986723705561292,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.745605,
-      "lng": -1.2524414,
-      "affinity": 0.9985248561734769,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 55.964355,
-      "lng": -3.2299805,
-      "affinity": 0.9983773417908246,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 53.415527,
-      "lng": -2.9663086,
-      "affinity": 0.9982298274081723,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.481934,
-      "lng": -0.5932617,
-      "affinity": 0.99808231302552,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.481934,
-      "lng": -0.021972656,
-      "affinity": 0.9979347986428677,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.174316,
-      "lng": -1.8676758,
-      "affinity": 0.9977872842602153,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 52.18506,
-      "lng": 0.10986328,
-      "affinity": 0.9976397698775631,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 55.876465,
-      "lng": -4.2407227,
-      "affinity": 0.9974922554949107,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 51.394043,
-      "lng": -2.3510742,
-      "affinity": 0.9973447411122585,
-      "evidenceId": "ev3"
-    },
-    {
-      "lat": 53.459473,
-      "lng": -2.2631836,
-      "affinity": 0.9971972267296061,
-      "evidenceId": "ev3"
     },
     {
       "lat": 52.53662,
       "lng": 13.381348,
       "affinity": 1,
+      "popularity": 1,
       "evidenceId": "ev4"
     },
     {
       "lat": 48.14209,
       "lng": 11.57959,
       "affinity": 0.9997030878859857,
+      "popularity": 0.9994061757719715,
       "evidenceId": "ev4"
     },
     {
       "lat": 52.492676,
       "lng": 13.381348,
       "affinity": 0.9994061757719715,
+      "popularity": 0.9997030878859857,
       "evidenceId": "ev4"
     },
     {
       "lat": 50.998535,
       "lng": 9.997559,
       "affinity": 0.9991092636579573,
+      "popularity": 0.997624703087886,
       "evidenceId": "ev4"
     },
     {
       "lat": 47.5708,
       "lng": 10.744629,
       "affinity": 0.998812351543943,
+      "popularity": 0.995249406175772,
       "evidenceId": "ev4"
     },
     {
       "lat": 50.11963,
       "lng": 8.679199,
       "affinity": 0.9985154394299287,
+      "popularity": 0.9985154394299287,
       "evidenceId": "ev4"
     },
     {
       "lat": 50.03174,
       "lng": 8.591309,
       "affinity": 0.9982185273159145,
+      "popularity": 0.9949524940617577,
       "evidenceId": "ev4"
     },
     {
       "lat": 52.492676,
       "lng": 13.337402,
       "affinity": 0.9979216152019003,
+      "popularity": 0.9973277909738717,
       "evidenceId": "ev4"
     },
     {
       "lat": 50.95459,
       "lng": 6.965332,
       "affinity": 0.997624703087886,
+      "popularity": 0.9979216152019003,
       "evidenceId": "ev4"
     },
     {
       "lat": 52.492676,
       "lng": 13.425293,
       "affinity": 0.9973277909738717,
+      "popularity": 0.9991092636579573,
       "evidenceId": "ev4"
     },
     {
       "lat": 52.53662,
       "lng": 13.425293,
       "affinity": 0.9970308788598575,
+      "popularity": 0.9982185273159145,
       "evidenceId": "ev4"
     },
     {
       "lat": 51.04248,
       "lng": 13.73291,
       "affinity": 0.9967339667458432,
+      "popularity": 0.9967339667458432,
       "evidenceId": "ev4"
     },
     {
       "lat": 53.547363,
       "lng": 9.997559,
       "affinity": 0.996437054631829,
+      "popularity": 0.998812351543943,
       "evidenceId": "ev4"
     },
     {
       "lat": 49.416504,
       "lng": 8.723145,
       "affinity": 0.9961401425178147,
+      "popularity": 0.9943586698337292,
       "evidenceId": "ev4"
     },
     {
       "lat": 51.21826,
       "lng": 6.789551,
       "affinity": 0.9958432304038005,
+      "popularity": 0.9970308788598575,
       "evidenceId": "ev4"
     },
     {
       "lat": 48.14209,
       "lng": 11.535645,
       "affinity": 0.9955463182897862,
+      "popularity": 0.9958432304038005,
       "evidenceId": "ev4"
     },
     {
       "lat": 48.361816,
       "lng": 11.799316,
       "affinity": 0.995249406175772,
+      "popularity": 0.9904988123515439,
       "evidenceId": "ev4"
     },
     {
       "lat": 48.186035,
       "lng": 11.535645,
       "affinity": 0.9949524940617577,
+      "popularity": 0.994061757719715,
       "evidenceId": "ev4"
     },
     {
       "lat": 49.46045,
       "lng": 11.096191,
       "affinity": 0.9946555819477435,
+      "popularity": 0.9931710213776722,
       "evidenceId": "ev4"
     },
     {
       "lat": 50.03174,
       "lng": 8.547363,
       "affinity": 0.9943586698337292,
+      "popularity": 0.9709026128266033,
       "evidenceId": "ev4"
+    },
+    {
+      "lat": 51.52588,
+      "lng": -0.10986328,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.52588,
+      "lng": -0.1538086,
+      "affinity": 0.9998524856173477,
+      "popularity": 0.9998524856173477,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.481934,
+      "lng": -0.10986328,
+      "affinity": 0.9997049712346954,
+      "popularity": 0.9995574568520431,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.481934,
+      "lng": -0.1538086,
+      "affinity": 0.9995574568520431,
+      "popularity": 0.9994099424693907,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.52588,
+      "lng": -0.1977539,
+      "affinity": 0.9994099424693907,
+      "popularity": 0.9992624280867385,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.52588,
+      "lng": -0.06591797,
+      "affinity": 0.9992624280867385,
+      "popularity": 0.9997049712346954,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 53.986816,
+      "lng": -1.9995117,
+      "affinity": 0.9991149137040861,
+      "popularity": 0.9952795397551262,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.481934,
+      "lng": -0.1977539,
+      "affinity": 0.9989673993214339,
+      "popularity": 0.9991149137040861,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 55.964355,
+      "lng": -3.1860352,
+      "affinity": 0.9988198849387815,
+      "popularity": 0.9988198849387815,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.70166,
+      "lng": -0.41748047,
+      "affinity": 0.9986723705561292,
+      "popularity": 0.9963121404336923,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.745605,
+      "lng": -1.2524414,
+      "affinity": 0.9985248561734769,
+      "popularity": 0.9973447411122585,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 55.964355,
+      "lng": -3.2299805,
+      "affinity": 0.9983773417908246,
+      "popularity": 0.9976397698775631,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 53.415527,
+      "lng": -2.9663086,
+      "affinity": 0.9982298274081723,
+      "popularity": 0.9986723705561292,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.481934,
+      "lng": -0.5932617,
+      "affinity": 0.99808231302552,
+      "popularity": 0.99232925210208,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.481934,
+      "lng": -0.021972656,
+      "affinity": 0.9979347986428677,
+      "popularity": 0.9974922554949107,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.174316,
+      "lng": -1.8676758,
+      "affinity": 0.9977872842602153,
+      "popularity": 0.9905590795102522,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 52.18506,
+      "lng": 0.10986328,
+      "affinity": 0.9976397698775631,
+      "popularity": 0.9942469390765599,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 55.876465,
+      "lng": -4.2407227,
+      "affinity": 0.9974922554949107,
+      "popularity": 0.9971972267296061,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.394043,
+      "lng": -2.3510742,
+      "affinity": 0.9973447411122585,
+      "popularity": 0.9957220829030831,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 53.459473,
+      "lng": -2.2631836,
+      "affinity": 0.9971972267296061,
+      "popularity": 0.9989673993214339,
+      "evidenceId": "ev3"
     },
     {
       "lat": 40.69336,
       "lng": -74.00391,
       "affinity": 1,
+      "popularity": 1,
       "evidenceId": "ev2"
     },
     {
       "lat": 43.154297,
       "lng": -78.92578,
       "affinity": 0.999867197875166,
+      "popularity": 0.9956175298804781,
       "evidenceId": "ev2"
     },
     {
       "lat": 34.01367,
       "lng": -118.30078,
       "affinity": 0.999734395750332,
+      "popularity": 0.999867197875166,
       "evidenceId": "ev2"
     },
     {
       "lat": 37.70508,
       "lng": -122.51953,
       "affinity": 0.999601593625498,
+      "popularity": 0.999070385126162,
       "evidenceId": "ev2"
     },
     {
       "lat": 34.189453,
       "lng": -118.30078,
       "affinity": 0.999468791500664,
+      "popularity": 0.999601593625498,
       "evidenceId": "ev2"
     },
     {
       "lat": 42.27539,
       "lng": -71.19141,
       "affinity": 0.99933598937583,
+      "popularity": 0.9981407702523241,
       "evidenceId": "ev2"
     },
     {
       "lat": 37.88086,
       "lng": -122.51953,
       "affinity": 0.999203187250996,
+      "popularity": 0.997875166002656,
       "evidenceId": "ev2"
     },
     {
       "lat": 34.01367,
       "lng": -118.65234,
       "affinity": 0.999070385126162,
+      "popularity": 0.99867197875166,
       "evidenceId": "ev2"
     },
     {
       "lat": 42.978516,
       "lng": -75.05859,
       "affinity": 0.9989375830013281,
+      "popularity": 0.9899070385126162,
       "evidenceId": "ev2"
     },
     {
       "lat": 28.388672,
       "lng": -81.38672,
       "affinity": 0.998804780876494,
+      "popularity": 0.99933598937583,
       "evidenceId": "ev2"
     },
     {
       "lat": 44.208984,
       "lng": -72.59766,
       "affinity": 0.99867197875166,
+      "popularity": 0.9860557768924303,
       "evidenceId": "ev2"
     },
     {
       "lat": 33.66211,
       "lng": -116.19141,
       "affinity": 0.998539176626826,
+      "popularity": 0.9922974767596282,
       "evidenceId": "ev2"
     },
     {
       "lat": 32.783203,
       "lng": -117.24609,
       "affinity": 0.998406374501992,
+      "popularity": 0.998406374501992,
       "evidenceId": "ev2"
     },
     {
       "lat": 47.54883,
       "lng": -122.16797,
       "affinity": 0.9982735723771581,
+      "popularity": 0.997078353253652,
       "evidenceId": "ev2"
     },
     {
       "lat": 36.123047,
       "lng": -115.13672,
       "affinity": 0.9981407702523241,
+      "popularity": 0.999734395750332,
       "evidenceId": "ev2"
     },
     {
       "lat": 42.45117,
       "lng": -71.19141,
       "affinity": 0.99800796812749,
+      "popularity": 0.9949535192563081,
       "evidenceId": "ev2"
     },
     {
       "lat": 40.86914,
       "lng": -74.00391,
       "affinity": 0.997875166002656,
+      "popularity": 0.9989375830013281,
       "evidenceId": "ev2"
     },
     {
       "lat": 25.751953,
       "lng": -80.33203,
       "affinity": 0.997742363877822,
+      "popularity": 0.999203187250996,
       "evidenceId": "ev2"
     },
     {
       "lat": 41.92383,
       "lng": -87.71484,
       "affinity": 0.9976095617529881,
+      "popularity": 0.999468791500664,
       "evidenceId": "ev2"
     },
     {
       "lat": 28.388672,
       "lng": -81.73828,
       "affinity": 0.9974767596281541,
+      "popularity": 0.9974767596281541,
       "evidenceId": "ev2"
     }
   ],
@@ -1122,7 +1282,7 @@
         "type": "genre:music"
       }
     ],
-    "evidenceIds": ["ev17", "ev7", "ev15", "ev14"]
+    "evidenceIds": ["ev18", "ev10", "ev8", "ev7"]
   },
   "crossover": [
     {
@@ -1170,7 +1330,7 @@
           "image": "https://images.qloo.com/i/0E66D1DC-588C-4632-8A8A-6D6BE3224AFD-420x-auto.jpg"
         }
       ],
-      "evidenceId": "ev8"
+      "evidenceId": "ev14"
     },
     {
       "category": "tv_show",
@@ -1207,7 +1367,7 @@
           "image": "https://images.qloo.com/i/737629DA-FC66-4F50-90EE-23E28BF2DFF3-420x-auto.jpg"
         }
       ],
-      "evidenceId": "ev9"
+      "evidenceId": "ev15"
     },
     {
       "category": "movie",
@@ -1244,7 +1404,7 @@
           "image": "https://images.qloo.com/i/4BE414CF-375F-4566-AA66-9AC6150A6B7F-420x-auto.jpg"
         }
       ],
-      "evidenceId": "ev19"
+      "evidenceId": "ev16"
     },
     {
       "category": "podcast",
@@ -1281,24 +1441,24 @@
           "image": "https://images.qloo.com/i/F683D388-785F-407A-8B41-A763542C95BC-420x-auto.jpg"
         }
       ],
-      "evidenceId": "ev10"
+      "evidenceId": "ev17"
     }
   ],
   "merchIdeas": [
     {
       "idea": "A merch capsule that nods to the look of Forever 21 and MAC Cosmetics, which over-index with this audience.",
       "basedOn": ["Forever 21", "MAC Cosmetics"],
-      "evidenceIds": ["ev8"]
+      "evidenceIds": ["ev14"]
     },
     {
-      "idea": "Use Entertainment, Expensive, Identifies as women-owned as the mood board for tour posters and social copy.",
-      "basedOn": ["Entertainment", "Expensive", "Identifies as women-owned"],
+      "idea": "Use teenager, female protagonist, teenage girl as the mood board for tour posters and social copy.",
+      "basedOn": ["teenager", "female protagonist", "teenage girl"],
       "evidenceIds": ["ev12"]
     },
     {
       "idea": "Pitch an interview or ad read on Daebak Show w/ Eric Nam ahead of on-sale.",
       "basedOn": ["Daebak Show w/ Eric Nam"],
-      "evidenceIds": ["ev10"]
+      "evidenceIds": ["ev17"]
     }
   ],
   "evidence": [
@@ -1313,9 +1473,9 @@
       "status": "ok",
       "summary": "1 result.",
       "resultCount": 1,
-      "fetchedAt": "2026-10-23T21:40:02.821Z",
-      "cached": false,
-      "durationMs": 16610,
+      "fetchedAt": "2026-10-25T22:37:07.951Z",
+      "cached": true,
+      "durationMs": 0,
       "keyFields": [
         {
           "id": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
@@ -1326,252 +1486,21 @@
       "warnings": []
     },
     {
-      "id": "ev13",
-      "tool": "qloo_trends",
-      "purpose": "Agent: trends",
-      "inputRedacted": {
-        "start_date": "2025-10-23",
-        "entities": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "end_date": "2026-10-23",
-        "entity_type": "artist"
-      },
-      "status": "ok",
-      "summary": "1 result.",
-      "resultCount": 1,
-      "fetchedAt": "2026-10-23T21:40:15.518Z",
-      "cached": false,
-      "durationMs": 2179,
-      "keyFields": [
-        {
-          "name": "Sia",
-          "points": [
-            {
-              "date": "2026-08-20",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-08-27",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-09-03",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-09-10",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-09-17",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-09-24",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-10-01",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-10-08",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-10-15",
-              "percentile": 0.11,
-              "delta": 0
-            },
-            {
-              "date": "2026-10-22",
-              "percentile": 0.11,
-              "delta": 0
-            }
-          ]
-        }
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ev8",
-      "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
-      "inputRedacted": {
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "target_type": "brand"
-      },
-      "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:15.578Z",
-      "cached": false,
-      "durationMs": 2239,
-      "keyFields": [
-        {
-          "id": "276A83F6-C4E3-43DD-B42A-6BF9CFAF51CB",
-          "name": "Forever 21",
-          "affinity": 0.977,
-          "popularity": 0.999
-        },
-        {
-          "id": "853AD85F-89EF-4274-BD23-E2B5C1F1A8DC",
-          "name": "MAC Cosmetics",
-          "affinity": 0.976,
-          "popularity": 1
-        },
-        {
-          "id": "D3310425-7161-41FC-8C2C-5435AF0F0A5B",
-          "name": "Victoria's Secret",
-          "affinity": 0.975,
-          "popularity": 1
-        },
-        {
-          "id": "212146FD-4F22-446B-BCA2-E8597774A940",
-          "name": "Chanel",
-          "affinity": 0.963,
-          "popularity": 1
-        },
-        {
-          "id": "2C5054E1-8691-4F52-83CD-310D029BA6A3",
-          "name": "Sephora",
-          "affinity": 0.96,
-          "popularity": 1
-        },
-        {
-          "id": "108EB684-257B-42D7-84E5-6E9D8BE3E793",
-          "name": "H&M",
-          "affinity": 0.956,
-          "popularity": 1
-        },
-        {
-          "id": "74A44B01-5C99-4754-9585-F487D21C543D",
-          "name": "Zara",
-          "affinity": 0.956,
-          "popularity": 0.999
-        },
-        {
-          "id": "0E66D1DC-588C-4632-8A8A-6D6BE3224AFD",
-          "name": "Urban Decay",
-          "affinity": 0.955,
-          "popularity": 0.999
-        },
-        {
-          "id": "3EC9E7DF-1497-44C4-8642-E7FA2FF3A99D",
-          "name": "Calvin Klein",
-          "affinity": 0.953,
-          "popularity": 1
-        },
-        {
-          "id": "B90BB764-2618-4A08-864E-C2748E3E5DCA",
-          "name": "Anastasia Beverly Hills",
-          "affinity": 0.951,
-          "popularity": 0.999
-        }
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ev10",
-      "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
-      "inputRedacted": {
-        "target_type": "podcast",
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"]
-      },
-      "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:15.859Z",
-      "cached": false,
-      "durationMs": 2520,
-      "keyFields": [
-        {
-          "id": "F52D25AF-779B-4B7C-B676-28995944AF8C",
-          "name": "Daebak Show w/ Eric Nam",
-          "affinity": 0.957,
-          "popularity": 0.995
-        },
-        {
-          "id": "B332477C-90DC-4D9D-9063-423B7E3E99C4",
-          "name": "The Tablo Podcast",
-          "affinity": 0.929,
-          "popularity": 0.949
-        },
-        {
-          "id": "51194948-94F0-46A0-B8A2-874FF66A0A57",
-          "name": "This Might Get Weird",
-          "affinity": 0.924,
-          "popularity": 0.972
-        },
-        {
-          "id": "B8E920EB-C8FC-43AD-B3D5-7896FE49B114",
-          "name": "GET REAL S4 w/ Ashley, BM, JUNNY, and PENIEL",
-          "affinity": 0.924,
-          "popularity": 0.981
-        },
-        {
-          "id": "0792967A-4289-42E9-961A-61E260B3AD65",
-          "name": "Psychobabble with Tyler Oakley & Korey Kuhl",
-          "affinity": 0.923,
-          "popularity": 0.983
-        },
-        {
-          "id": "F683D388-785F-407A-8B41-A763542C95BC",
-          "name": "How Did I Get Here? w/ Jae and AleXa",
-          "affinity": 0.923,
-          "popularity": 0.991
-        },
-        {
-          "id": "9BBF37D6-92BE-4719-83B3-7908C5390EBF",
-          "name": "I Think You're Dope w/ Eric Nam",
-          "affinity": 0.923,
-          "popularity": 0.953
-        },
-        {
-          "id": "9C46C73E-CC47-425D-81C1-CF365B98034B",
-          "name": "Don't Mess with Christine Sydelko and Chris Klemens",
-          "affinity": 0.918,
-          "popularity": 0.912
-        },
-        {
-          "id": "722113C5-5CB0-4E7C-A095-96C409B3129C",
-          "name": "Commit Or Quit",
-          "affinity": 0.913,
-          "popularity": 0.991
-        },
-        {
-          "id": "9C310A37-B8E3-40F6-A4CE-51BBA41DEAA4",
-          "name": "Jenna & Julien Podcast",
-          "affinity": 0.908,
-          "popularity": 0.98
-        }
-      ],
-      "warnings": []
-    },
-    {
       "id": "ev5",
       "tool": "qloo_where_popular",
-      "purpose": "Agent: where popular",
+      "purpose": "Map where Sia’s audience affinity is strongest in Nigeria",
       "inputRedacted": {
-        "within": "Nigeria",
         "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
-        "limit": 20,
-        "entity_type": "artist"
+        "entity_type": "artist",
+        "within": "Nigeria",
+        "limit": 20
       },
       "status": "ok",
       "summary": "20 results.",
       "resultCount": 20,
-      "fetchedAt": "2026-10-23T21:40:15.873Z",
+      "fetchedAt": "2026-10-25T22:37:10.060Z",
       "cached": false,
-      "durationMs": 2536,
+      "durationMs": 1545,
       "keyFields": {
         "top_cells": [
           {
@@ -1635,18 +1564,18 @@
             "cells": 1
           },
           {
-            "city": "Onitsha",
-            "region": "Anambra",
-            "country": "Nigeria",
-            "max_affinity": 0.964,
-            "cells": 2
-          },
-          {
             "city": "Port Harcourt",
             "region": "Rivers State",
             "country": "Nigeria",
             "max_affinity": 0.959,
             "cells": 3
+          },
+          {
+            "city": "Onitsha",
+            "region": "Anambra",
+            "country": "Nigeria",
+            "max_affinity": 0.964,
+            "cells": 2
           },
           {
             "city": "Bida",
@@ -1667,19 +1596,616 @@
       "warnings": []
     },
     {
+      "id": "ev6",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Sia’s audience affinity is strongest in Australia",
+      "inputRedacted": {
+        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
+        "entity_type": "artist",
+        "within": "Australia",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:10.256Z",
+      "cached": false,
+      "durationMs": 1742,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": -25.049,
+            "lng": 135.176,
+            "affinity": 1,
+            "popularity": 0.993
+          },
+          {
+            "lat": -33.838,
+            "lng": 151.348,
+            "affinity": 0.999,
+            "popularity": 1
+          },
+          {
+            "lat": -37.881,
+            "lng": 145.02,
+            "affinity": 0.998,
+            "popularity": 0.999
+          },
+          {
+            "lat": -34.893,
+            "lng": 138.691,
+            "affinity": 0.998,
+            "popularity": 0.994
+          },
+          {
+            "lat": -27.51,
+            "lng": 153.105,
+            "affinity": 0.997,
+            "popularity": 0.998
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Sydney",
+            "region": "New South Wales",
+            "country": "Australia",
+            "max_affinity": 0.999,
+            "cells": 5
+          },
+          {
+            "city": "Brisbane",
+            "region": "Queensland",
+            "country": "Australia",
+            "max_affinity": 0.997,
+            "cells": 3
+          },
+          {
+            "city": "Melbourne",
+            "region": "Victoria",
+            "country": "Australia",
+            "max_affinity": 0.998,
+            "cells": 2
+          },
+          {
+            "city": "Perth",
+            "region": "Western Australia",
+            "country": "Australia",
+            "max_affinity": 0.995,
+            "cells": 2
+          },
+          {
+            "city": "Adelaide",
+            "region": "South Australia",
+            "country": "Australia",
+            "max_affinity": 0.998,
+            "cells": 2
+          },
+          {
+            "city": "Canberra",
+            "region": "Australian Capital Territory",
+            "country": "Australia",
+            "max_affinity": 0.985,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev4",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Sia’s audience affinity is strongest in Germany",
+      "inputRedacted": {
+        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
+        "entity_type": "artist",
+        "within": "Germany",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:10.762Z",
+      "cached": false,
+      "durationMs": 2247,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 52.537,
+            "lng": 13.381,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 48.142,
+            "lng": 11.58,
+            "affinity": 1,
+            "popularity": 0.999
+          },
+          {
+            "lat": 52.493,
+            "lng": 13.381,
+            "affinity": 0.999,
+            "popularity": 1
+          },
+          {
+            "lat": 50.999,
+            "lng": 9.998,
+            "affinity": 0.999,
+            "popularity": 0.998
+          },
+          {
+            "lat": 47.571,
+            "lng": 10.745,
+            "affinity": 0.999,
+            "popularity": 0.995
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Berlin",
+            "region": "State of Berlin",
+            "country": "Germany",
+            "max_affinity": 1,
+            "cells": 5
+          },
+          {
+            "city": "Munich",
+            "region": "Bavaria",
+            "country": "Germany",
+            "max_affinity": 1,
+            "cells": 5
+          },
+          {
+            "city": "Frankfurt am Main",
+            "region": "Hesse",
+            "country": "Germany",
+            "max_affinity": 0.999,
+            "cells": 4
+          },
+          {
+            "city": "Koeln",
+            "region": "North Rhine-Westphalia",
+            "country": "Germany",
+            "max_affinity": 0.998,
+            "cells": 2
+          },
+          {
+            "city": "Hamburg",
+            "region": "Hamburg",
+            "country": "Germany",
+            "max_affinity": 0.996,
+            "cells": 1
+          },
+          {
+            "city": "Kassel",
+            "region": "Hesse",
+            "country": "Germany",
+            "max_affinity": 0.999,
+            "cells": 1
+          },
+          {
+            "city": "Dresden",
+            "region": "Saxony",
+            "country": "Germany",
+            "max_affinity": 0.997,
+            "cells": 1
+          },
+          {
+            "city": "Nuremberg",
+            "region": "Bavaria",
+            "country": "Germany",
+            "max_affinity": 0.995,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev3",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Sia’s audience affinity is strongest in United Kingdom",
+      "inputRedacted": {
+        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
+        "entity_type": "artist",
+        "within": "United Kingdom",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:11.761Z",
+      "cached": false,
+      "durationMs": 3248,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 51.526,
+            "lng": -0.11,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 51.526,
+            "lng": -0.154,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 51.482,
+            "lng": -0.11,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 51.482,
+            "lng": -0.154,
+            "affinity": 1,
+            "popularity": 0.999
+          },
+          {
+            "lat": 51.526,
+            "lng": -0.198,
+            "affinity": 0.999,
+            "popularity": 0.999
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "London",
+            "region": "England",
+            "country": "United Kingdom",
+            "max_affinity": 1,
+            "cells": 12
+          },
+          {
+            "city": "Glasgow",
+            "region": "Scotland",
+            "country": "United Kingdom",
+            "max_affinity": 0.999,
+            "cells": 3
+          },
+          {
+            "city": "Manchester",
+            "region": "England",
+            "country": "United Kingdom",
+            "max_affinity": 0.999,
+            "cells": 3
+          },
+          {
+            "city": "Bristol",
+            "region": "England",
+            "country": "United Kingdom",
+            "max_affinity": 0.998,
+            "cells": 2
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev2",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Sia’s audience affinity is strongest in United States",
+      "inputRedacted": {
+        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
+        "entity_type": "artist",
+        "within": "United States",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:37:13.060Z",
+      "cached": false,
+      "durationMs": 4546,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 40.693,
+            "lng": -74.004,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 43.154,
+            "lng": -78.926,
+            "affinity": 1,
+            "popularity": 0.996
+          },
+          {
+            "lat": 34.014,
+            "lng": -118.301,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 37.705,
+            "lng": -122.52,
+            "affinity": 1,
+            "popularity": 0.999
+          },
+          {
+            "lat": 34.189,
+            "lng": -118.301,
+            "affinity": 0.999,
+            "popularity": 1
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Los Angeles",
+            "region": "California",
+            "country": "United States",
+            "max_affinity": 1,
+            "cells": 3
+          },
+          {
+            "city": "New York City",
+            "region": "New York",
+            "country": "United States",
+            "max_affinity": 1,
+            "cells": 2
+          },
+          {
+            "city": "San Francisco",
+            "region": "California",
+            "country": "United States",
+            "max_affinity": 1,
+            "cells": 2
+          },
+          {
+            "city": "Orlando",
+            "region": "Florida",
+            "country": "United States",
+            "max_affinity": 0.999,
+            "cells": 2
+          },
+          {
+            "city": "Boston",
+            "region": "Massachusetts",
+            "country": "United States",
+            "max_affinity": 0.999,
+            "cells": 2
+          },
+          {
+            "city": "Paradise",
+            "region": "Nevada",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          },
+          {
+            "city": "Chicago",
+            "region": "Illinois",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          },
+          {
+            "city": "Miami",
+            "region": "Florida",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          },
+          {
+            "city": "San Diego",
+            "region": "California",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          },
+          {
+            "city": "Seattle",
+            "region": "Washington",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          },
+          {
+            "city": "Buffalo",
+            "region": "New York",
+            "country": "United States",
+            "max_affinity": 1,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev11",
+      "tool": "qloo_audience_demographics",
+      "purpose": "Age and gender affinity of Sia’s audience",
+      "inputRedacted": {
+        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
+        "entity_type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:37:14.066Z",
+      "cached": false,
+      "durationMs": 890,
+      "keyFields": {
+        "age": [
+          {
+            "bucket": "24 and under",
+            "value": 0.05
+          },
+          {
+            "bucket": "25–29",
+            "value": 0.28
+          },
+          {
+            "bucket": "30–34",
+            "value": 0.17
+          },
+          {
+            "bucket": "35–44",
+            "value": 0.23
+          },
+          {
+            "bucket": "45–54",
+            "value": -0.5700000000000001
+          },
+          {
+            "bucket": "55+",
+            "value": -0.51
+          }
+        ],
+        "gender": [
+          {
+            "bucket": "male",
+            "value": -0.28
+          },
+          {
+            "bucket": "female",
+            "value": 0.28
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev10",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Sia’s audience with a Munich location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "signal_location": "Munich, Germany",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:14.689Z",
+      "cached": false,
+      "durationMs": 1425,
+      "keyFields": [
+        {
+          "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
+          "name": "Ellie Goulding",
+          "affinity": 0.963,
+          "popularity": 1
+        },
+        {
+          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
+          "name": "Sam Smith",
+          "affinity": 0.96,
+          "popularity": 0.999
+        },
+        {
+          "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
+          "name": "Calvin Harris",
+          "affinity": 0.958,
+          "popularity": 1
+        },
+        {
+          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
+          "name": "Adele",
+          "affinity": 0.956,
+          "popularity": 1
+        },
+        {
+          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
+          "name": "Lorde",
+          "affinity": 0.955,
+          "popularity": 0.999
+        },
+        {
+          "id": "63BBE4D8-D721-466F-907C-D0007E9B6665",
+          "name": "Lana Del Rey",
+          "affinity": 0.955,
+          "popularity": 1
+        },
+        {
+          "id": "F6754C46-B3E7-457F-8B7E-06C613597320",
+          "name": "Beyoncé",
+          "affinity": 0.954,
+          "popularity": 1
+        },
+        {
+          "id": "058B79A3-49F5-4927-9AB6-DE713C706796",
+          "name": "Ed Sheeran",
+          "affinity": 0.954,
+          "popularity": 1
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev15",
+      "tool": "qloo_recommend",
+      "purpose": "TV with strong affinity among Sia’s audience",
+      "inputRedacted": {
+        "target_type": "tv_show",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:14.736Z",
+      "cached": false,
+      "durationMs": 1383,
+      "keyFields": [
+        {
+          "id": "0E94D5BA-B5DD-4ED2-AE15-7E8C55DC1DE3",
+          "name": "Big Little Lies",
+          "affinity": 0.978,
+          "popularity": 0.994
+        },
+        {
+          "id": "AD37A0C7-514C-4BA5-A36D-92543CD6C602",
+          "name": "The Handmaid's Tale",
+          "affinity": 0.957,
+          "popularity": 0.993
+        },
+        {
+          "id": "215CA754-41A2-4FD6-8BAB-634C3683B7DF",
+          "name": "Doctor Foster: A Woman Scorned",
+          "affinity": 0.946,
+          "popularity": 0.882
+        },
+        {
+          "id": "54205182-4C8A-4689-9692-50C1CA17F914",
+          "name": "The Affair",
+          "affinity": 0.943,
+          "popularity": 0.964
+        },
+        {
+          "id": "2FF66937-26D4-4533-AF23-EC0C5BCF4CA0",
+          "name": "Killing Eve",
+          "affinity": 0.943,
+          "popularity": 0.981
+        },
+        {
+          "id": "737629DA-FC66-4F50-90EE-23E28BF2DFF3",
+          "name": "Little Fires Everywhere",
+          "affinity": 0.939,
+          "popularity": 0.956
+        }
+      ],
+      "warnings": []
+    },
+    {
       "id": "ev12",
       "tool": "qloo_entity_tags",
-      "purpose": "Agent: entity tags",
+      "purpose": "Tags that characterise Sia",
       "inputRedacted": {
         "entities": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "entity_type": "artist"
+        "entity_type": "artist",
+        "limit": 10
       },
       "status": "ok",
       "summary": "10 results.",
       "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:16.652Z",
+      "fetchedAt": "2026-10-25T22:37:14.948Z",
       "cached": false,
-      "durationMs": 3314,
+      "durationMs": 1683,
       "keyFields": [
         {
           "id": "urn:tag:genre:brand:entertainment",
@@ -1735,439 +2261,419 @@
       "warnings": []
     },
     {
-      "id": "ev11",
-      "tool": "qloo_audience_demographics",
-      "purpose": "Agent: audience demographics",
+      "id": "ev13",
+      "tool": "qloo_trends",
+      "purpose": "Popularity trend for Sia over the last year",
       "inputRedacted": {
+        "entities": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
         "entity_type": "artist",
-        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7"
+        "start_date": "2025-10-25",
+        "end_date": "2026-10-24",
+        "limit": 20
       },
       "status": "ok",
       "summary": "1 result.",
       "resultCount": 1,
-      "fetchedAt": "2026-10-23T21:40:16.999Z",
+      "fetchedAt": "2026-10-25T22:37:15.161Z",
       "cached": false,
-      "durationMs": 3665,
-      "keyFields": {
-        "age": [
-          {
-            "bucket": "24 and under",
-            "value": 0.05
-          },
-          {
-            "bucket": "25–29",
-            "value": 0.28
-          },
-          {
-            "bucket": "30–34",
-            "value": 0.17
-          },
-          {
-            "bucket": "35–44",
-            "value": 0.23
-          },
-          {
-            "bucket": "45–54",
-            "value": -0.5700000000000001
-          },
-          {
-            "bucket": "55+",
-            "value": -0.51
-          }
-        ],
-        "gender": [
-          {
-            "bucket": "male",
-            "value": -0.28
-          },
-          {
-            "bucket": "female",
-            "value": 0.28
-          }
-        ]
-      },
-      "warnings": []
-    },
-    {
-      "id": "ev6",
-      "tool": "qloo_where_popular",
-      "purpose": "Agent: where popular",
-      "inputRedacted": {
-        "within": "Australia",
-        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
-        "entity_type": "artist",
-        "limit": 20
-      },
-      "status": "ok",
-      "summary": "20 results.",
-      "resultCount": 20,
-      "fetchedAt": "2026-10-23T21:40:17.065Z",
-      "cached": false,
-      "durationMs": 3775,
-      "keyFields": {
-        "top_cells": [
-          {
-            "lat": -25.049,
-            "lng": 135.176,
-            "affinity": 1,
-            "popularity": 0.993
-          },
-          {
-            "lat": -33.838,
-            "lng": 151.348,
-            "affinity": 0.999,
-            "popularity": 1
-          },
-          {
-            "lat": -37.881,
-            "lng": 145.02,
-            "affinity": 0.998,
-            "popularity": 0.999
-          },
-          {
-            "lat": -34.893,
-            "lng": 138.691,
-            "affinity": 0.998,
-            "popularity": 0.994
-          },
-          {
-            "lat": -27.51,
-            "lng": 153.105,
-            "affinity": 0.997,
-            "popularity": 0.998
-          }
-        ],
-        "cities_derived_by_opener": [
-          {
-            "city": "Sydney",
-            "region": "New South Wales",
-            "country": "Australia",
-            "max_affinity": 0.999,
-            "cells": 5
-          },
-          {
-            "city": "Melbourne",
-            "region": "Victoria",
-            "country": "Australia",
-            "max_affinity": 0.998,
-            "cells": 2
-          },
-          {
-            "city": "Adelaide",
-            "region": "South Australia",
-            "country": "Australia",
-            "max_affinity": 0.998,
-            "cells": 2
-          },
-          {
-            "city": "Brisbane",
-            "region": "Queensland",
-            "country": "Australia",
-            "max_affinity": 0.997,
-            "cells": 3
-          },
-          {
-            "city": "Perth",
-            "region": "Western Australia",
-            "country": "Australia",
-            "max_affinity": 0.995,
-            "cells": 2
-          },
-          {
-            "city": "Canberra",
-            "region": "Australian Capital Territory",
-            "country": "Australia",
-            "max_affinity": 0.985,
-            "cells": 1
-          }
-        ]
-      },
-      "warnings": []
-    },
-    {
-      "id": "ev3",
-      "tool": "qloo_where_popular",
-      "purpose": "Agent: where popular",
-      "inputRedacted": {
-        "within": "United Kingdom",
-        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
-        "limit": 20,
-        "entity_type": "artist"
-      },
-      "status": "ok",
-      "summary": "20 results.",
-      "resultCount": 20,
-      "fetchedAt": "2026-10-23T21:40:17.135Z",
-      "cached": false,
-      "durationMs": 3837,
-      "keyFields": {
-        "top_cells": [
-          {
-            "lat": 51.526,
-            "lng": -0.11,
-            "affinity": 1,
-            "popularity": 1
-          },
-          {
-            "lat": 51.526,
-            "lng": -0.154,
-            "affinity": 1,
-            "popularity": 1
-          },
-          {
-            "lat": 51.482,
-            "lng": -0.11,
-            "affinity": 1,
-            "popularity": 1
-          },
-          {
-            "lat": 51.482,
-            "lng": -0.154,
-            "affinity": 1,
-            "popularity": 0.999
-          },
-          {
-            "lat": 51.526,
-            "lng": -0.198,
-            "affinity": 0.999,
-            "popularity": 0.999
-          }
-        ],
-        "cities_derived_by_opener": [
-          {
-            "city": "London",
-            "region": "England",
-            "country": "United Kingdom",
-            "max_affinity": 1,
-            "cells": 12
-          },
-          {
-            "city": "Manchester",
-            "region": "England",
-            "country": "United Kingdom",
-            "max_affinity": 0.999,
-            "cells": 3
-          },
-          {
-            "city": "Glasgow",
-            "region": "Scotland",
-            "country": "United Kingdom",
-            "max_affinity": 0.999,
-            "cells": 3
-          },
-          {
-            "city": "Bristol",
-            "region": "England",
-            "country": "United Kingdom",
-            "max_affinity": 0.998,
-            "cells": 2
-          }
-        ]
-      },
-      "warnings": []
-    },
-    {
-      "id": "ev9",
-      "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
-      "inputRedacted": {
-        "target_type": "tv_show",
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"]
-      },
-      "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:17.267Z",
-      "cached": false,
-      "durationMs": 3928,
+      "durationMs": 1896,
       "keyFields": [
         {
-          "id": "0E94D5BA-B5DD-4ED2-AE15-7E8C55DC1DE3",
-          "name": "Big Little Lies",
-          "affinity": 0.978,
-          "popularity": 0.994
-        },
-        {
-          "id": "AD37A0C7-514C-4BA5-A36D-92543CD6C602",
-          "name": "The Handmaid's Tale",
-          "affinity": 0.957,
-          "popularity": 0.993
-        },
-        {
-          "id": "215CA754-41A2-4FD6-8BAB-634C3683B7DF",
-          "name": "Doctor Foster: A Woman Scorned",
-          "affinity": 0.946,
-          "popularity": 0.882
-        },
-        {
-          "id": "54205182-4C8A-4689-9692-50C1CA17F914",
-          "name": "The Affair",
-          "affinity": 0.943,
-          "popularity": 0.964
-        },
-        {
-          "id": "2FF66937-26D4-4533-AF23-EC0C5BCF4CA0",
-          "name": "Killing Eve",
-          "affinity": 0.943,
-          "popularity": 0.981
-        },
-        {
-          "id": "737629DA-FC66-4F50-90EE-23E28BF2DFF3",
-          "name": "Little Fires Everywhere",
-          "affinity": 0.939,
-          "popularity": 0.956
-        },
-        {
-          "id": "5521C951-41EB-475A-B8BD-034A4B5F8C8A",
-          "name": "Homecoming",
-          "affinity": 0.938,
-          "popularity": 0.928
-        },
-        {
-          "id": "A7C34CD5-C1D3-486F-948F-1631C08E15E4",
-          "name": "Good Behavior",
-          "affinity": 0.936,
-          "popularity": 0.854
-        },
-        {
-          "id": "DFF5EA80-4296-4090-A5A6-A3EEC7A9BAEF",
-          "name": "Sharp Objects",
-          "affinity": 0.936,
-          "popularity": 0.99
-        },
-        {
-          "id": "4F3E0F5A-F87E-4158-8A25-FC1FFFAA9417",
-          "name": "Here and Now",
-          "affinity": 0.934,
-          "popularity": 0.703
+          "name": "Sia",
+          "points": [
+            {
+              "date": "2026-08-08",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-15",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-22",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-29",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-05",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-12",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-19",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-26",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-03",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-10",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-17",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-24",
+              "percentile": 0.11,
+              "delta": 0
+            }
+          ]
         }
       ],
       "warnings": []
     },
     {
-      "id": "ev4",
-      "tool": "qloo_where_popular",
-      "purpose": "Agent: where popular",
+      "id": "ev17",
+      "tool": "qloo_recommend",
+      "purpose": "Podcasts with strong affinity among Sia’s audience",
       "inputRedacted": {
-        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
-        "within": "Germany",
-        "entity_type": "artist",
-        "limit": 20
+        "target_type": "podcast",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "limit": 6
       },
       "status": "ok",
-      "summary": "20 results.",
-      "resultCount": 20,
-      "fetchedAt": "2026-10-23T21:40:18.757Z",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:16.472Z",
       "cached": false,
-      "durationMs": 5419,
-      "keyFields": {
-        "top_cells": [
-          {
-            "lat": 52.537,
-            "lng": 13.381,
-            "affinity": 1,
-            "popularity": 1
-          },
-          {
-            "lat": 48.142,
-            "lng": 11.58,
-            "affinity": 1,
-            "popularity": 0.999
-          },
-          {
-            "lat": 52.493,
-            "lng": 13.381,
-            "affinity": 0.999,
-            "popularity": 1
-          },
-          {
-            "lat": 50.999,
-            "lng": 9.998,
-            "affinity": 0.999,
-            "popularity": 0.998
-          },
-          {
-            "lat": 47.571,
-            "lng": 10.745,
-            "affinity": 0.999,
-            "popularity": 0.995
-          }
-        ],
-        "cities_derived_by_opener": [
-          {
-            "city": "Berlin",
-            "region": "State of Berlin",
-            "country": "Germany",
-            "max_affinity": 1,
-            "cells": 5
-          },
-          {
-            "city": "Munich",
-            "region": "Bavaria",
-            "country": "Germany",
-            "max_affinity": 1,
-            "cells": 5
-          },
-          {
-            "city": "Kassel",
-            "region": "Hesse",
-            "country": "Germany",
-            "max_affinity": 0.999,
-            "cells": 1
-          },
-          {
-            "city": "Frankfurt am Main",
-            "region": "Hesse",
-            "country": "Germany",
-            "max_affinity": 0.999,
-            "cells": 4
-          },
-          {
-            "city": "Koeln",
-            "region": "North Rhine-Westphalia",
-            "country": "Germany",
-            "max_affinity": 0.998,
-            "cells": 2
-          },
-          {
-            "city": "Dresden",
-            "region": "Saxony",
-            "country": "Germany",
-            "max_affinity": 0.997,
-            "cells": 1
-          },
-          {
-            "city": "Hamburg",
-            "region": "Hamburg",
-            "country": "Germany",
-            "max_affinity": 0.996,
-            "cells": 1
-          },
-          {
-            "city": "Nuremberg",
-            "region": "Bavaria",
-            "country": "Germany",
-            "max_affinity": 0.995,
-            "cells": 1
-          }
-        ]
+      "durationMs": 3117,
+      "keyFields": [
+        {
+          "id": "F52D25AF-779B-4B7C-B676-28995944AF8C",
+          "name": "Daebak Show w/ Eric Nam",
+          "affinity": 0.957,
+          "popularity": 0.995
+        },
+        {
+          "id": "B332477C-90DC-4D9D-9063-423B7E3E99C4",
+          "name": "The Tablo Podcast",
+          "affinity": 0.929,
+          "popularity": 0.949
+        },
+        {
+          "id": "51194948-94F0-46A0-B8A2-874FF66A0A57",
+          "name": "This Might Get Weird",
+          "affinity": 0.924,
+          "popularity": 0.972
+        },
+        {
+          "id": "B8E920EB-C8FC-43AD-B3D5-7896FE49B114",
+          "name": "GET REAL S4 w/ Ashley, BM, JUNNY, and PENIEL",
+          "affinity": 0.924,
+          "popularity": 0.981
+        },
+        {
+          "id": "0792967A-4289-42E9-961A-61E260B3AD65",
+          "name": "Psychobabble with Tyler Oakley & Korey Kuhl",
+          "affinity": 0.923,
+          "popularity": 0.983
+        },
+        {
+          "id": "F683D388-785F-407A-8B41-A763542C95BC",
+          "name": "How Did I Get Here? w/ Jae and AleXa",
+          "affinity": 0.923,
+          "popularity": 0.991
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev14",
+      "tool": "qloo_recommend",
+      "purpose": "Brands with strong affinity among Sia’s audience",
+      "inputRedacted": {
+        "target_type": "brand",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "limit": 8
       },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:16.564Z",
+      "cached": false,
+      "durationMs": 3299,
+      "keyFields": [
+        {
+          "id": "276A83F6-C4E3-43DD-B42A-6BF9CFAF51CB",
+          "name": "Forever 21",
+          "affinity": 0.977,
+          "popularity": 0.999
+        },
+        {
+          "id": "853AD85F-89EF-4274-BD23-E2B5C1F1A8DC",
+          "name": "MAC Cosmetics",
+          "affinity": 0.976,
+          "popularity": 1
+        },
+        {
+          "id": "D3310425-7161-41FC-8C2C-5435AF0F0A5B",
+          "name": "Victoria's Secret",
+          "affinity": 0.975,
+          "popularity": 1
+        },
+        {
+          "id": "212146FD-4F22-446B-BCA2-E8597774A940",
+          "name": "Chanel",
+          "affinity": 0.963,
+          "popularity": 1
+        },
+        {
+          "id": "2C5054E1-8691-4F52-83CD-310D029BA6A3",
+          "name": "Sephora",
+          "affinity": 0.96,
+          "popularity": 1
+        },
+        {
+          "id": "108EB684-257B-42D7-84E5-6E9D8BE3E793",
+          "name": "H&M",
+          "affinity": 0.956,
+          "popularity": 1
+        },
+        {
+          "id": "74A44B01-5C99-4754-9585-F487D21C543D",
+          "name": "Zara",
+          "affinity": 0.956,
+          "popularity": 0.999
+        },
+        {
+          "id": "0E66D1DC-588C-4632-8A8A-6D6BE3224AFD",
+          "name": "Urban Decay",
+          "affinity": 0.955,
+          "popularity": 0.999
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev8",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Sia’s audience with a London location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "signal_location": "London, United Kingdom",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:16.863Z",
+      "cached": false,
+      "durationMs": 3599,
+      "keyFields": [
+        {
+          "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
+          "name": "Ellie Goulding",
+          "affinity": 0.963,
+          "popularity": 1
+        },
+        {
+          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
+          "name": "Sam Smith",
+          "affinity": 0.961,
+          "popularity": 0.999
+        },
+        {
+          "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
+          "name": "Calvin Harris",
+          "affinity": 0.958,
+          "popularity": 1
+        },
+        {
+          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
+          "name": "MØ",
+          "affinity": 0.957,
+          "popularity": 0.996
+        },
+        {
+          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
+          "name": "Lorde",
+          "affinity": 0.956,
+          "popularity": 0.999
+        },
+        {
+          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
+          "name": "Adele",
+          "affinity": 0.956,
+          "popularity": 1
+        },
+        {
+          "id": "4595F6D2-E849-4988-A4DE-8905D463C9B8",
+          "name": "Jessie J",
+          "affinity": 0.956,
+          "popularity": 0.998
+        },
+        {
+          "id": "77609B72-D958-4C2D-B6F9-59ECE4633D56",
+          "name": "Clean Bandit",
+          "affinity": 0.955,
+          "popularity": 0.998
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev9",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Sia’s audience with a Berlin location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "signal_location": "Berlin, Germany",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:37:16.959Z",
+      "cached": false,
+      "durationMs": 3695,
+      "keyFields": [
+        {
+          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
+          "name": "MØ",
+          "affinity": 0.957,
+          "popularity": 0.996
+        },
+        {
+          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
+          "name": "Lorde",
+          "affinity": 0.956,
+          "popularity": 0.999
+        },
+        {
+          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
+          "name": "Sam Smith",
+          "affinity": 0.956,
+          "popularity": 0.999
+        },
+        {
+          "id": "63BBE4D8-D721-466F-907C-D0007E9B6665",
+          "name": "Lana Del Rey",
+          "affinity": 0.955,
+          "popularity": 1
+        },
+        {
+          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
+          "name": "Adele",
+          "affinity": 0.953,
+          "popularity": 1
+        },
+        {
+          "id": "723BCD5C-AA73-4E13-AAA6-9FBE10A889E4",
+          "name": "Rihanna",
+          "affinity": 0.952,
+          "popularity": 1
+        },
+        {
+          "id": "5C2F20AE-92EF-4DD8-B0E4-E7A16C10E452",
+          "name": "Mark Ronson",
+          "affinity": 0.952,
+          "popularity": 0.998
+        },
+        {
+          "id": "02750106-6B44-44CA-911D-B32C846B49A1",
+          "name": "Tove Lo",
+          "affinity": 0.952,
+          "popularity": 0.998
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev16",
+      "tool": "qloo_recommend",
+      "purpose": "Film with strong affinity among Sia’s audience",
+      "inputRedacted": {
+        "target_type": "movie",
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:17.552Z",
+      "cached": false,
+      "durationMs": 4198,
+      "keyFields": [
+        {
+          "id": "73E550EF-654A-41EA-863C-E958002CF7BA",
+          "name": "La La Land",
+          "affinity": 0.921,
+          "popularity": 1
+        },
+        {
+          "id": "CD5D743A-44D5-4FBF-A8C2-7BDFF3DE6628",
+          "name": "The Fault in Our Stars",
+          "affinity": 0.919,
+          "popularity": 0.995
+        },
+        {
+          "id": "A572B5F1-FC14-4525-B0F2-D0AB05D91915",
+          "name": "The Greatest Showman",
+          "affinity": 0.917,
+          "popularity": 0.995
+        },
+        {
+          "id": "8E2814F5-4FAA-435B-A426-5A892452CC9E",
+          "name": "Me Before You",
+          "affinity": 0.917,
+          "popularity": 0.994
+        },
+        {
+          "id": "74E3107A-108B-4339-B9FD-54C4B1D5ABB4",
+          "name": "Love, Rosie",
+          "affinity": 0.917,
+          "popularity": 0.989
+        },
+        {
+          "id": "4BE414CF-375F-4566-AA66-9AC6150A6B7F",
+          "name": "Lady Bird",
+          "affinity": 0.914,
+          "popularity": 0.998
+        }
+      ],
       "warnings": []
     },
     {
       "id": "ev7",
       "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
+      "purpose": "Artists with strong affinity among Sia’s audience (opener pool)",
       "inputRedacted": {
         "target_type": "artist",
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"]
+        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
+        "limit": 15
       },
       "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:18.869Z",
+      "summary": "15 results.",
+      "resultCount": 15,
+      "fetchedAt": "2026-10-25T22:37:19.855Z",
       "cached": false,
-      "durationMs": 5534,
+      "durationMs": 6593,
       "keyFields": [
         {
           "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
@@ -2228,155 +2734,37 @@
           "name": "Jessie J",
           "affinity": 0.913,
           "popularity": 0.998
+        },
+        {
+          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
+          "name": "Lorde",
+          "affinity": 0.911,
+          "popularity": 0.999
+        },
+        {
+          "id": "67214C5E-264F-4329-8EA3-582B5AEE513D",
+          "name": "Foxes",
+          "affinity": 0.91,
+          "popularity": 0.992
         }
       ],
       "warnings": []
     },
     {
-      "id": "ev2",
-      "tool": "qloo_where_popular",
-      "purpose": "Agent: where popular",
-      "inputRedacted": {
-        "entity_type": "artist",
-        "within": "United States",
-        "entity": "287BFB38-2E54-4C2D-BFEB-0565B17325D7",
-        "limit": 20
-      },
-      "status": "ok",
-      "summary": "20 results.",
-      "resultCount": 20,
-      "fetchedAt": "2026-10-23T21:40:19.511Z",
-      "cached": false,
-      "durationMs": 6180,
-      "keyFields": {
-        "top_cells": [
-          {
-            "lat": 40.693,
-            "lng": -74.004,
-            "affinity": 1,
-            "popularity": 1
-          },
-          {
-            "lat": 43.154,
-            "lng": -78.926,
-            "affinity": 1,
-            "popularity": 0.996
-          },
-          {
-            "lat": 34.014,
-            "lng": -118.301,
-            "affinity": 1,
-            "popularity": 1
-          },
-          {
-            "lat": 37.705,
-            "lng": -122.52,
-            "affinity": 1,
-            "popularity": 0.999
-          },
-          {
-            "lat": 34.189,
-            "lng": -118.301,
-            "affinity": 0.999,
-            "popularity": 1
-          }
-        ],
-        "cities_derived_by_opener": [
-          {
-            "city": "New York City",
-            "region": "New York",
-            "country": "United States",
-            "max_affinity": 1,
-            "cells": 2
-          },
-          {
-            "city": "Toronto",
-            "region": "Ontario",
-            "country": "Canada",
-            "max_affinity": 1,
-            "cells": 1
-          },
-          {
-            "city": "Los Angeles",
-            "region": "California",
-            "country": "United States",
-            "max_affinity": 1,
-            "cells": 3
-          },
-          {
-            "city": "San Francisco",
-            "region": "California",
-            "country": "United States",
-            "max_affinity": 1,
-            "cells": 2
-          },
-          {
-            "city": "Boston",
-            "region": "Massachusetts",
-            "country": "United States",
-            "max_affinity": 0.999,
-            "cells": 2
-          },
-          {
-            "city": "Orlando",
-            "region": "Florida",
-            "country": "United States",
-            "max_affinity": 0.999,
-            "cells": 2
-          },
-          {
-            "city": "San Diego",
-            "region": "California",
-            "country": "United States",
-            "max_affinity": 0.998,
-            "cells": 1
-          },
-          {
-            "city": "Seattle",
-            "region": "Washington",
-            "country": "United States",
-            "max_affinity": 0.998,
-            "cells": 1
-          },
-          {
-            "city": "Paradise",
-            "region": "Nevada",
-            "country": "United States",
-            "max_affinity": 0.998,
-            "cells": 1
-          },
-          {
-            "city": "Miami",
-            "region": "Florida",
-            "country": "United States",
-            "max_affinity": 0.998,
-            "cells": 1
-          },
-          {
-            "city": "Chicago",
-            "region": "Illinois",
-            "country": "United States",
-            "max_affinity": 0.998,
-            "cells": 1
-          }
-        ]
-      },
-      "warnings": []
-    },
-    {
-      "id": "ev17",
+      "id": "ev18",
       "tool": "qloo_compare_audiences",
-      "purpose": "Agent: compare audiences",
+      "purpose": "Compare Sia’s audience with Ellie Goulding’s",
       "inputRedacted": {
+        "group_a": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
         "group_b": ["D0FB2FA3-01FF-4F46-A501-F53EE746CD66"],
-        "group_a": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"]
+        "limit": 10
       },
       "status": "ok",
       "summary": "1 result.",
       "resultCount": 1,
-      "fetchedAt": "2026-10-23T21:40:25.830Z",
+      "fetchedAt": "2026-10-25T22:37:20.457Z",
       "cached": false,
-      "durationMs": 1485,
+      "durationMs": 595,
       "keyFields": [
         {
           "name": "Experimental",
@@ -2440,372 +2828,16 @@
         }
       ],
       "warnings": []
-    },
-    {
-      "id": "ev15",
-      "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
-      "inputRedacted": {
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "target_type": "artist",
-        "signal_location": "London, United Kingdom"
-      },
-      "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:26.127Z",
-      "cached": false,
-      "durationMs": 1784,
-      "keyFields": [
-        {
-          "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
-          "name": "Ellie Goulding",
-          "affinity": 0.963,
-          "popularity": 1
-        },
-        {
-          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
-          "name": "Sam Smith",
-          "affinity": 0.961,
-          "popularity": 0.999
-        },
-        {
-          "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
-          "name": "Calvin Harris",
-          "affinity": 0.958,
-          "popularity": 1
-        },
-        {
-          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
-          "name": "MØ",
-          "affinity": 0.957,
-          "popularity": 0.996
-        },
-        {
-          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
-          "name": "Lorde",
-          "affinity": 0.956,
-          "popularity": 0.999
-        },
-        {
-          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
-          "name": "Adele",
-          "affinity": 0.956,
-          "popularity": 1
-        },
-        {
-          "id": "4595F6D2-E849-4988-A4DE-8905D463C9B8",
-          "name": "Jessie J",
-          "affinity": 0.956,
-          "popularity": 0.998
-        },
-        {
-          "id": "77609B72-D958-4C2D-B6F9-59ECE4633D56",
-          "name": "Clean Bandit",
-          "affinity": 0.955,
-          "popularity": 0.998
-        },
-        {
-          "id": "67214C5E-264F-4329-8EA3-582B5AEE513D",
-          "name": "Foxes",
-          "affinity": 0.955,
-          "popularity": 0.992
-        },
-        {
-          "id": "63BBE4D8-D721-466F-907C-D0007E9B6665",
-          "name": "Lana Del Rey",
-          "affinity": 0.955,
-          "popularity": 1
-        }
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ev16",
-      "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
-      "inputRedacted": {
-        "signal_location": "Berlin, Germany",
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "target_type": "artist"
-      },
-      "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:26.145Z",
-      "cached": false,
-      "durationMs": 1801,
-      "keyFields": [
-        {
-          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
-          "name": "MØ",
-          "affinity": 0.957,
-          "popularity": 0.996
-        },
-        {
-          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
-          "name": "Lorde",
-          "affinity": 0.956,
-          "popularity": 0.999
-        },
-        {
-          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
-          "name": "Sam Smith",
-          "affinity": 0.956,
-          "popularity": 0.999
-        },
-        {
-          "id": "63BBE4D8-D721-466F-907C-D0007E9B6665",
-          "name": "Lana Del Rey",
-          "affinity": 0.955,
-          "popularity": 1
-        },
-        {
-          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
-          "name": "Adele",
-          "affinity": 0.953,
-          "popularity": 1
-        },
-        {
-          "id": "723BCD5C-AA73-4E13-AAA6-9FBE10A889E4",
-          "name": "Rihanna",
-          "affinity": 0.952,
-          "popularity": 1
-        },
-        {
-          "id": "5C2F20AE-92EF-4DD8-B0E4-E7A16C10E452",
-          "name": "Mark Ronson",
-          "affinity": 0.952,
-          "popularity": 0.998
-        },
-        {
-          "id": "02750106-6B44-44CA-911D-B32C846B49A1",
-          "name": "Tove Lo",
-          "affinity": 0.952,
-          "popularity": 0.998
-        },
-        {
-          "id": "F8C15F57-39B6-454A-87F3-2D227B6B42B1",
-          "name": "Britney Spears",
-          "affinity": 0.951,
-          "popularity": 1
-        },
-        {
-          "id": "134329CB-BB11-4F69-A55F-ADA4B9F10A1D",
-          "name": "Banks",
-          "affinity": 0.95,
-          "popularity": 0.997
-        }
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ev14",
-      "tool": "qloo_recommend",
-      "purpose": "Agent: recommend",
-      "inputRedacted": {
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "target_type": "artist",
-        "signal_location": "New York City, United States"
-      },
-      "status": "ok",
-      "summary": "10 results.",
-      "resultCount": 10,
-      "fetchedAt": "2026-10-23T21:40:26.174Z",
-      "cached": false,
-      "durationMs": 1831,
-      "keyFields": [
-        {
-          "id": "6062A977-79F7-48F9-917E-0B57D77474AD",
-          "name": "Sam Smith",
-          "affinity": 0.96,
-          "popularity": 0.999
-        },
-        {
-          "id": "8C215FA9-DD4E-4A87-BC72-578887686325",
-          "name": "Calvin Harris",
-          "affinity": 0.957,
-          "popularity": 1
-        },
-        {
-          "id": "A37B17AE-15C7-48A3-AADD-6CE50BE3FF74",
-          "name": "Lorde",
-          "affinity": 0.956,
-          "popularity": 0.999
-        },
-        {
-          "id": "D0FB2FA3-01FF-4F46-A501-F53EE746CD66",
-          "name": "Ellie Goulding",
-          "affinity": 0.956,
-          "popularity": 1
-        },
-        {
-          "id": "53BFBE23-88E7-4822-94DA-A20D0874F086",
-          "name": "MØ",
-          "affinity": 0.956,
-          "popularity": 0.996
-        },
-        {
-          "id": "24012F7D-C125-4EB7-A661-6AF65523E43C",
-          "name": "Adele",
-          "affinity": 0.955,
-          "popularity": 1
-        },
-        {
-          "id": "4595F6D2-E849-4988-A4DE-8905D463C9B8",
-          "name": "Jessie J",
-          "affinity": 0.955,
-          "popularity": 0.998
-        },
-        {
-          "id": "63BBE4D8-D721-466F-907C-D0007E9B6665",
-          "name": "Lana Del Rey",
-          "affinity": 0.955,
-          "popularity": 1
-        },
-        {
-          "id": "F6754C46-B3E7-457F-8B7E-06C613597320",
-          "name": "Beyoncé",
-          "affinity": 0.955,
-          "popularity": 1
-        },
-        {
-          "id": "02750106-6B44-44CA-911D-B32C846B49A1",
-          "name": "Tove Lo",
-          "affinity": 0.953,
-          "popularity": 0.998
-        }
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ev18",
-      "tool": "qloo_recommend",
-      "purpose": "Opener candidates for Sia’s audience with a Lagos location signal",
-      "inputRedacted": {
-        "target_type": "artist",
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "signal_location": "Lagos, Nigeria",
-        "limit": 8
-      },
-      "status": "ok",
-      "summary": "8 results.",
-      "resultCount": 8,
-      "fetchedAt": "2026-10-23T21:40:39.279Z",
-      "cached": false,
-      "durationMs": 1305,
-      "keyFields": [
-        {
-          "id": "723BCD5C-AA73-4E13-AAA6-9FBE10A889E4",
-          "name": "Rihanna",
-          "affinity": 0.953,
-          "popularity": 1
-        },
-        {
-          "id": "41FF0A0C-38BD-449A-A566-7C3E59DC95AF",
-          "name": "Labrinth",
-          "affinity": 0.95,
-          "popularity": 0.995
-        },
-        {
-          "id": "A9C3CE3F-9A0C-47B3-8AF8-E75B252F86D8",
-          "name": "The Weeknd",
-          "affinity": 0.946,
-          "popularity": 1
-        },
-        {
-          "id": "33A00C9F-6842-49F8-B26A-34D5346FF75A",
-          "name": "Jason Derülo",
-          "affinity": 0.946,
-          "popularity": 0.999
-        },
-        {
-          "id": "4D16DBFD-35CB-44E2-95E3-62EDD9932A0B",
-          "name": "Major Lazer",
-          "affinity": 0.945,
-          "popularity": 0.999
-        },
-        {
-          "id": "7AEC8912-DB9F-43D6-ADE1-AB99AC138E26",
-          "name": "Nicki Minaj",
-          "affinity": 0.944,
-          "popularity": 0.999
-        },
-        {
-          "id": "FE82AB4A-9CAA-4C27-BA7D-CEA60F67969E",
-          "name": "Naughty Boy",
-          "affinity": 0.94,
-          "popularity": 0.993
-        },
-        {
-          "id": "510B9C56-42DA-4193-82EB-464FAFE1F209",
-          "name": "will.i.am",
-          "affinity": 0.936,
-          "popularity": 0.997
-        }
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ev19",
-      "tool": "qloo_recommend",
-      "purpose": "Film with strong affinity among Sia’s audience",
-      "inputRedacted": {
-        "target_type": "movie",
-        "signals": ["287BFB38-2E54-4C2D-BFEB-0565B17325D7"],
-        "limit": 6
-      },
-      "status": "ok",
-      "summary": "6 results.",
-      "resultCount": 6,
-      "fetchedAt": "2026-10-23T21:40:40.702Z",
-      "cached": false,
-      "durationMs": 2727,
-      "keyFields": [
-        {
-          "id": "73E550EF-654A-41EA-863C-E958002CF7BA",
-          "name": "La La Land",
-          "affinity": 0.921,
-          "popularity": 1
-        },
-        {
-          "id": "CD5D743A-44D5-4FBF-A8C2-7BDFF3DE6628",
-          "name": "The Fault in Our Stars",
-          "affinity": 0.919,
-          "popularity": 0.995
-        },
-        {
-          "id": "A572B5F1-FC14-4525-B0F2-D0AB05D91915",
-          "name": "The Greatest Showman",
-          "affinity": 0.917,
-          "popularity": 0.995
-        },
-        {
-          "id": "8E2814F5-4FAA-435B-A426-5A892452CC9E",
-          "name": "Me Before You",
-          "affinity": 0.917,
-          "popularity": 0.994
-        },
-        {
-          "id": "74E3107A-108B-4339-B9FD-54C4B1D5ABB4",
-          "name": "Love, Rosie",
-          "affinity": 0.917,
-          "popularity": 0.989
-        },
-        {
-          "id": "4BE414CF-375F-4566-AA66-9AC6150A6B7F",
-          "name": "Lady Bird",
-          "affinity": 0.914,
-          "popularity": 0.998
-        }
-      ],
-      "warnings": []
     }
   ],
   "notices": [
     {
       "level": "info",
       "message": "The agent was unavailable for this run, so the plan was assembled by the deterministic planner."
+    },
+    {
+      "level": "info",
+      "message": "Qloo scores each country's heatmap on its own scale, so Opener picks the strongest cities in each country (United States, United Kingdom, Germany, Nigeria, Australia) instead of ranking countries against each other."
     }
   ],
   "limitations": [
@@ -2813,6 +2845,7 @@
     "Cities are derived by Opener from Qloo heat cells using a bundled GeoNames table; cells more than 90 km from a listed city are left out.",
     "Demographic values are relative affinities (above or below average), not shares of fans.",
     "Dates, drive times, venue availability and capacity are not modelled yet.",
-    "Searched within: United States, United Kingdom, Germany, Nigeria, Australia."
+    "Searched within: United States, United Kingdom, Germany, Nigeria, Australia.",
+    "Heatmap scores are relative within each country searched, so cities in different countries are not ranked against each other."
   ]
 }

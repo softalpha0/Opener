@@ -175,20 +175,33 @@ Only what the code enforces.
 
 Every plan has a **Generic vs Opener** button. The server asks the configured model for a tour using only the artist's name and the countries (`lib/plan/generic.ts`, `genericPrompt`), with no tools and no Qloo data. If no LLM is configured or it fails, the generic tour is the largest cities by population, and the page says which one you're looking at. Each generic city is then looked up in the Qloo heatmaps the plan already fetched.
 
-From [`evidence/sia-worldwide/`](evidence/sia-worldwide/summary.md), a real Qloo run (Sia, five countries) compared offline with the population baseline:
+Captured from the live app on 2026-10-25 ([`evidence/`](evidence/)). The model was out of free quota that day, so each generic tour is the population baseline.
 
-| Generic (population) | What Qloo says                       | Opener picked it? |
-| -------------------- | ------------------------------------ | ----------------- |
-| New York City        | #2 of 11 cities in the US heatmap    | Yes               |
-| London               | #1 of 4 in the UK                    | Yes               |
-| Berlin               | #1 of 8 in Germany                   | Yes               |
-| Lagos                | #1 of 8 in Nigeria                   | Yes               |
-| Sydney               | #1 of 6 in Australia                 | No                |
-| Los Angeles          | #1 of 11 in the US                   | Yes               |
-| Birmingham           | No match in Qloo's top UK heat cells | No                |
-| Hamburg              | #5 of 8 in Germany                   | No                |
+**Phoebe Bridgers, North America** ([summary](evidence/phoebe-bridgers-north-america/summary.md)):
 
-For a global pop star the big-city guess and Qloo mostly agree (5 of 8). Where they differ, Qloo moves the tour: Munich (#2 in Germany) and San Francisco (#3 in the US) instead of Hamburg (#5) and Birmingham (no signal). The gap should be larger for niche artists. Run the comparison for the other samples on the live app, or capture them with `npm run evidence -- https://opener-9w48.onrender.com`.
+| Generic (largest cities) | What Qloo says                           |
+| ------------------------ | ---------------------------------------- |
+| New York City            | No match in Qloo's top US heat cells     |
+| Toronto                  | #2 of 6 in Canada (Opener picked it)     |
+| Los Angeles              | No match in Qloo's top US heat cells     |
+| Montreal                 | #3 of 6 in Canada (Opener picked it)     |
+| Chicago                  | No match in Qloo's top US heat cells     |
+| Calgary                  | No match in Qloo's top Canada heat cells |
+| Houston                  | No match in Qloo's top US heat cells     |
+| Ottawa                   | #4 of 6 in Canada (Opener picked it)     |
+
+Five of the eight cities a no-data booker would pick have no match in Qloo's top heat cells for her. Opener's route goes where Qloo puts her audience: Boston (#1 in the US), Portland (#2), Seattle (#3) and Vancouver (#1 in Canada), with openers like Lucy Dacus, Julien Baker, Big Thief and Faye Webster.
+
+All four samples:
+
+| Artist, region                                                                      | Generic cities Opener also picked | Generic cities in Qloo's top 3 for their country | Generic cities with no Qloo match |
+| ----------------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------ | --------------------------------- |
+| [Phoebe Bridgers, North America](evidence/phoebe-bridgers-north-america/summary.md) | 3 of 8                            | 2 of 8                                           | 5                                 |
+| [Khruangbin, Europe](evidence/khruangbin-europe/summary.md)                         | 5 of 8                            | 7 of 8                                           | 0                                 |
+| [Rema, Africa](evidence/rema-africa/summary.md)                                     | 6 of 8                            | 6 of 8                                           | 2                                 |
+| [Sia, Worldwide](evidence/sia-worldwide/summary.md)                                 | 6 of 8                            | 6 of 8                                           | 1                                 |
+
+The pattern is what you'd expect: for artists whose audience is spread across the biggest cities (Sia, Rema), the guess and Qloo mostly agree. For an indie artist like Phoebe Bridgers, the big-city guess misses most of the places her audience actually clusters. That's the case Opener is built for.
 
 ## Tech stack
 
@@ -267,7 +280,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Generic vs Opener (`generic.test.ts`) | 13              | Parsing model replies, population baseline, ranking on recorded Qloo data, no Qloo data in the prompt, caching                                                                        |
 | Agent runner (`runner.integration`)   | 8               | Full plan on mocked Qloo, ambiguous and unknown artists, grounding drops invented cities, artists and evidence, agent failure fallback, time budget, per-country ranking, agent steps |
 | Gemini provider (`gemini.test.ts`)    | 12              | Busy and quota fallbacks, retries, schema cleaning                                                                                                                                    |
-| Ranking and helpers (`plan-helpers`)  | 11              | Cell-to-city mapping, route order, momentum, rate limiter, "Why this city"                                                                                                            |
+| Ranking and helpers (`plan-helpers`)  | 13              | Cell-to-city mapping, route order, momentum, rate limiter, "Why this city", audience tag filtering                                                                                    |
 | Cities and scales (`merge`)           | 6               | Neighbour merging, metro over suburb, border fix, 0–1 percentiles, near-tie ranking                                                                                                   |
 | Qloo client (`client.integration`)    | 5               | One connection, caching by normalised args, bounded retries, respawn, readiness                                                                                                       |
 | Envelope normalisation (`envelope`)   | 9               | Result parsing, missing status, errors and retryability, `series` for trends                                                                                                          |
@@ -276,7 +289,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Redaction (`redact.test.ts`)          | 4               | Secret-looking fields and the Qloo key value scrubbed at any depth                                                                                                                    |
 | End to end (`tests/e2e`)              | 5 × 2 viewports | Landing, saved plan, Why this city, Under the hood, Generic vs Opener, health, no horizontal scroll                                                                                   |
 
-83 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
+85 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
 
 ## Project layout
 
@@ -307,7 +320,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 - **Affinity is not ticket demand.** It shows where the audience over-indexes, not how many tickets would sell.
 - **No venues, dates or drive times yet.** Stop reasons cite Qloo signals; there are no venue-level pitches. Route order is nearest-neighbour by straight-line distance.
 - **Free LLM tier.** Gemini's free tier can be busy or out of daily quota. The plan then comes from the fixed planner and the generic tour from the population baseline, and the page says so.
-- **Small evidence set.** One real run is recorded in this repo so far (Sia, worldwide, captured with the October 23 build, before the per-country ranking and border fixes). Re-capture from the live app with `npm run evidence`.
+- **Small evidence set.** Four artists captured from the live app, each one run. The generic tours in them are the population baseline because Gemini's free quota was spent that day; the LLM comparison runs on the live app when the quota allows.
 - **Rate limits and cache are per instance.** Several instances would need a shared store.
 - **The free Render plan sleeps** after about 15 idle minutes; the next visit takes about a minute.
 

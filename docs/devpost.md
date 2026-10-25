@@ -8,7 +8,7 @@ Ask a language model where an indie artist should tour and you get the biggest c
 
 ## What it does
 
-Every plan has a **Generic vs Opener** comparison: the same model suggests a tour from only the artist's name and the countries (no tools, no Qloo data), and Opener looks up each of its cities in Qloo's heatmaps. For Sia across five countries, the guess and Qloo agreed on 5 of 8 cities. Where they differed, Qloo swapped in Munich (#2 in Germany) and San Francisco (#3 in the US) for Hamburg (#5) and Birmingham, which matched none of the UK's top heat cells.
+Every plan has a **Generic vs Opener** comparison: a tour picked without data (the same model with only the artist's name and countries, or the largest cities when the model is unavailable) next to Opener's, with each generic city looked up in Qloo's heatmaps. For Phoebe Bridgers in North America, five of the eight big-city picks (New York, Los Angeles, Chicago, Houston, Calgary) had no match in Qloo's top heat cells for her. Opener routes her through Boston, Portland, Seattle and Vancouver instead, the top cities in Qloo's heatmaps. For stars with audiences everywhere, like Sia, the guess and Qloo mostly agree (6 of 8). Opener matters most for indie acts.
 
 You type an artist and a region, and Opener:
 
@@ -47,7 +47,7 @@ Next.js 15 in one Docker container that keeps `qloo mcp` running over stdio. A G
 
 - Every number on the page traces to a Qloo call you can open.
 - The no-Qloo comparison is on every plan, not just in the pitch.
-- 83 unit tests and 10 end-to-end runs, in CI, none touching the live API.
+- 85 unit tests and 10 end-to-end runs, in CI, none touching the live API.
 
 ## What we learned
 

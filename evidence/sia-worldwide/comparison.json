@@ -1,7 +1,7 @@
 {
   "generic": {
     "source": "population",
-    "generatedAt": "2026-10-24T12:06:35.572Z",
+    "generatedAt": "2026-10-25T22:38:37.458Z",
     "stops": [
       {
         "city": "New York City",
@@ -44,14 +44,14 @@
         "why": "One of the largest cities in Germany (population 1,974k)."
       }
     ],
-    "note": "Built offline from a saved plan, so the generic tour is the population baseline (no LLM call)."
+    "note": "The model was unavailable (busy or out of free quota), so this is the population baseline."
   },
   "rows": [
     {
       "city": "New York City",
       "country": "United States",
       "why": "One of the largest cities in United States (population 8,804k).",
-      "openerOrder": 5,
+      "openerOrder": 2,
       "qloo": {
         "key": "new york city|us",
         "city": "New York City",
@@ -69,7 +69,7 @@
       "city": "London",
       "country": "United Kingdom",
       "why": "One of the largest cities in United Kingdom (population 8,962k).",
-      "openerOrder": 1,
+      "openerOrder": 3,
       "qloo": {
         "key": "london|gb",
         "city": "London",
@@ -87,7 +87,7 @@
       "city": "Berlin",
       "country": "Germany",
       "why": "One of the largest cities in Germany (population 3,426k).",
-      "openerOrder": 3,
+      "openerOrder": 5,
       "qloo": {
         "key": "berlin|de",
         "city": "Berlin",
@@ -105,7 +105,7 @@
       "city": "Lagos",
       "country": "Nigeria",
       "why": "One of the largest cities in Nigeria (population 15,388k).",
-      "openerOrder": 4,
+      "openerOrder": 7,
       "qloo": {
         "key": "lagos|ng",
         "city": "Lagos",
@@ -123,6 +123,7 @@
       "city": "Sydney",
       "country": "Australia",
       "why": "One of the largest cities in Australia (population 5,639k).",
+      "openerOrder": 8,
       "qloo": {
         "key": "sydney|au",
         "city": "Sydney",
@@ -140,7 +141,7 @@
       "city": "Los Angeles",
       "country": "United States",
       "why": "One of the largest cities in United States (population 3,821k).",
-      "openerOrder": 7,
+      "openerOrder": 1,
       "qloo": {
         "key": "los angeles|us",
         "city": "Los Angeles",
@@ -180,7 +181,23 @@
   ],
   "openerOnly": [
     {
-      "order": 2,
+      "order": 4,
+      "city": "Glasgow",
+      "country": "United Kingdom",
+      "qloo": {
+        "key": "glasgow|gb",
+        "city": "Glasgow",
+        "country": "United Kingdom",
+        "area": "United Kingdom",
+        "rank": 2,
+        "of": 4,
+        "affinity": 0.9988198849387815,
+        "cells": 3,
+        "evidenceId": "ev3"
+      }
+    },
+    {
+      "order": 6,
       "city": "Munich",
       "country": "Germany",
       "qloo": {
@@ -194,30 +211,9 @@
         "cells": 5,
         "evidenceId": "ev4"
       }
-    },
-    {
-      "order": 6,
-      "city": "Toronto",
-      "country": "Canada"
-    },
-    {
-      "order": 8,
-      "city": "San Francisco",
-      "country": "United States",
-      "qloo": {
-        "key": "san francisco|us",
-        "city": "San Francisco",
-        "country": "United States",
-        "area": "United States",
-        "rank": 3,
-        "of": 11,
-        "affinity": 0.999601593625498,
-        "cells": 2,
-        "evidenceId": "ev2"
-      }
     }
   ],
-  "overlap": 5,
+  "overlap": 6,
   "noSignal": 1,
   "qlooTop3": 6
 }

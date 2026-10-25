@@ -181,6 +181,23 @@ function fillOpeners(
   return out;
 }
 
+const MUSIC_TAG = /^urn:tag:[^:]+:music(:|$)/;
+const MEDIA_TAG = /^urn:tag:[^:]+:media(:|$)/;
+
+/**
+ * Tags for the "Audience tags" panel. Qloo's tag list for an artist mixes in place and brand
+ * tags ("Three Star", "Discover" the credit card), so music tags come first, then media tags,
+ * and the rest only if there are too few of those.
+ */
+export function audienceTags<T extends { id: string; name: string }>(tags: T[], max = 10): T[] {
+  const clean = tags.map((t) => ({ ...t, name: t.name.trim() })).filter((t) => t.name);
+  const music = clean.filter((t) => MUSIC_TAG.test(t.id));
+  const media = clean.filter((t) => MEDIA_TAG.test(t.id));
+  const picked = [...music, ...media];
+  const rest = picked.length >= 3 ? [] : clean.filter((t) => !picked.includes(t));
+  return [...picked, ...rest].slice(0, max);
+}
+
 function toStop(
   d: Demand,
   order: number,
@@ -383,8 +400,9 @@ function merchIdeas(
       evidenceIds: [brands.evidenceId],
     });
   }
-  // Mood boards only make sense with music and media tags, not place tags like "Hotel".
-  const moodTags = tags.filter((t) => /^urn:tag:[^:]+:(music|media)(:|$)/.test(t.id));
+  // Mood boards use music tags only: not place tags like "Hotel", and not media keywords,
+  // which can describe people (e.g. an ethnicity) rather than a sound or style.
+  const moodTags = tags.filter((t) => MUSIC_TAG.test(t.id));
   if (moodTags.length >= 2 && tagsId) {
     const picked = moodTags.slice(0, 3).map((t) => t.name);
     ideas.push({
@@ -498,7 +516,7 @@ export function composePlan(ctx: ComposeContext): TourPlan {
     .slice(0, 120);
 
   const tagsCall = box.byTool("qloo_entity_tags").find((c) => hasResults(c.envelope));
-  const tags = tagsCall ? parseTags(tagsCall.envelope.results).slice(0, 10) : [];
+  const tags = tagsCall ? audienceTags(parseTags(tagsCall.envelope.results)) : [];
 
   const demoCall = box.byTool("qloo_audience_demographics").find((c) => hasResults(c.envelope));
   const demo = demoCall ? parseDemographics(demoCall.envelope.results) : undefined;

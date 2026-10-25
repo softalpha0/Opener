@@ -1,0 +1,245 @@
+{
+  "generic": {
+    "source": "population",
+    "generatedAt": "2026-10-25T22:38:35.750Z",
+    "stops": [
+      {
+        "city": "Berlin",
+        "country": "Germany",
+        "why": "One of the largest cities in Germany (population 3,426k)."
+      },
+      {
+        "city": "Paris",
+        "country": "France",
+        "why": "One of the largest cities in France (population 2,139k)."
+      },
+      {
+        "city": "Madrid",
+        "country": "Spain",
+        "why": "One of the largest cities in Spain (population 3,256k)."
+      },
+      {
+        "city": "Hamburg",
+        "country": "Germany",
+        "why": "One of the largest cities in Germany (population 1,974k)."
+      },
+      {
+        "city": "Marseille",
+        "country": "France",
+        "why": "One of the largest cities in France (population 877k)."
+      },
+      {
+        "city": "Barcelona",
+        "country": "Spain",
+        "why": "One of the largest cities in Spain (population 1,686k)."
+      },
+      {
+        "city": "Munich",
+        "country": "Germany",
+        "why": "One of the largest cities in Germany (population 1,505k)."
+      },
+      {
+        "city": "Lyon",
+        "country": "France",
+        "why": "One of the largest cities in France (population 521k)."
+      }
+    ],
+    "note": "The model was unavailable (busy or out of free quota), so this is the population baseline."
+  },
+  "rows": [
+    {
+      "city": "Berlin",
+      "country": "Germany",
+      "why": "One of the largest cities in Germany (population 3,426k).",
+      "openerOrder": 1,
+      "qloo": {
+        "key": "berlin|de",
+        "city": "Berlin",
+        "country": "Germany",
+        "area": "Germany",
+        "rank": 1,
+        "of": 5,
+        "affinity": 1,
+        "cells": 13,
+        "evidenceId": "ev2"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Paris",
+      "country": "France",
+      "why": "One of the largest cities in France (population 2,139k).",
+      "openerOrder": 3,
+      "qloo": {
+        "key": "paris|fr",
+        "city": "Paris",
+        "country": "France",
+        "area": "France",
+        "rank": 1,
+        "of": 6,
+        "affinity": 1,
+        "cells": 3,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Madrid",
+      "country": "Spain",
+      "why": "One of the largest cities in Spain (population 3,256k).",
+      "openerOrder": 8,
+      "qloo": {
+        "key": "madrid|es",
+        "city": "Madrid",
+        "country": "Spain",
+        "area": "Spain",
+        "rank": 2,
+        "of": 7,
+        "affinity": 0.9958275382475661,
+        "cells": 3,
+        "evidenceId": "ev5"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Hamburg",
+      "country": "Germany",
+      "why": "One of the largest cities in Germany (population 1,974k).",
+      "openerOrder": 2,
+      "qloo": {
+        "key": "hamburg|de",
+        "city": "Hamburg",
+        "country": "Germany",
+        "area": "Germany",
+        "rank": 2,
+        "of": 5,
+        "affinity": 0.9879518072289156,
+        "cells": 2,
+        "evidenceId": "ev2"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Marseille",
+      "country": "France",
+      "why": "One of the largest cities in France (population 877k).",
+      "qloo": {
+        "key": "marseille|fr",
+        "city": "Marseille",
+        "country": "France",
+        "area": "France",
+        "rank": 3,
+        "of": 6,
+        "affinity": 0.9890310786106032,
+        "cells": 4,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Barcelona",
+      "country": "Spain",
+      "why": "One of the largest cities in Spain (population 1,686k).",
+      "openerOrder": 7,
+      "qloo": {
+        "key": "barcelona|es",
+        "city": "Barcelona",
+        "country": "Spain",
+        "area": "Spain",
+        "rank": 1,
+        "of": 7,
+        "affinity": 1,
+        "cells": 7,
+        "evidenceId": "ev5"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Munich",
+      "country": "Germany",
+      "why": "One of the largest cities in Germany (population 1,505k).",
+      "qloo": {
+        "key": "munich|de",
+        "city": "Munich",
+        "country": "Germany",
+        "area": "Germany",
+        "rank": 3,
+        "of": 5,
+        "affinity": 0.9859437751004017,
+        "cells": 2,
+        "evidenceId": "ev2"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Lyon",
+      "country": "France",
+      "why": "One of the largest cities in France (population 521k).",
+      "qloo": {
+        "key": "lyon|fr",
+        "city": "Lyon",
+        "country": "France",
+        "area": "France",
+        "rank": 5,
+        "of": 6,
+        "affinity": 0.9835466179159049,
+        "cells": 1,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    }
+  ],
+  "openerOnly": [
+    {
+      "order": 4,
+      "city": "Nice",
+      "country": "France",
+      "qloo": {
+        "key": "nice|fr",
+        "city": "Nice",
+        "country": "France",
+        "area": "France",
+        "rank": 2,
+        "of": 6,
+        "affinity": 0.9963436928702011,
+        "cells": 3,
+        "evidenceId": "ev3"
+      }
+    },
+    {
+      "order": 5,
+      "city": "Rotterdam",
+      "country": "The Netherlands",
+      "qloo": {
+        "key": "rotterdam|nl",
+        "city": "Rotterdam",
+        "country": "The Netherlands",
+        "area": "Netherlands",
+        "rank": 1,
+        "of": 2,
+        "affinity": 1,
+        "cells": 19,
+        "evidenceId": "ev4"
+      }
+    },
+    {
+      "order": 6,
+      "city": "Groningen",
+      "country": "The Netherlands",
+      "qloo": {
+        "key": "groningen|nl",
+        "city": "Groningen",
+        "country": "The Netherlands",
+        "area": "Netherlands",
+        "rank": 2,
+        "of": 2,
+        "affinity": 0.9708994708994709,
+        "cells": 1,
+        "evidenceId": "ev4"
+      }
+    }
+  ],
+  "overlap": 5,
+  "noSignal": 0,
+  "qlooTop3": 7
+}

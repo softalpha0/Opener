@@ -6,6 +6,7 @@ import { parseCompare, parseDemographics, parseHeatmap } from "@/lib/qloo/parse"
 import { SlidingWindowLimiter } from "@/lib/rate-limit";
 import { extractJson } from "@/lib/agent/prompt";
 import { whyThisCity } from "@/lib/plan/format";
+import { audienceTags } from "@/lib/agent/compose";
 import type { Evidence, Stop } from "@/lib/plan/schema";
 
 describe("geo", () => {
@@ -159,6 +160,41 @@ describe("whyThisCity", () => {
     };
     expect(whyThisCity(bare, evidence)).toEqual([
       "Ranked #2 in Qloo's audience heatmap for United Kingdom.",
+    ]);
+  });
+});
+
+describe("audienceTags", () => {
+  // Real tag list Qloo returned for Drake (2026-10-25), trimmed.
+  const drake = [
+    {
+      id: "urn:tag:inclusivity:place:identifies_as_women_owned",
+      name: "Identifies as women-owned",
+    },
+    { id: "urn:tag:hotel_rating:place:three_star", name: "Three Star" },
+    { id: "urn:tag:credit_card:place:discover", name: "Discover" },
+    { id: "urn:tag:genre:brand:entertainment", name: "Entertainment" },
+    { id: "urn:tag:keyword:media:female_protagonist", name: "female protagonist" },
+    { id: "urn:tag:genre:music:hip_hop", name: " Hip Hop" },
+    { id: "urn:tag:style:music:rhythmic", name: "Rhythmic" },
+    { id: "urn:tag:genre:music:rap", name: "Rap" },
+  ];
+
+  it("puts music tags first, then media, and drops place and brand noise", () => {
+    expect(audienceTags(drake).map((t) => t.name)).toEqual([
+      "Hip Hop",
+      "Rhythmic",
+      "Rap",
+      "female protagonist",
+    ]);
+  });
+
+  it("falls back to other tags when there are too few music or media tags", () => {
+    expect(audienceTags(drake.slice(0, 4)).map((t) => t.name)).toEqual([
+      "Identifies as women-owned",
+      "Three Star",
+      "Discover",
+      "Entertainment",
     ]);
   });
 });

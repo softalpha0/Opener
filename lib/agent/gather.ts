@@ -131,7 +131,7 @@ export async function ensureAudience(box: Toolbox, artist: ArtistRef, today: Dat
     jobs.push(
       box.call(
         "qloo_entity_tags",
-        { entities: [artist.id], entity_type: "artist", limit: 10 },
+        { entities: [artist.id], entity_type: "artist", limit: 20 },
         `Tags that characterise ${artist.name}`,
       ),
     );

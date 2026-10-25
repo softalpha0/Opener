@@ -1,0 +1,208 @@
+{
+  "generic": {
+    "source": "population",
+    "generatedAt": "2026-10-25T22:38:36.356Z",
+    "stops": [
+      {
+        "city": "Lagos",
+        "country": "Nigeria",
+        "why": "One of the largest cities in Nigeria (population 15,388k)."
+      },
+      {
+        "city": "Kumasi",
+        "country": "Ghana",
+        "why": "One of the largest cities in Ghana (population 2,545k)."
+      },
+      {
+        "city": "Johannesburg",
+        "country": "South Africa",
+        "why": "One of the largest cities in South Africa (population 9,418k)."
+      },
+      {
+        "city": "Nairobi",
+        "country": "Kenya",
+        "why": "One of the largest cities in Kenya (population 4,397k)."
+      },
+      {
+        "city": "Kano",
+        "country": "Nigeria",
+        "why": "One of the largest cities in Nigeria (population 4,910k)."
+      },
+      {
+        "city": "Accra",
+        "country": "Ghana",
+        "why": "One of the largest cities in Ghana (population 1,963k)."
+      },
+      {
+        "city": "Cape Town",
+        "country": "South Africa",
+        "why": "One of the largest cities in South Africa (population 4,773k)."
+      },
+      {
+        "city": "Kakamega",
+        "country": "Kenya",
+        "why": "One of the largest cities in Kenya (population 1,868k)."
+      }
+    ],
+    "note": "The model was unavailable (busy or out of free quota), so this is the population baseline."
+  },
+  "rows": [
+    {
+      "city": "Lagos",
+      "country": "Nigeria",
+      "why": "One of the largest cities in Nigeria (population 15,388k).",
+      "openerOrder": 1,
+      "qloo": {
+        "key": "lagos|ng",
+        "city": "Lagos",
+        "country": "Nigeria",
+        "area": "Nigeria",
+        "rank": 1,
+        "of": 7,
+        "affinity": 1,
+        "cells": 6,
+        "evidenceId": "ev2"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Kumasi",
+      "country": "Ghana",
+      "why": "One of the largest cities in Ghana (population 2,545k).",
+      "openerOrder": 4,
+      "qloo": {
+        "key": "kumasi|gh",
+        "city": "Kumasi",
+        "country": "Ghana",
+        "area": "Ghana",
+        "rank": 2,
+        "of": 3,
+        "affinity": 0.9651162790697675,
+        "cells": 1,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "why": "One of the largest cities in South Africa (population 9,418k).",
+      "openerOrder": 5,
+      "qloo": {
+        "key": "johannesburg|za",
+        "city": "Johannesburg",
+        "country": "South Africa",
+        "area": "South Africa",
+        "rank": 1,
+        "of": 6,
+        "affinity": 0.9940119760479041,
+        "cells": 10,
+        "evidenceId": "ev4"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Nairobi",
+      "country": "Kenya",
+      "why": "One of the largest cities in Kenya (population 4,397k).",
+      "openerOrder": 7,
+      "qloo": {
+        "key": "nairobi|ke",
+        "city": "Nairobi",
+        "country": "Kenya",
+        "area": "Kenya",
+        "rank": 1,
+        "of": 3,
+        "affinity": 1,
+        "cells": 13,
+        "evidenceId": "ev5"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Kano",
+      "country": "Nigeria",
+      "why": "One of the largest cities in Nigeria (population 4,910k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Accra",
+      "country": "Ghana",
+      "why": "One of the largest cities in Ghana (population 1,963k).",
+      "openerOrder": 3,
+      "qloo": {
+        "key": "accra|gh",
+        "city": "Accra",
+        "country": "Ghana",
+        "area": "Ghana",
+        "rank": 1,
+        "of": 3,
+        "affinity": 1,
+        "cells": 16,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Cape Town",
+      "country": "South Africa",
+      "why": "One of the largest cities in South Africa (population 4,773k).",
+      "openerOrder": 6,
+      "qloo": {
+        "key": "cape town|za",
+        "city": "Cape Town",
+        "country": "South Africa",
+        "area": "South Africa",
+        "rank": 2,
+        "of": 6,
+        "affinity": 0.9760479041916168,
+        "cells": 4,
+        "evidenceId": "ev4"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Kakamega",
+      "country": "Kenya",
+      "why": "One of the largest cities in Kenya (population 1,868k).",
+      "outsideSearch": false
+    }
+  ],
+  "openerOnly": [
+    {
+      "order": 2,
+      "city": "Abuja",
+      "country": "Nigeria",
+      "qloo": {
+        "key": "abuja|ng",
+        "city": "Abuja",
+        "country": "Nigeria",
+        "area": "Nigeria",
+        "rank": 2,
+        "of": 7,
+        "affinity": 0.9948979591836735,
+        "cells": 4,
+        "evidenceId": "ev2"
+      }
+    },
+    {
+      "order": 8,
+      "city": "Mombasa",
+      "country": "Kenya",
+      "qloo": {
+        "key": "mombasa|ke",
+        "city": "Mombasa",
+        "country": "Kenya",
+        "area": "Kenya",
+        "rank": 2,
+        "of": 3,
+        "affinity": 0.993006993006993,
+        "cells": 4,
+        "evidenceId": "ev5"
+      }
+    }
+  ],
+  "overlap": 6,
+  "noSignal": 2,
+  "qlooTop3": 6
+}

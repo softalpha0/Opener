@@ -1,0 +1,2173 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-25T22:36:53.197Z",
+  "mode": "deterministic",
+  "query": {
+    "artistInput": "Phoebe Bridgers",
+    "region": "north-america",
+    "regionLabel": "North America",
+    "within": ["United States", "Canada"]
+  },
+  "artist": {
+    "id": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+    "name": "Phoebe Bridgers",
+    "image": "https://images.qloo.com/i/AFBC71A7-9439-4AB0-AB68-D14B11AAF836-420x-auto.jpg",
+    "description": "Phoebe Bridgers is an American singer-songwriter known for her emotive indie rock and folk music.",
+    "tags": [
+      {
+        "id": "urn:tag:motif:qloo:art",
+        "name": "Art"
+      },
+      {
+        "id": "urn:tag:motif:qloo:cats",
+        "name": "Cats"
+      },
+      {
+        "id": "urn:tag:specialty_dish:place:fish_chips",
+        "name": "Fish Chips"
+      },
+      {
+        "id": "urn:tag:genre:brand:fashion",
+        "name": "Fashion"
+      },
+      {
+        "id": "urn:tag:hotel_rating:place:three_star",
+        "name": "Three Star"
+      },
+      {
+        "id": "urn:tag:credit_card:place:discover",
+        "name": "Discover"
+      },
+      {
+        "id": "urn:tag:subgenre:qloo:media_commentary",
+        "name": "Media Commentary"
+      },
+      {
+        "id": "urn:tag:cost_description:place:inexpensive",
+        "name": "Inexpensive"
+      },
+      {
+        "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+        "name": "Identifies as women-owned"
+      },
+      {
+        "id": "urn:tag:genre:qloo:short_story",
+        "name": "Short Story"
+      }
+    ],
+    "alternatives": [
+      {
+        "id": "6B69DD98-5B6D-4FA6-B660-650D780F08D5",
+        "name": "Julien Baker, Phoebe Bridgers & Lucy Dacus",
+        "description": "Indie supergroup known for emotive lyrics and harmonized vocals blending rock and folk."
+      },
+      {
+        "id": "9D628A8F-BFAF-4C5A-89CF-C6E728922770",
+        "name": "Phoebe Ryan",
+        "description": "Phoebe Ryan is an American singer and songwriter known for her electropop and indie pop music."
+      },
+      {
+        "id": "8A8ACA11-A523-4376-87D1-0A2F3EDE1202",
+        "name": "Alice Phoebe Lou",
+        "description": "Alice Phoebe Lou is a South African singer-songwriter known for her indie folk and indie pop music."
+      },
+      {
+        "id": "0FC27734-8B41-4E8A-A89D-63DBC5A70B21",
+        "name": "Phoebe Snow",
+        "description": "American singer-songwriter known for her soulful voice and blend of folk, jazz, and blues."
+      }
+    ],
+    "evidenceIds": ["ev1", "ev9"]
+  },
+  "summary": "Within each country searched, Phoebe Bridgers’ audience affinity peaks around Boston (United States) and Vancouver (Canada). Qloo's heatmap scores are relative within each country, so the route takes the strongest cities country by country rather than ranking countries against each other, with openers drawn from artists that over-index with the same audience. Qloo's trend data reads as steady over the past year.",
+  "momentum": {
+    "direction": "steady",
+    "note": "Qloo population percentile moved from an average of 11.3 in the earliest weeks to 11.3 in the latest (2026-06-13 to 2026-10-24).",
+    "evidenceId": "ev10",
+    "series": [
+      {
+        "date": "2026-06-13",
+        "value": 11.25
+      },
+      {
+        "date": "2026-06-20",
+        "value": 11.25
+      },
+      {
+        "date": "2026-06-27",
+        "value": 11.25
+      },
+      {
+        "date": "2026-07-04",
+        "value": 11.25
+      },
+      {
+        "date": "2026-07-11",
+        "value": 11.25
+      },
+      {
+        "date": "2026-07-18",
+        "value": 11.25
+      },
+      {
+        "date": "2026-07-25",
+        "value": 11.25
+      },
+      {
+        "date": "2026-08-01",
+        "value": 11.25
+      },
+      {
+        "date": "2026-08-08",
+        "value": 11.25
+      },
+      {
+        "date": "2026-08-15",
+        "value": 11.25
+      },
+      {
+        "date": "2026-08-22",
+        "value": 11.25
+      },
+      {
+        "date": "2026-08-29",
+        "value": 11.25
+      },
+      {
+        "date": "2026-09-05",
+        "value": 11.25
+      },
+      {
+        "date": "2026-09-12",
+        "value": 11.25
+      },
+      {
+        "date": "2026-09-19",
+        "value": 11.25
+      },
+      {
+        "date": "2026-09-26",
+        "value": 11.25
+      },
+      {
+        "date": "2026-10-03",
+        "value": 11.25
+      },
+      {
+        "date": "2026-10-10",
+        "value": 11.25
+      },
+      {
+        "date": "2026-10-17",
+        "value": 11.25
+      },
+      {
+        "date": "2026-10-24",
+        "value": 11.25
+      }
+    ]
+  },
+  "demographics": {
+    "items": [
+      {
+        "group": "age",
+        "label": "24 and under",
+        "value": 0.29
+      },
+      {
+        "group": "age",
+        "label": "25–29",
+        "value": 0.33
+      },
+      {
+        "group": "age",
+        "label": "30–34",
+        "value": 0.2
+      },
+      {
+        "group": "age",
+        "label": "35–44",
+        "value": -0.63
+      },
+      {
+        "group": "age",
+        "label": "45–54",
+        "value": -0.44
+      },
+      {
+        "group": "age",
+        "label": "55+",
+        "value": -0.53
+      },
+      {
+        "group": "gender",
+        "label": "male",
+        "value": -0.47000000000000003
+      },
+      {
+        "group": "gender",
+        "label": "female",
+        "value": 0.47000000000000003
+      }
+    ],
+    "evidenceId": "ev8"
+  },
+  "stops": [
+    {
+      "order": 1,
+      "demandRank": 1,
+      "area": "United States",
+      "areaCities": 4,
+      "city": "Boston",
+      "region": "Massachusetts",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 42.3584,
+      "lng": -71.0598,
+      "affinityScore": 1,
+      "heatCells": 4,
+      "reason": "Strong audience affinity for Phoebe Bridgers within United States: the top cell near Boston scored 1.00 on Qloo's United States heatmap across 4 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46",
+          "name": "Lucy Dacus",
+          "image": "https://images.qloo.com/i/99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46-420x-auto.jpg",
+          "affinity": 0.9747148292714419,
+          "overlapNote": "Qloo recommends Lucy Dacus for Phoebe Bridgers’ audience, using Boston as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        },
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "image": "https://images.qloo.com/i/6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4-420x-auto.jpg",
+          "affinity": 0.9743726547341308,
+          "overlapNote": "Qloo recommends Julien Baker for Phoebe Bridgers’ audience, using Boston as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "F919E809-3234-4251-B031-5327E609AD82",
+          "name": "Adrianne Lenker",
+          "image": "https://images.qloo.com/i/F919E809-3234-4251-B031-5327E609AD82-420x-auto.jpg",
+          "affinity": 0.9705820859175553,
+          "overlapNote": "Qloo recommends Adrianne Lenker for Phoebe Bridgers’ audience, using Boston as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "demandRank": 3,
+      "area": "United States",
+      "areaCities": 4,
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 47.6062,
+      "lng": -122.3321,
+      "affinityScore": 0.998,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Phoebe Bridgers within United States: the top cell near Seattle scored 1.00 on Qloo's United States heatmap.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "F562D40B-46B6-493A-9B33-2E8B3B2D4635",
+          "name": "Faye Webster",
+          "image": "https://images.qloo.com/i/F562D40B-46B6-493A-9B33-2E8B3B2D4635-420x-auto.jpg",
+          "affinity": 0.9736110323616833,
+          "overlapNote": "Qloo recommends Faye Webster for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        },
+        {
+          "id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+          "name": "Big Thief",
+          "image": "https://images.qloo.com/i/AD420A3F-5F09-4C1C-BB1E-A3DEB937F184-420x-auto.jpg",
+          "affinity": 0.9702498488842057,
+          "overlapNote": "Qloo recommends Big Thief for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "5FB0A7DA-C7F0-487B-80C4-CA893D1BC56B",
+          "name": "Better Oblivion Community Center",
+          "image": "https://images.qloo.com/i/5FB0A7DA-C7F0-487B-80C4-CA893D1BC56B-420x-auto.jpg",
+          "affinity": 0.9679835447106175,
+          "overlapNote": "Qloo recommends Better Oblivion Community Center for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "demandRank": 2,
+      "area": "United States",
+      "areaCities": 4,
+      "city": "Portland",
+      "region": "Oregon",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 45.5234,
+      "lng": -122.6762,
+      "affinityScore": 1,
+      "heatCells": 2,
+      "reason": "Strong audience affinity for Phoebe Bridgers within United States: the top cell near Portland scored 1.00 on Qloo's United States heatmap across 2 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46",
+          "name": "Lucy Dacus",
+          "image": "https://images.qloo.com/i/99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46-420x-auto.jpg",
+          "affinity": 0.9747148292714419,
+          "overlapNote": "Qloo recommends Lucy Dacus for Phoebe Bridgers’ audience, using Portland as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        },
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "image": "https://images.qloo.com/i/6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4-420x-auto.jpg",
+          "affinity": 0.9743726547341308,
+          "overlapNote": "Qloo recommends Julien Baker for Phoebe Bridgers’ audience, using Portland as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "F919E809-3234-4251-B031-5327E609AD82",
+          "name": "Adrianne Lenker",
+          "image": "https://images.qloo.com/i/F919E809-3234-4251-B031-5327E609AD82-420x-auto.jpg",
+          "affinity": 0.9705820859175553,
+          "overlapNote": "Qloo recommends Adrianne Lenker for Phoebe Bridgers’ audience, using Portland as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "demandRank": 4,
+      "area": "United States",
+      "areaCities": 4,
+      "city": "Riverside",
+      "region": "California",
+      "country": "United States",
+      "countryCode": "US",
+      "lat": 33.9534,
+      "lng": -117.3962,
+      "affinityScore": 0.998,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Phoebe Bridgers within United States: the top cell near Riverside scored 1.00 on Qloo's United States heatmap.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "5F522BBF-F983-4E0C-B44B-39426491F268",
+          "name": "Christian Lee Hutson",
+          "image": "https://images.qloo.com/i/5F522BBF-F983-4E0C-B44B-39426491F268-420x-auto.jpg",
+          "affinity": 0.9667475345434194,
+          "overlapNote": "Qloo recommends Christian Lee Hutson for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "307D43E4-6A18-4FDB-82BA-7CBD9A2A8D82",
+          "name": "Haley Heynderickx",
+          "image": "https://images.qloo.com/i/307D43E4-6A18-4FDB-82BA-7CBD9A2A8D82-420x-auto.jpg",
+          "affinity": 0.9655076609315432,
+          "overlapNote": "Qloo recommends Haley Heynderickx for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev4"]
+        },
+        {
+          "id": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+          "name": "Julia Jacklin",
+          "image": "https://images.qloo.com/i/4CE60D14-B414-4163-97C3-C1E51108ED90-420x-auto.jpg",
+          "affinity": 0.9641862255595335,
+          "overlapNote": "Qloo recommends Julia Jacklin for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev7", "ev5", "ev4"]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "demandRank": 1,
+      "area": "Canada",
+      "areaCities": 6,
+      "city": "Vancouver",
+      "region": "British Columbia",
+      "country": "Canada",
+      "countryCode": "CA",
+      "lat": 49.2497,
+      "lng": -123.1193,
+      "affinityScore": 1,
+      "heatCells": 6,
+      "reason": "Strong audience affinity for Phoebe Bridgers within Canada: the top cell near Vancouver scored 1.00 on Qloo's Canada heatmap across 6 nearby heat cells.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "image": "https://images.qloo.com/i/6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4-420x-auto.jpg",
+          "affinity": 0.9743726547341308,
+          "overlapNote": "Qloo recommends Julien Baker for Phoebe Bridgers’ audience, using Vancouver as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+          "name": "Big Thief",
+          "image": "https://images.qloo.com/i/AD420A3F-5F09-4C1C-BB1E-A3DEB937F184-420x-auto.jpg",
+          "affinity": 0.9702498488842057,
+          "overlapNote": "Qloo recommends Big Thief for Phoebe Bridgers’ audience, using Vancouver as the location signal.",
+          "evidenceIds": ["ev7", "ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+          "name": "Julia Jacklin",
+          "image": "https://images.qloo.com/i/4CE60D14-B414-4163-97C3-C1E51108ED90-420x-auto.jpg",
+          "affinity": 0.9641862255595335,
+          "overlapNote": "Qloo recommends Julia Jacklin for Phoebe Bridgers’ audience, using Vancouver as the location signal.",
+          "evidenceIds": ["ev7", "ev5", "ev4"]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "demandRank": 2,
+      "area": "Canada",
+      "areaCities": 6,
+      "city": "Toronto",
+      "region": "Ontario",
+      "country": "Canada",
+      "countryCode": "CA",
+      "lat": 43.7064,
+      "lng": -79.3986,
+      "affinityScore": 0.998,
+      "heatCells": 2,
+      "reason": "Strong audience affinity for Phoebe Bridgers within Canada: the top cell near Toronto scored 1.00 on Qloo's Canada heatmap across 2 nearby heat cells.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "84EAECD1-A605-468E-A066-6AC7208DA4A2",
+          "name": "Matt Berninger",
+          "image": "https://images.qloo.com/i/84EAECD1-A605-468E-A066-6AC7208DA4A2-420x-auto.jpg",
+          "affinity": 0.9613909807311849,
+          "overlapNote": "Qloo recommends Matt Berninger for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "56908E37-B4A6-4466-BF3D-C0158FB9C8C3",
+          "name": "Soccer Mommy",
+          "image": "https://images.qloo.com/i/56908E37-B4A6-4466-BF3D-C0158FB9C8C3-420x-auto.jpg",
+          "affinity": 0.9609356904506279,
+          "overlapNote": "Qloo recommends Soccer Mommy for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "09D3870C-84A8-4522-870C-981795EA7CEC",
+          "name": "Samia",
+          "image": "https://images.qloo.com/i/09D3870C-84A8-4522-870C-981795EA7CEC-420x-auto.jpg",
+          "affinity": 0.9603291802867999,
+          "overlapNote": "Qloo recommends Samia for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev4"]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "demandRank": 4,
+      "area": "Canada",
+      "areaCities": 6,
+      "city": "Ottawa",
+      "region": "Ontario",
+      "country": "Canada",
+      "countryCode": "CA",
+      "lat": 45.4112,
+      "lng": -75.6981,
+      "affinityScore": 0.992,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Phoebe Bridgers within Canada: the top cell near Ottawa scored 0.99 on Qloo's Canada heatmap.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "C8B165BC-286E-4840-9417-AF68A8A690ED",
+          "name": "Big Red Machine",
+          "image": "https://images.qloo.com/i/C8B165BC-286E-4840-9417-AF68A8A690ED-420x-auto.jpg",
+          "affinity": 0.9593346299673341,
+          "overlapNote": "Qloo recommends Big Red Machine for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev4"]
+        },
+        {
+          "id": "E3BD2650-8E5C-43FB-B5A7-C1C7753A6293",
+          "name": "Mitski",
+          "image": "https://images.qloo.com/i/E3BD2650-8E5C-43FB-B5A7-C1C7753A6293-420x-auto.jpg",
+          "affinity": 0.9583401637921625,
+          "overlapNote": "Qloo recommends Mitski for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev6", "ev4"]
+        },
+        {
+          "id": "144F1259-C207-44A7-8367-D5CCC51FF5A9",
+          "name": "Snail Mail",
+          "image": "https://images.qloo.com/i/144F1259-C207-44A7-8367-D5CCC51FF5A9-420x-auto.jpg",
+          "affinity": 0.9578009490035874,
+          "overlapNote": "Qloo recommends Snail Mail for Phoebe Bridgers’ audience (affinity 0.96).",
+          "evidenceIds": ["ev4"]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "demandRank": 3,
+      "area": "Canada",
+      "areaCities": 6,
+      "city": "Montreal",
+      "region": "Quebec",
+      "country": "Canada",
+      "countryCode": "CA",
+      "lat": 45.5088,
+      "lng": -73.5878,
+      "affinityScore": 0.997,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Phoebe Bridgers within Canada: the top cell near Montreal scored 1.00 on Qloo's Canada heatmap.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46",
+          "name": "Lucy Dacus",
+          "image": "https://images.qloo.com/i/99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46-420x-auto.jpg",
+          "affinity": 0.9747148292714419,
+          "overlapNote": "Qloo recommends Lucy Dacus for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        },
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "image": "https://images.qloo.com/i/6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4-420x-auto.jpg",
+          "affinity": 0.9743726547341308,
+          "overlapNote": "Qloo recommends Julien Baker for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev6", "ev5", "ev4"]
+        },
+        {
+          "id": "F562D40B-46B6-493A-9B33-2E8B3B2D4635",
+          "name": "Faye Webster",
+          "image": "https://images.qloo.com/i/F562D40B-46B6-493A-9B33-2E8B3B2D4635-420x-auto.jpg",
+          "affinity": 0.9736110323616833,
+          "overlapNote": "Qloo recommends Faye Webster for Phoebe Bridgers’ audience (affinity 0.97).",
+          "evidenceIds": ["ev7", "ev6", "ev4"]
+        }
+      ]
+    }
+  ],
+  "heat": [
+    {
+      "lat": 49.30664,
+      "lng": -123.22266,
+      "affinity": 1,
+      "popularity": 0.9987253027405991,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 55.98633,
+      "lng": -109.16016,
+      "affinity": 0.9993626513702996,
+      "popularity": 0.9904397705544933,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 48.427734,
+      "lng": -123.22266,
+      "affinity": 0.9987253027405991,
+      "popularity": 0.9968132568514978,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.68164,
+      "lng": -79.27734,
+      "affinity": 0.9980879541108987,
+      "popularity": 1,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 45.439453,
+      "lng": -73.65234,
+      "affinity": 0.9974506054811982,
+      "popularity": 0.9993626513702996,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.240234,
+      "lng": -115.48828,
+      "affinity": 0.9968132568514978,
+      "popularity": 0.9949012109623965,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.416016,
+      "lng": -116.19141,
+      "affinity": 0.9961759082217974,
+      "popularity": 0.9923518164435946,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 50.185547,
+      "lng": -122.87109,
+      "affinity": 0.9955385595920969,
+      "popularity": 0.992989165073295,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 49.13086,
+      "lng": -126.03516,
+      "affinity": 0.9949012109623965,
+      "popularity": 0.9840662842574889,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 49.30664,
+      "lng": -122.87109,
+      "affinity": 0.994263862332696,
+      "popularity": 0.9936265137029955,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 44.560547,
+      "lng": -63.45703,
+      "affinity": 0.9936265137029955,
+      "popularity": 0.9898024219247928,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 55.10742,
+      "lng": -104.94141,
+      "affinity": 0.992989165073295,
+      "popularity": 0.9012109623964308,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 45.439453,
+      "lng": -75.76172,
+      "affinity": 0.9923518164435946,
+      "popularity": 0.9980879541108987,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 49.13086,
+      "lng": -123.22266,
+      "affinity": 0.9917144678138942,
+      "popularity": 0.9891650732950924,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 49.658203,
+      "lng": -123.22266,
+      "affinity": 0.9910771191841937,
+      "popularity": 0.9859783301465902,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 52.822266,
+      "lng": -117.94922,
+      "affinity": 0.9904397705544933,
+      "popularity": 0.982791586998088,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 49.833984,
+      "lng": -97.20703,
+      "affinity": 0.9898024219247928,
+      "popularity": 0.988527724665392,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.33008,
+      "lng": -79.98047,
+      "affinity": 0.9891650732950924,
+      "popularity": 0.9917144678138942,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 51.064453,
+      "lng": -115.48828,
+      "affinity": 0.988527724665392,
+      "popularity": 0.9872530274059911,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 48.427734,
+      "lng": -123.57422,
+      "affinity": 0.9878903760356915,
+      "popularity": 0.9789674952198852,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 42.626953,
+      "lng": -72.94922,
+      "affinity": 1,
+      "popularity": 0.9643148688046648,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.27539,
+      "lng": -72.59766,
+      "affinity": 0.9998833819241982,
+      "popularity": 0.9756268221574343,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 43.68164,
+      "lng": -70.13672,
+      "affinity": 0.9997667638483965,
+      "popularity": 0.9935860058309038,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 45.439453,
+      "lng": -122.51953,
+      "affinity": 0.9996501457725947,
+      "popularity": 0.9980174927113703,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.45117,
+      "lng": -72.59766,
+      "affinity": 0.999533527696793,
+      "popularity": 0.957201166180758,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 44.560547,
+      "lng": -73.30078,
+      "affinity": 0.9994169096209913,
+      "popularity": 0.9854227405247813,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 43.68164,
+      "lng": -101.77734,
+      "affinity": 0.9993002915451895,
+      "popularity": 0.9504373177842566,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 44.384766,
+      "lng": -68.37891,
+      "affinity": 0.9991836734693877,
+      "popularity": 0.9807580174927114,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.45117,
+      "lng": -71.19141,
+      "affinity": 0.999067055393586,
+      "popularity": 0.9974344023323615,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.45117,
+      "lng": -76.46484,
+      "affinity": 0.9989504373177842,
+      "popularity": 0.9755102040816327,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 44.033203,
+      "lng": -72.59766,
+      "affinity": 0.9988338192419826,
+      "popularity": 0.9633819241982507,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 34.189453,
+      "lng": -116.19141,
+      "affinity": 0.9987172011661808,
+      "popularity": 0.9899708454810495,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 45.615234,
+      "lng": -122.51953,
+      "affinity": 0.998600583090379,
+      "popularity": 0.9959183673469387,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 36.29883,
+      "lng": -121.81641,
+      "affinity": 0.9984839650145773,
+      "popularity": 0.9914868804664723,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 34.189453,
+      "lng": -116.54297,
+      "affinity": 0.9983673469387755,
+      "popularity": 0.9788921282798834,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.27539,
+      "lng": -71.19141,
+      "affinity": 0.9982507288629737,
+      "popularity": 0.9993002915451895,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 45.966797,
+      "lng": -123.92578,
+      "affinity": 0.9980174927113703,
+      "popularity": 0.9898542274052479,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.27539,
+      "lng": -73.65234,
+      "affinity": 0.9980174927113703,
+      "popularity": 0.96466472303207,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 42.09961,
+      "lng": -74.00391,
+      "affinity": 0.9979008746355685,
+      "popularity": 0.9836734693877551,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 47.72461,
+      "lng": -122.51953,
+      "affinity": 0.9977842565597668,
+      "popularity": 0.993935860058309,
+      "evidenceId": "ev2"
+    }
+  ],
+  "openerSpotlight": {
+    "openerId": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+    "openerName": "Julien Baker",
+    "note": "Qloo's audience comparison of Phoebe Bridgers and Julien Baker surfaced these taste signals.",
+    "shared": [
+      {
+        "name": "Straightforward",
+        "type": "characteristic:music"
+      },
+      {
+        "name": "United States",
+        "type": "region:qloo"
+      },
+      {
+        "name": "Melodic",
+        "type": "characteristic:music"
+      },
+      {
+        "name": "Folk",
+        "type": "genre:music"
+      },
+      {
+        "name": "4/4 Time",
+        "type": "characteristic:music"
+      },
+      {
+        "name": "Post Punk",
+        "type": "genre:music"
+      }
+    ],
+    "evidenceIds": ["ev16", "ev7", "ev6", "ev5", "ev4"]
+  },
+  "crossover": [
+    {
+      "category": "brand",
+      "label": "Brands",
+      "items": [
+        {
+          "id": "4584672D-C702-4E58-AEE3-D8DE584C36C8",
+          "name": "Fender",
+          "image": "https://images.qloo.com/i/4584672D-C702-4E58-AEE3-D8DE584C36C8-420x-auto.jpg"
+        },
+        {
+          "id": "F59D6DB5-5A85-48C6-A2EC-CAAE334D4348",
+          "name": "Dr. Martens",
+          "image": "https://images.qloo.com/i/F59D6DB5-5A85-48C6-A2EC-CAAE334D4348-420x-auto.jpg"
+        },
+        {
+          "id": "93B4EDF6-FF9A-4059-BF78-C1CA1B64B3AD",
+          "name": "Gibson",
+          "image": "https://images.qloo.com/i/93B4EDF6-FF9A-4059-BF78-C1CA1B64B3AD-420x-auto.jpg"
+        },
+        {
+          "id": "4F94C666-5FFA-4A42-8453-24C2F779EC36",
+          "name": "Urban Outfitters",
+          "image": "https://images.qloo.com/i/4F94C666-5FFA-4A42-8453-24C2F779EC36-420x-auto.jpg"
+        },
+        {
+          "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+          "name": "Vans",
+          "image": "https://images.qloo.com/i/AC8F9047-F23D-4A54-BBAA-A3CBD2991C02-420x-auto.jpg"
+        },
+        {
+          "id": "62926E8D-2D7E-4428-819E-BF2477D3233F",
+          "name": "Polaroid",
+          "image": "https://images.qloo.com/i/62926E8D-2D7E-4428-819E-BF2477D3233F-420x-auto.jpg"
+        },
+        {
+          "id": "F1C02FB3-D0DD-428C-A9B1-0A0EE9F22925",
+          "name": "Rolling Stone",
+          "image": "https://images.qloo.com/i/F1C02FB3-D0DD-428C-A9B1-0A0EE9F22925-420x-auto.jpg"
+        },
+        {
+          "id": "A5707876-D5A1-49F0-ABF9-A793EA7736D2",
+          "name": "Vice",
+          "image": "https://images.qloo.com/i/A5707876-D5A1-49F0-ABF9-A793EA7736D2-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev11"
+    },
+    {
+      "category": "tv_show",
+      "label": "TV",
+      "items": [
+        {
+          "id": "79BCA029-E151-4A01-A515-C77135F3D420",
+          "name": "PEN15",
+          "image": "https://images.qloo.com/i/79BCA029-E151-4A01-A515-C77135F3D420-420x-auto.jpg"
+        },
+        {
+          "id": "B453E2CB-7933-444F-8CD9-5DF4154ED1A8",
+          "name": "Shrill",
+          "image": "https://images.qloo.com/i/B453E2CB-7933-444F-8CD9-5DF4154ED1A8-420x-auto.jpg"
+        },
+        {
+          "id": "27F3C711-4DB5-40B8-AFC3-18CA1CF7517A",
+          "name": "High Fidelity",
+          "image": "https://images.qloo.com/i/27F3C711-4DB5-40B8-AFC3-18CA1CF7517A-420x-auto.jpg"
+        },
+        {
+          "id": "C00D010B-D49B-4773-B2E2-ECB985689D3C",
+          "name": "Somebody Somewhere",
+          "image": "https://images.qloo.com/i/C00D010B-D49B-4773-B2E2-ECB985689D3C-420x-auto.jpg"
+        },
+        {
+          "id": "7573F6D5-2E27-46A4-9FDE-8ECA6F37FAF7",
+          "name": "Life & Beth",
+          "image": "https://images.qloo.com/i/7573F6D5-2E27-46A4-9FDE-8ECA6F37FAF7-420x-auto.jpg"
+        },
+        {
+          "id": "EAE22DF3-AD71-43CD-9F14-52E99D5D9196",
+          "name": "Kevin Can F**k Himself",
+          "image": "https://images.qloo.com/i/EAE22DF3-AD71-43CD-9F14-52E99D5D9196-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev12"
+    },
+    {
+      "category": "movie",
+      "label": "Film",
+      "items": [
+        {
+          "id": "E39A5CE6-5991-46B9-897D-4B23A494804A",
+          "name": "Promising Young Woman",
+          "image": "https://images.qloo.com/i/E39A5CE6-5991-46B9-897D-4B23A494804A-420x-auto.jpg"
+        },
+        {
+          "id": "C17E1B67-0D79-404B-B0BC-BBBD37F7107D",
+          "name": "The Menu",
+          "image": "https://images.qloo.com/i/C17E1B67-0D79-404B-B0BC-BBBD37F7107D-420x-auto.jpg"
+        },
+        {
+          "id": "69B5C53B-E382-4839-80F1-23809446563D",
+          "name": "Last Night in Soho",
+          "image": "https://images.qloo.com/i/69B5C53B-E382-4839-80F1-23809446563D-420x-auto.jpg"
+        },
+        {
+          "id": "F0D354AA-BA7E-49D2-8ABA-9A8250F5C852",
+          "name": "Everything Everywhere All at Once",
+          "image": "https://images.qloo.com/i/F0D354AA-BA7E-49D2-8ABA-9A8250F5C852-420x-auto.jpg"
+        },
+        {
+          "id": "DAA2869B-1310-4BAC-8626-5AA0857FFA9B",
+          "name": "Fresh",
+          "image": "https://images.qloo.com/i/DAA2869B-1310-4BAC-8626-5AA0857FFA9B-420x-auto.jpg"
+        },
+        {
+          "id": "AE3E7E3C-9932-4420-942B-16D53B2B3B17",
+          "name": "Palm Springs",
+          "image": "https://images.qloo.com/i/AE3E7E3C-9932-4420-942B-16D53B2B3B17-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev13"
+    },
+    {
+      "category": "podcast",
+      "label": "Podcasts",
+      "items": [
+        {
+          "id": "D95B20A8-0CEA-4BDC-8074-60A303FA1980",
+          "name": "Song Exploder",
+          "image": "https://images.qloo.com/i/D95B20A8-0CEA-4BDC-8074-60A303FA1980-420x-auto.jpg"
+        },
+        {
+          "id": "14EECB60-E987-47CA-8582-D8FEB225C945",
+          "name": "Las Culturistas with Matt Rogers and Bowen Yang",
+          "image": "https://images.qloo.com/i/14EECB60-E987-47CA-8582-D8FEB225C945-420x-auto.jpg"
+        },
+        {
+          "id": "656C8017-53E3-4754-A951-7A48CEC1179C",
+          "name": "2 Dope Queens",
+          "image": "https://images.qloo.com/i/656C8017-53E3-4754-A951-7A48CEC1179C-420x-auto.jpg"
+        },
+        {
+          "id": "99BF734E-D82D-4960-AF07-490DED5B8D44",
+          "name": "Switched on Pop",
+          "image": "https://images.qloo.com/i/99BF734E-D82D-4960-AF07-490DED5B8D44-420x-auto.jpg"
+        },
+        {
+          "id": "AC3942AD-F756-47DB-85D0-945111AB9434",
+          "name": "Sooo Many White Guys",
+          "image": "https://images.qloo.com/i/AC3942AD-F756-47DB-85D0-945111AB9434-420x-auto.jpg"
+        },
+        {
+          "id": "707321D6-F2D5-4867-BEEE-FEF3C0E2CE8C",
+          "name": "Beautiful Stories From Anonymous People",
+          "image": "https://images.qloo.com/i/707321D6-F2D5-4867-BEEE-FEF3C0E2CE8C-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev14"
+    },
+    {
+      "category": "place",
+      "label": "Places in Vancouver",
+      "items": [
+        {
+          "id": "F532E870-12C1-473C-9224-825BD1162EF6",
+          "name": "Western Front",
+          "image": "https://images.qloo.com/i/F532E870-12C1-473C-9224-825BD1162EF6-420x-auto.jpg"
+        },
+        {
+          "id": "60E4DCBA-7817-4C74-9372-AD522F496CA5",
+          "name": "UBC Faculty of Pharmaceutical Sciences",
+          "image": "https://images.qloo.com/i/60E4DCBA-7817-4C74-9372-AD522F496CA5-420x-auto.jpg"
+        },
+        {
+          "id": "9EC501D7-B2D1-4E77-B9AF-320334FCE473",
+          "name": "Vancouver Institute of Media Arts (VanArts)",
+          "image": "https://images.qloo.com/i/9EC501D7-B2D1-4E77-B9AF-320334FCE473-420x-auto.jpg"
+        },
+        {
+          "id": "96B6E160-CFD4-4DD9-B6CE-61A7F4E7DF75",
+          "name": "Emily Carr University of Art + Design",
+          "image": "https://images.qloo.com/i/96B6E160-CFD4-4DD9-B6CE-61A7F4E7DF75-420x-auto.jpg"
+        },
+        {
+          "id": "49FFB0A5-A8FE-4961-9864-03ECE661BBAB",
+          "name": "Mah Milk Bar - Victoria Dr",
+          "image": "https://images.qloo.com/i/49FFB0A5-A8FE-4961-9864-03ECE661BBAB-420x-auto.jpg"
+        },
+        {
+          "id": "3E2F7FE5-2F34-4277-B3A4-B8F669EBD24E",
+          "name": "Capilano Suspension Bridge Park",
+          "image": "https://images.qloo.com/i/3E2F7FE5-2F34-4277-B3A4-B8F669EBD24E-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev15"
+    }
+  ],
+  "merchIdeas": [
+    {
+      "idea": "A merch capsule that nods to the look of Fender and Dr. Martens, which over-index with this audience.",
+      "basedOn": ["Fender", "Dr. Martens"],
+      "evidenceIds": ["ev11"]
+    },
+    {
+      "idea": "Pitch an interview or ad read on Song Exploder ahead of on-sale.",
+      "basedOn": ["Song Exploder"],
+      "evidenceIds": ["ev14"]
+    },
+    {
+      "idea": "Scout Western Front for a pre-show listening party or poster drop.",
+      "basedOn": ["Western Front"],
+      "evidenceIds": ["ev15"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev1",
+      "tool": "qloo_describe",
+      "purpose": "Resolve “Phoebe Bridgers” to a Qloo artist",
+      "inputRedacted": {
+        "entity": "Phoebe Bridgers",
+        "type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:39.758Z",
+      "cached": false,
+      "durationMs": 12597,
+      "keyFields": [
+        {
+          "id": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+          "name": "Phoebe Bridgers",
+          "popularity": 0.994
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev3",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Phoebe Bridgers’ audience affinity is strongest in Canada",
+      "inputRedacted": {
+        "entity": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+        "entity_type": "artist",
+        "within": "Canada",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:36:46.156Z",
+      "cached": false,
+      "durationMs": 3295,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 49.307,
+            "lng": -123.223,
+            "affinity": 1,
+            "popularity": 0.999
+          },
+          {
+            "lat": 55.986,
+            "lng": -109.16,
+            "affinity": 0.999,
+            "popularity": 0.99
+          },
+          {
+            "lat": 48.428,
+            "lng": -123.223,
+            "affinity": 0.999,
+            "popularity": 0.997
+          },
+          {
+            "lat": 43.682,
+            "lng": -79.277,
+            "affinity": 0.998,
+            "popularity": 1
+          },
+          {
+            "lat": 45.439,
+            "lng": -73.652,
+            "affinity": 0.997,
+            "popularity": 0.999
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Vancouver",
+            "region": "British Columbia",
+            "country": "Canada",
+            "max_affinity": 1,
+            "cells": 6
+          },
+          {
+            "city": "Toronto",
+            "region": "Ontario",
+            "country": "Canada",
+            "max_affinity": 0.998,
+            "cells": 2
+          },
+          {
+            "city": "Montreal",
+            "region": "Quebec",
+            "country": "Canada",
+            "max_affinity": 0.997,
+            "cells": 1
+          },
+          {
+            "city": "Ottawa",
+            "region": "Ontario",
+            "country": "Canada",
+            "max_affinity": 0.992,
+            "cells": 1
+          },
+          {
+            "city": "Halifax",
+            "region": "Nova Scotia",
+            "country": "Canada",
+            "max_affinity": 0.994,
+            "cells": 1
+          },
+          {
+            "city": "Winnipeg",
+            "region": "Manitoba",
+            "country": "Canada",
+            "max_affinity": 0.99,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev2",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Phoebe Bridgers’ audience affinity is strongest in United States",
+      "inputRedacted": {
+        "entity": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+        "entity_type": "artist",
+        "within": "United States",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:36:48.966Z",
+      "cached": false,
+      "durationMs": 6106,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 42.627,
+            "lng": -72.949,
+            "affinity": 1,
+            "popularity": 0.964
+          },
+          {
+            "lat": 42.275,
+            "lng": -72.598,
+            "affinity": 1,
+            "popularity": 0.976
+          },
+          {
+            "lat": 43.682,
+            "lng": -70.137,
+            "affinity": 1,
+            "popularity": 0.994
+          },
+          {
+            "lat": 45.439,
+            "lng": -122.52,
+            "affinity": 1,
+            "popularity": 0.998
+          },
+          {
+            "lat": 42.451,
+            "lng": -72.598,
+            "affinity": 1,
+            "popularity": 0.957
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Boston",
+            "region": "Massachusetts",
+            "country": "United States",
+            "max_affinity": 1,
+            "cells": 4
+          },
+          {
+            "city": "Portland",
+            "region": "Oregon",
+            "country": "United States",
+            "max_affinity": 1,
+            "cells": 2
+          },
+          {
+            "city": "Seattle",
+            "region": "Washington",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          },
+          {
+            "city": "Riverside",
+            "region": "California",
+            "country": "United States",
+            "max_affinity": 0.998,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev8",
+      "tool": "qloo_audience_demographics",
+      "purpose": "Age and gender affinity of Phoebe Bridgers’ audience",
+      "inputRedacted": {
+        "entity": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+        "entity_type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:49.563Z",
+      "cached": false,
+      "durationMs": 506,
+      "keyFields": {
+        "age": [
+          {
+            "bucket": "24 and under",
+            "value": 0.29
+          },
+          {
+            "bucket": "25–29",
+            "value": 0.33
+          },
+          {
+            "bucket": "30–34",
+            "value": 0.2
+          },
+          {
+            "bucket": "35–44",
+            "value": -0.63
+          },
+          {
+            "bucket": "45–54",
+            "value": -0.44
+          },
+          {
+            "bucket": "55+",
+            "value": -0.53
+          }
+        ],
+        "gender": [
+          {
+            "bucket": "male",
+            "value": -0.47000000000000003
+          },
+          {
+            "bucket": "female",
+            "value": 0.47000000000000003
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev10",
+      "tool": "qloo_trends",
+      "purpose": "Popularity trend for Phoebe Bridgers over the last year",
+      "inputRedacted": {
+        "entities": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "entity_type": "artist",
+        "start_date": "2025-10-25",
+        "end_date": "2026-10-24",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:49.563Z",
+      "cached": false,
+      "durationMs": 596,
+      "keyFields": [
+        {
+          "name": "Phoebe Bridgers",
+          "points": [
+            {
+              "date": "2026-08-08",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-15",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-22",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-29",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-05",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-12",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-19",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-26",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-03",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-10",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-17",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-24",
+              "percentile": 0.11,
+              "delta": 0
+            }
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev9",
+      "tool": "qloo_entity_tags",
+      "purpose": "Tags that characterise Phoebe Bridgers",
+      "inputRedacted": {
+        "entities": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "entity_type": "artist",
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "10 results.",
+      "resultCount": 10,
+      "fetchedAt": "2026-10-25T22:36:49.729Z",
+      "cached": false,
+      "durationMs": 671,
+      "keyFields": [
+        {
+          "id": "urn:tag:motif:qloo:art",
+          "name": "Art",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:motif:qloo:cats",
+          "name": "Cats",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:specialty_dish:place:fish_chips",
+          "name": "Fish Chips",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:genre:brand:fashion",
+          "name": "Fashion",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:hotel_rating:place:three_star",
+          "name": "Three Star",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:credit_card:place:discover",
+          "name": "Discover",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:subgenre:qloo:media_commentary",
+          "name": "Media Commentary",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:cost_description:place:inexpensive",
+          "name": "Inexpensive",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+          "name": "Identifies as women-owned",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:genre:qloo:short_story",
+          "name": "Short Story",
+          "affinity": 1
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev7",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Phoebe Bridgers’ audience with a Portland location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "signal_location": "Portland, United States",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:50.157Z",
+      "cached": false,
+      "durationMs": 1099,
+      "keyFields": [
+        {
+          "id": "99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46",
+          "name": "Lucy Dacus",
+          "affinity": 0.987,
+          "popularity": 0.983
+        },
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "affinity": 0.986,
+          "popularity": 0.983
+        },
+        {
+          "id": "F919E809-3234-4251-B031-5327E609AD82",
+          "name": "Adrianne Lenker",
+          "affinity": 0.984,
+          "popularity": 0.981
+        },
+        {
+          "id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+          "name": "Big Thief",
+          "affinity": 0.984,
+          "popularity": 0.991
+        },
+        {
+          "id": "F562D40B-46B6-493A-9B33-2E8B3B2D4635",
+          "name": "Faye Webster",
+          "affinity": 0.984,
+          "popularity": 0.98
+        },
+        {
+          "id": "307D43E4-6A18-4FDB-82BA-7CBD9A2A8D82",
+          "name": "Haley Heynderickx",
+          "affinity": 0.983,
+          "popularity": 0.964
+        },
+        {
+          "id": "5FB0A7DA-C7F0-487B-80C4-CA893D1BC56B",
+          "name": "Better Oblivion Community Center",
+          "affinity": 0.981,
+          "popularity": 0.961
+        },
+        {
+          "id": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+          "name": "Julia Jacklin",
+          "affinity": 0.98,
+          "popularity": 0.974
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev11",
+      "tool": "qloo_recommend",
+      "purpose": "Brands with strong affinity among Phoebe Bridgers’ audience",
+      "inputRedacted": {
+        "target_type": "brand",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:50.226Z",
+      "cached": false,
+      "durationMs": 1169,
+      "keyFields": [
+        {
+          "id": "4584672D-C702-4E58-AEE3-D8DE584C36C8",
+          "name": "Fender",
+          "affinity": 0.931,
+          "popularity": 0.994
+        },
+        {
+          "id": "F59D6DB5-5A85-48C6-A2EC-CAAE334D4348",
+          "name": "Dr. Martens",
+          "affinity": 0.931,
+          "popularity": 0.992
+        },
+        {
+          "id": "93B4EDF6-FF9A-4059-BF78-C1CA1B64B3AD",
+          "name": "Gibson",
+          "affinity": 0.914,
+          "popularity": 0.991
+        },
+        {
+          "id": "4F94C666-5FFA-4A42-8453-24C2F779EC36",
+          "name": "Urban Outfitters",
+          "affinity": 0.913,
+          "popularity": 0.999
+        },
+        {
+          "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+          "name": "Vans",
+          "affinity": 0.904,
+          "popularity": 1
+        },
+        {
+          "id": "62926E8D-2D7E-4428-819E-BF2477D3233F",
+          "name": "Polaroid",
+          "affinity": 0.898,
+          "popularity": 0.98
+        },
+        {
+          "id": "F1C02FB3-D0DD-428C-A9B1-0A0EE9F22925",
+          "name": "Rolling Stone",
+          "affinity": 0.896,
+          "popularity": 0.999
+        },
+        {
+          "id": "A5707876-D5A1-49F0-ABF9-A793EA7736D2",
+          "name": "Vice",
+          "affinity": 0.895,
+          "popularity": 0.998
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev6",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Phoebe Bridgers’ audience with a Boston location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "signal_location": "Boston, United States",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:50.306Z",
+      "cached": false,
+      "durationMs": 1248,
+      "keyFields": [
+        {
+          "id": "99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46",
+          "name": "Lucy Dacus",
+          "affinity": 0.987,
+          "popularity": 0.983
+        },
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "affinity": 0.986,
+          "popularity": 0.983
+        },
+        {
+          "id": "F919E809-3234-4251-B031-5327E609AD82",
+          "name": "Adrianne Lenker",
+          "affinity": 0.983,
+          "popularity": 0.981
+        },
+        {
+          "id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+          "name": "Big Thief",
+          "affinity": 0.983,
+          "popularity": 0.991
+        },
+        {
+          "id": "F562D40B-46B6-493A-9B33-2E8B3B2D4635",
+          "name": "Faye Webster",
+          "affinity": 0.983,
+          "popularity": 0.98
+        },
+        {
+          "id": "5FB0A7DA-C7F0-487B-80C4-CA893D1BC56B",
+          "name": "Better Oblivion Community Center",
+          "affinity": 0.981,
+          "popularity": 0.961
+        },
+        {
+          "id": "84EAECD1-A605-468E-A066-6AC7208DA4A2",
+          "name": "Matt Berninger",
+          "affinity": 0.979,
+          "popularity": 0.855
+        },
+        {
+          "id": "E3BD2650-8E5C-43FB-B5A7-C1C7753A6293",
+          "name": "Mitski",
+          "affinity": 0.978,
+          "popularity": 0.996
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev5",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Phoebe Bridgers’ audience with a Vancouver location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "signal_location": "Vancouver, Canada",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:50.490Z",
+      "cached": false,
+      "durationMs": 1433,
+      "keyFields": [
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "affinity": 0.978,
+          "popularity": 0.983
+        },
+        {
+          "id": "84EAECD1-A605-468E-A066-6AC7208DA4A2",
+          "name": "Matt Berninger",
+          "affinity": 0.977,
+          "popularity": 0.855
+        },
+        {
+          "id": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+          "name": "Julia Jacklin",
+          "affinity": 0.976,
+          "popularity": 0.974
+        },
+        {
+          "id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+          "name": "Big Thief",
+          "affinity": 0.975,
+          "popularity": 0.991
+        },
+        {
+          "id": "AA21934D-3A6E-4973-983F-28604C44E3AC",
+          "name": "Japanese Breakfast",
+          "affinity": 0.975,
+          "popularity": 0.992
+        },
+        {
+          "id": "D0DFD941-A7DB-4310-9B39-1D51BD7F085F",
+          "name": "Maggie Rogers",
+          "affinity": 0.973,
+          "popularity": 0.985
+        },
+        {
+          "id": "4607C481-A992-456F-900E-46AB836351EF",
+          "name": "Suki Waterhouse",
+          "affinity": 0.971,
+          "popularity": 0.963
+        },
+        {
+          "id": "4362CD81-FAC2-4D2D-BFF9-528416B00951",
+          "name": "Haley Blais",
+          "affinity": 0.968,
+          "popularity": 0.829
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev14",
+      "tool": "qloo_recommend",
+      "purpose": "Podcasts with strong affinity among Phoebe Bridgers’ audience",
+      "inputRedacted": {
+        "target_type": "podcast",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:36:51.759Z",
+      "cached": false,
+      "durationMs": 2701,
+      "keyFields": [
+        {
+          "id": "D95B20A8-0CEA-4BDC-8074-60A303FA1980",
+          "name": "Song Exploder",
+          "affinity": 0.952,
+          "popularity": 0.978
+        },
+        {
+          "id": "14EECB60-E987-47CA-8582-D8FEB225C945",
+          "name": "Las Culturistas with Matt Rogers and Bowen Yang",
+          "affinity": 0.919,
+          "popularity": 0.992
+        },
+        {
+          "id": "656C8017-53E3-4754-A951-7A48CEC1179C",
+          "name": "2 Dope Queens",
+          "affinity": 0.918,
+          "popularity": 0.996
+        },
+        {
+          "id": "99BF734E-D82D-4960-AF07-490DED5B8D44",
+          "name": "Switched on Pop",
+          "affinity": 0.917,
+          "popularity": 0.958
+        },
+        {
+          "id": "AC3942AD-F756-47DB-85D0-945111AB9434",
+          "name": "Sooo Many White Guys",
+          "affinity": 0.913,
+          "popularity": 0.977
+        },
+        {
+          "id": "707321D6-F2D5-4867-BEEE-FEF3C0E2CE8C",
+          "name": "Beautiful Stories From Anonymous People",
+          "affinity": 0.903,
+          "popularity": 0.997
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev12",
+      "tool": "qloo_recommend",
+      "purpose": "TV with strong affinity among Phoebe Bridgers’ audience",
+      "inputRedacted": {
+        "target_type": "tv_show",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:36:51.861Z",
+      "cached": false,
+      "durationMs": 2803,
+      "keyFields": [
+        {
+          "id": "79BCA029-E151-4A01-A515-C77135F3D420",
+          "name": "PEN15",
+          "affinity": 0.982,
+          "popularity": 0.857
+        },
+        {
+          "id": "B453E2CB-7933-444F-8CD9-5DF4154ED1A8",
+          "name": "Shrill",
+          "affinity": 0.961,
+          "popularity": 0.738
+        },
+        {
+          "id": "27F3C711-4DB5-40B8-AFC3-18CA1CF7517A",
+          "name": "High Fidelity",
+          "affinity": 0.958,
+          "popularity": 0.895
+        },
+        {
+          "id": "C00D010B-D49B-4773-B2E2-ECB985689D3C",
+          "name": "Somebody Somewhere",
+          "affinity": 0.955,
+          "popularity": 0.792
+        },
+        {
+          "id": "7573F6D5-2E27-46A4-9FDE-8ECA6F37FAF7",
+          "name": "Life & Beth",
+          "affinity": 0.955,
+          "popularity": 0.743
+        },
+        {
+          "id": "EAE22DF3-AD71-43CD-9F14-52E99D5D9196",
+          "name": "Kevin Can F**k Himself",
+          "affinity": 0.954,
+          "popularity": 0.833
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev15",
+      "tool": "qloo_recommend",
+      "purpose": "Places in Vancouver with strong affinity among Phoebe Bridgers’ audience",
+      "inputRedacted": {
+        "target_type": "place",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "filter_location": "Vancouver, Canada",
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:36:51.862Z",
+      "cached": false,
+      "durationMs": 2804,
+      "keyFields": [
+        {
+          "id": "F532E870-12C1-473C-9224-825BD1162EF6",
+          "name": "Western Front",
+          "affinity": 0.857,
+          "popularity": 0.808
+        },
+        {
+          "id": "60E4DCBA-7817-4C74-9372-AD522F496CA5",
+          "name": "UBC Faculty of Pharmaceutical Sciences",
+          "affinity": 0.857,
+          "popularity": 0.832
+        },
+        {
+          "id": "9EC501D7-B2D1-4E77-B9AF-320334FCE473",
+          "name": "Vancouver Institute of Media Arts (VanArts)",
+          "affinity": 0.856,
+          "popularity": 0.708
+        },
+        {
+          "id": "96B6E160-CFD4-4DD9-B6CE-61A7F4E7DF75",
+          "name": "Emily Carr University of Art + Design",
+          "affinity": 0.855,
+          "popularity": 0.991
+        },
+        {
+          "id": "49FFB0A5-A8FE-4961-9864-03ECE661BBAB",
+          "name": "Mah Milk Bar - Victoria Dr",
+          "affinity": 0.852,
+          "popularity": 0.1
+        },
+        {
+          "id": "3E2F7FE5-2F34-4277-B3A4-B8F669EBD24E",
+          "name": "Capilano Suspension Bridge Park",
+          "affinity": 0.852,
+          "popularity": 1
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev13",
+      "tool": "qloo_recommend",
+      "purpose": "Film with strong affinity among Phoebe Bridgers’ audience",
+      "inputRedacted": {
+        "target_type": "movie",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:36:52.443Z",
+      "cached": false,
+      "durationMs": 3385,
+      "keyFields": [
+        {
+          "id": "E39A5CE6-5991-46B9-897D-4B23A494804A",
+          "name": "Promising Young Woman",
+          "affinity": 0.945,
+          "popularity": 0.993
+        },
+        {
+          "id": "C17E1B67-0D79-404B-B0BC-BBBD37F7107D",
+          "name": "The Menu",
+          "affinity": 0.923,
+          "popularity": 0.998
+        },
+        {
+          "id": "69B5C53B-E382-4839-80F1-23809446563D",
+          "name": "Last Night in Soho",
+          "affinity": 0.923,
+          "popularity": 0.993
+        },
+        {
+          "id": "F0D354AA-BA7E-49D2-8ABA-9A8250F5C852",
+          "name": "Everything Everywhere All at Once",
+          "affinity": 0.922,
+          "popularity": 1
+        },
+        {
+          "id": "DAA2869B-1310-4BAC-8626-5AA0857FFA9B",
+          "name": "Fresh",
+          "affinity": 0.921,
+          "popularity": 0.987
+        },
+        {
+          "id": "AE3E7E3C-9932-4420-942B-16D53B2B3B17",
+          "name": "Palm Springs",
+          "affinity": 0.919,
+          "popularity": 0.994
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev4",
+      "tool": "qloo_recommend",
+      "purpose": "Artists with strong affinity among Phoebe Bridgers’ audience (opener pool)",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "limit": 15
+      },
+      "status": "ok",
+      "summary": "15 results.",
+      "resultCount": 15,
+      "fetchedAt": "2026-10-25T22:36:52.949Z",
+      "cached": false,
+      "durationMs": 3893,
+      "keyFields": [
+        {
+          "id": "99FBEE0C-2A8A-4EE2-9B20-8CEBD854CD46",
+          "name": "Lucy Dacus",
+          "affinity": 0.975,
+          "popularity": 0.983
+        },
+        {
+          "id": "6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4",
+          "name": "Julien Baker",
+          "affinity": 0.974,
+          "popularity": 0.983
+        },
+        {
+          "id": "F562D40B-46B6-493A-9B33-2E8B3B2D4635",
+          "name": "Faye Webster",
+          "affinity": 0.974,
+          "popularity": 0.98
+        },
+        {
+          "id": "F919E809-3234-4251-B031-5327E609AD82",
+          "name": "Adrianne Lenker",
+          "affinity": 0.971,
+          "popularity": 0.981
+        },
+        {
+          "id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+          "name": "Big Thief",
+          "affinity": 0.97,
+          "popularity": 0.991
+        },
+        {
+          "id": "5FB0A7DA-C7F0-487B-80C4-CA893D1BC56B",
+          "name": "Better Oblivion Community Center",
+          "affinity": 0.968,
+          "popularity": 0.961
+        },
+        {
+          "id": "5F522BBF-F983-4E0C-B44B-39426491F268",
+          "name": "Christian Lee Hutson",
+          "affinity": 0.967,
+          "popularity": 0.895
+        },
+        {
+          "id": "307D43E4-6A18-4FDB-82BA-7CBD9A2A8D82",
+          "name": "Haley Heynderickx",
+          "affinity": 0.966,
+          "popularity": 0.964
+        },
+        {
+          "id": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+          "name": "Julia Jacklin",
+          "affinity": 0.964,
+          "popularity": 0.974
+        },
+        {
+          "id": "84EAECD1-A605-468E-A066-6AC7208DA4A2",
+          "name": "Matt Berninger",
+          "affinity": 0.961,
+          "popularity": 0.855
+        },
+        {
+          "id": "56908E37-B4A6-4466-BF3D-C0158FB9C8C3",
+          "name": "Soccer Mommy",
+          "affinity": 0.961,
+          "popularity": 0.985
+        },
+        {
+          "id": "09D3870C-84A8-4522-870C-981795EA7CEC",
+          "name": "Samia",
+          "affinity": 0.96,
+          "popularity": 0.95
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev16",
+      "tool": "qloo_compare_audiences",
+      "purpose": "Compare Phoebe Bridgers’ audience with Julien Baker’s",
+      "inputRedacted": {
+        "group_a": ["AFBC71A7-9439-4AB0-AB68-D14B11AAF836"],
+        "group_b": ["6B4A457B-EAB3-4BB6-BBA2-5E1B2A374AF4"],
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:53.196Z",
+      "cached": false,
+      "durationMs": 244,
+      "keyFields": [
+        {
+          "name": "Straightforward",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.994
+        },
+        {
+          "name": "United States",
+          "type": "urn:tag:region:qloo",
+          "score": 0.994
+        },
+        {
+          "name": "Melodic",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.987
+        },
+        {
+          "name": "Folk",
+          "type": "urn:tag:genre:music",
+          "score": 0.987
+        },
+        {
+          "name": "4/4 Time",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.855
+        },
+        {
+          "name": "Post Punk",
+          "type": "urn:tag:genre:music",
+          "score": 0.855
+        },
+        {
+          "name": "Brooklyn",
+          "type": "urn:tag:region:qloo",
+          "score": 0.855
+        },
+        {
+          "name": "Alternative Rock",
+          "type": "urn:tag:genre:music",
+          "score": 0.855
+        },
+        {
+          "name": "Storytelling",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.855
+        },
+        {
+          "name": "Punk Rock",
+          "type": "urn:tag:genre:music",
+          "score": 0.855
+        },
+        {
+          "name": "Introspective",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.855
+        },
+        {
+          "name": "Moderate",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.855
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "notices": [
+    {
+      "level": "info",
+      "message": "The agent was unavailable for this run, so the plan was assembled by the deterministic planner."
+    },
+    {
+      "level": "info",
+      "message": "Qloo scores each country's heatmap on its own scale, so Opener picks the strongest cities in each country (United States, Canada) instead of ranking countries against each other."
+    }
+  ],
+  "limitations": [
+    "Qloo heatmap affinity is relative to this query. It shows where the audience over-indexes, not ticket demand or venue capacity.",
+    "Cities are derived by Opener from Qloo heat cells using a bundled GeoNames table; cells more than 90 km from a listed city are left out.",
+    "Demographic values are relative affinities (above or below average), not shares of fans.",
+    "Dates, drive times, venue availability and capacity are not modelled yet.",
+    "Searched within: United States, Canada.",
+    "Heatmap scores are relative within each country searched, so cities in different countries are not ranked against each other."
+  ]
+}

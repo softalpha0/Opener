@@ -1,0 +1,2523 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-25T22:37:01.558Z",
+  "mode": "deterministic",
+  "query": {
+    "artistInput": "Khruangbin",
+    "region": "europe",
+    "regionLabel": "Europe",
+    "within": ["Germany", "France", "Netherlands", "Spain"]
+  },
+  "artist": {
+    "id": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+    "name": "Khruangbin",
+    "image": "https://images.qloo.com/i/BAF6317A-DF94-4C90-92AE-63F86560C21B-420x-auto.jpg",
+    "description": "Khruangbin is an American musical trio known for their eclectic blend of global musical influences and instrumental sound.",
+    "tags": [
+      {
+        "id": "urn:tag:style:qloo:exotic",
+        "name": "Exotic"
+      },
+      {
+        "id": "urn:tag:genre:brand:fashion",
+        "name": "Fashion"
+      },
+      {
+        "id": "urn:tag:cost_description:place:inexpensive",
+        "name": "Inexpensive"
+      },
+      {
+        "id": "urn:tag:hotel_rating:place:four_star",
+        "name": "Four Star"
+      },
+      {
+        "id": "urn:tag:specialty_dish:place:pork_buns",
+        "name": "Pork Buns"
+      },
+      {
+        "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+        "name": "Identifies as women-owned"
+      },
+      {
+        "id": "urn:tag:credit_card:place:discover",
+        "name": "Discover"
+      },
+      {
+        "id": "urn:tag:genre:place:restaurant:bar",
+        "name": "Bar"
+      },
+      {
+        "id": "urn:tag:genre:person:musician",
+        "name": "Musician"
+      },
+      {
+        "id": "urn:tag:style:qloo:sultry",
+        "name": "Sultry"
+      }
+    ],
+    "alternatives": [
+      {
+        "id": "9446057A-BC4E-468A-BBC7-A3D8F9B70C83",
+        "name": "Khruangbin & Leon Bridges",
+        "description": "A collaborative musical project blending Khruangbin's psychedelic soul with Leon Bridges' soulful vocals."
+      },
+      {
+        "id": "B52260DE-8051-48A5-80AC-B78D0A48D12F",
+        "name": "Khruangbin @ Villain",
+        "description": "A Texas-based trio known for their eclectic blend of global musical styles and instrumental grooves."
+      }
+    ],
+    "evidenceIds": ["ev1", "ev11"]
+  },
+  "summary": "Within each country searched, Khruangbin’s audience affinity peaks around Berlin (Germany), Paris (France), Rotterdam (Netherlands) and Barcelona (Spain). Qloo's heatmap scores are relative within each country, so the route takes the strongest cities country by country rather than ranking countries against each other, with openers drawn from artists that over-index with the same audience. Qloo's trend data reads as steady over the past year.",
+  "momentum": {
+    "direction": "steady",
+    "note": "Qloo population percentile moved from an average of 11.0 in the earliest weeks to 11.0 in the latest (2026-06-13 to 2026-10-24).",
+    "evidenceId": "ev12",
+    "series": [
+      {
+        "date": "2026-06-13",
+        "value": 11.03
+      },
+      {
+        "date": "2026-06-20",
+        "value": 11.03
+      },
+      {
+        "date": "2026-06-27",
+        "value": 11.03
+      },
+      {
+        "date": "2026-07-04",
+        "value": 11.03
+      },
+      {
+        "date": "2026-07-11",
+        "value": 11.03
+      },
+      {
+        "date": "2026-07-18",
+        "value": 11.03
+      },
+      {
+        "date": "2026-07-25",
+        "value": 11.03
+      },
+      {
+        "date": "2026-08-01",
+        "value": 11.03
+      },
+      {
+        "date": "2026-08-08",
+        "value": 11.03
+      },
+      {
+        "date": "2026-08-15",
+        "value": 11.03
+      },
+      {
+        "date": "2026-08-22",
+        "value": 11.03
+      },
+      {
+        "date": "2026-08-29",
+        "value": 11.03
+      },
+      {
+        "date": "2026-09-05",
+        "value": 11.03
+      },
+      {
+        "date": "2026-09-12",
+        "value": 11.03
+      },
+      {
+        "date": "2026-09-19",
+        "value": 11.03
+      },
+      {
+        "date": "2026-09-26",
+        "value": 11.03
+      },
+      {
+        "date": "2026-10-03",
+        "value": 11.03
+      },
+      {
+        "date": "2026-10-10",
+        "value": 11.03
+      },
+      {
+        "date": "2026-10-17",
+        "value": 11.03
+      },
+      {
+        "date": "2026-10-24",
+        "value": 11.03
+      }
+    ]
+  },
+  "demographics": {
+    "items": [
+      {
+        "group": "age",
+        "label": "24 and under",
+        "value": 0
+      },
+      {
+        "group": "age",
+        "label": "25–29",
+        "value": -0.05
+      },
+      {
+        "group": "age",
+        "label": "30–34",
+        "value": -0.78
+      },
+      {
+        "group": "age",
+        "label": "35–44",
+        "value": 0.29
+      },
+      {
+        "group": "age",
+        "label": "45–54",
+        "value": -0.59
+      },
+      {
+        "group": "age",
+        "label": "55+",
+        "value": -0.59
+      },
+      {
+        "group": "gender",
+        "label": "male",
+        "value": 0.16
+      },
+      {
+        "group": "gender",
+        "label": "female",
+        "value": -0.16
+      }
+    ],
+    "evidenceId": "ev10"
+  },
+  "stops": [
+    {
+      "order": 1,
+      "demandRank": 1,
+      "area": "Germany",
+      "areaCities": 5,
+      "city": "Berlin",
+      "region": "State of Berlin",
+      "country": "Germany",
+      "countryCode": "DE",
+      "lat": 52.5244,
+      "lng": 13.4105,
+      "affinityScore": 1,
+      "heatCells": 13,
+      "reason": "Strong audience affinity for Khruangbin within Germany: the top cell near Berlin scored 1.00 on Qloo's Germany heatmap across 13 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "image": "https://images.qloo.com/i/B8A29D31-35E3-4DB7-8BDA-92F505BD24C0-420x-auto.jpg",
+          "affinity": 0.9543419217743561,
+          "overlapNote": "Qloo recommends SAULT for Khruangbin’s audience, using Berlin as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "image": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg",
+          "affinity": 0.9522676986146482,
+          "overlapNote": "Qloo recommends KOKOROKO for Khruangbin’s audience, using Berlin as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        },
+        {
+          "id": "24BA18BE-62EF-4B7E-99C6-7AA20EB05F28",
+          "name": "Glass Beams",
+          "image": "https://images.qloo.com/i/24BA18BE-62EF-4B7E-99C6-7AA20EB05F28-420x-auto.jpg",
+          "affinity": 0.9615385496743382,
+          "overlapNote": "Qloo recommends Glass Beams for Khruangbin’s audience, using Berlin as the location signal.",
+          "evidenceIds": ["ev8", "ev9", "ev6"]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "demandRank": 2,
+      "area": "Germany",
+      "areaCities": 5,
+      "city": "Hamburg",
+      "region": "Hamburg",
+      "country": "Germany",
+      "countryCode": "DE",
+      "lat": 53.5507,
+      "lng": 9.993,
+      "affinityScore": 0.988,
+      "heatCells": 2,
+      "reason": "Strong audience affinity for Khruangbin within Germany: the top cell near Hamburg scored 0.99 on Qloo's Germany heatmap across 2 nearby heat cells.",
+      "evidenceIds": ["ev2"],
+      "openers": [
+        {
+          "id": "7C038006-7C6B-4F1B-A3F0-E6BED80C1098",
+          "name": "Arc De Soleil",
+          "image": "https://images.qloo.com/i/7C038006-7C6B-4F1B-A3F0-E6BED80C1098-420x-auto.jpg",
+          "affinity": 0.9753196167290491,
+          "overlapNote": "Qloo recommends Arc De Soleil for Khruangbin’s audience (affinity 0.98).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "076ADA9F-DB3B-4BD3-AE61-DBBA89FC0D15",
+          "name": "Mildlife",
+          "image": "https://images.qloo.com/i/076ADA9F-DB3B-4BD3-AE61-DBBA89FC0D15-420x-auto.jpg",
+          "affinity": 0.960507766967522,
+          "overlapNote": "Qloo recommends Mildlife for Khruangbin’s audience (affinity 0.96).",
+          "evidenceIds": ["ev8", "ev6"]
+        },
+        {
+          "id": "77C7B492-4B8F-41F6-81A5-A6EC3932C307",
+          "name": "Common Saints",
+          "image": "https://images.qloo.com/i/77C7B492-4B8F-41F6-81A5-A6EC3932C307-420x-auto.jpg",
+          "affinity": 0.9580919487574043,
+          "overlapNote": "Qloo recommends Common Saints for Khruangbin’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6"]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "demandRank": 1,
+      "area": "France",
+      "areaCities": 6,
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "countryCode": "FR",
+      "lat": 48.8534,
+      "lng": 2.3488,
+      "affinityScore": 1,
+      "heatCells": 3,
+      "reason": "Strong audience affinity for Khruangbin within France: the top cell near Paris scored 1.00 on Qloo's France heatmap across 3 nearby heat cells.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "6C599E55-2FE5-49E4-8CA9-60773BE8F865",
+          "name": "Robohands",
+          "image": "https://images.qloo.com/i/6C599E55-2FE5-49E4-8CA9-60773BE8F865-420x-auto.jpg",
+          "affinity": 0.9560139585306014,
+          "overlapNote": "Qloo recommends Robohands for Khruangbin’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "FC07BE09-ED83-46BD-AFB1-D5C58D84BDA7",
+          "name": "Thee Sacred Souls",
+          "image": "https://images.qloo.com/i/FC07BE09-ED83-46BD-AFB1-D5C58D84BDA7-420x-auto.jpg",
+          "affinity": 0.9560041734870158,
+          "overlapNote": "Qloo recommends Thee Sacred Souls for Khruangbin’s audience (affinity 0.96).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "2F1698BB-21B5-409D-86AE-57C003DED153",
+          "name": "Menahan Street Band",
+          "image": "https://images.qloo.com/i/2F1698BB-21B5-409D-86AE-57C003DED153-420x-auto.jpg",
+          "affinity": 0.9511745318654503,
+          "overlapNote": "Qloo recommends Menahan Street Band for Khruangbin’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "demandRank": 2,
+      "area": "France",
+      "areaCities": 6,
+      "city": "Nice",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "country": "France",
+      "countryCode": "FR",
+      "lat": 43.7031,
+      "lng": 7.2661,
+      "affinityScore": 0.996,
+      "heatCells": 3,
+      "reason": "Strong audience affinity for Khruangbin within France: the top cell near Nice scored 1.00 on Qloo's France heatmap across 3 nearby heat cells.",
+      "evidenceIds": ["ev3"],
+      "openers": [
+        {
+          "id": "22E0DEB3-DAFF-418B-9396-C323D47F2BCC",
+          "name": "J Lloyd",
+          "image": "https://images.qloo.com/i/22E0DEB3-DAFF-418B-9396-C323D47F2BCC-420x-auto.jpg",
+          "affinity": 0.9511607330142035,
+          "overlapNote": "Qloo recommends J Lloyd for Khruangbin’s audience (affinity 0.95).",
+          "evidenceIds": ["ev8", "ev9", "ev6"]
+        },
+        {
+          "id": "7E51F8BC-FA1E-4E93-B465-39663E16E7C1",
+          "name": "Hermanos Gutiérrez",
+          "image": "https://images.qloo.com/i/7E51F8BC-FA1E-4E93-B465-39663E16E7C1-420x-auto.jpg",
+          "affinity": 0.9502096765228321,
+          "overlapNote": "Qloo recommends Hermanos Gutiérrez for Khruangbin’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "732D9924-FC26-432F-95C9-8DD1C34D6D83",
+          "name": "Brainstory",
+          "image": "https://images.qloo.com/i/732D9924-FC26-432F-95C9-8DD1C34D6D83-420x-auto.jpg",
+          "affinity": 0.9472642514321824,
+          "overlapNote": "Qloo recommends Brainstory for Khruangbin’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "demandRank": 1,
+      "area": "Netherlands",
+      "areaCities": 2,
+      "city": "Rotterdam",
+      "region": "South Holland",
+      "country": "The Netherlands",
+      "countryCode": "NL",
+      "lat": 51.9225,
+      "lng": 4.4792,
+      "affinityScore": 1,
+      "heatCells": 19,
+      "reason": "Strong audience affinity for Khruangbin within Netherlands: the top cell near Rotterdam scored 1.00 on Qloo's Netherlands heatmap across 19 nearby heat cells.",
+      "evidenceIds": ["ev4"],
+      "openers": [
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "image": "https://images.qloo.com/i/B8A29D31-35E3-4DB7-8BDA-92F505BD24C0-420x-auto.jpg",
+          "affinity": 0.9543419217743561,
+          "overlapNote": "Qloo recommends SAULT for Khruangbin’s audience, using Rotterdam as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "image": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg",
+          "affinity": 0.9522676986146482,
+          "overlapNote": "Qloo recommends KOKOROKO for Khruangbin’s audience, using Rotterdam as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        },
+        {
+          "id": "C6AA351E-6E2D-473B-BA63-A0B63AAC037C",
+          "name": "Kikagaku Moyo",
+          "image": "https://images.qloo.com/i/C6AA351E-6E2D-473B-BA63-A0B63AAC037C-420x-auto.jpg",
+          "affinity": 0.9467927789099235,
+          "overlapNote": "Qloo recommends Kikagaku Moyo for Khruangbin’s audience, using Rotterdam as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "demandRank": 2,
+      "area": "Netherlands",
+      "areaCities": 2,
+      "city": "Groningen",
+      "region": "Groningen",
+      "country": "The Netherlands",
+      "countryCode": "NL",
+      "lat": 53.2192,
+      "lng": 6.5667,
+      "affinityScore": 0.971,
+      "heatCells": 1,
+      "reason": "Strong audience affinity for Khruangbin within Netherlands: the top cell near Groningen scored 0.97 on Qloo's Netherlands heatmap.",
+      "evidenceIds": ["ev4"],
+      "openers": [
+        {
+          "id": "9C61522C-CA78-4343-BF33-8C3E1717D7AE",
+          "name": "Whatitdo Archive Group",
+          "image": "https://images.qloo.com/i/9C61522C-CA78-4343-BF33-8C3E1717D7AE-420x-auto.jpg",
+          "affinity": 0.9472298692855321,
+          "overlapNote": "Qloo recommends Whatitdo Archive Group for Khruangbin’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "1051E5ED-D119-41D4-8E6C-80A06F4C9019",
+          "name": "Surprise Chef",
+          "image": "https://images.qloo.com/i/1051E5ED-D119-41D4-8E6C-80A06F4C9019-420x-auto.jpg",
+          "affinity": 0.9460308936900057,
+          "overlapNote": "Qloo recommends Surprise Chef for Khruangbin’s audience (affinity 0.95).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "7C038006-7C6B-4F1B-A3F0-E6BED80C1098",
+          "name": "Arc De Soleil",
+          "image": "https://images.qloo.com/i/7C038006-7C6B-4F1B-A3F0-E6BED80C1098-420x-auto.jpg",
+          "affinity": 0.9753196167290491,
+          "overlapNote": "Qloo recommends Arc De Soleil for Khruangbin’s audience (affinity 0.98).",
+          "evidenceIds": ["ev6"]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "demandRank": 1,
+      "area": "Spain",
+      "areaCities": 7,
+      "city": "Barcelona",
+      "region": "Catalonia",
+      "country": "Spain",
+      "countryCode": "ES",
+      "lat": 41.3888,
+      "lng": 2.159,
+      "affinityScore": 1,
+      "heatCells": 7,
+      "reason": "Strong audience affinity for Khruangbin within Spain: the top cell near Barcelona scored 1.00 on Qloo's Spain heatmap across 7 nearby heat cells.",
+      "evidenceIds": ["ev5"],
+      "openers": [
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "image": "https://images.qloo.com/i/B8A29D31-35E3-4DB7-8BDA-92F505BD24C0-420x-auto.jpg",
+          "affinity": 0.9543419217743561,
+          "overlapNote": "Qloo recommends SAULT for Khruangbin’s audience, using Barcelona as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "image": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg",
+          "affinity": 0.9522676986146482,
+          "overlapNote": "Qloo recommends KOKOROKO for Khruangbin’s audience, using Barcelona as the location signal.",
+          "evidenceIds": ["ev8", "ev7", "ev9", "ev6"]
+        },
+        {
+          "id": "24BA18BE-62EF-4B7E-99C6-7AA20EB05F28",
+          "name": "Glass Beams",
+          "image": "https://images.qloo.com/i/24BA18BE-62EF-4B7E-99C6-7AA20EB05F28-420x-auto.jpg",
+          "affinity": 0.9615385496743382,
+          "overlapNote": "Qloo recommends Glass Beams for Khruangbin’s audience, using Barcelona as the location signal.",
+          "evidenceIds": ["ev8", "ev9", "ev6"]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "demandRank": 2,
+      "area": "Spain",
+      "areaCities": 7,
+      "city": "Madrid",
+      "region": "Madrid",
+      "country": "Spain",
+      "countryCode": "ES",
+      "lat": 40.4165,
+      "lng": -3.7026,
+      "affinityScore": 0.996,
+      "heatCells": 3,
+      "reason": "Strong audience affinity for Khruangbin within Spain: the top cell near Madrid scored 1.00 on Qloo's Spain heatmap across 3 nearby heat cells.",
+      "evidenceIds": ["ev5"],
+      "openers": [
+        {
+          "id": "7C038006-7C6B-4F1B-A3F0-E6BED80C1098",
+          "name": "Arc De Soleil",
+          "image": "https://images.qloo.com/i/7C038006-7C6B-4F1B-A3F0-E6BED80C1098-420x-auto.jpg",
+          "affinity": 0.9753196167290491,
+          "overlapNote": "Qloo recommends Arc De Soleil for Khruangbin’s audience (affinity 0.98).",
+          "evidenceIds": ["ev6"]
+        },
+        {
+          "id": "24BA18BE-62EF-4B7E-99C6-7AA20EB05F28",
+          "name": "Glass Beams",
+          "image": "https://images.qloo.com/i/24BA18BE-62EF-4B7E-99C6-7AA20EB05F28-420x-auto.jpg",
+          "affinity": 0.9615385496743382,
+          "overlapNote": "Qloo recommends Glass Beams for Khruangbin’s audience (affinity 0.96).",
+          "evidenceIds": ["ev8", "ev9", "ev6"]
+        },
+        {
+          "id": "076ADA9F-DB3B-4BD3-AE61-DBBA89FC0D15",
+          "name": "Mildlife",
+          "image": "https://images.qloo.com/i/076ADA9F-DB3B-4BD3-AE61-DBBA89FC0D15-420x-auto.jpg",
+          "affinity": 0.960507766967522,
+          "overlapNote": "Qloo recommends Mildlife for Khruangbin’s audience (affinity 0.96).",
+          "evidenceIds": ["ev8", "ev6"]
+        }
+      ]
+    }
+  ],
+  "heat": [
+    {
+      "lat": 41.37451,
+      "lng": 2.175293,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 41.418457,
+      "lng": 2.175293,
+      "affinity": 0.9986091794158554,
+      "popularity": 0.9972183588317107,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 43.308105,
+      "lng": -1.9995117,
+      "affinity": 0.9972183588317107,
+      "popularity": 0.9819193324061196,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 40.407715,
+      "lng": -3.713379,
+      "affinity": 0.9958275382475661,
+      "popularity": 0.9986091794158554,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 41.418457,
+      "lng": 2.1313477,
+      "affinity": 0.9944367176634215,
+      "popularity": 0.9902642559109874,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 37.37549,
+      "lng": -5.998535,
+      "affinity": 0.9930458970792768,
+      "popularity": 0.9916550764951322,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 37.199707,
+      "lng": -3.581543,
+      "affinity": 0.9916550764951322,
+      "popularity": 0.9833101529902643,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 41.418457,
+      "lng": 2.2192383,
+      "affinity": 0.9902642559109874,
+      "popularity": 0.9888734353268428,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 41.37451,
+      "lng": 2.1313477,
+      "affinity": 0.9888734353268428,
+      "popularity": 0.9944367176634215,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 40.407715,
+      "lng": -3.6694336,
+      "affinity": 0.9874826147426982,
+      "popularity": 0.9958275382475661,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 37.15576,
+      "lng": -3.581543,
+      "affinity": 0.9860917941585535,
+      "popularity": 0.9777468706536857,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 43.26416,
+      "lng": -2.9223633,
+      "affinity": 0.9847009735744089,
+      "popularity": 0.9791376912378303,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 38.913574,
+      "lng": 1.4282227,
+      "affinity": 0.9833101529902643,
+      "popularity": 0.9930458970792768,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 42.253418,
+      "lng": 2.9663086,
+      "affinity": 0.9819193324061196,
+      "popularity": 0.952712100139082,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 39.484863,
+      "lng": -0.37353516,
+      "affinity": 0.980528511821975,
+      "popularity": 0.9874826147426982,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 41.28662,
+      "lng": 2.0874023,
+      "affinity": 0.9791376912378303,
+      "popularity": 0.9694019471488178,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 40.012207,
+      "lng": -3.010254,
+      "affinity": 0.9777468706536857,
+      "popularity": 0.980528511821975,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 36.71631,
+      "lng": -4.416504,
+      "affinity": 0.9763560500695411,
+      "popularity": 0.9847009735744089,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 39.572754,
+      "lng": 2.6586914,
+      "affinity": 0.9749652294853964,
+      "popularity": 0.9860917941585535,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 41.989746,
+      "lng": 2.8344727,
+      "affinity": 0.9735744089012517,
+      "popularity": 0.9666203059805285,
+      "evidenceId": "ev5"
+    },
+    {
+      "lat": 52.492676,
+      "lng": 13.425293,
+      "affinity": 1,
+      "popularity": 0.9979919678714859,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.492676,
+      "lng": 13.469238,
+      "affinity": 0.9979919678714859,
+      "popularity": 0.9939759036144579,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.53662,
+      "lng": 13.381348,
+      "affinity": 0.9959839357429718,
+      "popularity": 1,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.492676,
+      "lng": 13.381348,
+      "affinity": 0.9939759036144579,
+      "popularity": 0.9959839357429718,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.53662,
+      "lng": 13.425293,
+      "affinity": 0.9919678714859438,
+      "popularity": 0.9919678714859438,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.492676,
+      "lng": 13.337402,
+      "affinity": 0.9899598393574297,
+      "popularity": 0.9859437751004017,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 53.547363,
+      "lng": 9.953613,
+      "affinity": 0.9879518072289156,
+      "popularity": 0.9839357429718876,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 48.14209,
+      "lng": 11.57959,
+      "affinity": 0.9859437751004017,
+      "popularity": 0.9899598393574297,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 53.547363,
+      "lng": 9.997559,
+      "affinity": 0.9839357429718876,
+      "popularity": 0.9879518072289156,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.53662,
+      "lng": 13.293457,
+      "affinity": 0.9819277108433735,
+      "popularity": 0.9698795180722891,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.53662,
+      "lng": 13.337402,
+      "affinity": 0.9799196787148594,
+      "popularity": 0.9678714859437751,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.492676,
+      "lng": 13.513184,
+      "affinity": 0.9779116465863453,
+      "popularity": 0.9598393574297188,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 50.11963,
+      "lng": 8.679199,
+      "affinity": 0.9759036144578314,
+      "popularity": 0.9819277108433735,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 50.95459,
+      "lng": 6.965332,
+      "affinity": 0.9738955823293173,
+      "popularity": 0.9799196787148594,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.492676,
+      "lng": 13.249512,
+      "affinity": 0.9718875502008032,
+      "popularity": 0.963855421686747,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 48.14209,
+      "lng": 11.535645,
+      "affinity": 0.9698795180722891,
+      "popularity": 0.9759036144578314,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.53662,
+      "lng": 13.469238,
+      "affinity": 0.9678714859437751,
+      "popularity": 0.9538152610441767,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 50.95459,
+      "lng": 6.9213867,
+      "affinity": 0.9658634538152611,
+      "popularity": 0.9658634538152611,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.404785,
+      "lng": 13.513184,
+      "affinity": 0.963855421686747,
+      "popularity": 0.9497991967871486,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.44873,
+      "lng": 13.381348,
+      "affinity": 0.9618473895582329,
+      "popularity": 0.9357429718875502,
+      "evidenceId": "ev2"
+    },
+    {
+      "lat": 52.36084,
+      "lng": 4.8999023,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.36084,
+      "lng": 4.855957,
+      "affinity": 0.9973544973544973,
+      "popularity": 0.9973544973544973,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.404785,
+      "lng": 4.8999023,
+      "affinity": 0.9947089947089947,
+      "popularity": 0.9947089947089947,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.36084,
+      "lng": 4.9438477,
+      "affinity": 0.9920634920634921,
+      "popularity": 0.9867724867724867,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.097168,
+      "lng": 5.119629,
+      "affinity": 0.9894179894179894,
+      "popularity": 0.9894179894179894,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 51.921387,
+      "lng": 4.460449,
+      "affinity": 0.9867724867724867,
+      "popularity": 0.9920634920634921,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.097168,
+      "lng": 4.3286133,
+      "affinity": 0.9841269841269841,
+      "popularity": 0.9814814814814815,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 51.921387,
+      "lng": 4.5043945,
+      "affinity": 0.9814814814814815,
+      "popularity": 0.9788359788359788,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 51.43799,
+      "lng": 5.4711914,
+      "affinity": 0.9788359788359788,
+      "popularity": 0.9841269841269841,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.316895,
+      "lng": 4.7680664,
+      "affinity": 0.9761904761904762,
+      "popularity": 0.9761904761904762,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.097168,
+      "lng": 5.163574,
+      "affinity": 0.9735449735449735,
+      "popularity": 0.9629629629629629,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 53.1958,
+      "lng": 6.569824,
+      "affinity": 0.9708994708994709,
+      "popularity": 0.9603174603174603,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.36084,
+      "lng": 4.6362305,
+      "affinity": 0.9682539682539683,
+      "popularity": 0.9523809523809523,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.404785,
+      "lng": 4.855957,
+      "affinity": 0.9656084656084656,
+      "popularity": 0.9735449735449735,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.316895,
+      "lng": 5.559082,
+      "affinity": 0.9629629629629629,
+      "popularity": 0.9708994708994709,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 51.833496,
+      "lng": 5.866699,
+      "affinity": 0.9603174603174603,
+      "popularity": 0.9576719576719577,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.097168,
+      "lng": 4.284668,
+      "affinity": 0.9576719576719577,
+      "popularity": 0.9656084656084656,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.404785,
+      "lng": 4.9438477,
+      "affinity": 0.955026455026455,
+      "popularity": 0.9312169312169312,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.316895,
+      "lng": 4.9438477,
+      "affinity": 0.9523809523809523,
+      "popularity": 0.9682539682539683,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 52.316895,
+      "lng": 4.855957,
+      "affinity": 0.9497354497354498,
+      "popularity": 0.9391534391534392,
+      "evidenceId": "ev4"
+    },
+    {
+      "lat": 48.779297,
+      "lng": 2.2851562,
+      "affinity": 1,
+      "popularity": 1,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 48.95508,
+      "lng": 2.2851562,
+      "affinity": 0.9981718464351006,
+      "popularity": 0.9981718464351006,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.68164,
+      "lng": 7.2070312,
+      "affinity": 0.9963436928702011,
+      "popularity": 0.9963436928702011,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 46.14258,
+      "lng": 6.1523438,
+      "affinity": 0.9945155393053017,
+      "popularity": 0.9835466179159049,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 47.021484,
+      "lng": 1.9335938,
+      "affinity": 0.9926873857404022,
+      "popularity": 0.9872029250457038,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 45.966797,
+      "lng": 6.8554688,
+      "affinity": 0.9908592321755028,
+      "popularity": 0.9725776965265083,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.33008,
+      "lng": 5.4492188,
+      "affinity": 0.9890310786106032,
+      "popularity": 0.9926873857404022,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 50.71289,
+      "lng": 2.9882812,
+      "affinity": 0.9872029250457038,
+      "popularity": 0.9780621572212066,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.50586,
+      "lng": -1.5820312,
+      "affinity": 0.9853747714808044,
+      "popularity": 0.979890310786106,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 45.791016,
+      "lng": 4.7460938,
+      "affinity": 0.9835466179159049,
+      "popularity": 0.9908592321755028,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 44.91211,
+      "lng": -0.52734375,
+      "affinity": 0.9817184643510055,
+      "popularity": 0.9853747714808044,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.50586,
+      "lng": 6.8554688,
+      "affinity": 0.979890310786106,
+      "popularity": 0.9890310786106032,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 48.95508,
+      "lng": 2.6367188,
+      "affinity": 0.9780621572212066,
+      "popularity": 0.9945155393053017,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.68164,
+      "lng": 4.7460938,
+      "affinity": 0.9762340036563071,
+      "popularity": 0.9652650822669104,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 50.88867,
+      "lng": 1.9335938,
+      "affinity": 0.9744058500914077,
+      "popularity": 0.9085923217550275,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.154297,
+      "lng": 5.4492188,
+      "affinity": 0.9725776965265083,
+      "popularity": 0.9744058500914077,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.50586,
+      "lng": 7.2070312,
+      "affinity": 0.9707495429616088,
+      "popularity": 0.9762340036563071,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 17.841797,
+      "lng": -62.753906,
+      "affinity": 0.9689213893967094,
+      "popularity": 0.9104204753199269,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 43.50586,
+      "lng": 5.4492188,
+      "affinity": 0.9670932358318098,
+      "popularity": 0.9670932358318098,
+      "evidenceId": "ev3"
+    },
+    {
+      "lat": 45.966797,
+      "lng": 6.1523438,
+      "affinity": 0.9652650822669104,
+      "popularity": 0.9634369287020109,
+      "evidenceId": "ev3"
+    }
+  ],
+  "openerSpotlight": {
+    "openerId": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+    "openerName": "SAULT",
+    "note": "Qloo's audience comparison of Khruangbin and SAULT surfaced these taste signals.",
+    "shared": [
+      {
+        "name": "Drums",
+        "type": "instrument:music"
+      },
+      {
+        "name": "United States",
+        "type": "region:qloo"
+      },
+      {
+        "name": "Spirituals",
+        "type": "genre:music"
+      },
+      {
+        "name": "Folk",
+        "type": "genre:music"
+      },
+      {
+        "name": "Blues",
+        "type": "genre:music"
+      },
+      {
+        "name": "Ragtime",
+        "type": "genre:music"
+      }
+    ],
+    "evidenceIds": ["ev17", "ev8", "ev7", "ev9", "ev6"]
+  },
+  "crossover": [
+    {
+      "category": "brand",
+      "label": "Brands",
+      "items": [
+        {
+          "id": "DB4CE34E-3A63-4947-946F-9D52502C5762",
+          "name": "Patagonia",
+          "image": "https://images.qloo.com/i/DB4CE34E-3A63-4947-946F-9D52502C5762-420x-auto.jpg"
+        },
+        {
+          "id": "E9A70778-6E65-49A4-8C38-A24D20C05BDA",
+          "name": "Fjällräven",
+          "image": "https://images.qloo.com/i/E9A70778-6E65-49A4-8C38-A24D20C05BDA-420x-auto.jpg"
+        },
+        {
+          "id": "DB03F250-64F3-47AB-8756-BC1C4E13EBFD",
+          "name": "The North Face",
+          "image": "https://images.qloo.com/i/DB03F250-64F3-47AB-8756-BC1C4E13EBFD-420x-auto.jpg"
+        },
+        {
+          "id": "205AF33F-118E-4C49-9721-6BDBAF981DA0",
+          "name": "Recreational Equipment Inc",
+          "image": "https://images.qloo.com/i/205AF33F-118E-4C49-9721-6BDBAF981DA0-420x-auto.jpg"
+        },
+        {
+          "id": "1BFF764A-D06D-48CA-9075-1E0F2A3FCE3D",
+          "name": "Fjällräven",
+          "image": "https://images.qloo.com/i/1BFF764A-D06D-48CA-9075-1E0F2A3FCE3D-420x-auto.jpg"
+        },
+        {
+          "id": "D69A3BE9-3C01-4786-9EFD-8B70586A977E",
+          "name": "Pendleton Woolen Mills",
+          "image": "https://images.qloo.com/i/D69A3BE9-3C01-4786-9EFD-8B70586A977E-420x-auto.jpg"
+        },
+        {
+          "id": "82BC424A-68CF-4F14-A831-826F28143F54",
+          "name": "Huckberry",
+          "image": "https://images.qloo.com/i/82BC424A-68CF-4F14-A831-826F28143F54-420x-auto.jpg"
+        },
+        {
+          "id": "B88738CC-8415-4F18-9095-2955EC094B0C",
+          "name": "Icebreaker",
+          "image": "https://images.qloo.com/i/B88738CC-8415-4F18-9095-2955EC094B0C-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev13"
+    },
+    {
+      "category": "tv_show",
+      "label": "TV",
+      "items": [
+        {
+          "id": "4FB650CB-2ED7-4A97-A70E-0722929E78B3",
+          "name": "Fargo",
+          "image": "https://images.qloo.com/i/4FB650CB-2ED7-4A97-A70E-0722929E78B3-420x-auto.jpg"
+        },
+        {
+          "id": "C78323C6-575D-4D68-B159-AE40D3303331",
+          "name": "Baskets",
+          "image": "https://images.qloo.com/i/C78323C6-575D-4D68-B159-AE40D3303331-420x-auto.jpg"
+        },
+        {
+          "id": "B8E4BDB9-6C06-4833-9698-A6D5ADD53990",
+          "name": "Horace and Pete",
+          "image": "https://images.qloo.com/i/B8E4BDB9-6C06-4833-9698-A6D5ADD53990-420x-auto.jpg"
+        },
+        {
+          "id": "D9AB4F73-85A0-4F4A-9CE5-D93D8A63576D",
+          "name": "Mad Dogs",
+          "image": "https://images.qloo.com/i/D9AB4F73-85A0-4F4A-9CE5-D93D8A63576D-420x-auto.jpg"
+        },
+        {
+          "id": "C0FABEA5-D59D-4B63-B193-6636F61FBD67",
+          "name": "Better Call Saul",
+          "image": "https://images.qloo.com/i/C0FABEA5-D59D-4B63-B193-6636F61FBD67-420x-auto.jpg"
+        },
+        {
+          "id": "0A80E078-8CF1-450B-8027-D5A90202F0CB",
+          "name": "High Maintenance",
+          "image": "https://images.qloo.com/i/0A80E078-8CF1-450B-8027-D5A90202F0CB-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev14"
+    },
+    {
+      "category": "movie",
+      "label": "Film",
+      "items": [
+        {
+          "id": "603C7E42-C952-45CB-8B6F-3B803FEFB2F7",
+          "name": "Lost in Translation",
+          "image": "https://images.qloo.com/i/603C7E42-C952-45CB-8B6F-3B803FEFB2F7-420x-auto.jpg"
+        },
+        {
+          "id": "9E661A87-6EB9-4138-8795-27284CD8E249",
+          "name": "Marriage Story",
+          "image": "https://images.qloo.com/i/9E661A87-6EB9-4138-8795-27284CD8E249-420x-auto.jpg"
+        },
+        {
+          "id": "66EBD81E-3F1B-4913-AF28-FD197DC49EE9",
+          "name": "Portrait of a Lady on Fire",
+          "image": "https://images.qloo.com/i/66EBD81E-3F1B-4913-AF28-FD197DC49EE9-420x-auto.jpg"
+        },
+        {
+          "id": "DE02F90E-EF5E-4860-9D19-18BCFCD47F38",
+          "name": "Pain and Glory",
+          "image": "https://images.qloo.com/i/DE02F90E-EF5E-4860-9D19-18BCFCD47F38-420x-auto.jpg"
+        },
+        {
+          "id": "969911E8-7092-43D9-8C7D-C7547EAE3C00",
+          "name": "Little Women",
+          "image": "https://images.qloo.com/i/969911E8-7092-43D9-8C7D-C7547EAE3C00-420x-auto.jpg"
+        },
+        {
+          "id": "086E2298-1734-4043-A1C9-0E18121B384C",
+          "name": "Eternal Sunshine of the Spotless Mind",
+          "image": "https://images.qloo.com/i/086E2298-1734-4043-A1C9-0E18121B384C-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev15"
+    },
+    {
+      "category": "podcast",
+      "label": "Podcasts",
+      "items": [
+        {
+          "id": "D95B20A8-0CEA-4BDC-8074-60A303FA1980",
+          "name": "Song Exploder",
+          "image": "https://images.qloo.com/i/D95B20A8-0CEA-4BDC-8074-60A303FA1980-420x-auto.jpg"
+        },
+        {
+          "id": "1B466B0E-323A-4EFD-A314-8737F58F1E1B",
+          "name": "99% Invisible",
+          "image": "https://images.qloo.com/i/1B466B0E-323A-4EFD-A314-8737F58F1E1B-420x-auto.jpg"
+        },
+        {
+          "id": "B4D6B6FD-7146-4E1C-AE48-B8EBD2BB71DA",
+          "name": "Radiolab",
+          "image": "https://images.qloo.com/i/B4D6B6FD-7146-4E1C-AE48-B8EBD2BB71DA-420x-auto.jpg"
+        },
+        {
+          "id": "B683E01D-FBF2-4869-988A-F084C5146259",
+          "name": "Love and Radio",
+          "image": "https://images.qloo.com/i/B683E01D-FBF2-4869-988A-F084C5146259-420x-auto.jpg"
+        },
+        {
+          "id": "BF80E280-A231-44B0-B98C-31C541F007E2",
+          "name": "This American Life",
+          "image": "https://images.qloo.com/i/BF80E280-A231-44B0-B98C-31C541F007E2-420x-auto.jpg"
+        },
+        {
+          "id": "87EAEE3F-8F2D-4478-AB1A-E803F7BF69D0",
+          "name": "the memory palace",
+          "image": "https://images.qloo.com/i/87EAEE3F-8F2D-4478-AB1A-E803F7BF69D0-420x-auto.jpg"
+        }
+      ],
+      "evidenceId": "ev16"
+    }
+  ],
+  "merchIdeas": [
+    {
+      "idea": "A merch capsule that nods to the look of Patagonia and Fjällräven, which over-index with this audience.",
+      "basedOn": ["Patagonia", "Fjällräven"],
+      "evidenceIds": ["ev13"]
+    },
+    {
+      "idea": "Pitch an interview or ad read on Song Exploder ahead of on-sale.",
+      "basedOn": ["Song Exploder"],
+      "evidenceIds": ["ev16"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev1",
+      "tool": "qloo_describe",
+      "purpose": "Resolve “Khruangbin” to a Qloo artist",
+      "inputRedacted": {
+        "entity": "Khruangbin",
+        "type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:53.857Z",
+      "cached": false,
+      "durationMs": 500,
+      "keyFields": [
+        {
+          "id": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+          "name": "Khruangbin",
+          "popularity": 0.992
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev5",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Khruangbin’s audience affinity is strongest in Spain",
+      "inputRedacted": {
+        "entity": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+        "entity_type": "artist",
+        "within": "Spain",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:36:55.131Z",
+      "cached": false,
+      "durationMs": 1249,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 41.375,
+            "lng": 2.175,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 41.418,
+            "lng": 2.175,
+            "affinity": 0.999,
+            "popularity": 0.997
+          },
+          {
+            "lat": 43.308,
+            "lng": -2,
+            "affinity": 0.997,
+            "popularity": 0.982
+          },
+          {
+            "lat": 40.408,
+            "lng": -3.713,
+            "affinity": 0.996,
+            "popularity": 0.999
+          },
+          {
+            "lat": 41.418,
+            "lng": 2.131,
+            "affinity": 0.994,
+            "popularity": 0.99
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Barcelona",
+            "region": "Catalonia",
+            "country": "Spain",
+            "max_affinity": 1,
+            "cells": 7
+          },
+          {
+            "city": "Madrid",
+            "region": "Madrid",
+            "country": "Spain",
+            "max_affinity": 0.996,
+            "cells": 3
+          },
+          {
+            "city": "Bilbao",
+            "region": "Basque Country",
+            "country": "Spain",
+            "max_affinity": 0.997,
+            "cells": 2
+          },
+          {
+            "city": "Malaga",
+            "region": "Andalusia",
+            "country": "Spain",
+            "max_affinity": 0.992,
+            "cells": 3
+          },
+          {
+            "city": "Sevilla",
+            "region": "Andalusia",
+            "country": "Spain",
+            "max_affinity": 0.993,
+            "cells": 1
+          },
+          {
+            "city": "Valencia",
+            "region": "Valencia",
+            "country": "Spain",
+            "max_affinity": 0.981,
+            "cells": 1
+          },
+          {
+            "city": "Palma",
+            "region": "Balearic Islands",
+            "country": "Spain",
+            "max_affinity": 0.975,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev2",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Khruangbin’s audience affinity is strongest in Germany",
+      "inputRedacted": {
+        "entity": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+        "entity_type": "artist",
+        "within": "Germany",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:36:55.145Z",
+      "cached": false,
+      "durationMs": 1264,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 52.493,
+            "lng": 13.425,
+            "affinity": 1,
+            "popularity": 0.998
+          },
+          {
+            "lat": 52.493,
+            "lng": 13.469,
+            "affinity": 0.998,
+            "popularity": 0.994
+          },
+          {
+            "lat": 52.537,
+            "lng": 13.381,
+            "affinity": 0.996,
+            "popularity": 1
+          },
+          {
+            "lat": 52.493,
+            "lng": 13.381,
+            "affinity": 0.994,
+            "popularity": 0.996
+          },
+          {
+            "lat": 52.537,
+            "lng": 13.425,
+            "affinity": 0.992,
+            "popularity": 0.992
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Berlin",
+            "region": "State of Berlin",
+            "country": "Germany",
+            "max_affinity": 1,
+            "cells": 13
+          },
+          {
+            "city": "Hamburg",
+            "region": "Hamburg",
+            "country": "Germany",
+            "max_affinity": 0.988,
+            "cells": 2
+          },
+          {
+            "city": "Munich",
+            "region": "Bavaria",
+            "country": "Germany",
+            "max_affinity": 0.986,
+            "cells": 2
+          },
+          {
+            "city": "Frankfurt am Main",
+            "region": "Hesse",
+            "country": "Germany",
+            "max_affinity": 0.976,
+            "cells": 1
+          },
+          {
+            "city": "Koeln",
+            "region": "North Rhine-Westphalia",
+            "country": "Germany",
+            "max_affinity": 0.974,
+            "cells": 2
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev4",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Khruangbin’s audience affinity is strongest in Netherlands",
+      "inputRedacted": {
+        "entity": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+        "entity_type": "artist",
+        "within": "Netherlands",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:36:55.403Z",
+      "cached": false,
+      "durationMs": 1522,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 52.361,
+            "lng": 4.9,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 52.361,
+            "lng": 4.856,
+            "affinity": 0.997,
+            "popularity": 0.997
+          },
+          {
+            "lat": 52.405,
+            "lng": 4.9,
+            "affinity": 0.995,
+            "popularity": 0.995
+          },
+          {
+            "lat": 52.361,
+            "lng": 4.944,
+            "affinity": 0.992,
+            "popularity": 0.987
+          },
+          {
+            "lat": 52.097,
+            "lng": 5.12,
+            "affinity": 0.989,
+            "popularity": 0.989
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Rotterdam",
+            "region": "South Holland",
+            "country": "The Netherlands",
+            "max_affinity": 1,
+            "cells": 19
+          },
+          {
+            "city": "Groningen",
+            "region": "Groningen",
+            "country": "The Netherlands",
+            "max_affinity": 0.971,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev3",
+      "tool": "qloo_where_popular",
+      "purpose": "Map where Khruangbin’s audience affinity is strongest in France",
+      "inputRedacted": {
+        "entity": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+        "entity_type": "artist",
+        "within": "France",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "20 results.",
+      "resultCount": 20,
+      "fetchedAt": "2026-10-25T22:36:57.367Z",
+      "cached": false,
+      "durationMs": 3486,
+      "keyFields": {
+        "top_cells": [
+          {
+            "lat": 48.779,
+            "lng": 2.285,
+            "affinity": 1,
+            "popularity": 1
+          },
+          {
+            "lat": 48.955,
+            "lng": 2.285,
+            "affinity": 0.998,
+            "popularity": 0.998
+          },
+          {
+            "lat": 43.682,
+            "lng": 7.207,
+            "affinity": 0.996,
+            "popularity": 0.996
+          },
+          {
+            "lat": 46.143,
+            "lng": 6.152,
+            "affinity": 0.995,
+            "popularity": 0.984
+          },
+          {
+            "lat": 47.021,
+            "lng": 1.934,
+            "affinity": 0.993,
+            "popularity": 0.987
+          }
+        ],
+        "cities_derived_by_opener": [
+          {
+            "city": "Paris",
+            "region": "Île-de-France",
+            "country": "France",
+            "max_affinity": 1,
+            "cells": 3
+          },
+          {
+            "city": "Nice",
+            "region": "Provence-Alpes-Côte d'Azur",
+            "country": "France",
+            "max_affinity": 0.996,
+            "cells": 3
+          },
+          {
+            "city": "Marseille",
+            "region": "Provence-Alpes-Côte d'Azur",
+            "country": "France",
+            "max_affinity": 0.989,
+            "cells": 4
+          },
+          {
+            "city": "Lille",
+            "region": "Hauts-de-France",
+            "country": "France",
+            "max_affinity": 0.987,
+            "cells": 2
+          },
+          {
+            "city": "Lyon",
+            "region": "Auvergne-Rhône-Alpes",
+            "country": "France",
+            "max_affinity": 0.984,
+            "cells": 1
+          },
+          {
+            "city": "Bordeaux",
+            "region": "New Aquitaine",
+            "country": "France",
+            "max_affinity": 0.982,
+            "cells": 1
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev8",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Khruangbin’s audience with a Berlin location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "signal_location": "Berlin, Germany",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:58.651Z",
+      "cached": false,
+      "durationMs": 1279,
+      "keyFields": [
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "affinity": 0.973,
+          "popularity": 0.982
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "affinity": 0.969,
+          "popularity": 0.955
+        },
+        {
+          "id": "24BA18BE-62EF-4B7E-99C6-7AA20EB05F28",
+          "name": "Glass Beams",
+          "affinity": 0.968,
+          "popularity": 0.96
+        },
+        {
+          "id": "C6AA351E-6E2D-473B-BA63-A0B63AAC037C",
+          "name": "Kikagaku Moyo",
+          "affinity": 0.968,
+          "popularity": 0.948
+        },
+        {
+          "id": "061CE350-5D95-49F0-8C09-3D13B2E2D056",
+          "name": "Jungle",
+          "affinity": 0.967,
+          "popularity": 0.996
+        },
+        {
+          "id": "AC007829-3D79-438E-9F02-11228C82AD38",
+          "name": "Hiatus Kaiyote",
+          "affinity": 0.966,
+          "popularity": 0.986
+        },
+        {
+          "id": "22E0DEB3-DAFF-418B-9396-C323D47F2BCC",
+          "name": "J Lloyd",
+          "affinity": 0.964,
+          "popularity": 0.865
+        },
+        {
+          "id": "076ADA9F-DB3B-4BD3-AE61-DBBA89FC0D15",
+          "name": "Mildlife",
+          "affinity": 0.964,
+          "popularity": 0.9
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev12",
+      "tool": "qloo_trends",
+      "purpose": "Popularity trend for Khruangbin over the last year",
+      "inputRedacted": {
+        "entities": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "entity_type": "artist",
+        "start_date": "2025-10-25",
+        "end_date": "2026-10-24",
+        "limit": 20
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:58.735Z",
+      "cached": false,
+      "durationMs": 1282,
+      "keyFields": [
+        {
+          "name": "Khruangbin",
+          "points": [
+            {
+              "date": "2026-08-08",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-15",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-22",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-08-29",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-05",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-12",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-19",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-09-26",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-03",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-10",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-17",
+              "percentile": 0.11,
+              "delta": 0
+            },
+            {
+              "date": "2026-10-24",
+              "percentile": 0.11,
+              "delta": 0
+            }
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev10",
+      "tool": "qloo_audience_demographics",
+      "purpose": "Age and gender affinity of Khruangbin’s audience",
+      "inputRedacted": {
+        "entity": "BAF6317A-DF94-4C90-92AE-63F86560C21B",
+        "entity_type": "artist"
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:36:58.796Z",
+      "cached": false,
+      "durationMs": 1423,
+      "keyFields": {
+        "age": [
+          {
+            "bucket": "24 and under",
+            "value": 0
+          },
+          {
+            "bucket": "25–29",
+            "value": -0.05
+          },
+          {
+            "bucket": "30–34",
+            "value": -0.78
+          },
+          {
+            "bucket": "35–44",
+            "value": 0.29
+          },
+          {
+            "bucket": "45–54",
+            "value": -0.59
+          },
+          {
+            "bucket": "55+",
+            "value": -0.59
+          }
+        ],
+        "gender": [
+          {
+            "bucket": "male",
+            "value": 0.16
+          },
+          {
+            "bucket": "female",
+            "value": -0.16
+          }
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "id": "ev11",
+      "tool": "qloo_entity_tags",
+      "purpose": "Tags that characterise Khruangbin",
+      "inputRedacted": {
+        "entities": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "entity_type": "artist",
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "10 results.",
+      "resultCount": 10,
+      "fetchedAt": "2026-10-25T22:36:58.976Z",
+      "cached": false,
+      "durationMs": 1603,
+      "keyFields": [
+        {
+          "id": "urn:tag:style:qloo:exotic",
+          "name": "Exotic",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:genre:brand:fashion",
+          "name": "Fashion",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:cost_description:place:inexpensive",
+          "name": "Inexpensive",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:hotel_rating:place:four_star",
+          "name": "Four Star",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:specialty_dish:place:pork_buns",
+          "name": "Pork Buns",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+          "name": "Identifies as women-owned",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:credit_card:place:discover",
+          "name": "Discover",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:genre:place:restaurant:bar",
+          "name": "Bar",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:genre:person:musician",
+          "name": "Musician",
+          "affinity": 1
+        },
+        {
+          "id": "urn:tag:style:qloo:sultry",
+          "name": "Sultry",
+          "affinity": 1
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev7",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Khruangbin’s audience with a Rotterdam location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "signal_location": "Rotterdam, The Netherlands",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:59.130Z",
+      "cached": false,
+      "durationMs": 1758,
+      "keyFields": [
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "affinity": 0.972,
+          "popularity": 0.982
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "affinity": 0.969,
+          "popularity": 0.955
+        },
+        {
+          "id": "AC007829-3D79-438E-9F02-11228C82AD38",
+          "name": "Hiatus Kaiyote",
+          "affinity": 0.967,
+          "popularity": 0.986
+        },
+        {
+          "id": "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
+          "name": "Mansur Brown",
+          "affinity": 0.966,
+          "popularity": 0.862
+        },
+        {
+          "id": "C6AA351E-6E2D-473B-BA63-A0B63AAC037C",
+          "name": "Kikagaku Moyo",
+          "affinity": 0.965,
+          "popularity": 0.948
+        },
+        {
+          "id": "31DA05F2-0096-4209-94FA-3AE331190494",
+          "name": "Altın Gün",
+          "affinity": 0.965,
+          "popularity": 0.96
+        },
+        {
+          "id": "F986ED77-8148-4C4E-BDA1-7240FE7C32D2",
+          "name": "Vulfpeck",
+          "affinity": 0.965,
+          "popularity": 0.986
+        },
+        {
+          "id": "57478178-BBBC-49A4-8755-5D942B388316",
+          "name": "Jordan Rakei",
+          "affinity": 0.964,
+          "popularity": 0.961
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev9",
+      "tool": "qloo_recommend",
+      "purpose": "Opener candidates for Khruangbin’s audience with a Barcelona location signal",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "signal_location": "Barcelona, Spain",
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:59.156Z",
+      "cached": false,
+      "durationMs": 1785,
+      "keyFields": [
+        {
+          "id": "061CE350-5D95-49F0-8C09-3D13B2E2D056",
+          "name": "Jungle",
+          "affinity": 0.968,
+          "popularity": 0.996
+        },
+        {
+          "id": "22E0DEB3-DAFF-418B-9396-C323D47F2BCC",
+          "name": "J Lloyd",
+          "affinity": 0.967,
+          "popularity": 0.865
+        },
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "affinity": 0.966,
+          "popularity": 0.982
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "affinity": 0.963,
+          "popularity": 0.955
+        },
+        {
+          "id": "37E7653C-A9DB-4313-892B-FEAC54A46F59",
+          "name": "Black Pumas",
+          "affinity": 0.963,
+          "popularity": 0.977
+        },
+        {
+          "id": "C6AA351E-6E2D-473B-BA63-A0B63AAC037C",
+          "name": "Kikagaku Moyo",
+          "affinity": 0.963,
+          "popularity": 0.948
+        },
+        {
+          "id": "AC007829-3D79-438E-9F02-11228C82AD38",
+          "name": "Hiatus Kaiyote",
+          "affinity": 0.963,
+          "popularity": 0.986
+        },
+        {
+          "id": "24BA18BE-62EF-4B7E-99C6-7AA20EB05F28",
+          "name": "Glass Beams",
+          "affinity": 0.961,
+          "popularity": 0.96
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev13",
+      "tool": "qloo_recommend",
+      "purpose": "Brands with strong affinity among Khruangbin’s audience",
+      "inputRedacted": {
+        "target_type": "brand",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "limit": 8
+      },
+      "status": "ok",
+      "summary": "8 results.",
+      "resultCount": 8,
+      "fetchedAt": "2026-10-25T22:36:59.368Z",
+      "cached": false,
+      "durationMs": 1914,
+      "keyFields": [
+        {
+          "id": "DB4CE34E-3A63-4947-946F-9D52502C5762",
+          "name": "Patagonia",
+          "affinity": 0.973,
+          "popularity": 0.996
+        },
+        {
+          "id": "E9A70778-6E65-49A4-8C38-A24D20C05BDA",
+          "name": "Fjällräven",
+          "affinity": 0.941,
+          "popularity": 0.879
+        },
+        {
+          "id": "DB03F250-64F3-47AB-8756-BC1C4E13EBFD",
+          "name": "The North Face",
+          "affinity": 0.938,
+          "popularity": 0.997
+        },
+        {
+          "id": "205AF33F-118E-4C49-9721-6BDBAF981DA0",
+          "name": "Recreational Equipment Inc",
+          "affinity": 0.936,
+          "popularity": 0.993
+        },
+        {
+          "id": "1BFF764A-D06D-48CA-9075-1E0F2A3FCE3D",
+          "name": "Fjällräven",
+          "affinity": 0.93,
+          "popularity": 0.955
+        },
+        {
+          "id": "D69A3BE9-3C01-4786-9EFD-8B70586A977E",
+          "name": "Pendleton Woolen Mills",
+          "affinity": 0.926,
+          "popularity": 0.916
+        },
+        {
+          "id": "82BC424A-68CF-4F14-A831-826F28143F54",
+          "name": "Huckberry",
+          "affinity": 0.926,
+          "popularity": 0.95
+        },
+        {
+          "id": "B88738CC-8415-4F18-9095-2955EC094B0C",
+          "name": "Icebreaker",
+          "affinity": 0.917,
+          "popularity": 0.817
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev14",
+      "tool": "qloo_recommend",
+      "purpose": "TV with strong affinity among Khruangbin’s audience",
+      "inputRedacted": {
+        "target_type": "tv_show",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:36:59.372Z",
+      "cached": false,
+      "durationMs": 1918,
+      "keyFields": [
+        {
+          "id": "4FB650CB-2ED7-4A97-A70E-0722929E78B3",
+          "name": "Fargo",
+          "affinity": 0.97,
+          "popularity": 0.998
+        },
+        {
+          "id": "C78323C6-575D-4D68-B159-AE40D3303331",
+          "name": "Baskets",
+          "affinity": 0.946,
+          "popularity": 0.892
+        },
+        {
+          "id": "B8E4BDB9-6C06-4833-9698-A6D5ADD53990",
+          "name": "Horace and Pete",
+          "affinity": 0.942,
+          "popularity": 0.94
+        },
+        {
+          "id": "D9AB4F73-85A0-4F4A-9CE5-D93D8A63576D",
+          "name": "Mad Dogs",
+          "affinity": 0.942,
+          "popularity": 0.844
+        },
+        {
+          "id": "C0FABEA5-D59D-4B63-B193-6636F61FBD67",
+          "name": "Better Call Saul",
+          "affinity": 0.939,
+          "popularity": 0.999
+        },
+        {
+          "id": "0A80E078-8CF1-450B-8027-D5A90202F0CB",
+          "name": "High Maintenance",
+          "affinity": 0.935,
+          "popularity": 0.876
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev16",
+      "tool": "qloo_recommend",
+      "purpose": "Podcasts with strong affinity among Khruangbin’s audience",
+      "inputRedacted": {
+        "target_type": "podcast",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:36:59.444Z",
+      "cached": false,
+      "durationMs": 1990,
+      "keyFields": [
+        {
+          "id": "D95B20A8-0CEA-4BDC-8074-60A303FA1980",
+          "name": "Song Exploder",
+          "affinity": 0.965,
+          "popularity": 0.978
+        },
+        {
+          "id": "1B466B0E-323A-4EFD-A314-8737F58F1E1B",
+          "name": "99% Invisible",
+          "affinity": 0.93,
+          "popularity": 0.998
+        },
+        {
+          "id": "B4D6B6FD-7146-4E1C-AE48-B8EBD2BB71DA",
+          "name": "Radiolab",
+          "affinity": 0.921,
+          "popularity": 0.999
+        },
+        {
+          "id": "B683E01D-FBF2-4869-988A-F084C5146259",
+          "name": "Love and Radio",
+          "affinity": 0.915,
+          "popularity": 0.969
+        },
+        {
+          "id": "BF80E280-A231-44B0-B98C-31C541F007E2",
+          "name": "This American Life",
+          "affinity": 0.901,
+          "popularity": 0.999
+        },
+        {
+          "id": "87EAEE3F-8F2D-4478-AB1A-E803F7BF69D0",
+          "name": "the memory palace",
+          "affinity": 0.901,
+          "popularity": 0.991
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev15",
+      "tool": "qloo_recommend",
+      "purpose": "Film with strong affinity among Khruangbin’s audience",
+      "inputRedacted": {
+        "target_type": "movie",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "limit": 6
+      },
+      "status": "ok",
+      "summary": "6 results.",
+      "resultCount": 6,
+      "fetchedAt": "2026-10-25T22:37:00.699Z",
+      "cached": false,
+      "durationMs": 3244,
+      "keyFields": [
+        {
+          "id": "603C7E42-C952-45CB-8B6F-3B803FEFB2F7",
+          "name": "Lost in Translation",
+          "affinity": 0.924,
+          "popularity": 0.997
+        },
+        {
+          "id": "9E661A87-6EB9-4138-8795-27284CD8E249",
+          "name": "Marriage Story",
+          "affinity": 0.922,
+          "popularity": 0.997
+        },
+        {
+          "id": "66EBD81E-3F1B-4913-AF28-FD197DC49EE9",
+          "name": "Portrait of a Lady on Fire",
+          "affinity": 0.902,
+          "popularity": 0.997
+        },
+        {
+          "id": "DE02F90E-EF5E-4860-9D19-18BCFCD47F38",
+          "name": "Pain and Glory",
+          "affinity": 0.902,
+          "popularity": 0.979
+        },
+        {
+          "id": "969911E8-7092-43D9-8C7D-C7547EAE3C00",
+          "name": "Little Women",
+          "affinity": 0.901,
+          "popularity": 0.998
+        },
+        {
+          "id": "086E2298-1734-4043-A1C9-0E18121B384C",
+          "name": "Eternal Sunshine of the Spotless Mind",
+          "affinity": 0.9,
+          "popularity": 1
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev6",
+      "tool": "qloo_recommend",
+      "purpose": "Artists with strong affinity among Khruangbin’s audience (opener pool)",
+      "inputRedacted": {
+        "target_type": "artist",
+        "signals": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "limit": 15
+      },
+      "status": "ok",
+      "summary": "15 results.",
+      "resultCount": 15,
+      "fetchedAt": "2026-10-25T22:37:00.976Z",
+      "cached": false,
+      "durationMs": 3604,
+      "keyFields": [
+        {
+          "id": "7C038006-7C6B-4F1B-A3F0-E6BED80C1098",
+          "name": "Arc De Soleil",
+          "affinity": 0.975,
+          "popularity": 0.97
+        },
+        {
+          "id": "24BA18BE-62EF-4B7E-99C6-7AA20EB05F28",
+          "name": "Glass Beams",
+          "affinity": 0.962,
+          "popularity": 0.96
+        },
+        {
+          "id": "076ADA9F-DB3B-4BD3-AE61-DBBA89FC0D15",
+          "name": "Mildlife",
+          "affinity": 0.961,
+          "popularity": 0.9
+        },
+        {
+          "id": "77C7B492-4B8F-41F6-81A5-A6EC3932C307",
+          "name": "Common Saints",
+          "affinity": 0.958,
+          "popularity": 0.905
+        },
+        {
+          "id": "6C599E55-2FE5-49E4-8CA9-60773BE8F865",
+          "name": "Robohands",
+          "affinity": 0.956,
+          "popularity": 0.935
+        },
+        {
+          "id": "FC07BE09-ED83-46BD-AFB1-D5C58D84BDA7",
+          "name": "Thee Sacred Souls",
+          "affinity": 0.956,
+          "popularity": 0.974
+        },
+        {
+          "id": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+          "name": "SAULT",
+          "affinity": 0.954,
+          "popularity": 0.982
+        },
+        {
+          "id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+          "name": "KOKOROKO",
+          "affinity": 0.952,
+          "popularity": 0.955
+        },
+        {
+          "id": "2F1698BB-21B5-409D-86AE-57C003DED153",
+          "name": "Menahan Street Band",
+          "affinity": 0.951,
+          "popularity": 0.984
+        },
+        {
+          "id": "22E0DEB3-DAFF-418B-9396-C323D47F2BCC",
+          "name": "J Lloyd",
+          "affinity": 0.951,
+          "popularity": 0.865
+        },
+        {
+          "id": "7E51F8BC-FA1E-4E93-B465-39663E16E7C1",
+          "name": "Hermanos Gutiérrez",
+          "affinity": 0.95,
+          "popularity": 0.965
+        },
+        {
+          "id": "732D9924-FC26-432F-95C9-8DD1C34D6D83",
+          "name": "Brainstory",
+          "affinity": 0.947,
+          "popularity": 0.824
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "ev17",
+      "tool": "qloo_compare_audiences",
+      "purpose": "Compare Khruangbin’s audience with SAULT’s",
+      "inputRedacted": {
+        "group_a": ["BAF6317A-DF94-4C90-92AE-63F86560C21B"],
+        "group_b": ["B8A29D31-35E3-4DB7-8BDA-92F505BD24C0"],
+        "limit": 10
+      },
+      "status": "ok",
+      "summary": "1 result.",
+      "resultCount": 1,
+      "fetchedAt": "2026-10-25T22:37:01.557Z",
+      "cached": false,
+      "durationMs": 574,
+      "keyFields": [
+        {
+          "name": "Drums",
+          "type": "urn:tag:instrument:music",
+          "score": 1
+        },
+        {
+          "name": "United States",
+          "type": "urn:tag:region:qloo",
+          "score": 1
+        },
+        {
+          "name": "Spirituals",
+          "type": "urn:tag:genre:music",
+          "score": 1
+        },
+        {
+          "name": "Folk",
+          "type": "urn:tag:genre:music",
+          "score": 1
+        },
+        {
+          "name": "Blues",
+          "type": "urn:tag:genre:music",
+          "score": 0.999
+        },
+        {
+          "name": "Ragtime",
+          "type": "urn:tag:genre:music",
+          "score": 0.999
+        },
+        {
+          "name": "Jazz",
+          "type": "urn:tag:genre:music",
+          "score": 0.999
+        },
+        {
+          "name": "Soul",
+          "type": "urn:tag:genre:music",
+          "score": 0.999
+        },
+        {
+          "name": "Marches",
+          "type": "urn:tag:genre:music",
+          "score": 0.999
+        },
+        {
+          "name": "United Kingdom",
+          "type": "urn:tag:region:qloo",
+          "score": 0.994
+        },
+        {
+          "name": "Syncopated",
+          "type": "urn:tag:characteristic:music",
+          "score": 0.982
+        },
+        {
+          "name": "Rock",
+          "type": "urn:tag:genre:music",
+          "score": 0.952
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "notices": [
+    {
+      "level": "info",
+      "message": "The agent was unavailable for this run, so the plan was assembled by the deterministic planner."
+    },
+    {
+      "level": "info",
+      "message": "Qloo scores each country's heatmap on its own scale, so Opener picks the strongest cities in each country (Germany, France, Netherlands, Spain) instead of ranking countries against each other."
+    }
+  ],
+  "limitations": [
+    "Qloo heatmap affinity is relative to this query. It shows where the audience over-indexes, not ticket demand or venue capacity.",
+    "Cities are derived by Opener from Qloo heat cells using a bundled GeoNames table; cells more than 90 km from a listed city are left out.",
+    "Demographic values are relative affinities (above or below average), not shares of fans.",
+    "Dates, drive times, venue availability and capacity are not modelled yet.",
+    "Searched within: Germany, France, Netherlands, Spain.",
+    "Heatmap scores are relative within each country searched, so cities in different countries are not ranked against each other."
+  ]
+}
