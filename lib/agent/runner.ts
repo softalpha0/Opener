@@ -16,6 +16,7 @@ import {
   TourPlanSchema,
   type AgentDraft,
   type PlanEvent,
+  type PlanStageId,
   type TourPlan,
 } from "../plan/schema";
 import { composePlan, spotlightCandidate } from "./compose";
@@ -212,7 +213,20 @@ export async function runPlan(
     deadline: Date.now() + TOTAL_TIME_MS,
   });
 
+  let stageStart = Date.now();
+  const stage = (id: PlanStageId, state: "start" | "done", detail?: string) => {
+    if (state === "start") stageStart = Date.now();
+    emit({
+      type: "stage",
+      id,
+      state,
+      ...(state === "done" ? { ms: Date.now() - stageStart } : {}),
+      ...(detail ? { detail } : {}),
+    });
+  };
+
   // 1. Resolve the artist. Never auto-pick when Qloo says the name is ambiguous.
+  stage("resolve", "start");
   emit({ type: "status", message: `Resolving “${input.artist}” in Qloo` });
   const describe = await box.call(
     "qloo_describe",
@@ -257,6 +271,12 @@ export async function runPlan(
   }
   const artist: ArtistRef = { id: entity.id, name: entity.name };
   const notices: TourPlan["notices"] = [];
+  stage("resolve", "done", `Matched ${entity.name}`);
+  stage(
+    "query",
+    "start",
+    deps.llm ? `Agent (${deps.llm.model}) chooses the calls` : "Fixed tool chain",
+  );
 
   // 2. Agent loop (when an LLM is configured).
   let draft: AgentDraft | null = null;
@@ -301,6 +321,8 @@ export async function runPlan(
       : "Mapping demand and building the route",
   });
   await ensureHeat(box, artist, region.within);
+  stage("query", "done", `${box.calls.length} Qloo calls so far`);
+  stage("rank", "start");
   const demand = cityDemand(box, artist);
   const heat = box.byTool("qloo_where_popular");
   if (!heat.length) {
@@ -330,8 +352,10 @@ export async function runPlan(
     ensureCrossover(box, artist, demand[0]),
   ]);
   await ensureCompare(box, artist, spotlightCandidate(box, artist));
+  stage("rank", "done", `${demand.length} cities ranked from Qloo heatmaps`);
 
   // 4. Compose and validate.
+  stage("compose", "start");
   const plan = composePlan({
     box,
     artist: entity,
@@ -358,6 +382,7 @@ export async function runPlan(
     });
     return null;
   }
+  stage("compose", "done", `${checked.data.stops.length} stops`);
   emit({ type: "plan", plan: checked.data });
   return checked.data;
 }

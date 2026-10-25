@@ -158,7 +158,7 @@ export default function Home() {
           <p className="mt-3 max-w-2xl text-mist-2">
             Each runs a live plan (or loads it from the 24-hour cache if someone ran it recently).
           </p>
-          <ul className="mt-8 grid gap-4 md:grid-cols-3">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {SAMPLE_ARTISTS.map((a) => (
               <li key={a.slug}>
                 <Link

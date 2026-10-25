@@ -1,14 +1,17 @@
 import { TtlCache, cacheDir, cacheTtlMs } from "./qloo/cache";
 import { getQloo } from "./qloo/client";
 import { stableKeyFor } from "./plan/key";
+import type { GenericTour } from "./plan/generic";
 import type { TourPlan } from "./plan/schema";
 import { createLlmProvider, type LlmProvider } from "./agent/llm";
 import { SlidingWindowLimiter } from "./rate-limit";
 
 interface ServerState {
   plans: TtlCache<TourPlan>;
+  generic: TtlCache<GenericTour>;
   planLimiter: SlidingWindowLimiter;
   resolveLimiter: SlidingWindowLimiter;
+  genericLimiter: SlidingWindowLimiter;
   llm: LlmProvider | null;
   startedAt: number;
 }
@@ -26,8 +29,15 @@ export function serverState(): ServerState {
         maxEntries: 200,
         dir: cacheDir(),
       }),
+      generic: new TtlCache<GenericTour>({
+        namespace: "generic",
+        ttlMs: cacheTtlMs(),
+        maxEntries: 200,
+        dir: cacheDir(),
+      }),
       planLimiter: new SlidingWindowLimiter(perMinute, 60_000),
       resolveLimiter: new SlidingWindowLimiter(30, 60_000),
+      genericLimiter: new SlidingWindowLimiter(perMinute, 60_000),
       llm: createLlmProvider(),
       startedAt: Date.now(),
     };

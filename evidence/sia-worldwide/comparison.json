@@ -1,0 +1,223 @@
+{
+  "generic": {
+    "source": "population",
+    "generatedAt": "2026-10-24T12:06:35.572Z",
+    "stops": [
+      {
+        "city": "New York City",
+        "country": "United States",
+        "why": "One of the largest cities in United States (population 8,804k)."
+      },
+      {
+        "city": "London",
+        "country": "United Kingdom",
+        "why": "One of the largest cities in United Kingdom (population 8,962k)."
+      },
+      {
+        "city": "Berlin",
+        "country": "Germany",
+        "why": "One of the largest cities in Germany (population 3,426k)."
+      },
+      {
+        "city": "Lagos",
+        "country": "Nigeria",
+        "why": "One of the largest cities in Nigeria (population 15,388k)."
+      },
+      {
+        "city": "Sydney",
+        "country": "Australia",
+        "why": "One of the largest cities in Australia (population 5,639k)."
+      },
+      {
+        "city": "Los Angeles",
+        "country": "United States",
+        "why": "One of the largest cities in United States (population 3,821k)."
+      },
+      {
+        "city": "Birmingham",
+        "country": "United Kingdom",
+        "why": "One of the largest cities in United Kingdom (population 1,158k)."
+      },
+      {
+        "city": "Hamburg",
+        "country": "Germany",
+        "why": "One of the largest cities in Germany (population 1,974k)."
+      }
+    ],
+    "note": "Built offline from a saved plan, so the generic tour is the population baseline (no LLM call)."
+  },
+  "rows": [
+    {
+      "city": "New York City",
+      "country": "United States",
+      "why": "One of the largest cities in United States (population 8,804k).",
+      "openerOrder": 5,
+      "qloo": {
+        "key": "new york city|us",
+        "city": "New York City",
+        "country": "United States",
+        "area": "United States",
+        "rank": 2,
+        "of": 11,
+        "affinity": 1,
+        "cells": 2,
+        "evidenceId": "ev2"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "London",
+      "country": "United Kingdom",
+      "why": "One of the largest cities in United Kingdom (population 8,962k).",
+      "openerOrder": 1,
+      "qloo": {
+        "key": "london|gb",
+        "city": "London",
+        "country": "United Kingdom",
+        "area": "United Kingdom",
+        "rank": 1,
+        "of": 4,
+        "affinity": 1,
+        "cells": 12,
+        "evidenceId": "ev3"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Berlin",
+      "country": "Germany",
+      "why": "One of the largest cities in Germany (population 3,426k).",
+      "openerOrder": 3,
+      "qloo": {
+        "key": "berlin|de",
+        "city": "Berlin",
+        "country": "Germany",
+        "area": "Germany",
+        "rank": 1,
+        "of": 8,
+        "affinity": 1,
+        "cells": 5,
+        "evidenceId": "ev4"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Lagos",
+      "country": "Nigeria",
+      "why": "One of the largest cities in Nigeria (population 15,388k).",
+      "openerOrder": 4,
+      "qloo": {
+        "key": "lagos|ng",
+        "city": "Lagos",
+        "country": "Nigeria",
+        "area": "Nigeria",
+        "rank": 1,
+        "of": 8,
+        "affinity": 1,
+        "cells": 5,
+        "evidenceId": "ev5"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Sydney",
+      "country": "Australia",
+      "why": "One of the largest cities in Australia (population 5,639k).",
+      "qloo": {
+        "key": "sydney|au",
+        "city": "Sydney",
+        "country": "Australia",
+        "area": "Australia",
+        "rank": 1,
+        "of": 6,
+        "affinity": 0.9991843393148451,
+        "cells": 5,
+        "evidenceId": "ev6"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Los Angeles",
+      "country": "United States",
+      "why": "One of the largest cities in United States (population 3,821k).",
+      "openerOrder": 7,
+      "qloo": {
+        "key": "los angeles|us",
+        "city": "Los Angeles",
+        "country": "United States",
+        "area": "United States",
+        "rank": 1,
+        "of": 11,
+        "affinity": 0.999734395750332,
+        "cells": 3,
+        "evidenceId": "ev2"
+      },
+      "outsideSearch": false
+    },
+    {
+      "city": "Birmingham",
+      "country": "United Kingdom",
+      "why": "One of the largest cities in United Kingdom (population 1,158k).",
+      "outsideSearch": false
+    },
+    {
+      "city": "Hamburg",
+      "country": "Germany",
+      "why": "One of the largest cities in Germany (population 1,974k).",
+      "qloo": {
+        "key": "hamburg|de",
+        "city": "Hamburg",
+        "country": "Germany",
+        "area": "Germany",
+        "rank": 5,
+        "of": 8,
+        "affinity": 0.996437054631829,
+        "cells": 1,
+        "evidenceId": "ev4"
+      },
+      "outsideSearch": false
+    }
+  ],
+  "openerOnly": [
+    {
+      "order": 2,
+      "city": "Munich",
+      "country": "Germany",
+      "qloo": {
+        "key": "munich|de",
+        "city": "Munich",
+        "country": "Germany",
+        "area": "Germany",
+        "rank": 2,
+        "of": 8,
+        "affinity": 0.9997030878859857,
+        "cells": 5,
+        "evidenceId": "ev4"
+      }
+    },
+    {
+      "order": 6,
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    {
+      "order": 8,
+      "city": "San Francisco",
+      "country": "United States",
+      "qloo": {
+        "key": "san francisco|us",
+        "city": "San Francisco",
+        "country": "United States",
+        "area": "United States",
+        "rank": 3,
+        "of": 11,
+        "affinity": 0.999601593625498,
+        "cells": 2,
+        "evidenceId": "ev2"
+      }
+    }
+  ],
+  "overlap": 5,
+  "noSignal": 1,
+  "qlooTop3": 6
+}

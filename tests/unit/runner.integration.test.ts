@@ -48,6 +48,18 @@ describe("runPlan (deterministic planner, mocked Qloo)", () => {
     ).toBe(true);
     expect(events.filter((e) => e.type === "heat").length).toBe(2);
     expect(events.at(-1)?.type).toBe("plan");
+    const stages = events.flatMap((e) => (e.type === "stage" ? [`${e.id}:${e.state}`] : []));
+    expect(stages).toEqual([
+      "resolve:start",
+      "resolve:done",
+      "query:start",
+      "query:done",
+      "rank:start",
+      "rank:done",
+      "compose:start",
+      "compose:done",
+    ]);
+    for (const stop of plan.stops) expect(stop.areaCities).toBeGreaterThanOrEqual(stop.demandRank);
   });
 
   it("stops and returns candidates for an ambiguous name (never auto-picks)", async () => {

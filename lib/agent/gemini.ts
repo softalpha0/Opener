@@ -15,9 +15,11 @@ export const DEFAULT_GEMINI_FALLBACKS = ["gemini-3.8-flash", "gemini-3.5-flash-l
 const MAX_TURNS = 12;
 const WRAP_UP_MS = 15_000;
 /** One slow response must not eat the whole run's time budget. */
-const TURN_TIMEOUT_MS = 45_000;
+const TURN_TIMEOUT_MS = 60_000;
 /** An overloaded free-tier model often hangs instead of returning 503; move on quickly on the first turn. */
 const FIRST_TURN_TIMEOUT_MS = 25_000;
+/** Waits before retrying the same model when it is busy mid-conversation. */
+const BUSY_RETRY_DELAYS_MS = [3_000, 6_000];
 
 /** JSON Schema keywords Gemini's function declarations don't accept; everything else passes through. */
 const UNSUPPORTED_KEYS = new Set(["$schema", "examples", "default"]);
@@ -35,6 +37,14 @@ function cleanSchema(value: unknown): unknown {
 }
 
 const userText = (text: string): Content => ({ role: "user", parts: [{ text }] });
+
+/** Quota or rate limit (429 / RESOURCE_EXHAUSTED): retrying the same model soon won't help. */
+export function isQuotaError(error: unknown): boolean {
+  const status = (error as { status?: unknown })?.status;
+  if (status === 429) return true;
+  const message = error instanceof Error ? error.message : String(error);
+  return /RESOURCE_EXHAUSTED|exceeded your current quota|"code":\s*429/i.test(message);
+}
 
 /** Overload, rate-limit and transient server errors are worth trying on another model. */
 export function isBusyError(error: unknown): boolean {
@@ -75,15 +85,45 @@ export class GeminiProvider implements LlmProvider {
    */
   private async withFallback<T>(
     canSwitch: boolean,
+    deadline: number,
     call: (model: string) => Promise<T>,
   ): Promise<T> {
+    let retries = 0;
     for (;;) {
       try {
         return await call(this.model);
       } catch (error) {
-        if (!canSwitch || !isBusyError(error) || this.active >= this.models.length - 1) throw error;
-        log("warn", `Gemini model ${this.model} is busy; trying ${this.models[this.active + 1]}`);
-        this.active++;
+        if (!isBusyError(error)) throw error;
+        const hasNext = this.active < this.models.length - 1;
+        if (isQuotaError(error) && !canSwitch) {
+          // Waiting won't restore a spent quota. Fail this run (the deterministic planner takes
+          // over) and start the next run on the next model, which has its own quota.
+          if (hasNext) {
+            log(
+              "warn",
+              `Gemini model ${this.model} is out of quota; next run uses ${this.models[this.active + 1]}`,
+            );
+            this.active++;
+          }
+          throw error;
+        }
+        if (canSwitch && hasNext) {
+          log("warn", `Gemini model ${this.model} is busy; trying ${this.models[this.active + 1]}`);
+          this.active++;
+          continue;
+        }
+        // Mid-conversation the history is tied to this model, so wait and retry it instead.
+        if (
+          !canSwitch &&
+          retries < BUSY_RETRY_DELAYS_MS.length &&
+          Date.now() + (BUSY_RETRY_DELAYS_MS[retries] ?? 0) < deadline
+        ) {
+          const delay = BUSY_RETRY_DELAYS_MS[retries++] ?? 0;
+          log("warn", `Gemini model ${this.model} is busy; retrying in ${delay / 1000}s`);
+          await new Promise((resolve) => setTimeout(resolve, delay));
+          continue;
+        }
+        throw error;
       }
     }
   }
@@ -98,7 +138,7 @@ export class GeminiProvider implements LlmProvider {
     const canSwitch = !contents.some((c) => c.role === "model");
     const limit = canSwitch ? FIRST_TURN_TIMEOUT_MS : TURN_TIMEOUT_MS;
     const timeout = Math.max(5_000, Math.min(limit, deadline - Date.now()));
-    const response = await this.withFallback(canSwitch, (model) =>
+    const response = await this.withFallback(canSwitch, deadline, (model) =>
       this.client.models.generateContent({
         model,
         contents: [...contents],

@@ -7,6 +7,7 @@ import type { TourPlan } from "@/lib/plan/schema";
 import { AudiencePanel } from "./AudiencePanel";
 import { CityCard } from "./CityCard";
 import { EvidenceDrawer, EvidenceToggle } from "./EvidencePanel";
+import { GenericCompare } from "./GenericCompare";
 import { LazyMount } from "./LazyMount";
 import { PlanActions } from "./PlanActions";
 import { TasteGrid } from "./TasteGrid";
@@ -27,6 +28,7 @@ export function PlanResults({
   const index = useMemo(() => evidenceIndex(plan), [plan]);
   const [active, setActive] = useState<number | undefined>(plan.stops[0]?.order);
   const [drawer, setDrawer] = useState(false);
+  const [compareRequested, setCompareRequested] = useState(0);
   const mapStops = useMemo(
     () =>
       plan.stops.flatMap((s) =>
@@ -102,7 +104,11 @@ export function PlanResults({
           <p className="mt-2 leading-relaxed text-paper">{plan.summary}</p>
         </div>
         <div className="relative mt-5">
-          <PlanActions plan={plan} onEvidence={() => setDrawer(true)} />
+          <PlanActions
+            plan={plan}
+            onEvidence={() => setDrawer(true)}
+            onCompare={() => setCompareRequested((n) => n + 1)}
+          />
         </div>
       </Panel>
 
@@ -169,6 +175,8 @@ export function PlanResults({
           )}
         </div>
       </section>
+
+      <GenericCompare plan={plan} requested={compareRequested} />
 
       {plan.openerSpotlight && (
         <Panel aria-labelledby="spotlight-title">

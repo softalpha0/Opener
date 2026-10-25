@@ -465,7 +465,10 @@ export function composePlan(ctx: ComposeContext): TourPlan {
 
   const demand = cityDemand(box, ref);
   const pool = openerPool(box, ref);
-  const stops = buildStops(ctx, demand, pool, notices, limitations);
+  const stops = buildStops(ctx, demand, pool, notices, limitations).map((s) => ({
+    ...s,
+    areaCities: s.area ? demand.filter((d) => d.area === s.area).length : demand.length,
+  }));
 
   const heat = heatCalls(box, ref)
     .flatMap((call) =>
@@ -473,6 +476,7 @@ export function composePlan(ctx: ComposeContext): TourPlan {
         lat: p.lat,
         lng: p.lng,
         affinity: p.affinity,
+        ...(p.popularity !== undefined ? { popularity: p.popularity } : {}),
         evidenceId: call.id,
       })),
     )

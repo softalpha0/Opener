@@ -86,13 +86,22 @@ export function citiesFromHeat(points: HeatPoint[], countryCode?: string): CityD
       ...rest,
       ...(popN ? { meanPopularity: popSum / popN } : {}),
     }))
-    .sort(
-      (a, b) =>
-        b.affinity - a.affinity ||
-        b.cells - a.cells ||
-        (b.meanPopularity ?? 0) - (a.meanPopularity ?? 0) ||
-        b.city.pop - a.city.pop,
-    );
+    .sort(compareDemand);
+}
+
+/**
+ * Heatmap affinities often differ only in the third or fourth decimal (0.9999 vs 0.9997),
+ * which is noise. Treat scores equal to two decimals as a tie and prefer the city with
+ * more heat cells, then higher in-area popularity, then the larger metro.
+ */
+export function compareDemand(a: CityDemand, b: CityDemand): number {
+  const round = (n: number) => Math.round(n * 100);
+  return (
+    round(b.affinity) - round(a.affinity) ||
+    b.cells - a.cells ||
+    (b.meanPopularity ?? 0) - (a.meanPopularity ?? 0) ||
+    b.city.pop - a.city.pop
+  );
 }
 
 /** Greedy nearest-neighbour route starting at the highest-demand city. */

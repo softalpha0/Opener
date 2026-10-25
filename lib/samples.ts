@@ -11,7 +11,8 @@ export const SAMPLE_ARTISTS = [
     blurb: "Indie folk",
   },
   { slug: "khruangbin", name: "Khruangbin", region: "europe", blurb: "Psychedelic trio" },
-  { slug: "japanese-breakfast", name: "Japanese Breakfast", region: "us", blurb: "Indie pop" },
+  { slug: "rema", name: "Rema", region: "africa", blurb: "Afrobeats" },
+  { slug: "sia", name: "Sia", region: "worldwide", blurb: "Pop, five countries" },
 ] as const;
 
 export const SAMPLES_DIR = process.env.OPENER_SAMPLES_DIR || join(process.cwd(), "data", "samples");

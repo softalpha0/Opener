@@ -35,6 +35,8 @@ export const StopSchema = z.object({
   /** Heatmap rank: global for one area, within `area` when several areas were searched. */
   demandRank: z.number().int().positive(),
   area: z.string().optional(),
+  /** How many cities Opener derived from that area's heatmap (the N in "#2 of N"). */
+  areaCities: z.number().int().positive().optional(),
   city: z.string(),
   region: z.string(),
   country: z.string(),
@@ -96,7 +98,15 @@ export const TourPlanSchema = z.object({
     evidenceId: evidenceId.nullable(),
   }),
   stops: z.array(StopSchema),
-  heat: z.array(z.object({ lat: z.number(), lng: z.number(), affinity: z.number(), evidenceId })),
+  heat: z.array(
+    z.object({
+      lat: z.number(),
+      lng: z.number(),
+      affinity: z.number(),
+      popularity: z.number().optional(),
+      evidenceId,
+    }),
+  ),
   openerSpotlight: z
     .object({
       openerId: z.string(),
@@ -180,9 +190,19 @@ export const AgentDraftSchema = z.object({
 });
 export type AgentDraft = z.infer<typeof AgentDraftSchema>;
 
+/** The agent's steps, shown live in the UI with their status and duration. */
+export const PLAN_STAGES = [
+  { id: "resolve", label: "Understand the artist" },
+  { id: "query", label: "Query Qloo" },
+  { id: "rank", label: "Rank cities and pick openers" },
+  { id: "compose", label: "Build the route and check the write-up" },
+] as const;
+export type PlanStageId = (typeof PLAN_STAGES)[number]["id"];
+
 /** Server-sent events streamed by POST /api/plan. */
 export type PlanEvent =
   | { type: "status"; message: string }
+  | { type: "stage"; id: PlanStageId; state: "start" | "done"; ms?: number; detail?: string }
   | {
       type: "tool";
       phase: "start" | "end";

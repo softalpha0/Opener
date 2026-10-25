@@ -16,6 +16,8 @@ export async function GET() {
       harnessVersion: version,
       tools: ready.tools,
       ...(ready.error ? { detail: ready.error } : {}),
+      // Whether each credential is set up. Booleans only; values are never read into the response.
+      configured: { qloo: ready.qloo === "ready", llm: state.llm !== null },
       planner: state.llm
         ? { mode: "agent", provider: state.llm.id, model: state.llm.model }
         : { mode: "deterministic" },

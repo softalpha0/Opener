@@ -1,5 +1,6 @@
 "use client";
 
+import { whyThisCity } from "@/lib/plan/format";
 import type { Evidence, Stop } from "@/lib/plan/schema";
 import { EvidenceToggle } from "./EvidencePanel";
 import { QlooBadge, cx } from "./ui";
@@ -79,6 +80,16 @@ export function CityCard({
               </span>
             )}
             <QlooBadge>where popular</QlooBadge>
+          </div>
+          <div className="mt-3 rounded-xl border border-gold/20 bg-gold/5 px-3 py-2.5">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-gold">
+              Why this city · Qloo signals
+            </p>
+            <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs leading-relaxed text-mist-2">
+              {whyThisCity(stop, index).map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-mist-2">{stop.reason}</p>
         </div>

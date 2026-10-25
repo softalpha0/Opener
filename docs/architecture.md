@@ -23,13 +23,16 @@ Browser ──POST /api/plan──▶ Next.js route ──▶ runPlan()
 | `lib/qloo/redact.ts`   | Removes secret-looking keys and configured secret values before anything is shown or logged.                                                                               |
 | `lib/agent/toolbox.ts` | Per-run recorder: evidence IDs, redacted inputs, key fields, call/time budget, SSE events.                                                                                 |
 | `lib/agent/llm.ts`     | Provider interface, provider selection, and the Anthropic tool-calling loop.                                                                                               |
-| `lib/agent/gemini.ts`  | Gemini tool-calling loop (Google Interactions API, stateless).                                                                                                             |
+| `lib/agent/gemini.ts`  | Gemini tool-calling loop (`generateContent` with function calling), model fallbacks and retries.                                                                           |
 | `lib/agent/prompt.ts`  | System prompt and JSON extraction.                                                                                                                                         |
 | `lib/agent/gather.ts`  | Fixed tool chain steps (`ensureHeat`, `ensureOpeners`, …) that skip work the agent already did.                                                                            |
 | `lib/agent/compose.ts` | Builds the `TourPlan` from evidence plus the agent draft, dropping anything ungrounded.                                                                                    |
-| `lib/agent/runner.ts`  | Orchestrates a run: resolve → agent → gap fill → compose → validate.                                                                                                       |
+| `lib/agent/runner.ts`  | Orchestrates a run: resolve → agent → gap fill → compose → validate, emitting four timed stage events for the UI.                                                          |
 | `lib/plan/schema.ts`   | Zod schemas for `TourPlan`, the agent draft and SSE events.                                                                                                                |
 | `lib/geo/cities.ts`    | Nearest-city lookup over the bundled GeoNames subset.                                                                                                                      |
+| `lib/agent/generic.ts` | The "without Qloo" tour: one LLM call with only the artist and countries, or the population baseline; cached 24h.                                                          |
+| `lib/plan/generic.ts`  | Ranks each generic city against the plan's Qloo heatmaps (per country) and builds the comparison.                                                                          |
+| `app/api/compare`      | POST a plan, get the comparison. Makes no Qloo calls; 5 per IP per minute.                                                                                                 |
 
 ## Run budget
 

@@ -3,7 +3,7 @@ import { hasResults } from "../qloo/envelope";
 import { parseEntities, parseHeatmap } from "../qloo/parse";
 import { isoDaysAgo, type InsightsType } from "../qloo/tools";
 import { countryCodeFor } from "../geo/cities";
-import { citiesFromHeat, type CityDemand } from "../plan/cities";
+import { citiesFromHeat, compareDemand, type CityDemand } from "../plan/cities";
 import type { ToolCall, Toolbox } from "./toolbox";
 
 export interface ArtistRef {
@@ -57,7 +57,7 @@ export function cityDemand(box: Toolbox, artist: ArtistRef): AreaDemand[] {
       }
     });
   }
-  return [...merged.values()].sort((a, b) => b.affinity - a.affinity || b.cells - a.cells);
+  return [...merged.values()].sort(compareDemand);
 }
 
 export async function ensureHeat(box: Toolbox, artist: ArtistRef, within: string[]): Promise<void> {

@@ -1,70 +1,62 @@
-# Devpost submission: Opener
+# Opener: Devpost write-up
 
-## Project name
+**Elevator pitch:** An AI tour-routing agent for independent artists. It plans the tour around where Qloo says the fans are, and shows you the tour a plain LLM would have guessed instead.
 
-Opener
+## Inspiration
 
-## Elevator pitch (under 200 characters)
+Ask a language model where an indie artist should tour and you get the biggest cities in the country. Small teams make the same guess, and it's how tours lose money: big rooms where nobody knows the act, while the towns where the audience clusters get skipped. Qloo answers the booker's real question: where does this audience over-index, and who else do they like?
 
-Opener is an AI tour-routing agent for indie musicians. It uses Qloo's taste graph to find where an artist's fans cluster, suggest openers and read the crowd, with sources.
+## What it does
 
-## About the project
+Every plan has a **Generic vs Opener** comparison: the same model suggests a tour from only the artist's name and the countries (no tools, no Qloo data), and Opener looks up each of its cities in Qloo's heatmaps. For Sia across five countries, the guess and Qloo agreed on 5 of 8 cities. Where they differed, Qloo swapped in Munich (#2 in Germany) and San Francisco (#3 in the US) for Hamburg (#5) and Birmingham, which matched none of the UK's top heat cells.
 
-### Inspiration
-
-Small artists and their managers plan tours with very little data. Cities get picked because the band played there last year or because an agent knows a promoter. Openers get booked because they're free that week. A general chatbot doesn't help much: ask it where an indie act should play and it lists the biggest cities in the country.
-
-Qloo's taste graph answers a different question: where does this particular audience over-index, and what else do those people like? We wanted to see whether an agent could turn that into a plan a booking agent would actually read.
-
-### What it does
-
-You type an artist and pick a region. Opener:
+You type an artist and a region, and Opener:
 
 - resolves the artist in Qloo, and asks you to choose if the name is ambiguous;
-- pulls Qloo heatmaps for the region and turns the hottest cells into 5–8 routed tour stops, each with a reason tied to a specific Qloo result;
-- suggests openers for each stop from artists Qloo recommends for the headliner's audience, using a city location signal for the top markets, and compares the two audiences for the lead pick;
-- shows who over-indexes in the audience (relative age and gender affinity), audience tags, and the brands, shows, films, podcasts and local places the audience likes;
-- reads the artist's popularity trend over the past year.
+- maps where the audience over-indexes in each country and turns it into a routed 5–8 stop tour;
+- explains each stop in plain words: its rank in Qloo's heatmap for that country, its affinity score and how many heat cells it covers;
+- suggests openers per city from artists Qloo recommends to the same audience, located in that city;
+- shows who over-indexes and what else the crowd likes.
 
-Every card has a "Qloo evidence" toggle with the tool name, the redacted request and the key result fields. The agent's own words are marked as interpretation, separate from Qloo data. You can copy the plan as Markdown, download it as JSON, or share a link.
+An **Under the hood** drawer lists every Qloo call with its input, timing and the fields Opener used.
 
-### How we built it
+## What makes it Qloo-powered
 
-Opener is one Next.js 15 app running in a Docker container. The backend starts `qloo mcp` from the Qloo harness once, keeps it alive, and talks to it over stdio with the MCP SDK. Every tool call goes through a small client that caches results for 24 hours (memory plus disk), retries only errors Qloo marks as retryable, and respawns the MCP process if it dies.
+Without Qloo, Opener has no cities, openers or audience. Each call decides something:
 
-The agent is an LLM (Google's Gemini 3.8 Flash by default, with Claude as a drop-in alternative) in a tool-calling loop with the real Qloo tool schemas from `listTools()`. Each call gets an evidence ID and streams to the browser over server-sent events, so you can watch the agent work. Claude finishes with a JSON draft; the server validates it with Zod and then rebuilds the plan from the evidence. A stop survives only if its city matches a city derived from a heatmap result, and an opener survives only if it appeared in a recommend or rank result. Numbers always come from Qloo, never from the model. If there's no LLM key, a fixed tool chain builds the whole plan.
+- `qloo_describe`: which artist this is, or a stop to ask you.
+- `qloo_where_popular`, one per country: which cities make the tour and in what rank.
+- `qloo_recommend` (`target_type: artist`, `signal_location: "City, Country"`): the openers for each city.
+- `qloo_compare_audiences`: why the lead opener fits, from tags both audiences share.
+- `qloo_audience_demographics`, `qloo_entity_tags`, `qloo_trends`: who the crowd is and whether the artist is rising.
+- `qloo_recommend` for brands, TV, film, podcasts and places: merch and promo ideas.
 
-The map is MapLibre with free Carto tiles. Tests are Vitest (including a fake MCP server and a fake LLM that tries to sneak in invented cities) and Playwright.
+The comparison reuses the heatmaps, so it costs no extra Qloo calls.
 
-### Challenges we ran into
+## How we built it
 
-- **Heatmaps return grid cells, not cities.** `qloo_where_popular` gives latitude, longitude and affinity per cell. To turn that into tour stops we bundled a GeoNames city table and map each cell to the nearest large city within 90 km, keeping each city's strongest cell.
-- **`within` has to be a real locality.** Continent names aren't reliable matches, so region presets expand to a few large countries each. That trades some coverage for answers that don't fail.
-- **We built most of it without live data.** We wrote a fake `qloo mcp` that returns the harness's real result shapes (read from the harness source and Qloo's docs) with obviously fictional names, and drove the whole pipeline, UI and tests from it.
-- **Keeping the model honest.** Early on it was clear the model could name a city or opener that no tool returned. Rather than trusting the prompt, the server cross-checks every stop, opener and evidence ID against the recorded tool calls and drops what doesn't match.
-- **Deployment details.** `next.config.ts` needed TypeScript at runtime, which the slim production image didn't have, so the config moved to `.mjs`. The map's canvas also stretched the route grid past a 375px screen until we fixed the column sizing, and the WebGL map was the main source of blocking time on the plan page until we mounted it only when scrolled into view.
+Next.js 15 in one Docker container that keeps `qloo mcp` running over stdio. A Gemini agent (free tier; Claude also works) chooses Qloo calls from the real tool schemas. Code does everything numeric: cell-to-city mapping, per-country ranking and routing. The server checks the model's draft against the recorded calls and drops any city, opener or citation Qloo didn't return. Results are cached for 24 hours.
 
-### Accomplishments that we're proud of
+## Challenges we ran into
 
-- Every number and name on the page traces back to a Qloo call you can open.
-- Ambiguous artists are never guessed: Opener stops and shows the candidates.
-- The agent and the fixed tool chain share the same evidence and validation, so the plan degrades instead of failing when the LLM is slow or missing.
-- Lighthouse on mobile: 99 performance and 100 accessibility on the landing page, 95 and 100 on the plan page.
+- Heatmaps return grid cells, not cities, so we built cell-to-city mapping.
+- Scores are relative to each country: every country's best cell is about 1.0. Our first worldwide plan ranked Lagos level with London, so plans now rank within each country.
+- Gemini's free tier was busy or out of quota, so we added model fallbacks, retries and a fixed planner.
 
-### What we learned
+## Accomplishments that we're proud of
 
-- The harness's `needs_input` status and its resolution candidates make "don't guess" easy to build in, as long as you pass the resolved Qloo ID (not the name) to every later call.
-- Qloo demographic values are relative affinities, not shares of the audience. That changed the UI from percentage bars to above/below-average bars.
-- `qloo_trends` puts its data under `series`, not `results`, so normalizing the envelope early saved a lot of special cases.
-- An agent is more useful when the server treats its output as a draft to check, not an answer to display.
+- Every number on the page traces to a Qloo call you can open.
+- The no-Qloo comparison is on every plan, not just in the pitch.
+- 82 unit tests and 10 end-to-end runs, in CI, none touching the live API.
 
-### What's next for Opener
+## What we learned
 
-- Venue capacity matching per city
-- Date and drive-time aware routing
-- A read-only plan page that booking agents can comment on
-- Ranking every city's opener shortlist with `qloo_rank`
+Read the raw numbers before trusting a ranking. Treat the model's output as a draft to check, not an answer to show.
+
+## What's next for Opener
+
+Venue capacity, dates and drive times, and recorded comparisons for niche artists, where we expect the gap to be largest.
 
 ## Built with
 
-`qloo` · `qloo-harness` · `mcp` · `gemini` · `google-ai-studio` · `next.js` · `react` · `typescript` · `tailwindcss` · `maplibre` · `openstreetmap` · `zod` · `docker` · `render` · `vitest` · `playwright` · `geonames`
+`qloo` · `qloo-harness` · `mcp` · `gemini` · `next.js` · `react` · `typescript` · `tailwindcss` · `maplibre` · `zod` · `docker` · `render` · `vitest` · `playwright` · `github-actions` · `geonames`

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { formatDateTime, toolLabel } from "@/lib/plan/format";
+import { TOOL_ASKS, formatDateTime, toolLabel } from "@/lib/plan/format";
 import type { Evidence } from "@/lib/plan/schema";
 import { QlooBadge, StatusDot, cx } from "./ui";
 
@@ -25,10 +25,23 @@ export function EvidenceDetail({ evidence }: { evidence: Evidence }) {
         </span>
         <span className="text-xs text-mist">
           {evidence.resultCount} result{evidence.resultCount === 1 ? "" : "s"} ·{" "}
-          {evidence.cached ? "cached" : "live"} · {formatDateTime(evidence.fetchedAt)}
+          {evidence.cached ? "cached" : "live"}
+          {evidence.durationMs !== undefined && !evidence.cached
+            ? ` · ${(evidence.durationMs / 1000).toFixed(1)}s`
+            : ""}{" "}
+          · {formatDateTime(evidence.fetchedAt)}
         </span>
       </div>
-      <p className="text-mist-2">{evidence.purpose}</p>
+      <p className="text-mist-2">
+        <span className="text-paper">Why: </span>
+        {evidence.purpose}
+      </p>
+      {TOOL_ASKS[evidence.tool] && (
+        <p className="text-xs text-mist">
+          <span className="text-mist-2">What it asks Qloo: </span>
+          {TOOL_ASKS[evidence.tool]}
+        </p>
+      )}
       <p className="text-paper">{evidence.summary}</p>
       {evidence.warnings.length > 0 && (
         <ul className="list-disc pl-5 text-xs text-gold">
@@ -93,7 +106,7 @@ export function EvidenceToggle({
   );
 }
 
-/** Full list of every Qloo call in the run. */
+/** "Under the hood": the full list of every Qloo call in the run. */
 export function EvidenceDrawer({
   evidence,
   open,
@@ -117,11 +130,13 @@ export function EvidenceDrawer({
         <div className="mb-4 flex items-start justify-between gap-3">
           <div>
             <h2 id="evidence-title" className="font-display text-2xl font-semibold">
-              Qloo evidence
+              Under the hood
             </h2>
             <p className="mt-1 text-sm text-mist-2">
-              Every Qloo tool call in this run, with its redacted input, status and the result
-              fields Opener used.
+              Every Qloo call behind this plan, in order: the harness tool (via{" "}
+              <code className="font-mono text-xs">qloo mcp</code>), why it was called, its redacted
+              input, status, timing and the result fields Opener used. The API key never appears
+              here.
             </p>
           </div>
           <button

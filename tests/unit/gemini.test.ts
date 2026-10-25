@@ -146,23 +146,51 @@ describe("busy-model fallback", () => {
     expect(provider.model).toBe("b");
   });
 
-  it("does not switch models mid-conversation or on non-busy errors", async () => {
+  it("retries the same model (never switches) when it is busy mid-conversation", async () => {
     const call = { id: "c1", name: "t", args: {} };
     generateContent
       .mockResolvedValueOnce(reply([{ functionCall: call }], [call]))
-      .mockRejectedValueOnce(busy());
-    await expect(
-      new GeminiProvider("a", "k", ["b"]).runLoop({
-        system: "",
-        prompt: "",
-        tools: [{ name: "t", description: "", inputSchema: {} }],
-        execute: async () => ({ text: "r" }),
-        maxToolCalls: 5,
-        deadline: Date.now() + 60_000,
-      }),
-    ).rejects.toThrow(/503/);
-    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["a", "a"]);
+      .mockRejectedValueOnce(busy())
+      .mockResolvedValueOnce(reply([{ text: "{}" }], undefined, "{}"));
+    const out = await new GeminiProvider("a", "k", ["b"]).runLoop({
+      system: "",
+      prompt: "",
+      tools: [{ name: "t", description: "", inputSchema: {} }],
+      execute: async () => ({ text: "r" }),
+      maxToolCalls: 5,
+      deadline: Date.now() + 60_000,
+    });
+    expect(out.text).toBe("{}");
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["a", "a", "a"]);
+  }, 10_000);
 
+  it("does not retry a spent quota mid-conversation, and starts the next run on the next model", async () => {
+    const call = { id: "c1", name: "t", args: {} };
+    const quota = Object.assign(new Error("You exceeded your current quota"), { status: 429 });
+    generateContent
+      .mockResolvedValueOnce(reply([{ functionCall: call }], [call]))
+      .mockRejectedValueOnce(quota)
+      .mockResolvedValueOnce(reply([{ text: "OK" }], undefined, "OK"));
+    const provider = new GeminiProvider("a", "k", ["b"]);
+    const loop = provider.runLoop({
+      system: "",
+      prompt: "",
+      tools: [{ name: "t", description: "", inputSchema: {} }],
+      execute: async () => ({ text: "r" }),
+      maxToolCalls: 5,
+      deadline: Date.now() + 60_000,
+    });
+    const error = await loop.then(
+      () => null,
+      (e: unknown) => e,
+    );
+    expect(String(error)).toMatch(/quota/);
+    expect(provider.model).toBe("b");
+    expect(await provider.complete("s", "p", Date.now() + 10_000)).toBe("OK");
+    expect(generateContent.mock.calls.map((c) => c[0].model)).toEqual(["a", "a", "b"]);
+  });
+
+  it("does not retry non-busy errors", async () => {
     generateContent.mockReset();
     generateContent.mockRejectedValueOnce(
       Object.assign(new Error("API key not valid"), { status: 400 }),

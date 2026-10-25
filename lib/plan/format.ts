@@ -1,4 +1,4 @@
-import type { Evidence, TourPlan } from "./schema";
+import type { Evidence, Stop, TourPlan } from "./schema";
 
 export const TOOL_LABELS: Record<string, string> = {
   qloo_describe: "Resolve artist",
@@ -10,6 +10,24 @@ export const TOOL_LABELS: Record<string, string> = {
   qloo_audience_demographics: "Demographics",
   qloo_trends: "Trends",
   qloo_find_tags: "Find tags",
+};
+
+/** What each harness tool asks Qloo, in plain words (shown in "Under the hood"). */
+export const TOOL_ASKS: Record<string, string> = {
+  qloo_describe: "Looks the name up in Qloo's entity catalogue and returns the matching artist.",
+  qloo_where_popular:
+    "Asks Qloo's Insights heatmap where this artist's audience over-indexes inside one country.",
+  qloo_recommend:
+    "Asks Qloo's Insights API for entities (artists, brands, shows…) that the same audience likes, optionally near one city.",
+  qloo_rank: "Asks Qloo to score a fixed list of options against the artist's audience.",
+  qloo_compare_audiences:
+    "Asks Qloo's Insights compare workflow what two artists' audiences share.",
+  qloo_entity_tags:
+    "Asks Qloo's Insights API for the tags (genres, moods) that describe the artist.",
+  qloo_audience_demographics:
+    "Asks Qloo's Insights API how the audience skews by age and gender, relative to the baseline.",
+  qloo_trends: "Asks Qloo for the artist's weekly popularity percentile over the past year.",
+  qloo_find_tags: "Searches Qloo's tag ontology for a concept.",
 };
 
 export function toolLabel(tool: string): string {
@@ -67,4 +85,35 @@ export function errorCopy(
 /** English possessive: "Phoebe Bridgers" → "Phoebe Bridgers'", "Khruangbin" → "Khruangbin's". */
 export function possessive(name: string): string {
   return /s$/i.test(name.trim()) ? `${name}’` : `${name}’s`;
+}
+
+/** "Why this city": the Qloo signals behind a stop, in plain words. */
+export function whyThisCity(stop: Stop, index: Map<string, Evidence>): string[] {
+  const lines: string[] = [];
+  const area = stop.area ?? stop.country;
+  const of = stop.areaCities ? ` of ${stop.areaCities} cities` : "";
+  lines.push(`Ranked #${stop.demandRank}${of} in Qloo's audience heatmap for ${area}.`);
+  if (stop.affinityScore !== undefined) {
+    lines.push(
+      `Strongest heat cell near ${stop.city} scored ${stop.affinityScore.toFixed(2)} for audience affinity (Qloo scores 0 to 1, relative within ${area}).`,
+    );
+  }
+  if (stop.heatCells && stop.heatCells > 1) {
+    lines.push(`${stop.heatCells} of Qloo's top heat cells fall in and around the city.`);
+  }
+  const local = stop.openers.length
+    ? stop.openers
+        .flatMap((o) => o.evidenceIds)
+        .map((id) => index.get(id))
+        .find(
+          (e) =>
+            e?.tool === "qloo_recommend" && typeof e.inputRedacted.signal_location === "string",
+        )
+    : undefined;
+  if (stop.openers.length) {
+    lines.push(
+      `${stop.openers.length} opener${stop.openers.length === 1 ? "" : "s"} picked from artists Qloo recommends to the same audience${local ? ` near ${String(local.inputRedacted.signal_location)}` : ""}.`,
+    );
+  }
+  return lines;
 }

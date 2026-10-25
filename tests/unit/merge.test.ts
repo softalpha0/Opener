@@ -44,3 +44,21 @@ describe("borders and scales", () => {
     expect(m.series[0]?.value).toBe(50);
   });
 });
+
+describe("near-tie ranking", () => {
+  it("prefers the city with more heat cells when scores only differ in the 4th decimal", () => {
+    const cities = citiesFromHeat(
+      [
+        cell(40.69, -74.0, 1),
+        cell(40.87, -74.0, 0.9979),
+        cell(42.9, -78.88, 0.9999),
+        cell(34.01, -118.3, 0.9997),
+        cell(34.19, -118.3, 0.9995),
+        cell(34.01, -118.65, 0.9991),
+      ],
+      "US",
+    );
+    expect(cities.map((c) => c.city.n).slice(0, 2)).toEqual(["Los Angeles", "New York City"]);
+    expect(cities.at(-1)?.city.n).toBe("Buffalo");
+  });
+});

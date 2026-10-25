@@ -1,299 +1,326 @@
 # Opener
 
-**Tour where your fans actually are.**
-
-Opener is an AI tour-routing agent for independent musicians and their managers. Type an artist; Opener uses Qloo's taste graph to find the cities where that artist's audience affinity is strongest, turns them into a routed shortlist of stops, suggests openers whose fans overlap, and reads what else the crowd likes. Every claim links to the Qloo call behind it.
-
+[![CI](https://github.com/softalpha0/Opener/actions/workflows/ci.yml/badge.svg)](https://github.com/softalpha0/Opener/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-FF7A45.svg)](LICENSE)
-![Node 22.19+](https://img.shields.io/badge/node-%E2%89%A522.19-FFC45C.svg)
 
-- **Live demo:** `https://<your-render-service>.onrender.com` _(add the URL after deploying)_
-- **Screenshot / GIF:** `docs/screenshots/plan.png` _(add after the first live run)_
+**An AI tour-routing agent for independent artists: it plans the tour around where Qloo says the fans are, not where the big cities are.**
 
----
+An indie artist with a few thousand fans in five countries has to pick eight cities. With no data, the list writes itself: the biggest cities, the ones the last band played, the ones a promoter knows. Half of those rooms are full of people who have never heard the artist, the door money doesn't cover the van, and the tour loses money. The fans who would have sold out a smaller room two hours away never hear about the show. Opener replaces the guess with Qloo's taste data: where this artist's audience over-indexes, who else that audience likes, and what the crowd is into.
 
-## 1. The problem
+- **Live app:** `LIVE_URL` _(replace with the Render or Hugging Face link)_
+- **One-click sample:** `LIVE_URL/plan?artist=Rema&region=africa`
+- **Demo video:** _add the link after recording_
+- **Evidence from real runs:** [`evidence/`](evidence/)
 
-Routing a small tour is mostly guesswork. Teams repeat last year's cities, lean on whoever an agent knows, or read a streaming dashboard that says where people listen but not where an audience clusters relative to everyone else. Openers are booked on availability rather than measured fan overlap, and merch or promo choices are made without knowing what the crowd already likes. A plain chatbot doesn't fix this: it can only guess at taste and geography.
+## Contents
 
-## 2. What it does
+1. [The problem](#the-problem)
+2. [What Opener does](#what-opener-does)
+3. [Try it in a minute](#try-it-in-a-minute)
+4. [How it works](#how-it-works)
+5. [Architecture](#architecture)
+6. [Where Qloo fits](#where-qloo-fits)
+7. [What the model does, and what it never does](#what-the-model-does-and-what-it-never-does)
+8. [Guarantees](#guarantees)
+9. [Generic vs Opener](#generic-vs-opener)
+10. [Tech stack](#tech-stack)
+11. [Running it yourself](#running-it-yourself)
+12. [Testing](#testing)
+13. [Project layout](#project-layout)
+14. [Known limitations](#known-limitations)
+15. [Build log](#build-log)
+16. [Credits](#credits)
 
-1. **Map demand.** Pulls Qloo heatmaps for the artist inside the chosen region and turns the hottest cells into ranked cities.
-2. **Rank a route.** Picks 5–8 stops, orders them, and gives each a one-line reason tied to a specific Qloo result.
-3. **Find openers.** For each city, suggests artists that Qloo recommends for the headliner's audience, scoped with a city location signal for the top markets, and compares the two audiences for the lead pick.
-4. **Read the crowd.** Shows relative age and gender affinity, audience tags, and the brands, TV, film, podcasts and local places the audience over-indexes on, plus merch and promo ideas clearly labelled as agent suggestions.
-5. **Check momentum.** Reads Qloo's weekly popularity percentile over the past year and calls it rising, steady or cooling.
+## The problem
 
-Every card has a **Qloo evidence** toggle showing the tool, the redacted request input, the status and the key result fields. An evidence drawer lists every call in the run.
+Routing a small tour is mostly guesswork. Teams repeat last year's cities, lean on whoever an agent knows, or read a streaming dashboard that says where people listen but not where an audience clusters relative to everyone else. Openers are booked on availability, not measured fan overlap. Merch and promo are chosen without knowing what the crowd already likes.
 
-## 3. Why it only works with Qloo
+A chatbot doesn't fix this. Ask a language model where an indie act should play and it lists the largest cities in the country, because that is all it can know without data. Opener shows that answer next to the Qloo-ranked one, on every plan, so you can see the difference.
 
-| Question                | An LLM alone                                   | Opener with Qloo                                                                                                                |
-| ----------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Where should we play?   | Names big-market cities from general knowledge | Ranks cities from `qloo_where_popular` heat cells for this artist, with the affinity score shown                                |
-| Who should open?        | Suggests artists that sound similar            | Uses artists `qloo_recommend` returns for this audience, scoped by city, and checks the lead pick with `qloo_compare_audiences` |
-| Who are the fans?       | Repeats genre stereotypes                      | Shows `qloo_audience_demographics` relative affinities, labelled as relative                                                    |
-| Is the artist growing?  | Can't tell                                     | Reads `qloo_trends` weekly percentile for the past year                                                                         |
-| Can I check the answer? | No sources                                     | Every card links to the Qloo call and its redacted input                                                                        |
+## What Opener does
 
-The model in Opener plans and explains, but the server only keeps what Qloo backs up: stops must match heatmap-derived cities, and openers must appear in a recommend or rank result. Anything else is dropped and the drop is reported in the plan's limitations.
+Type an artist and pick a region (North America, US, Europe, UK & Ireland, Latin America, Africa, Australia & NZ, or Worldwide). Opener:
 
-## 4. How it works
+1. Resolves the artist in Qloo, and asks you to choose if the name is ambiguous.
+2. Pulls a Qloo heatmap for each country in the region and turns the hottest cells into ranked cities.
+3. Picks 5–8 stops, routes them country by country, and shows the Qloo signals behind each one.
+4. Suggests openers per city from artists Qloo recommends to the same audience, using the city as a location signal.
+5. Compares the headliner's and lead opener's audiences, shows who over-indexes by age and gender, and lists the brands, TV, films, podcasts and local places the crowd likes.
+6. Puts a generic, no-data tour next to its own, and ranks every generic city against Qloo.
+
+| Outcome                                                   | Where you see it                |
+| --------------------------------------------------------- | ------------------------------- |
+| A routed shortlist of 5–8 cities with a reason each       | Route list and map              |
+| "Why this city" in plain words: rank, affinity, cells     | Every stop card                 |
+| Openers with Qloo affinity scores, per city               | Every stop card                 |
+| What a plain LLM would have picked, and how Qloo rates it | "Generic tour vs Opener" panel  |
+| Every Qloo call, its input, timing and result fields      | "Under the hood" drawer         |
+| The crowd: demographics, tags, brands, shows, places      | Audience and taste panels       |
+| A shareable link, Markdown copy and JSON download         | Buttons at the top of each plan |
+
+## Try it in a minute
+
+1. Open the live app (`LIVE_URL`). No login.
+2. Under **Try an example**, click one of the four sample artists (Phoebe Bridgers, Khruangbin, Rema, Sia). Each runs a live plan, or loads it from the 24-hour cache if it ran recently.
+3. Watch the **Agent timeline**: four steps with their durations, and every Qloo call as it happens.
+4. When the plan appears, click **Generic vs Opener**. The left column is the tour a model suggests from its own knowledge; the right is Opener's. Each generic city shows where Qloo actually ranks it.
+5. Open any stop's **Why this city** box, then **Qloo evidence** on the card for the raw call.
+6. Click **Under the hood** to see every Qloo request behind the plan.
+7. Try your own artist and region from the form at the top.
+
+If the free server was asleep, the first page load takes about a minute.
+
+## How it works
+
+1. **Understand the artist.** The server calls `qloo_describe`. If Qloo says the name is ambiguous, the run stops and shows the candidates. Every later call uses the resolved Qloo ID, not the name.
+2. **Query Qloo.** An LLM agent (Gemini by default, Claude optional) gets the real Qloo tool schemas and decides which calls to make: a heatmap per country, opener recommendations (broad and per city), audience comparison, demographics, tags, trends and crossover tastes. Each call gets an evidence ID like `ev3` and streams to the browser. Without an LLM key, a fixed tool chain makes the same calls.
+3. **Rank cities and pick openers.** Code maps each heat cell to the nearest city in a bundled GeoNames table (inside the searched country, within 90 km), merges cities closer than 110 km, and ranks them by affinity within each country. Openers must come from a Qloo recommend or rank result.
+4. **Build the route and check the write-up.** Code orders the stops country by country with nearest-neighbour hops. The model's draft is checked against the recorded calls: a stop survives only if its city came from a heatmap, an opener only if Qloo returned it, a citation only if the evidence ID exists.
 
 ```mermaid
 flowchart LR
-  B[Browser /plan] -- "artist, region (POST)" --> API[Next.js API /api/plan]
-  API -- "SSE: tool calls, heat, plan" --> B
-  subgraph Container [One long-running Node container]
-    API --> R[Runner]
-    R --> A[Agent loop: Gemini or Claude + tool calling]
-    A -- "qloo_* tool calls" --> T[Toolbox: evidence IDs, 20-call budget]
-    R -- "gap fill / no-LLM mode" --> T
-    T --> C[QlooService: 24h cache, retries, respawn]
-    C -- "MCP over stdio" --> M[qloo mcp child process]
+  A[Artist + region] --> B[qloo_describe<br/>resolve or ask]
+  B --> C[Agent picks Qloo calls<br/>heatmaps, recommend, compare...]
+  C --> D[Code: cells to cities,<br/>rank per country]
+  D --> E[Code: route order,<br/>openers from Qloo results]
+  E --> F[Server checks the draft<br/>against recorded calls]
+  F --> G[Plan with evidence]
+  G --> H[Generic tour vs Opener]
+```
+
+## Architecture
+
+One Next.js app in one long-running Docker container. The container keeps a single `qloo mcp` process alive and talks to it over stdio. That is why Opener can't run on serverless functions.
+
+```mermaid
+flowchart TB
+  subgraph Browser
+    UI[Plan page<br/>timeline, map, cards, compare]
   end
-  M -- "QLOO_API_KEY (server only)" --> Q[(hackathon.api.qloo.com)]
+  subgraph Container[Docker container: next start]
+    API[API routes<br/>/api/plan SSE, /api/compare,<br/>/api/health, /api/samples]
+    RUN[Runner]
+    AG[Agent loop<br/>Gemini or Claude]
+    TB[Toolbox<br/>evidence IDs, 20-call budget]
+    QC[QlooService<br/>24h cache, retries, respawn]
+    MCP[qloo mcp<br/>child process]
+    CACHE[(Cache<br/>memory + disk)]
+  end
+  QLOO[(Qloo hackathon API)]
+  LLM[(LLM API)]
+  UI -- artist, region --> API
+  API -- server-sent events --> UI
+  API --> RUN
+  RUN --> AG
+  AG -- tool calls --> TB
+  RUN -- gap fill --> TB
+  TB --> QC
+  QC --> CACHE
+  QC -- stdio --> MCP
+  MCP -- key stays here --> QLOO
+  AG --> LLM
 ```
 
-### The agent loop
+## Where Qloo fits
 
-1. **Resolve.** The server calls `qloo_describe` (type `artist`). If Qloo returns `needs_input`, the run stops and the UI shows the candidates. Opener never auto-picks an ambiguous name. Other plausible matches the harness noted appear as "Not the right artist?" links.
-2. **Plan.** The LLM (Gemini `gemini-3.6-flash` by default, falling back to `gemini-3.8-flash` and `gemini-3.5-flash-lite` when a model is busy; or Claude `claude-sonnet-5-5`) gets the real tool schemas from `listTools()` and calls Qloo tools itself: heatmaps for each area, opener recommendations (broad and city-scoped), crossover categories, demographics, tags, trends and an audience comparison. Each call is cached, gets an evidence ID (`ev3`) and streams to the UI. The run is capped at 20 Qloo calls and about 60 seconds.
-3. **Draft.** The model returns one JSON draft (summary, stops, openers, spotlight, merch ideas) where every reason cites evidence IDs. The server validates it with Zod and runs one repair pass if needed.
-4. **Ground.** The server builds the final `TourPlan` from evidence: cities must match heatmap-derived cities, openers must exist in recommend/rank results, and evidence IDs must exist. Numbers (affinity, demographics, momentum) are always computed from Qloo results, never taken from the model.
-5. **Fill gaps.** Any section the agent skipped is filled by a fixed tool chain. With no LLM key, that chain builds the whole plan (labelled "deterministic planner").
+Opener calls Qloo only through the `qloo mcp` tools from `@qloo/qloo-harness`. The "Qloo API" column says what each tool asks Qloo, from the tool's own description.
 
-### Tool chain
+| What Opener does                              | Qloo tool → Qloo API                                                  | File                                          |
+| --------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------- |
+| Resolve the artist, never guess               | `qloo_describe` → entity lookup                                       | `lib/agent/runner.ts`                         |
+| Find where the audience over-indexes          | `qloo_where_popular` → Insights heatmap, one per country              | `lib/agent/gather.ts` (`ensureHeat`)          |
+| Turn heat cells into ranked cities            | (uses the heatmap result)                                             | `lib/plan/cities.ts`, `lib/agent/gather.ts`   |
+| Openers, broad and per city                   | `qloo_recommend` → Insights, `target_type: artist`, `signal_location` | `lib/agent/gather.ts` (`ensureOpeners`)       |
+| Rank an opener shortlist (agent)              | `qloo_rank`                                                           | agent tool, `lib/agent/runner.ts`             |
+| Why this opener                               | `qloo_compare_audiences` → Insights compare                           | `lib/agent/gather.ts` (`ensureCompare`)       |
+| Who over-indexes                              | `qloo_audience_demographics` → Insights `urn:demographics`            | `lib/agent/gather.ts` (`ensureAudience`)      |
+| Audience tags                                 | `qloo_entity_tags` → Insights `urn:tag`                               | `lib/agent/gather.ts` (`ensureAudience`)      |
+| Momentum over the past year                   | `qloo_trends`                                                         | `lib/agent/gather.ts`, `lib/plan/momentum.ts` |
+| Crossover: brands, TV, film, podcasts, places | `qloo_recommend` with other `target_type`s                            | `lib/agent/gather.ts` (`ensureCrossover`)     |
+| Rank a generic tour's cities                  | (reuses the plan's heatmaps; no extra calls)                          | `lib/plan/generic.ts`                         |
+| Readiness check                               | `qloo_capabilities` (no Qloo request)                                 | `lib/qloo/client.ts`, `app/api/health`        |
 
-| Feature                          | Qloo tool                    | Arguments Opener sends                                                                           |
-| -------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------ |
-| Resolve the artist               | `qloo_describe`              | `entity`, `type: "artist"`                                                                       |
-| Demand map and city ranking      | `qloo_where_popular`         | `entity` (Qloo ID), `entity_type: "artist"`, `within` (country), `limit: 20`                     |
-| Openers                          | `qloo_recommend`             | `target_type: "artist"`, `signals: [artist ID]`, optional `signal_location: "City, Country"`     |
-| Opener shortlist ranking (agent) | `qloo_rank`                  | `options`, `option_type: "artist"`, `signals`, `signal_location`                                 |
-| Why this opener                  | `qloo_compare_audiences`     | `group_a: [headliner]`, `group_b: [opener]`                                                      |
-| Crossover tastes                 | `qloo_recommend`             | `target_type`: `brand`, `tv_show`, `movie`, `podcast`; `place` with `filter_location` = top city |
-| Who over-indexes                 | `qloo_audience_demographics` | `entity`, `entity_type: "artist"`                                                                |
-| Audience tags                    | `qloo_entity_tags`           | `entities: [artist ID]`                                                                          |
-| Momentum                         | `qloo_trends`                | `entities`, `entity_type: "artist"`, last 365 days, `limit: 20`                                  |
-| Readiness                        | `qloo_capabilities`          | none (makes no Qloo request)                                                                     |
+Every call goes through `lib/qloo/client.ts`: one connection, a 30-second timeout, a 24-hour cache, and up to two retries when Qloo marks an error as retryable. The exact tool schemas captured from `@qloo/qloo-harness` 0.1.26 are in [`docs/qloo-tool-schemas.json`](docs/qloo-tool-schemas.json).
 
-The exact input schemas captured from harness 0.1.26 are in [`docs/qloo-tool-schemas.json`](docs/qloo-tool-schemas.json) (`npm run inspect-tools` regenerates them).
+## What the model does, and what it never does
 
-## 5. Request-to-result walkthrough
+| The model (Gemini or Claude)                                        | Deterministic code                                                   |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Chooses which Qloo tools to call and with what arguments            | Resolves the artist first and stops on ambiguous names               |
+| Writes the summary, stop reasons, opener notes and merch ideas      | Maps heat cells to cities, merges neighbours, ranks per country      |
+| Cites evidence IDs for each claim                                   | Checks every city, opener and evidence ID against the recorded calls |
+| Suggests the generic, no-data tour (with no tools and no Qloo data) | Orders the route, computes distances and momentum                    |
+|                                                                     | Takes every number (affinity, rank, cells, demographics) from Qloo   |
 
-This walks one request through the system. The **requests** below are exactly what Opener sends. The **response shape** comes from Qloo's public heatmap documentation. Replace the placeholder values with a real trace from `npm run plan -- "<artist>" north-america` (the CLI prints every call with its evidence ID) before submitting.
+The model never: sets a number shown on the page, adds a city or opener Qloo didn't return (the server drops it and says so), sees the Qloo key, or sees anything in the generic-tour prompt beyond the artist's name and the countries.
 
-**1. Input.** `POST /api/plan {"artist": "<artist name>", "region": "north-america"}`. The region preset expands to `within: ["United States", "Canada"]`, because Qloo resolves `within` to a locality and country names resolve reliably.
+## Guarantees
 
-**2. Resolve (`ev1`).**
+Only what the code enforces.
 
-```json
-{ "tool": "qloo_describe", "input": { "entity": "<artist name>", "type": "artist" } }
-```
+| Guarantee                                               | How                                                                                            | Where                                                    |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| The Qloo key never reaches the browser, prompts or logs | Key passed only to the `qloo mcp` child; secret-looking values scrubbed from logs and evidence | `lib/qloo/client.ts`, `lib/qloo/redact.ts`, `lib/log.ts` |
+| Ambiguous artists are never auto-picked                 | Run stops on `needs_input` and returns candidates                                              | `lib/agent/runner.ts`                                    |
+| Every stop and opener is backed by a Qloo call          | Draft grounding drops anything not in the recorded results                                     | `lib/agent/compose.ts`                                   |
+| Every plan matches its schema                           | Zod validation before anything is sent                                                         | `lib/plan/schema.ts`, `lib/agent/runner.ts`              |
+| A plan never needs more than 20 Qloo calls              | Toolbox budget                                                                                 | `lib/agent/toolbox.ts`                                   |
+| A slow or missing LLM doesn't break the plan            | 90s agent budget, then the fixed planner gets its own 45s                                      | `lib/agent/runner.ts`, `lib/agent/toolbox.ts`            |
+| No call hangs forever                                   | 30s per Qloo call, 25s/60s per Gemini turn, 45s client timeout on comparison                   | `lib/qloo/client.ts`, `lib/agent/gemini.ts`              |
+| Repeat demos don't spend quota                          | 24h cache for Qloo results, plans and generic tours                                            | `lib/qloo/cache.ts`, `lib/server.ts`                     |
+| One visitor can't drain the quota                       | 5 new plans and 5 comparisons per IP per minute                                                | `lib/rate-limit.ts`, `app/api/plan`, `app/api/compare`   |
+| Saved plans are never shown as live                     | Labelled "Saved result from <timestamp>"                                                       | `components/PlanResults.tsx`                             |
 
-Result: `status: "ok"` with one entity `{ "entity_id": "<uuid>", "name": "<artist name>" }`. Had the name been ambiguous, the result would be `needs_input` with `resolution.issues[0].candidates`, and the UI would ask.
+## Generic vs Opener
 
-**3. Demand (`ev2`).** Opener passes the Qloo ID, not the name, so the call cannot drift to a different artist:
+Every plan has a **Generic vs Opener** button. The server asks the configured model for a tour using only the artist's name and the countries (`lib/plan/generic.ts`, `genericPrompt`), with no tools and no Qloo data. If no LLM is configured or it fails, the generic tour is the largest cities by population, and the page says which one you're looking at. Each generic city is then looked up in the Qloo heatmaps the plan already fetched.
 
-```json
-{
-  "tool": "qloo_where_popular",
-  "input": { "entity": "<uuid>", "entity_type": "artist", "within": "United States", "limit": 20 }
-}
-```
+From [`evidence/sia-worldwide/`](evidence/sia-worldwide/summary.md), a real Qloo run (Sia, five countries) compared offline with the population baseline:
 
-The harness turns this into a `/v2/insights` request with `filter.type=urn:heatmap`. Results are grid cells, trimmed:
+| Generic (population) | What Qloo says                       | Opener picked it? |
+| -------------------- | ------------------------------------ | ----------------- |
+| New York City        | #2 of 11 cities in the US heatmap    | Yes               |
+| London               | #1 of 4 in the UK                    | Yes               |
+| Berlin               | #1 of 8 in Germany                   | Yes               |
+| Lagos                | #1 of 8 in Nigeria                   | Yes               |
+| Sydney               | #1 of 6 in Australia                 | No                |
+| Los Angeles          | #1 of 11 in the US                   | Yes               |
+| Birmingham           | No match in Qloo's top UK heat cells | No                |
+| Hamburg              | #5 of 8 in Germany                   | No                |
 
-```json
-{
-  "status": "ok",
-  "results": [
-    {
-      "location": { "latitude": 0.0, "longitude": 0.0, "geohash": "…" },
-      "query": { "affinity": 0.0, "affinity_rank": 0.0, "popularity": 0.0 }
-    }
-  ]
-}
-```
+For a global pop star the big-city guess and Qloo mostly agree (5 of 8). Where they differ, Qloo moves the tour: Munich (#2 in Germany) and San Francisco (#3 in the US) instead of Hamburg (#5) and Birmingham (no signal). The gap should be larger for niche artists. Run the comparison for the other samples on the live app, or capture them with `npm run evidence -- LIVE_URL`.
 
-**4. Cell → stop #1.** Opener maps each cell to the nearest city in its bundled GeoNames table (within 90 km, preferring larger cities when two are close), keeps each city's strongest cell, and ranks cities by that affinity. The top city becomes stop #1 with the reason _"Strong audience affinity for &lt;artist&gt;: Qloo's heatmap scored 0.xx at the top cell near &lt;city&gt; across n nearby heat cells"_, citing `ev2`.
+## Tech stack
 
-**5. Openers (`ev4`–`ev7`).** `qloo_recommend` with `target_type: "artist"`, `signals: ["<uuid>"]`, and for the top three cities `signal_location: "<City>, <Country>"`. Each opener on a stop cites the calls that returned it.
+| Layer       | Choice                                                                            |
+| ----------- | --------------------------------------------------------------------------------- |
+| App         | Next.js 15 (App Router), React 19, TypeScript strict                              |
+| Qloo access | `@qloo/qloo-harness` (`qloo mcp`) over stdio with `@modelcontextprotocol/sdk`     |
+| Agent       | `@google/genai` (Gemini, free tier) or `@anthropic-ai/sdk` (Claude), tool calling |
+| Validation  | Zod                                                                               |
+| Map         | MapLibre GL with Carto tiles (OpenStreetMap data), no token                       |
+| Styling     | Tailwind CSS v4, Inter (self-hosted)                                              |
+| Geography   | GeoNames cities15000 subset, 1,797 cities, bundled as JSON                        |
+| Tests       | Vitest, Playwright                                                                |
+| CI          | GitHub Actions                                                                    |
+| Hosting     | Docker on Render (free plan) or Hugging Face Spaces                               |
 
-**6. Why this opener (`ev16`).**
+## Running it yourself
 
-```json
-{
-  "tool": "qloo_compare_audiences",
-  "input": { "group_a": ["<headliner uuid>"], "group_b": ["<opener uuid>"], "limit": 10 }
-}
-```
-
-The comparison's named items appear in the "Why &lt;opener&gt; opens" panel, with the agent's one-line note clearly marked as interpretation.
-
-## 6. Tech stack
-
-- **Next.js 15** (App Router, TypeScript strict) served with `next start` in one Docker container
-- **@qloo/qloo-harness** `qloo mcp` over stdio via **@modelcontextprotocol/sdk**
-- **@google/genai** (Gemini 3.8 Flash, free tier) or **@anthropic-ai/sdk** (Claude Sonnet 5.5) tool-calling loop behind a small provider interface
-- **Zod** for request, agent draft and plan validation
-- **MapLibre GL** with free Carto dark tiles (OpenStreetMap data), no map token
-- **Tailwind CSS v4**, Inter (self-hosted via Fontsource)
-- **Vitest** and **Playwright**
-- **GeoNames** cities15000 subset (CC BY 4.0) for cell-to-city mapping, bundled as JSON
-
-## 7. Run locally
-
-You need a Qloo hackathon key. An LLM key is optional but recommended: a free Gemini key from [Google AI Studio](https://aistudio.google.com) (or an Anthropic key) turns on the agent. Without one, Opener uses its deterministic planner.
-
-### macOS / Linux
+You need Node 22.19+, a Qloo hackathon key and, optionally, a free Gemini key from [Google AI Studio](https://aistudio.google.com).
 
 ```sh
-# 1. Node.js 22.19 or newer (nvm shown; any installer works)
-nvm install 22 && node --version
-
-# 2. Qloo harness 0.1.26+
-npm install --global @qloo/qloo-harness
-qloo --version
-
-# 3. Environment (hackathon keys only work against the hackathon API)
-export QLOO_BASE_URL="https://hackathon.api.qloo.com"
-export QLOO_TRUSTED_BASE_URL="https://hackathon.api.qloo.com"
-qloo setup --qloo            # paste the key when prompted (stored in the harness config)
-qloo setup --status          # look for "Qloo data: ready"
-export GEMINI_API_KEY="…"    # optional: free key from Google AI Studio (or ANTHROPIC_API_KEY)
-
-# 4. App
-git clone https://github.com/softalpha0/opener.git && cd opener
+npm install --global @qloo/qloo-harness   # gives the `qloo` command
+git clone https://github.com/softalpha0/Opener.git && cd Opener
 npm install
-npm run inspect-tools        # saves docs/qloo-tool-schemas.json and prints each tool's inputs
-npm run dev                  # http://localhost:3000
+cp .env.example .env.local                 # then put your keys in .env.local
+npm run dev                                # http://localhost:3000
 ```
 
-### Windows (PowerShell)
+On Windows PowerShell, use `Copy-Item .env.example .env.local` and `notepad .env.local`.
 
-```powershell
-# 1. Node.js 22.19 or newer
-winget install OpenJS.NodeJS.LTS
-node --version
+| Variable                                     | Required | What it does                                             |
+| -------------------------------------------- | -------- | -------------------------------------------------------- |
+| `QLOO_API_KEY`                               | Yes      | Qloo hackathon key, read only by the `qloo mcp` process  |
+| `QLOO_BASE_URL`                              | Yes      | `https://hackathon.api.qloo.com`                         |
+| `QLOO_TRUSTED_BASE_URL`                      | Yes      | Same URL; `qloo mcp` only sends the key to trusted hosts |
+| `GEMINI_API_KEY`                             | No       | Turns on the Gemini agent and the LLM generic tour       |
+| `ANTHROPIC_API_KEY`                          | No       | Uses Claude instead (wins if both keys are set)          |
+| `LLM_PROVIDER`, `LLM_MODEL`                  | No       | Force a provider or model                                |
+| `GEMINI_FALLBACK_MODELS`                     | No       | Models to try when the first is busy or out of quota     |
+| `OPENER_RATE_LIMIT_PER_MINUTE`               | No       | New plans per IP per minute (default 5)                  |
+| `OPENER_CACHE_DIR`, `OPENER_CACHE_TTL_HOURS` | No       | Cache location and lifetime (default 24h)                |
+| `OPENER_AGENT_TIME_MS`                       | No       | Agent time budget (default 90000)                        |
+| `OPENER_WARM_ON_START`                       | No       | Load saved sample plans into the cache at boot           |
+| `PORT`                                       | No       | HTTP port (default 3000)                                 |
 
-# 2. Qloo harness 0.1.26+
-npm install --global @qloo/qloo-harness
-qloo --version
+Every variable has a one-line description in [`.env.example`](.env.example).
 
-# 3. Environment
-$env:QLOO_BASE_URL="https://hackathon.api.qloo.com"
-$env:QLOO_TRUSTED_BASE_URL="https://hackathon.api.qloo.com"
-qloo setup --qloo
-qloo setup --status
-$env:GEMINI_API_KEY="…"      # optional: free key from Google AI Studio (or ANTHROPIC_API_KEY)
+Useful scripts:
 
-# 4. App
-git clone https://github.com/softalpha0/opener.git; cd opener
-npm install
-npm run inspect-tools
-npm run dev
-```
+| Command                             | What it does                                                       |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| `npm run plan -- "Artist" [region]` | One plan from the terminal against live Qloo                       |
+| `npm run warm-cache`                | Runs the sample artists and saves their plans to `data/samples`    |
+| `npm run evidence -- LIVE_URL`      | Captures plans and comparisons from a running app into `evidence/` |
+| `npm run check-llm`                 | One tiny request to the configured LLM                             |
+| `npm run inspect-tools`             | Dumps the live `qloo mcp` tool schemas                             |
 
-Instead of `qloo setup --qloo`, you can set `QLOO_API_KEY` in your shell or in `.env.local` (copy `.env.example`). Never commit it.
+**Deploying.** Use a host that runs a Docker container continuously; serverless functions can't keep `qloo mcp` alive.
 
-### Useful scripts
+- **Render (free):** New → Web Service → this repo → Language **Docker** → instance **Free**. Add `QLOO_API_KEY`, `GEMINI_API_KEY`, `QLOO_BASE_URL`, `QLOO_TRUSTED_BASE_URL`, `OPENER_WARM_ON_START=true`, and health check path `/api/health`. The free plan sleeps after about 15 idle minutes.
+- **Hugging Face Spaces (free):** create a Docker Space and upload the two files in [`deploy/huggingface/`](deploy/huggingface/); add the keys as secrets.
 
-| Script                              | What it does                                                                                     |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `npm run plan -- "Artist" [region]` | One plan from the CLI against live Qloo; prints each tool call                                   |
-| `npm run warm-cache`                | Runs the three sample artists, warms the cache, writes `data/samples/*.json`                     |
-| `npm run inspect-tools`             | Dumps the live `qloo mcp` tool schemas                                                           |
-| `npm run check-llm`                 | Sends one tiny request to the configured LLM (Gemini or Claude) and reports latency or the error |
-| `npm test` / `npm run test:e2e`     | Vitest unit + integration tests / Playwright smoke tests                                         |
-| `npm run test:all`                  | Lint, typecheck, unit and E2E tests                                                              |
+Check `/api/health` after deploying. You want `"configured": {"qloo": true, "llm": true}`.
 
-## 8. Deploy to production
-
-`qloo mcp` is a local stdio process that Opener keeps running for the life of the server. **Serverless platforms (Vercel functions, Netlify functions, Lambda) are not supported**: they can't keep a child process alive between requests, and a browser can't start one. Deploy the Docker image as a long-running web service.
-
-### Render (default)
-
-1. Push this repo to GitHub.
-2. In Render, **New → Blueprint**, pick the repo. `render.yaml` defines one Docker web service with health check `/api/health`.
-3. Set the secrets when prompted: `QLOO_API_KEY` (required) and `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` (optional; leave the other blank). `QLOO_BASE_URL` and `QLOO_TRUSTED_BASE_URL` are set as plain values.
-4. Use the **Starter** plan or higher. Free instances sleep, so a judge's first request would wait on a cold start.
-5. Deploy, then open `/api/health`. You want `"qloo": "ready"` and a harness version of 0.1.26 or newer.
-6. Optional: add a custom domain, and attach a persistent disk at `/app/.cache` (see the commented block in `render.yaml`) so the 24-hour cache survives deploys.
-
-`OPENER_WARM_ON_START=true` (set in `render.yaml`) runs the sample artists once after boot so the landing-page examples load from cache.
-
-### Railway or Fly.io
-
-Both build the `Dockerfile` as is. Set the same environment variables, expose port 3000 (`PORT` is honoured), point the health check at `/api/health`, and keep at least one instance always running (Fly: `min_machines_running = 1`, `auto_stop_machines = false`).
-
-### Local Docker
+## Testing
 
 ```sh
-docker build -t opener .
-docker run --rm -p 3000:3000 -e QLOO_API_KEY=… -e GEMINI_API_KEY=… opener
+npm run lint && npm run typecheck && npm test   # unit and integration
+npm run test:e2e                                # Playwright, desktop and phone
 ```
 
-## 9. Environment variables
+No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real result shapes, plus one recorded real run (`tests/fixtures/recorded/sia-worldwide.json`).
 
-| Name                           | Required | Description                                                       | Example                                  |
-| ------------------------------ | -------- | ----------------------------------------------------------------- | ---------------------------------------- |
-| `QLOO_API_KEY`                 | Yes      | Qloo hackathon key. Read only by the `qloo mcp` child process.    | `your-qloo-hackathon-key`                |
-| `QLOO_BASE_URL`                | Yes      | Hackathon API base URL (defaulted if unset).                      | `https://hackathon.api.qloo.com`         |
-| `QLOO_TRUSTED_BASE_URL`        | Yes      | Same URL; the harness only sends the key to trusted hosts.        | `https://hackathon.api.qloo.com`         |
-| `GEMINI_API_KEY`               | No       | Enables the agent with Gemini (free tier available).              | `your-gemini-key`                        |
-| `ANTHROPIC_API_KEY`            | No       | Enables the agent with Claude instead.                            | `your-anthropic-key`                     |
-| `LLM_PROVIDER`                 | No       | `gemini` or `anthropic`; only needed when both keys are set.      | `gemini`                                 |
-| `LLM_MODEL`                    | No       | Model override for the chosen provider.                           | `gemini-3.6-flash`                       |
-| `OPENER_LLM_FALLBACKS`         | No       | `off` disables server-side refusal fallback.                      | `on`                                     |
-| `OPENER_RATE_LIMIT_PER_MINUTE` | No       | Live plans per IP per minute (cached plans don't count).          | `5`                                      |
-| `OPENER_CACHE_DIR`             | No       | Where the persistent cache lives.                                 | `/app/.cache`                            |
-| `OPENER_CACHE_TTL_HOURS`       | No       | Cache lifetime.                                                   | `24`                                     |
-| `OPENER_WARM_ON_START`         | No       | Pre-warm the sample artists after boot.                           | `true`                                   |
-| `OPENER_AGENT_TIME_MS`         | No       | Time budget for the agent loop, in ms.                            | `90000`                                  |
-| `GEMINI_FALLBACK_MODELS`       | No       | Comma-separated models to try when the main Gemini model is busy. | `gemini-3.8-flash,gemini-3.5-flash-lite` |
-| `OPENER_SAMPLES_DIR`           | No       | Override the saved-plan folder (tests use fixtures).              | `data/samples`                           |
-| `PORT`                         | No       | HTTP port.                                                        | `3000`                                   |
+| Area                                  | Tests           | Covers                                                                                                                                                                                |
+| ------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Generic vs Opener (`generic.test.ts`) | 13              | Parsing model replies, population baseline, ranking on recorded Qloo data, no Qloo data in the prompt, caching                                                                        |
+| Agent runner (`runner.integration`)   | 8               | Full plan on mocked Qloo, ambiguous and unknown artists, grounding drops invented cities, artists and evidence, agent failure fallback, time budget, per-country ranking, agent steps |
+| Gemini provider (`gemini.test.ts`)    | 12              | Busy and quota fallbacks, retries, schema cleaning                                                                                                                                    |
+| Ranking and helpers (`plan-helpers`)  | 10              | Cell-to-city mapping, route order, momentum, rate limiter, "Why this city"                                                                                                            |
+| Cities and scales (`merge`)           | 6               | Neighbour merging, metro over suburb, border fix, 0–1 percentiles, near-tie ranking                                                                                                   |
+| Qloo client (`client.integration`)    | 5               | One connection, caching by normalised args, bounded retries, respawn, readiness                                                                                                       |
+| Envelope normalisation (`envelope`)   | 9               | Result parsing, missing status, errors and retryability, `series` for trends                                                                                                          |
+| Cache (`cache.test.ts`)               | 8               | TTL, LRU, disk layer                                                                                                                                                                  |
+| Schema (`schema.test.ts`)             | 7               | Plan and draft validation, every stop must cite a Qloo call                                                                                                                           |
+| Redaction (`redact.test.ts`)          | 4               | Secret-looking fields and the Qloo key value scrubbed at any depth                                                                                                                    |
+| End to end (`tests/e2e`)              | 5 × 2 viewports | Landing, saved plan, Why this city, Under the hood, Generic vs Opener, health, no horizontal scroll                                                                                   |
 
-## 10. Data handling and responsible use
+82 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
 
-- **Aggregate affinities only.** Qloo results describe how an audience over- or under-indexes. Opener says "strong audience affinity", never "X% of fans will buy tickets", and never describes individuals.
-- **No personal data sent.** Inputs are public artist names and country names. Opener has no accounts and stores no visitor data beyond a per-IP request counter in memory.
-- **Key stays on the server.** `QLOO_API_KEY` is passed only to the `qloo mcp` child. It is never in the browser bundle, prompts, logs or evidence (a redaction helper scrubs secret-looking keys and the key value itself).
-- **What the LLM sees.** Only public artist names and Qloo's aggregate results. Google's free Gemini tier may use prompts to improve its products; use a paid key or Claude if that matters for your deployment.
-- **Provenance shown.** Qloo data carries a gold "Qloo data" badge and an evidence toggle; the agent's words carry a dashed "Agent interpretation" badge.
-- **What results do not establish:** ticket demand, venue fit, routing feasibility, or the preferences of any particular person. Demographic values are relative affinities, not shares of fans. Saved plans are always labelled "Saved result from &lt;timestamp&gt;".
+## Project layout
 
-## 11. Known limitations
+| Path                  | What's there                                                         |
+| --------------------- | -------------------------------------------------------------------- |
+| `app/`                | Pages (`/`, `/plan`, `/how-it-works`) and API routes                 |
+| `app/api/plan`        | Streams a plan as server-sent events                                 |
+| `app/api/compare`     | Generic tour and its Qloo ranking for a plan                         |
+| `app/api/health`      | Readiness: Qloo and LLM configured, cache stats, no secrets          |
+| `components/`         | UI: timeline, map, city cards, compare panel, evidence drawer        |
+| `lib/qloo/`           | `qloo mcp` client, cache, envelope normalisation, redaction          |
+| `lib/agent/`          | Runner, agent loop, Gemini/Claude providers, grounding, generic tour |
+| `lib/plan/`           | Schema, regions, city ranking, routing, comparison, formatting       |
+| `lib/geo/`            | Bundled GeoNames city table and lookups                              |
+| `scripts/`            | CLI planner, cache warmer, evidence capture, tool inspector          |
+| `tests/`              | Unit, integration and E2E tests, fixtures                            |
+| `evidence/`           | Real outputs: plans, comparisons and summaries                       |
+| `data/samples/`       | Saved sample plans (written by `npm run warm-cache`)                 |
+| `docs/`               | Devpost write-up, architecture notes, Qloo tool schemas              |
+| `deploy/huggingface/` | Files for a Hugging Face Space                                       |
 
-- Coverage varies by region. Presets search a few large countries each (Qloo needs a resolvable locality for `within`), so smaller markets can be missed.
-- Heatmap affinity is relative to the query. It shows where the audience over-indexes, not how many tickets would sell.
-- Cells more than 90 km from a city in the bundled table are left out, and two nearby cities can merge into the larger one.
-- Venue capacity, dates, drive times and holds are not modelled yet.
-- `qloo_compare_audiences` returns different shapes by entity type; Opener shows the named items it finds.
-- The agent's route order is its own interpretation; the deterministic planner uses a greedy nearest-neighbour order.
-- The in-memory rate limiter is per instance. Running several instances needs a shared store.
+## Known limitations
 
-## 12. Roadmap
+- **Heatmap scores are relative within each country.** Multi-country plans rank cities inside each country, not across countries.
+- **Coverage depends on the presets.** Each region searches 1–5 large countries, because Qloo's `within` needs a resolvable place. Smaller markets can be missed.
+- **Cities come from a bundled table.** Cells more than 90 km from one of the 1,797 cities are dropped, and cities closer than 110 km merge. A generic city missing from the table (Cologne, for example) shows as "no match" even if Qloo has heat nearby.
+- **Affinity is not ticket demand.** It shows where the audience over-indexes, not how many tickets would sell.
+- **No venues, dates or drive times yet.** Stop reasons cite Qloo signals; there are no venue-level pitches. Route order is nearest-neighbour by straight-line distance.
+- **Free LLM tier.** Gemini's free tier can be busy or out of daily quota. The plan then comes from the fixed planner and the generic tour from the population baseline, and the page says so.
+- **Small evidence set.** One real run is recorded in this repo so far (Sia, worldwide, captured with the October 23 build, before the per-country ranking and border fixes). Re-capture from the live app with `npm run evidence`.
+- **Rate limits and cache are per instance.** Several instances would need a shared store.
+- **The free Render plan sleeps** after about 15 idle minutes; the next visit takes about a minute.
 
-- Venue capacity matching per city
-- Date and drive-time aware routing (holds, off days, max legs)
-- A shareable, read-only plan page for booking agents with comments
-- Per-city opener ranking with `qloo_rank` across the full shortlist
-- Compare two candidate routes side by side
+## Build log
 
-## 13. Troubleshooting
+- **2026-10-22:** Next.js scaffold, `qloo mcp` client with cache and retries, typed Qloo tools, agent runner, plan schema, CLI. SSE plan API, plan page with live timeline, map, city cards and evidence. Landing and how-it-works pages. Dockerfile and Render blueprint. Unit, integration and E2E tests. First README and Devpost draft.
+- **2026-10-23:** First live runs on the hackathon API (Phoebe Bridgers, Rema, Sia). Switched the agent to Gemini's free tier with model fallbacks. Fixed cross-country ranking (scores are relative per country), the Buffalo → Toronto border bug, trend percentiles (0–1, not 0–100) and agent time budgets. Added the Africa region preset and Hugging Face deployment files.
+- **2026-10-24:** Generic vs Opener comparison, "Why this city" panel, "Under the hood" drawer with timings, live agent steps with durations, fourth sample artist, health check reports configured keys, recorded-data tests, GitHub Actions CI, `evidence/` and capture script, complete `.env.example`, this README and the Devpost write-up.
 
-| Problem                                                               | Fix                                                                                                                                                                                                               |
-| --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `qloo` not found                                                      | Install Node 22.19+, run `npm install --global @qloo/qloo-harness`, open a new terminal, check `qloo --version`.                                                                                                  |
-| `/api/health` says `"qloo": "missing"` or plans fail with `QLOO_AUTH` | The server has no usable key. Run `qloo setup --status`, or set `QLOO_API_KEY` in the server environment and restart. If a key is set and it still fails, the key was rejected: ask the organisers for a new one. |
-| Windows can't find `qloo` (PATH)                                      | `where.exe qloo` shows the full path. Open a new PowerShell after installing, or add the npm global folder (`npm prefix -g`) to PATH.                                                                             |
-| Rate limited                                                          | Opener allows 5 live plans per IP per minute; cached plans don't count. Qloo's own rate limits return a retryable error, which Opener retries twice with backoff, then offers a saved plan.                       |
-| Plans are slow                                                        | First runs make up to 20 Qloo calls. Repeat runs come from the 24-hour cache. Set `OPENER_WARM_ON_START=true` to warm the samples after deploy.                                                                   |
-| Map is blank                                                          | The Carto basemap couldn't load (network or ad-blocker); Opener falls back to a plain dark canvas, and the route list still works.                                                                                |
+## Credits
 
-## 14. License
-
-[MIT](LICENSE). City data from [GeoNames](https://www.geonames.org/) (CC BY 4.0). Map tiles © [CARTO](https://carto.com/attributions), data © OpenStreetMap contributors. Taste data from [Qloo](https://www.qloo.com/).
+- Taste data from [Qloo](https://www.qloo.com/), through `@qloo/qloo-harness`.
+- City data from [GeoNames](https://www.geonames.org/) (CC BY 4.0).
+- Map tiles © [CARTO](https://carto.com/attributions), map data © OpenStreetMap contributors, rendered with [MapLibre](https://maplibre.org/).
+- Inter typeface by Rasmus Andersson, self-hosted via Fontsource.
+- README structure modelled on [Enoch208/cadence](https://github.com/Enoch208/cadence).
+- Licensed under [MIT](LICENSE).

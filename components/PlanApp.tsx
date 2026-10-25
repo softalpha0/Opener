@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { errorCopy, formatDateTime } from "@/lib/plan/format";
 import type { PlanEvent, TourPlan } from "@/lib/plan/schema";
 import { readPlanStream } from "@/lib/plan/sse";
-import { AgentTimeline, type TimelineItem } from "./AgentTimeline";
+import { AgentTimeline, StageStrip, type StageState, type TimelineItem } from "./AgentTimeline";
 import { ArtistForm, type ArtistChoice } from "./ArtistForm";
 import { CandidatePicker, type CandidateOption } from "./CandidatePicker";
 import { PlanResults } from "./PlanResults";
@@ -43,6 +43,7 @@ export function PlanApp({ initial, autoStart, sample }: PlanAppProps) {
   const [phase, setPhase] = useState<Phase>({ kind: "idle" });
   const [timeline, setTimeline] = useState<TimelineItem[]>([]);
   const [status, setStatus] = useState<string>("");
+  const [stages, setStages] = useState<StageState>({});
   const [heat, setHeat] = useState<Array<{ lat: number; lng: number; affinity: number }>>([]);
   const [saved, setSaved] = useState<SavedSample[] | null>(null);
   const abort = useRef<AbortController | null>(null);
@@ -75,6 +76,7 @@ export function PlanApp({ initial, autoStart, sample }: PlanAppProps) {
     setChoice(next);
     setPhase({ kind: "running" });
     setTimeline([]);
+    setStages({});
     setHeat([]);
     setStatus("Starting");
 
@@ -87,6 +89,16 @@ export function PlanApp({ initial, autoStart, sample }: PlanAppProps) {
       switch (event.type) {
         case "status":
           setStatus(event.message);
+          break;
+        case "stage":
+          setStages((st) => ({
+            ...st,
+            [event.id]: {
+              state: event.state,
+              ...(event.ms !== undefined ? { ms: event.ms } : {}),
+              ...(event.detail ? { detail: event.detail } : {}),
+            },
+          }));
           break;
         case "tool":
           setTimeline((items) => {
@@ -220,6 +232,7 @@ export function PlanApp({ initial, autoStart, sample }: PlanAppProps) {
         >
           <Panel>
             <h2 className="mb-3 font-display text-lg font-semibold">Agent timeline</h2>
+            <StageStrip stages={stages} running={running} />
             <AgentTimeline items={timeline} status={running ? status : undefined} compact />
           </Panel>
           <div className="h-[360px] lg:h-auto lg:min-h-[420px]">

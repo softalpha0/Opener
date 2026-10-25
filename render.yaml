@@ -1,10 +1,10 @@
-# Render Blueprint: one Docker web service. Starter plan or higher (free instances sleep,
-# so a judge's first request would wait on a cold start).
+# Render Blueprint: one Docker web service. The free plan works but sleeps when idle
+# (first request after a nap takes ~1 min); the Starter plan stays awake.
 services:
   - type: web
     name: opener
     runtime: docker
-    plan: starter
+    plan: free # free instances sleep after ~15 min idle; "starter" (paid) stays awake
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/health
     autoDeploy: true

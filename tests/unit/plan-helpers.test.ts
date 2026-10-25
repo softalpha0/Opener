@@ -5,6 +5,8 @@ import { computeMomentum } from "@/lib/plan/momentum";
 import { parseCompare, parseDemographics, parseHeatmap } from "@/lib/qloo/parse";
 import { SlidingWindowLimiter } from "@/lib/rate-limit";
 import { extractJson } from "@/lib/agent/prompt";
+import { whyThisCity } from "@/lib/plan/format";
+import type { Evidence, Stop } from "@/lib/plan/schema";
 
 describe("geo", () => {
   it("maps a heat cell to the nearest touring city", () => {
@@ -86,5 +88,62 @@ describe("extractJson", () => {
   it("pulls the object out of fenced model text", () => {
     expect(extractJson('Here:\n```json\n{"a":1}\n```')).toEqual({ a: 1 });
     expect(extractJson("no json")).toBeUndefined();
+  });
+});
+
+describe("whyThisCity", () => {
+  const evidence = new Map<string, Evidence>([
+    [
+      "ev9",
+      {
+        id: "ev9",
+        tool: "qloo_recommend",
+        purpose: "Openers near Leeds",
+        inputRedacted: { signal_location: "Leeds, United Kingdom" },
+        status: "ok",
+        summary: "5 results.",
+        resultCount: 5,
+        fetchedAt: "2026-10-24T00:00:00Z",
+        cached: false,
+        warnings: [],
+      },
+    ],
+  ]);
+  const stop: Stop = {
+    order: 2,
+    demandRank: 2,
+    area: "United Kingdom",
+    areaCities: 9,
+    city: "Leeds",
+    region: "England",
+    country: "United Kingdom",
+    affinityScore: 0.871,
+    heatCells: 3,
+    reason: "r",
+    evidenceIds: ["ev3"],
+    openers: [{ id: "a", name: "A", overlapNote: "n", evidenceIds: ["ev9"] }],
+  };
+
+  it("states the Qloo signals in plain words", () => {
+    expect(whyThisCity(stop, evidence)).toEqual([
+      "Ranked #2 of 9 cities in Qloo's audience heatmap for United Kingdom.",
+      "Strongest heat cell near Leeds scored 0.87 for audience affinity (Qloo scores 0 to 1, relative within United Kingdom).",
+      "3 of Qloo's top heat cells fall in and around the city.",
+      "1 opener picked from artists Qloo recommends to the same audience near Leeds, United Kingdom.",
+    ]);
+  });
+
+  it("drops lines it has no data for", () => {
+    const bare = {
+      ...stop,
+      area: undefined,
+      areaCities: undefined,
+      affinityScore: undefined,
+      heatCells: 1,
+      openers: [],
+    };
+    expect(whyThisCity(bare, evidence)).toEqual([
+      "Ranked #2 in Qloo's audience heatmap for United Kingdom.",
+    ]);
   });
 });

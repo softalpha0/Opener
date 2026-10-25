@@ -5,7 +5,15 @@ import { planToMarkdown } from "@/lib/plan/markdown";
 import type { TourPlan } from "@/lib/plan/schema";
 import { Button } from "./ui";
 
-export function PlanActions({ plan, onEvidence }: { plan: TourPlan; onEvidence: () => void }) {
+export function PlanActions({
+  plan,
+  onEvidence,
+  onCompare,
+}: {
+  plan: TourPlan;
+  onEvidence: () => void;
+  onCompare: () => void;
+}) {
   const [message, setMessage] = useState("");
 
   async function copy(text: string, done: string) {
@@ -45,6 +53,10 @@ export function PlanActions({ plan, onEvidence }: { plan: TourPlan; onEvidence: 
 
   return (
     <div className="flex flex-wrap items-center gap-2">
+      <Button onClick={onCompare}>Generic vs Opener</Button>
+      <Button variant="ghost" onClick={onEvidence}>
+        Under the hood ({plan.evidence.length} Qloo calls)
+      </Button>
       <Button
         variant="ghost"
         onClick={() => copy(planToMarkdown(plan, shareUrl()), "Plan copied as Markdown.")}
@@ -56,9 +68,6 @@ export function PlanActions({ plan, onEvidence }: { plan: TourPlan; onEvidence: 
       </Button>
       <Button variant="ghost" onClick={() => copy(shareUrl(), "Share link copied.")}>
         Share
-      </Button>
-      <Button variant="ghost" onClick={onEvidence}>
-        Qloo evidence ({plan.evidence.length})
       </Button>
       <span className="text-sm text-gold" role="status" aria-live="polite">
         {message}

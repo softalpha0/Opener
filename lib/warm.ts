@@ -5,7 +5,7 @@ import { log } from "./log";
 import { stableKeyFor } from "./plan/key";
 import type { PlanEvent, TourPlan } from "./plan/schema";
 import { getQloo, serverState } from "./server";
-import { SAMPLE_ARTISTS, SAMPLES_DIR } from "./samples";
+import { SAMPLE_ARTISTS, SAMPLES_DIR, readSavedSample } from "./samples";
 
 export interface WarmResult {
   slug: string;
@@ -28,6 +28,18 @@ export async function warmSamples(options: {
     const key = stableKeyFor(input);
     if (!options.writeSamples && state.plans.get(key)) {
       results.push({ slug: sample.slug, ok: true, detail: "already cached" });
+      continue;
+    }
+    // On server start, reuse the committed saved plan (still labelled "Saved result from …")
+    // instead of spending Qloo and LLM quota on every restart.
+    const saved = options.writeSamples ? undefined : readSavedSample(sample.slug);
+    if (saved) {
+      state.plans.set(key, saved);
+      results.push({
+        slug: sample.slug,
+        ok: true,
+        detail: `loaded saved plan from ${saved.saved?.savedAt}`,
+      });
       continue;
     }
     let failure = "";

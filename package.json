@@ -21,7 +21,8 @@
     "plan": "tsx scripts/plan-cli.ts",
     "warm-cache": "node scripts/warm-cache.mjs",
     "test:all": "npm run lint && npm run typecheck && npm run test && npm run test:e2e",
-    "check-llm": "tsx scripts/check-llm.ts"
+    "check-llm": "tsx scripts/check-llm.ts",
+    "evidence": "tsx scripts/capture-evidence.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.1.0",
