@@ -119,6 +119,16 @@ describe("compareTours on recorded Qloo data", () => {
     expect(rowVerdict(london!)).toMatch(/^#1 of \d+ cities in Qloo's United Kingdom heatmap/);
   });
 
+  it("fixes a wrong country from the model and drops its note", () => {
+    const c = compareTours(
+      recorded,
+      tour([{ city: "Lagos", country: "Ghana", why: "Wait, Lagos is in Nigeria, but…" }]),
+    );
+    expect(c.rows[0]).toMatchObject({ city: "Lagos", country: "Nigeria", outsideSearch: false });
+    expect(c.rows[0]?.why).toBeUndefined();
+    expect(c.rows[0]?.qloo?.rank).toBe(1);
+  });
+
   it("matches common spellings to the city table", () => {
     const c = compareTours(recorded, tour([{ city: "New York", country: "USA" }]));
     expect(c.rows[0]?.qloo?.city).toBe("New York City");

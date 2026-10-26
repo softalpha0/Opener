@@ -277,7 +277,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 
 | Area                                  | Tests           | Covers                                                                                                                                                                                |
 | ------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Generic vs Opener (`generic.test.ts`) | 13              | Parsing model replies, population baseline, ranking on recorded Qloo data, no Qloo data in the prompt, caching                                                                        |
+| Generic vs Opener (`generic.test.ts`) | 14              | Parsing model replies, population baseline, ranking on recorded Qloo data, no Qloo data in the prompt, caching                                                                        |
 | Agent runner (`runner.integration`)   | 8               | Full plan on mocked Qloo, ambiguous and unknown artists, grounding drops invented cities, artists and evidence, agent failure fallback, time budget, per-country ranking, agent steps |
 | Gemini provider (`gemini.test.ts`)    | 12              | Busy and quota fallbacks, retries, schema cleaning                                                                                                                                    |
 | Ranking and helpers (`plan-helpers`)  | 14              | Cell-to-city mapping, route order (incl. a real cross-border tour), momentum, rate limiter, "Why this city", audience tag filtering                                                   |
@@ -289,7 +289,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 | Redaction (`redact.test.ts`)          | 4               | Secret-looking fields and the Qloo key value scrubbed at any depth                                                                                                                    |
 | End to end (`tests/e2e`)              | 5 × 2 viewports | Landing, saved plan, Why this city, Under the hood, Generic vs Opener, health, no horizontal scroll                                                                                   |
 
-86 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
+87 unit and integration tests and 10 end-to-end runs. CI runs all of them on every push (`.github/workflows/ci.yml`).
 
 ## Project layout
 

@@ -47,7 +47,7 @@ Next.js 15 in one Docker container that keeps `qloo mcp` running over stdio. A G
 
 - Every number on the page traces to a Qloo call you can open.
 - The no-Qloo comparison is on every plan, not just in the pitch.
-- 86 unit tests and 10 end-to-end runs, in CI, none touching the live API.
+- 87 unit tests and 10 end-to-end runs, in CI, none touching the live API.
 
 ## What we learned
 

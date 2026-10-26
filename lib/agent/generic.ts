@@ -26,6 +26,7 @@ export async function genericTour(
   const count = Math.max(plan.stops.length, 5);
   const { regionLabel, within } = plan.query;
   const key = cacheKey("generic", {
+    v: 2,
     artist: plan.artist.name.toLowerCase(),
     within,
     count,

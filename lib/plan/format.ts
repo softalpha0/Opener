@@ -95,7 +95,7 @@ export function whyThisCity(stop: Stop, index: Map<string, Evidence>): string[] 
   lines.push(`Ranked #${stop.demandRank}${of} in Qloo's audience heatmap for ${area}.`);
   if (stop.affinityScore !== undefined && stop.areaCities !== undefined && stop.areaCities < 3) {
     lines.push(
-      `Qloo returned very few heat cells here, so the affinity score (${stop.affinityScore.toFixed(2)}, relative within ${area}) only compares ${stop.areaCities} cities.`,
+      `Only ${stop.areaCities} cit${stop.areaCities === 1 ? "y" : "ies"} came out of Qloo's heatmap for ${area}, so the affinity score (${stop.affinityScore.toFixed(2)}) only compares ${stop.areaCities === 1 ? "that one" : "those"}.`,
     );
   } else if (stop.affinityScore !== undefined) {
     lines.push(

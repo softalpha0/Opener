@@ -137,7 +137,8 @@ export function genericPrompt(
 ) {
   return [
     `Suggest ${count} cities for a headline tour by the artist "${artist}" in ${regionLabel}.`,
-    `Only pick cities in these countries: ${within.join(", ")}.`,
+    `Only pick cities in these countries: ${within.join(", ")}. Give each city's correct country.`,
+    `Keep each "why" under 15 words.`,
     `Reply with a JSON array, best city first, like:`,
     `[{"city": "City", "country": "Country", "why": "one short sentence"}]`,
   ].join("\n");
@@ -212,7 +213,16 @@ export function compareTours(plan: TourPlan, generic: GenericTour): TourComparis
     if (city) stopKeys.set(cityKey(city), s.order);
   }
 
-  const rows: ComparisonRow[] = generic.stops.map((g) => {
+  const rows: ComparisonRow[] = generic.stops.map((model) => {
+    // Models sometimes give the wrong country ("Toronto, United States"). Use the city table's
+    // country, and drop the model's note in that case since it was written about the wrong place.
+    const city = lookup(model);
+    const claimed = countryCodeFor(model.country);
+    const g: GenericStop = !city
+      ? model
+      : claimed && claimed !== city.cc
+        ? { city: model.city, country: city.c }
+        : { ...model, country: city.c };
     const key = lookupKey(g);
     const qloo = key ? ranks.get(key) : undefined;
     const openerOrder = key ? stopKeys.get(key) : undefined;

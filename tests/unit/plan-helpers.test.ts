@@ -145,7 +145,7 @@ describe("whyThisCity", () => {
     };
     expect(whyThisCity(thin, evidence)).toEqual([
       "Ranked #2 of 2 cities in Qloo's audience heatmap for United Kingdom.",
-      "Qloo returned very few heat cells here, so the affinity score (0.00, relative within United Kingdom) only compares 2 cities.",
+      "Only 2 cities came out of Qloo's heatmap for United Kingdom, so the affinity score (0.00) only compares those.",
     ]);
   });
 
