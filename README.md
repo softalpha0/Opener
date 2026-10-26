@@ -8,8 +8,8 @@
 An indie artist with a few thousand fans in five countries has to pick eight cities. With no data, the list writes itself: the biggest cities, the ones the last band played, the ones a promoter knows. Half of those rooms are full of people who have never heard the artist, the door money doesn't cover the van, and the tour loses money. The fans who would have sold out a smaller room two hours away never hear about the show. Opener replaces the guess with Qloo's taste data: where this artist's audience over-indexes, who else that audience likes, and what the crowd is into.
 
 - **Live app:** https://opener-9w48.onrender.com (free Render plan: the first visit after a quiet spell takes about a minute)
-- **One-click sample:** https://opener-9w48.onrender.com/plan?artist=Rema&region=africa
-- **Demo video:** _add the link after recording_
+- **One-click sample:** https://opener-9w48.onrender.com/plan?artist=Phoebe+Bridgers&region=north-america (then click **Generic vs Opener**)
+- **Demo video (2:53):** https://youtu.be/-qubntGJhiE
 - **Evidence from real runs:** [`evidence/`](evidence/)
 
 ## Contents
@@ -329,6 +329,7 @@ No test calls the live Qloo API. They use a fake `qloo mcp` with Qloo's real res
 - **2026-10-22:** Next.js scaffold, `qloo mcp` client with cache and retries, typed Qloo tools, agent runner, plan schema, CLI. SSE plan API, plan page with live timeline, map, city cards and evidence. Landing and how-it-works pages. Dockerfile and Render blueprint. Unit, integration and E2E tests. First README and Devpost draft.
 - **2026-10-23:** First live runs on the hackathon API (Phoebe Bridgers, Rema, Sia). Switched the agent to Gemini's free tier with model fallbacks. Fixed cross-country ranking (scores are relative per country), the Buffalo → Toronto border bug, trend percentiles (0–1, not 0–100) and agent time budgets. Added the Africa region preset and Hugging Face deployment files.
 - **2026-10-24:** Generic vs Opener comparison, "Why this city" panel, "Under the hood" drawer with timings, live agent steps with durations, fourth sample artist, health check reports configured keys, recorded-data tests, GitHub Actions CI, `evidence/` and capture script, complete `.env.example`, this README and the Devpost write-up.
+- **2026-10-25 and 26:** Deployed to Render. Gemini agent live with model fallbacks. Captured live evidence for four artists. Cleaned up audience tags and mood-board ideas, explained thin location data, fixed generic-tour country labels, and routed stops as one trip instead of country by country. Recorded the demo video.
 
 ## Credits
 

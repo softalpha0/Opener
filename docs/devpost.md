@@ -57,6 +57,12 @@ Read the raw numbers before trusting a ranking. Treat the model's output as a dr
 
 Venue capacity, dates and drive times, and recorded comparisons for niche artists, where we expect the gap to be largest.
 
+## Links
+
+- Live app: https://opener-9w48.onrender.com
+- Code: https://github.com/softalpha0/Opener (MIT)
+- Demo video: https://youtu.be/-qubntGJhiE
+
 ## Built with
 
 `qloo` · `qloo-harness` · `mcp` · `gemini` · `next.js` · `react` · `typescript` · `tailwindcss` · `maplibre` · `zod` · `docker` · `render` · `vitest` · `playwright` · `github-actions` · `geonames`
